@@ -1,3 +1,5 @@
+using QuanLyGaRanKFC.View;
+
 namespace QuanLyGaRanKFC
 {
     internal static class Program

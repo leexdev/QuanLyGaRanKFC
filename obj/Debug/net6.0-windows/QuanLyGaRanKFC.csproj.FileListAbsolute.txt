@@ -1,5 +1,4 @@
 E:\Project\baitap\QuanLyGaRanKFC\obj\Debug\net6.0-windows\QuanLyGaRanKFC.csproj.AssemblyReference.cache
-E:\Project\baitap\QuanLyGaRanKFC\obj\Debug\net6.0-windows\QuanLyGaRanKFC.Form1.resources
 E:\Project\baitap\QuanLyGaRanKFC\obj\Debug\net6.0-windows\QuanLyGaRanKFC.csproj.GenerateResource.cache
 E:\Project\baitap\QuanLyGaRanKFC\obj\Debug\net6.0-windows\QuanLyGaRanKFC.GeneratedMSBuildEditorConfig.editorconfig
 E:\Project\baitap\QuanLyGaRanKFC\obj\Debug\net6.0-windows\QuanLyGaRanKFC.AssemblyInfoInputs.cache
@@ -23,3 +22,6 @@ E:\Project\baitap\QuanLyGaRanKFC\obj\Debug\net6.0-windows\refint\QuanLyGaRanKFC.
 E:\Project\baitap\QuanLyGaRanKFC\obj\Debug\net6.0-windows\QuanLyGaRanKFC.pdb
 E:\Project\baitap\QuanLyGaRanKFC\obj\Debug\net6.0-windows\QuanLyGaRanKFC.genruntimeconfig.cache
 E:\Project\baitap\QuanLyGaRanKFC\obj\Debug\net6.0-windows\ref\QuanLyGaRanKFC.dll
+E:\Project\baitap\QuanLyGaRanKFC\obj\Debug\net6.0-windows\QuanLyGaRanKFC.View.Form1.resources
+E:\Project\baitap\QuanLyGaRanKFC\obj\Debug\net6.0-windows\QuanLyGaRanKFC.Properties.Resources.resources
+E:\Project\baitap\QuanLyGaRanKFC\obj\Debug\net6.0-windows\QuanLyGaRanKFC.View.QuanLyGaRanKFC.resources
