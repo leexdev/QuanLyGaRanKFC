@@ -133,6 +133,16 @@ namespace QuanLyGaRanKFC.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_add_new_16 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-add-new-16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_add_user_16 {
             get {
                 object obj = ResourceManager.GetObject("icons8-add-user-16", resourceCulture);
@@ -193,6 +203,16 @@ namespace QuanLyGaRanKFC.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_logout_16 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-logout-16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_people_64 {
             get {
                 object obj = ResourceManager.GetObject("icons8-people-64", resourceCulture);
@@ -246,6 +266,16 @@ namespace QuanLyGaRanKFC.Properties {
         internal static System.Drawing.Bitmap icons8_search_16 {
             get {
                 object obj = ResourceManager.GetObject("icons8-search-16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_send_to_printer_16 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-send-to-printer-16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

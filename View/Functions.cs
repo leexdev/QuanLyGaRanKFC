@@ -55,7 +55,6 @@ namespace QuanLyGaRanKFC.View
             {
                 strBuilder.Append(result[i].ToString("X2"));
             }
-
             return strBuilder.ToString();
         }
     }

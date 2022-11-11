@@ -64,12 +64,12 @@ namespace QuanLyGaRanKFC.View
             {
                 if (_function.GetMD5(pwd) != nhanVien.matKhau)
                 {
-                    txbPassword.Text = "*Mật khẩu không chính xác";
+                    lbErr2.Text = "*Mật khẩu không chính xác";
                 }
                 else
                 {
                     this.Hide();
-                    QuanLyGaRanKFC qlch = new QuanLyGaRanKFC();
+                    QuanLyGaRanKFC qlch = new QuanLyGaRanKFC(nhanVien);
                     qlch.ShowDialog();
                     this.Close();
                 }

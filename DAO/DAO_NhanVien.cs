@@ -196,7 +196,7 @@ namespace QuanLyGaRanKFC.DAO
             command.ExecuteNonQuery();
             _conn.Close();
         }
-        private object GetMD5(string plainText)
+        public static string GetMD5(string plainText)
         {
             MD5 md5 = new MD5CryptoServiceProvider();
             md5.ComputeHash(ASCIIEncoding.ASCII.GetBytes(plainText));
@@ -206,6 +206,7 @@ namespace QuanLyGaRanKFC.DAO
             {
                 strBuilder.Append(result[i].ToString("X2"));
             }
+
             return strBuilder.ToString();
         }
     }

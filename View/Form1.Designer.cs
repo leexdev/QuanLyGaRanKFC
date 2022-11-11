@@ -36,9 +36,9 @@
             this.txbUserName = new System.Windows.Forms.TextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.lbErr1 = new System.Windows.Forms.Label();
             this.lbErr2 = new System.Windows.Forms.Label();
+            this.lbErr1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
@@ -84,6 +84,7 @@
             this.txbPassword.PlaceholderText = "Mật khẩu";
             this.txbPassword.Size = new System.Drawing.Size(179, 23);
             this.txbPassword.TabIndex = 2;
+            this.txbPassword.Text = "123456";
             // 
             // pictureBox3
             // 
@@ -106,6 +107,7 @@
             this.txbUserName.PlaceholderText = "Tài khoản";
             this.txbUserName.Size = new System.Drawing.Size(179, 23);
             this.txbUserName.TabIndex = 1;
+            this.txbUserName.Text = "vovantrong";
             // 
             // pictureBox2
             // 
@@ -137,15 +139,15 @@
             this.panel1.Size = new System.Drawing.Size(297, 318);
             this.panel1.TabIndex = 16;
             // 
-            // pictureBox1
+            // lbErr2
             // 
-            this.pictureBox1.Image = global::QuanLyGaRanKFC.Properties.Resources._0af3c9613761d2d2394d99312aeba397;
-            this.pictureBox1.Location = new System.Drawing.Point(52, 19);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(199, 138);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 15;
-            this.pictureBox1.TabStop = false;
+            this.lbErr2.AutoSize = true;
+            this.lbErr2.ForeColor = System.Drawing.Color.Red;
+            this.lbErr2.Location = new System.Drawing.Point(80, 239);
+            this.lbErr2.Name = "lbErr2";
+            this.lbErr2.Size = new System.Drawing.Size(44, 15);
+            this.lbErr2.TabIndex = 17;
+            this.lbErr2.Text = "txbErr2";
             // 
             // lbErr1
             // 
@@ -157,15 +159,15 @@
             this.lbErr1.TabIndex = 16;
             this.lbErr1.Text = "txbErr1";
             // 
-            // lbErr2
+            // pictureBox1
             // 
-            this.lbErr2.AutoSize = true;
-            this.lbErr2.ForeColor = System.Drawing.Color.Red;
-            this.lbErr2.Location = new System.Drawing.Point(80, 239);
-            this.lbErr2.Name = "lbErr2";
-            this.lbErr2.Size = new System.Drawing.Size(44, 15);
-            this.lbErr2.TabIndex = 17;
-            this.lbErr2.Text = "txbErr2";
+            this.pictureBox1.Image = global::QuanLyGaRanKFC.Properties.Resources._0af3c9613761d2d2394d99312aeba397;
+            this.pictureBox1.Location = new System.Drawing.Point(52, 19);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(199, 138);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 15;
+            this.pictureBox1.TabStop = false;
             // 
             // Form1
             // 
