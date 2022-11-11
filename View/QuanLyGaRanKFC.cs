@@ -20,6 +20,22 @@ namespace QuanLyGaRanKFC.View
         {
             InitializeComponent();
         }
+
+        private Form activeForm = null;
+        private void OpenChildForm(Form childForm)
+        {
+            if(activeForm != null)
+                activeForm.Close();
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            pnChildForm.Controls.Add(childForm);
+            pnChildForm.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+        }
+
         public QuanLyGaRanKFC(NhanVien nhanVien)
         {
             InitializeComponent();
@@ -28,8 +44,6 @@ namespace QuanLyGaRanKFC.View
 
         private void btnKhachHang_Click(object sender, EventArgs e)
         {
-            pnMain.Controls.Clear();
-            pnMain.Controls.Add(new ucQuanLyKhachHang());
         }
 
         private void QuanLyGaRanKFC_Load(object sender, EventArgs e)
@@ -51,9 +65,15 @@ namespace QuanLyGaRanKFC.View
 
         private void btnChiNhanh_Click(object sender, EventArgs e)
         {
-            ucChiNhanh f = new ucChiNhanh();
-            this.AddOwnedForm(f);
-            f.Show();
+            OpenChildForm(new ucChiNhanh());
+        }
+
+        private void btnDangXuat_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form1 f = new Form1();
+            f.ShowDialog();
+            this.Close();
         }
     }
 }

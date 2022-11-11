@@ -25,22 +25,10 @@ namespace QuanLyGaRanKFC.View.UserControl
 
         private void ucChiNhanh_Load(object sender, EventArgs e)
         {
-            txbMaCN.Enabled = false;
-            txbTenCN.Enabled = false;
-            txbDiaChi.Enabled = false;
-            function.turnOffButton(btnSuaCN, pbSua);
-            function.turnOffButton(btnLuuCN, pbLuu);
-            function.turnOffButton(btnXoaCN, pbXoa);
         }
 
         private void btnThemCN_Click(object sender, EventArgs e)
         {
-            txbMaCN.Enabled = true;
-            txbTenCN.Enabled = true;
-            txbDiaChi.Enabled = true;
-
-            function.turnOffButton(btnThemCN, pbThem);
-            function.turnOnButton(btnLuuCN, pbLuu);
         }
 
         private void btnLuuCN_Click(object sender, EventArgs e)
@@ -53,9 +41,16 @@ namespace QuanLyGaRanKFC.View.UserControl
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            function.turnOnButton(btnSuaCN, pbSua);
-            function.turnOnButton(btnXoaCN, pbXoa);
-            function.turnOffButton(btnThemCN, pbThem);
+        }
+
+        private void btnXoaCN_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dtgvChiNhanh_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

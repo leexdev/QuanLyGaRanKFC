@@ -29,303 +29,246 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.lbCapBac = new System.Windows.Forms.Label();
             this.lbDisplayName = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.btnDangXuat = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lbTaiKhoan = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnThongKe = new System.Windows.Forms.Button();
-            this.btnHoaDon = new System.Windows.Forms.Button();
             this.btnKho = new System.Windows.Forms.Button();
+            this.btnThanhToan = new System.Windows.Forms.Button();
+            this.btnKhachHang = new System.Windows.Forms.Button();
             this.btnNhanVien = new System.Windows.Forms.Button();
             this.btnChiNhanh = new System.Windows.Forms.Button();
             this.btnTrangChu = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnKhachHang = new System.Windows.Forms.Button();
-            this.pnMain = new System.Windows.Forms.Panel();
+            this.pnLogo = new System.Windows.Forms.Panel();
+            this.pnChildForm = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
-            this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(80)))), ((int)(((byte)(63)))));
-            this.panel1.Controls.Add(this.panel3);
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.btnThongKe);
-            this.panel1.Controls.Add(this.btnHoaDon);
             this.panel1.Controls.Add(this.btnKho);
+            this.panel1.Controls.Add(this.btnThanhToan);
+            this.panel1.Controls.Add(this.btnKhachHang);
             this.panel1.Controls.Add(this.btnNhanVien);
             this.panel1.Controls.Add(this.btnChiNhanh);
             this.panel1.Controls.Add(this.btnTrangChu);
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.btnKhachHang);
+            this.panel1.Controls.Add(this.pnLogo);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(245, 593);
-            this.panel1.TabIndex = 3;
+            this.panel1.Size = new System.Drawing.Size(250, 658);
+            this.panel1.TabIndex = 0;
             // 
-            // panel3
+            // panel2
             // 
-            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.panel3.Controls.Add(this.button1);
-            this.panel3.Controls.Add(this.lbCapBac);
-            this.panel3.Controls.Add(this.lbDisplayName);
-            this.panel3.Controls.Add(this.pictureBox3);
-            this.panel3.Location = new System.Drawing.Point(3, 455);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(241, 138);
-            this.panel3.TabIndex = 10;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Black;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(13, 98);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(220, 31);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "Đăng Xuất";
-            this.button1.UseVisualStyleBackColor = false;
+            this.panel2.Controls.Add(this.lbCapBac);
+            this.panel2.Controls.Add(this.lbDisplayName);
+            this.panel2.Controls.Add(this.btnDangXuat);
+            this.panel2.Controls.Add(this.pictureBox1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(0, 549);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(250, 109);
+            this.panel2.TabIndex = 9;
             // 
             // lbCapBac
             // 
             this.lbCapBac.AutoSize = true;
-            this.lbCapBac.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbCapBac.ForeColor = System.Drawing.Color.White;
-            this.lbCapBac.Location = new System.Drawing.Point(95, 57);
+            this.lbCapBac.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lbCapBac.Location = new System.Drawing.Point(102, 45);
             this.lbCapBac.Name = "lbCapBac";
-            this.lbCapBac.Size = new System.Drawing.Size(62, 19);
-            this.lbCapBac.TabIndex = 2;
-            this.lbCapBac.Text = "ADMIN";
+            this.lbCapBac.Size = new System.Drawing.Size(38, 15);
+            this.lbCapBac.TabIndex = 3;
+            this.lbCapBac.Text = "label2";
             // 
             // lbDisplayName
             // 
             this.lbDisplayName.AutoSize = true;
-            this.lbDisplayName.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbDisplayName.ForeColor = System.Drawing.Color.White;
-            this.lbDisplayName.Location = new System.Drawing.Point(95, 31);
+            this.lbDisplayName.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lbDisplayName.Location = new System.Drawing.Point(102, 16);
             this.lbDisplayName.Name = "lbDisplayName";
-            this.lbDisplayName.Size = new System.Drawing.Size(62, 19);
-            this.lbDisplayName.TabIndex = 1;
-            this.lbDisplayName.Text = "Lepro83";
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::QuanLyGaRanKFC.Properties.Resources.user;
-            this.pictureBox3.Location = new System.Drawing.Point(32, 31);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(48, 45);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 0;
-            this.pictureBox3.TabStop = false;
-            // 
-            // panel2
-            // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.panel2.Controls.Add(this.btnDangXuat);
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.lbTaiKhoan);
-            this.panel2.Controls.Add(this.pictureBox2);
-            this.panel2.Location = new System.Drawing.Point(-1, 1015);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(251, 138);
-            this.panel2.TabIndex = 9;
+            this.lbDisplayName.Size = new System.Drawing.Size(38, 15);
+            this.lbDisplayName.TabIndex = 2;
+            this.lbDisplayName.Text = "label1";
             // 
             // btnDangXuat
             // 
-            this.btnDangXuat.BackColor = System.Drawing.Color.Black;
             this.btnDangXuat.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDangXuat.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnDangXuat.FlatAppearance.BorderSize = 0;
             this.btnDangXuat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDangXuat.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnDangXuat.ForeColor = System.Drawing.Color.White;
-            this.btnDangXuat.Location = new System.Drawing.Point(13, 98);
+            this.btnDangXuat.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnDangXuat.Location = new System.Drawing.Point(0, 69);
             this.btnDangXuat.Name = "btnDangXuat";
-            this.btnDangXuat.Size = new System.Drawing.Size(220, 31);
-            this.btnDangXuat.TabIndex = 10;
-            this.btnDangXuat.Text = "Đăng Xuất";
-            this.btnDangXuat.UseVisualStyleBackColor = false;
+            this.btnDangXuat.Size = new System.Drawing.Size(250, 40);
+            this.btnDangXuat.TabIndex = 1;
+            this.btnDangXuat.Text = "Đăng xuất";
+            this.btnDangXuat.UseVisualStyleBackColor = true;
+            this.btnDangXuat.Click += new System.EventHandler(this.btnDangXuat_Click);
             // 
-            // label1
+            // pictureBox1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(95, 57);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(122, 36);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "ADMIN";
-            // 
-            // lbTaiKhoan
-            // 
-            this.lbTaiKhoan.AutoSize = true;
-            this.lbTaiKhoan.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbTaiKhoan.ForeColor = System.Drawing.Color.White;
-            this.lbTaiKhoan.Location = new System.Drawing.Point(95, 31);
-            this.lbTaiKhoan.Name = "lbTaiKhoan";
-            this.lbTaiKhoan.Size = new System.Drawing.Size(62, 19);
-            this.lbTaiKhoan.TabIndex = 1;
-            this.lbTaiKhoan.Text = "Lepro83";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Location = new System.Drawing.Point(32, 31);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(48, 45);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Image = global::QuanLyGaRanKFC.Properties.Resources.user;
+            this.pictureBox1.Location = new System.Drawing.Point(27, 16);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(50, 44);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // btnThongKe
             // 
-            this.btnThongKe.BackColor = System.Drawing.Color.Transparent;
             this.btnThongKe.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnThongKe.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnThongKe.FlatAppearance.BorderSize = 0;
+            this.btnThongKe.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
+            this.btnThongKe.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnThongKe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThongKe.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnThongKe.ForeColor = System.Drawing.Color.Black;
-            this.btnThongKe.Location = new System.Drawing.Point(0, 370);
+            this.btnThongKe.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnThongKe.Location = new System.Drawing.Point(0, 330);
             this.btnThongKe.Name = "btnThongKe";
-            this.btnThongKe.Size = new System.Drawing.Size(250, 48);
+            this.btnThongKe.Size = new System.Drawing.Size(250, 40);
             this.btnThongKe.TabIndex = 8;
-            this.btnThongKe.Text = "Thống Kê";
-            this.btnThongKe.UseVisualStyleBackColor = false;
-            // 
-            // btnHoaDon
-            // 
-            this.btnHoaDon.BackColor = System.Drawing.Color.Transparent;
-            this.btnHoaDon.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnHoaDon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHoaDon.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnHoaDon.ForeColor = System.Drawing.Color.Black;
-            this.btnHoaDon.Location = new System.Drawing.Point(0, 323);
-            this.btnHoaDon.Name = "btnHoaDon";
-            this.btnHoaDon.Size = new System.Drawing.Size(249, 48);
-            this.btnHoaDon.TabIndex = 7;
-            this.btnHoaDon.Text = "Hóa Đơn";
-            this.btnHoaDon.UseVisualStyleBackColor = false;
+            this.btnThongKe.Text = "Thống kê";
+            this.btnThongKe.UseVisualStyleBackColor = true;
             // 
             // btnKho
             // 
-            this.btnKho.BackColor = System.Drawing.Color.Transparent;
             this.btnKho.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnKho.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnKho.FlatAppearance.BorderSize = 0;
+            this.btnKho.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
+            this.btnKho.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnKho.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnKho.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnKho.ForeColor = System.Drawing.Color.Black;
-            this.btnKho.Location = new System.Drawing.Point(-1, 276);
+            this.btnKho.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnKho.Location = new System.Drawing.Point(0, 290);
             this.btnKho.Name = "btnKho";
-            this.btnKho.Size = new System.Drawing.Size(250, 48);
-            this.btnKho.TabIndex = 6;
+            this.btnKho.Size = new System.Drawing.Size(250, 40);
+            this.btnKho.TabIndex = 7;
             this.btnKho.Text = "Kho";
-            this.btnKho.UseVisualStyleBackColor = false;
+            this.btnKho.UseVisualStyleBackColor = true;
+            // 
+            // btnThanhToan
+            // 
+            this.btnThanhToan.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnThanhToan.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnThanhToan.FlatAppearance.BorderSize = 0;
+            this.btnThanhToan.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
+            this.btnThanhToan.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnThanhToan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThanhToan.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnThanhToan.Location = new System.Drawing.Point(0, 250);
+            this.btnThanhToan.Name = "btnThanhToan";
+            this.btnThanhToan.Size = new System.Drawing.Size(250, 40);
+            this.btnThanhToan.TabIndex = 6;
+            this.btnThanhToan.Text = "Thanh Toán";
+            this.btnThanhToan.UseVisualStyleBackColor = true;
+            // 
+            // btnKhachHang
+            // 
+            this.btnKhachHang.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnKhachHang.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnKhachHang.FlatAppearance.BorderSize = 0;
+            this.btnKhachHang.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
+            this.btnKhachHang.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnKhachHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnKhachHang.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnKhachHang.Location = new System.Drawing.Point(0, 210);
+            this.btnKhachHang.Name = "btnKhachHang";
+            this.btnKhachHang.Size = new System.Drawing.Size(250, 40);
+            this.btnKhachHang.TabIndex = 5;
+            this.btnKhachHang.Text = "Khách Hàng";
+            this.btnKhachHang.UseVisualStyleBackColor = true;
             // 
             // btnNhanVien
             // 
-            this.btnNhanVien.BackColor = System.Drawing.Color.Transparent;
             this.btnNhanVien.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNhanVien.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnNhanVien.FlatAppearance.BorderSize = 0;
+            this.btnNhanVien.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
+            this.btnNhanVien.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnNhanVien.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNhanVien.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnNhanVien.ForeColor = System.Drawing.Color.Black;
-            this.btnNhanVien.Location = new System.Drawing.Point(0, 182);
+            this.btnNhanVien.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnNhanVien.Location = new System.Drawing.Point(0, 170);
             this.btnNhanVien.Name = "btnNhanVien";
-            this.btnNhanVien.Size = new System.Drawing.Size(248, 48);
-            this.btnNhanVien.TabIndex = 5;
+            this.btnNhanVien.Size = new System.Drawing.Size(250, 40);
+            this.btnNhanVien.TabIndex = 4;
             this.btnNhanVien.Text = "Nhân Viên";
-            this.btnNhanVien.UseVisualStyleBackColor = false;
+            this.btnNhanVien.UseVisualStyleBackColor = true;
             // 
             // btnChiNhanh
             // 
-            this.btnChiNhanh.BackColor = System.Drawing.Color.Transparent;
             this.btnChiNhanh.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnChiNhanh.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnChiNhanh.FlatAppearance.BorderSize = 0;
+            this.btnChiNhanh.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
+            this.btnChiNhanh.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnChiNhanh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnChiNhanh.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnChiNhanh.ForeColor = System.Drawing.Color.Black;
-            this.btnChiNhanh.Location = new System.Drawing.Point(0, 135);
+            this.btnChiNhanh.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnChiNhanh.Location = new System.Drawing.Point(0, 130);
             this.btnChiNhanh.Name = "btnChiNhanh";
-            this.btnChiNhanh.Size = new System.Drawing.Size(249, 48);
-            this.btnChiNhanh.TabIndex = 4;
+            this.btnChiNhanh.Size = new System.Drawing.Size(250, 40);
+            this.btnChiNhanh.TabIndex = 3;
             this.btnChiNhanh.Text = "Chi Nhánh";
-            this.btnChiNhanh.UseVisualStyleBackColor = false;
+            this.btnChiNhanh.UseVisualStyleBackColor = true;
             this.btnChiNhanh.Click += new System.EventHandler(this.btnChiNhanh_Click);
             // 
             // btnTrangChu
             // 
-            this.btnTrangChu.BackColor = System.Drawing.Color.Transparent;
             this.btnTrangChu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnTrangChu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnTrangChu.FlatAppearance.BorderSize = 0;
+            this.btnTrangChu.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
+            this.btnTrangChu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnTrangChu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTrangChu.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnTrangChu.ForeColor = System.Drawing.Color.Black;
+            this.btnTrangChu.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnTrangChu.Location = new System.Drawing.Point(0, 90);
             this.btnTrangChu.Name = "btnTrangChu";
-            this.btnTrangChu.Size = new System.Drawing.Size(249, 48);
-            this.btnTrangChu.TabIndex = 3;
+            this.btnTrangChu.Size = new System.Drawing.Size(250, 40);
+            this.btnTrangChu.TabIndex = 2;
             this.btnTrangChu.Text = "Trang Chủ";
-            this.btnTrangChu.UseVisualStyleBackColor = false;
+            this.btnTrangChu.UseVisualStyleBackColor = true;
             // 
-            // pictureBox1
+            // pnLogo
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(246)))), ((int)(((byte)(244)))));
-            this.pictureBox1.Image = global::QuanLyGaRanKFC.Properties.Resources.kfc_PNG53;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(245, 90);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
+            this.pnLogo.BackgroundImage = global::QuanLyGaRanKFC.Properties.Resources.kfc_PNG53;
+            this.pnLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnLogo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnLogo.Location = new System.Drawing.Point(0, 0);
+            this.pnLogo.Name = "pnLogo";
+            this.pnLogo.Size = new System.Drawing.Size(250, 90);
+            this.pnLogo.TabIndex = 1;
             // 
-            // btnKhachHang
+            // pnChildForm
             // 
-            this.btnKhachHang.BackColor = System.Drawing.Color.Transparent;
-            this.btnKhachHang.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnKhachHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnKhachHang.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnKhachHang.ForeColor = System.Drawing.Color.Black;
-            this.btnKhachHang.Location = new System.Drawing.Point(0, 229);
-            this.btnKhachHang.Name = "btnKhachHang";
-            this.btnKhachHang.Size = new System.Drawing.Size(248, 48);
-            this.btnKhachHang.TabIndex = 1;
-            this.btnKhachHang.Text = "Khách Hàng";
-            this.btnKhachHang.UseVisualStyleBackColor = false;
-            this.btnKhachHang.Click += new System.EventHandler(this.btnKhachHang_Click);
-            // 
-            // pnMain
-            // 
-            this.pnMain.Location = new System.Drawing.Point(247, 0);
-            this.pnMain.Name = "pnMain";
-            this.pnMain.Size = new System.Drawing.Size(823, 593);
-            this.pnMain.TabIndex = 4;
+            this.pnChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnChildForm.Location = new System.Drawing.Point(250, 0);
+            this.pnChildForm.Name = "pnChildForm";
+            this.pnChildForm.Size = new System.Drawing.Size(820, 658);
+            this.pnChildForm.TabIndex = 1;
             // 
             // QuanLyGaRanKFC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1070, 593);
-            this.Controls.Add(this.pnMain);
+            this.ClientSize = new System.Drawing.Size(1070, 658);
+            this.Controls.Add(this.pnChildForm);
             this.Controls.Add(this.panel1);
             this.Name = "QuanLyGaRanKFC";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "QuanLyGaRanKFC";
             this.Load += new System.EventHandler(this.QuanLyGaRanKFC_Load);
             this.panel1.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -334,24 +277,19 @@
         #endregion
 
         private Panel panel1;
-        private Panel panel3;
-        private Button button1;
-        private Label lbCapBac;
-        private Label lbDisplayName;
-        private PictureBox pictureBox3;
         private Panel panel2;
-        private Button btnDangXuat;
-        private Label label1;
-        private Label lbTaiKhoan;
-        private PictureBox pictureBox2;
         private Button btnThongKe;
-        private Button btnHoaDon;
         private Button btnKho;
+        private Button btnThanhToan;
+        private Button btnKhachHang;
         private Button btnNhanVien;
         private Button btnChiNhanh;
         private Button btnTrangChu;
+        private Panel pnLogo;
+        private Label lbDisplayName;
+        private Button btnDangXuat;
         private PictureBox pictureBox1;
-        private Button btnKhachHang;
-        private Panel pnMain;
+        private Label lbCapBac;
+        private Panel pnChildForm;
     }
 }
