@@ -15,22 +15,10 @@ namespace QuanLyGaRanKFC.View
         {
 
         }
-        public void turnOffButton(Button btn, PictureBox picture)
-        {
-            btn.Enabled = false;
-            btn.BackColor = Color.FromArgb(238, 238, 238);
-            picture.BackColor = Color.FromArgb(238, 238, 238);
-        }
         public void turnOffButton(Button btn)
         {
             btn.Enabled = false;
             btn.BackColor = Color.FromArgb(238, 238, 238);
-        }
-        public void turnOnButton(Button btn, PictureBox picture)
-        {
-            btn.Enabled = true;
-            btn.BackColor = Color.FromArgb(23, 162, 139);
-            picture.BackColor = Color.FromArgb(23, 162, 139);
         }
         public void turnOnButton(Button btn)
         {

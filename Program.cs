@@ -10,14 +10,9 @@ namespace QuanLyGaRanKFC
         [STAThread]
         static void Main()
         {
-            // To customize application configuration such as set high DPI settings or default font,
-            // see https://aka.ms/applicationconfiguration.
-
-            ApplicationConfiguration.Initialize();
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
-            AllocConsole();
         }
-        [System.Runtime.InteropServices.DllImport("kernel32.dll")]
-        private static extern bool AllocConsole();
     }
 }

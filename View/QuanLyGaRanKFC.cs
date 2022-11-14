@@ -44,6 +44,7 @@ namespace QuanLyGaRanKFC.View
 
         private void btnKhachHang_Click(object sender, EventArgs e)
         {
+            OpenChildForm(new ucQuanLyKhachHang());
         }
 
         private void QuanLyGaRanKFC_Load(object sender, EventArgs e)
@@ -51,15 +52,15 @@ namespace QuanLyGaRanKFC.View
             lbDisplayName.Text = nhanVien.tenNV;
             if (nhanVien.quyen == 0)
             {
-                lbCapBac.Text = "(Nhân Viên)";
+                lbCapBac.Text = "Nhân Viên";
             }
             if (nhanVien.quyen == 1)
             {
-                lbCapBac.Text = "(Quản Lý)";
+                lbCapBac.Text = "Quản Lý";
             }
             if (nhanVien.quyen == 2)
             {
-                lbCapBac.Text = "(Admin)";
+                lbCapBac.Text = "Admin";
             }
         }
 
@@ -74,6 +75,16 @@ namespace QuanLyGaRanKFC.View
             Form1 f = new Form1();
             f.ShowDialog();
             this.Close();
+        }
+
+        private void btnTrangChu_Click(object sender, EventArgs e)
+        {
+            pnChildForm.Controls.Clear();
+        }
+
+        private void btnHoaDon_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new ucQuanLyHoaDon());
         }
     }
 }

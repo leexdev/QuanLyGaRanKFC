@@ -19,7 +19,18 @@ namespace QuanLyGaRanKFC.View.UserControl
             InitializeComponent();
         }
 
+
         private void ucQuanLyHoaDon_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnXoaKH_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCTHD_Click(object sender, EventArgs e)
         {
 
         }

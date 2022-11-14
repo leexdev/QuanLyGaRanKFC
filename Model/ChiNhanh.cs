@@ -14,7 +14,10 @@ namespace QuanLyGaRanKFC.Model
         public List<NhanVien> nhanVien { get; set; }
         public List<NguyenLieu> nguyenLieu { get; set; }
 
-        public ChiNhanh() { }
+        public ChiNhanh() 
+        { 
+        
+        }
 
         public ChiNhanh(string maCN, string tenCN, string diaChi, List<NhanVien> nhanVien, List<NguyenLieu> nguyenLieu)
         {

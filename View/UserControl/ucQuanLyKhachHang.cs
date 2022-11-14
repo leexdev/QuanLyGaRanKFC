@@ -16,5 +16,10 @@ namespace QuanLyGaRanKFC.View.UserControl
         {
             InitializeComponent();
         }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

@@ -13,6 +13,7 @@ namespace QuanLyGaRanKFC.View.UserControl
     public partial class ucChiNhanh : Form
     {
         Functions function = new Functions();
+        ucChiNhanh
         public ucChiNhanh()
         {
             InitializeComponent();
@@ -25,10 +26,13 @@ namespace QuanLyGaRanKFC.View.UserControl
 
         private void ucChiNhanh_Load(object sender, EventArgs e)
         {
-        }
+            txbMaCN.Enabled = false;
+            txbTenCN.Enabled = false;
+            txbDiaChi.Enabled = false;
 
-        private void btnThemCN_Click(object sender, EventArgs e)
-        {
+            function.turnOffButton(btnSuaCN);
+            function.turnOffButton(btnLuuCN);
+            function.turnOffButton(btnXoaCN);
         }
 
         private void btnLuuCN_Click(object sender, EventArgs e)
@@ -41,6 +45,9 @@ namespace QuanLyGaRanKFC.View.UserControl
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            function.turnOnButton(btnSuaCN);
+            function.turnOnButton(btnXoaCN);
+            function.turnOffButton(btnThemCN);
         }
 
         private void btnXoaCN_Click(object sender, EventArgs e)
@@ -51,6 +58,17 @@ namespace QuanLyGaRanKFC.View.UserControl
         private void dtgvChiNhanh_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void btnThemCN_Click_1(object sender, EventArgs e)
+        {
+
+            txbMaCN.Enabled = true;
+            txbTenCN.Enabled = true;
+            txbDiaChi.Enabled = true;
+
+            function.turnOffButton(btnThemCN);
+            function.turnOnButton(btnLuuCN);
         }
     }
 }

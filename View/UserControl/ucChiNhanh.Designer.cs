@@ -31,7 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucChiNhanh));
             this.label14 = new System.Windows.Forms.Label();
             this.btnTimKiemCN = new System.Windows.Forms.Button();
-            this.dtgvChiNhanh = new System.Windows.Forms.DataGridView();
+            this.dgvChiNhanh = new System.Windows.Forms.DataGridView();
+            this.txtMaCN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtTenCN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtDiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
@@ -49,7 +52,7 @@
             this.txbMaCN = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txbTimKiemCN = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvChiNhanh)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvChiNhanh)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -82,21 +85,41 @@
             this.btnTimKiemCN.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnTimKiemCN.UseVisualStyleBackColor = false;
             // 
-            // dtgvChiNhanh
+            // dgvChiNhanh
             // 
-            this.dtgvChiNhanh.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvChiNhanh.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dtgvChiNhanh.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dtgvChiNhanh.BackgroundColor = System.Drawing.Color.White;
-            this.dtgvChiNhanh.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvChiNhanh.Location = new System.Drawing.Point(0, 302);
-            this.dtgvChiNhanh.Name = "dtgvChiNhanh";
-            this.dtgvChiNhanh.RowTemplate.Height = 25;
-            this.dtgvChiNhanh.Size = new System.Drawing.Size(826, 355);
-            this.dtgvChiNhanh.TabIndex = 0;
-            this.dtgvChiNhanh.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-            this.dtgvChiNhanh.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvChiNhanh_CellContentClick);
+            this.dgvChiNhanh.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvChiNhanh.BackgroundColor = System.Drawing.Color.White;
+            this.dgvChiNhanh.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvChiNhanh.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.txtMaCN,
+            this.txtTenCN,
+            this.txtDiaChi});
+            this.dgvChiNhanh.Location = new System.Drawing.Point(0, 302);
+            this.dgvChiNhanh.Name = "dgvChiNhanh";
+            this.dgvChiNhanh.RowTemplate.Height = 25;
+            this.dgvChiNhanh.Size = new System.Drawing.Size(826, 355);
+            this.dgvChiNhanh.TabIndex = 0;
+            this.dgvChiNhanh.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dgvChiNhanh.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvChiNhanh_CellContentClick);
+            // 
+            // txtMaCN
+            // 
+            this.txtMaCN.HeaderText = "Mã Chi Nhánh";
+            this.txtMaCN.Name = "txtMaCN";
+            this.txtMaCN.ReadOnly = true;
+            // 
+            // txtTenCN
+            // 
+            this.txtTenCN.HeaderText = "Tên Chi Nhánh";
+            this.txtTenCN.Name = "txtTenCN";
+            // 
+            // txtDiaChi
+            // 
+            this.txtDiaChi.HeaderText = "Địa Chỉ";
+            this.txtDiaChi.Name = "txtDiaChi";
             // 
             // panel2
             // 
@@ -185,6 +208,7 @@
             this.btnThemCN.Text = "Thêm";
             this.btnThemCN.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnThemCN.UseVisualStyleBackColor = false;
+            this.btnThemCN.Click += new System.EventHandler(this.btnThemCN_Click_1);
             // 
             // txbDiaChi
             // 
@@ -252,6 +276,7 @@
             this.btnLuuCN.Text = "Lưu";
             this.btnLuuCN.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnLuuCN.UseVisualStyleBackColor = false;
+            this.btnLuuCN.Click += new System.EventHandler(this.btnLuuCN_Click);
             // 
             // btnSuaCN
             // 
@@ -352,13 +377,13 @@
             this.ClientSize = new System.Drawing.Size(825, 658);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.btnTimKiemCN);
-            this.Controls.Add(this.dtgvChiNhanh);
+            this.Controls.Add(this.dgvChiNhanh);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.txbTimKiemCN);
             this.Name = "ucChiNhanh";
             this.Text = "ucChiNhanh";
             this.Load += new System.EventHandler(this.ucChiNhanh_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvChiNhanh)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvChiNhanh)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -371,7 +396,7 @@
         #endregion
         private Label label14;
         private Button btnTimKiemCN;
-        private DataGridView dtgvChiNhanh;
+        private DataGridView dgvChiNhanh;
         private Panel panel2;
         private TextBox txbTimKiemCN;
         private Button btnXoaCN;
@@ -389,5 +414,8 @@
         private Label label1;
         private Panel panel1;
         private Label label2;
+        private DataGridViewTextBoxColumn txtMaCN;
+        private DataGridViewTextBoxColumn txtTenCN;
+        private DataGridViewTextBoxColumn txtDiaChi;
     }
 }

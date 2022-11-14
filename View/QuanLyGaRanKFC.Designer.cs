@@ -36,7 +36,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnThongKe = new System.Windows.Forms.Button();
             this.btnKho = new System.Windows.Forms.Button();
-            this.btnThanhToan = new System.Windows.Forms.Button();
+            this.btnHoaDon = new System.Windows.Forms.Button();
             this.btnKhachHang = new System.Windows.Forms.Button();
             this.btnNhanVien = new System.Windows.Forms.Button();
             this.btnChiNhanh = new System.Windows.Forms.Button();
@@ -54,7 +54,7 @@
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.btnThongKe);
             this.panel1.Controls.Add(this.btnKho);
-            this.panel1.Controls.Add(this.btnThanhToan);
+            this.panel1.Controls.Add(this.btnHoaDon);
             this.panel1.Controls.Add(this.btnKhachHang);
             this.panel1.Controls.Add(this.btnNhanVien);
             this.panel1.Controls.Add(this.btnChiNhanh);
@@ -100,6 +100,7 @@
             // 
             // btnDangXuat
             // 
+            this.btnDangXuat.BackColor = System.Drawing.Color.DimGray;
             this.btnDangXuat.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDangXuat.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnDangXuat.FlatAppearance.BorderSize = 0;
@@ -110,7 +111,7 @@
             this.btnDangXuat.Size = new System.Drawing.Size(250, 40);
             this.btnDangXuat.TabIndex = 1;
             this.btnDangXuat.Text = "Đăng xuất";
-            this.btnDangXuat.UseVisualStyleBackColor = true;
+            this.btnDangXuat.UseVisualStyleBackColor = false;
             this.btnDangXuat.Click += new System.EventHandler(this.btnDangXuat_Click);
             // 
             // pictureBox1
@@ -156,21 +157,22 @@
             this.btnKho.Text = "Kho";
             this.btnKho.UseVisualStyleBackColor = true;
             // 
-            // btnThanhToan
+            // btnHoaDon
             // 
-            this.btnThanhToan.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnThanhToan.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnThanhToan.FlatAppearance.BorderSize = 0;
-            this.btnThanhToan.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
-            this.btnThanhToan.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnThanhToan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThanhToan.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnThanhToan.Location = new System.Drawing.Point(0, 250);
-            this.btnThanhToan.Name = "btnThanhToan";
-            this.btnThanhToan.Size = new System.Drawing.Size(250, 40);
-            this.btnThanhToan.TabIndex = 6;
-            this.btnThanhToan.Text = "Thanh Toán";
-            this.btnThanhToan.UseVisualStyleBackColor = true;
+            this.btnHoaDon.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnHoaDon.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnHoaDon.FlatAppearance.BorderSize = 0;
+            this.btnHoaDon.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
+            this.btnHoaDon.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnHoaDon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHoaDon.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnHoaDon.Location = new System.Drawing.Point(0, 250);
+            this.btnHoaDon.Name = "btnHoaDon";
+            this.btnHoaDon.Size = new System.Drawing.Size(250, 40);
+            this.btnHoaDon.TabIndex = 6;
+            this.btnHoaDon.Text = "Hóa Đơn";
+            this.btnHoaDon.UseVisualStyleBackColor = true;
+            this.btnHoaDon.Click += new System.EventHandler(this.btnHoaDon_Click);
             // 
             // btnKhachHang
             // 
@@ -187,6 +189,7 @@
             this.btnKhachHang.TabIndex = 5;
             this.btnKhachHang.Text = "Khách Hàng";
             this.btnKhachHang.UseVisualStyleBackColor = true;
+            this.btnKhachHang.Click += new System.EventHandler(this.btnKhachHang_Click);
             // 
             // btnNhanVien
             // 
@@ -236,6 +239,7 @@
             this.btnTrangChu.TabIndex = 2;
             this.btnTrangChu.Text = "Trang Chủ";
             this.btnTrangChu.UseVisualStyleBackColor = true;
+            this.btnTrangChu.Click += new System.EventHandler(this.btnTrangChu_Click);
             // 
             // pnLogo
             // 
@@ -249,6 +253,10 @@
             // 
             // pnChildForm
             // 
+            this.pnChildForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(37)))), ((int)(((byte)(54)))));
+            this.pnChildForm.BackgroundImage = global::QuanLyGaRanKFC.Properties.Resources.kfc_head2;
+            this.pnChildForm.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pnChildForm.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnChildForm.Location = new System.Drawing.Point(250, 0);
             this.pnChildForm.Name = "pnChildForm";
@@ -280,7 +288,7 @@
         private Panel panel2;
         private Button btnThongKe;
         private Button btnKho;
-        private Button btnThanhToan;
+        private Button btnHoaDon;
         private Button btnKhachHang;
         private Button btnNhanVien;
         private Button btnChiNhanh;

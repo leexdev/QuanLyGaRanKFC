@@ -26,5 +26,10 @@ namespace QuanLyGaRanKFC.View
         {
 
         }
+
+        private void ChiTietHoaDon_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
