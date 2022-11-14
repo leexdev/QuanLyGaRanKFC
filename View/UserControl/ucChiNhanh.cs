@@ -13,7 +13,6 @@ namespace QuanLyGaRanKFC.View.UserControl
     public partial class ucChiNhanh : Form
     {
         Functions function = new Functions();
-        ucChiNhanh
         public ucChiNhanh()
         {
             InitializeComponent();
