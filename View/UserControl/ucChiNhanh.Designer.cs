@@ -32,9 +32,6 @@
             this.label14 = new System.Windows.Forms.Label();
             this.btnTimKiemCN = new System.Windows.Forms.Button();
             this.dgvChiNhanh = new System.Windows.Forms.DataGridView();
-            this.txtMaCN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtTenCN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtDiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
@@ -84,6 +81,7 @@
             this.btnTimKiemCN.Text = "Tìm kiếm";
             this.btnTimKiemCN.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnTimKiemCN.UseVisualStyleBackColor = false;
+            this.btnTimKiemCN.Click += new System.EventHandler(this.btnTimKiemCN_Click);
             // 
             // dgvChiNhanh
             // 
@@ -93,10 +91,6 @@
             this.dgvChiNhanh.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvChiNhanh.BackgroundColor = System.Drawing.Color.White;
             this.dgvChiNhanh.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvChiNhanh.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.txtMaCN,
-            this.txtTenCN,
-            this.txtDiaChi});
             this.dgvChiNhanh.Location = new System.Drawing.Point(0, 302);
             this.dgvChiNhanh.Name = "dgvChiNhanh";
             this.dgvChiNhanh.RowTemplate.Height = 25;
@@ -104,22 +98,6 @@
             this.dgvChiNhanh.TabIndex = 0;
             this.dgvChiNhanh.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dgvChiNhanh.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvChiNhanh_CellContentClick);
-            // 
-            // txtMaCN
-            // 
-            this.txtMaCN.HeaderText = "Mã Chi Nhánh";
-            this.txtMaCN.Name = "txtMaCN";
-            this.txtMaCN.ReadOnly = true;
-            // 
-            // txtTenCN
-            // 
-            this.txtTenCN.HeaderText = "Tên Chi Nhánh";
-            this.txtTenCN.Name = "txtTenCN";
-            // 
-            // txtDiaChi
-            // 
-            this.txtDiaChi.HeaderText = "Địa Chỉ";
-            this.txtDiaChi.Name = "txtDiaChi";
             // 
             // panel2
             // 
@@ -340,6 +318,7 @@
             this.txbMaCN.Location = new System.Drawing.Point(149, 92);
             this.txbMaCN.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.txbMaCN.Name = "txbMaCN";
+            this.txbMaCN.ReadOnly = true;
             this.txbMaCN.Size = new System.Drawing.Size(238, 16);
             this.txbMaCN.TabIndex = 1;
             // 
@@ -414,8 +393,5 @@
         private Label label1;
         private Panel panel1;
         private Label label2;
-        private DataGridViewTextBoxColumn txtMaCN;
-        private DataGridViewTextBoxColumn txtTenCN;
-        private DataGridViewTextBoxColumn txtDiaChi;
     }
 }

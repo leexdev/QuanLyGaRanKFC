@@ -24,8 +24,8 @@ E:\Project\baitap\QuanLyGaRanKFC\obj\Debug\net6.0-windows\QuanLyGaRanKFC.genrunt
 E:\Project\baitap\QuanLyGaRanKFC\obj\Debug\net6.0-windows\ref\QuanLyGaRanKFC.dll
 E:\Project\baitap\QuanLyGaRanKFC\obj\Debug\net6.0-windows\QuanLyGaRanKFC.View.Form1.resources
 E:\Project\baitap\QuanLyGaRanKFC\obj\Debug\net6.0-windows\QuanLyGaRanKFC.Properties.Resources.resources
-E:\Project\baitap\QuanLyGaRanKFC\obj\Debug\net6.0-windows\QuanLyGaRanKFC.View.QuanLyGaRanKFC.resources
 E:\Project\baitap\QuanLyGaRanKFC\obj\Debug\net6.0-windows\QuanLyGaRanKFC.View.UserControl.ucQuanLyKhachHang.resources
 E:\Project\baitap\QuanLyGaRanKFC\obj\Debug\net6.0-windows\QuanLyGaRanKFC.View.ChiTietHoaDon.resources
 E:\Project\baitap\QuanLyGaRanKFC\obj\Debug\net6.0-windows\QuanLyGaRanKFC.View.UserControl.ucChiNhanh.resources
 E:\Project\baitap\QuanLyGaRanKFC\obj\Debug\net6.0-windows\QuanLyGaRanKFC.View.UserControl.ucQuanLyHoaDon.resources
+E:\Project\baitap\QuanLyGaRanKFC\obj\Debug\net6.0-windows\QuanLyGaRanKFC.View.fQuanLyGaRanKFC.resources

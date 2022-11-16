@@ -125,6 +125,7 @@
             this.btnLuu.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLuu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnLuu.UseVisualStyleBackColor = false;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // btnXoaKH
             // 
@@ -144,6 +145,7 @@
             this.btnXoaKH.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnXoaKH.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnXoaKH.UseVisualStyleBackColor = false;
+            this.btnXoaKH.Click += new System.EventHandler(this.btnXoaKH_Click);
             // 
             // btnSuaKH
             // 
@@ -163,6 +165,7 @@
             this.btnSuaKH.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSuaKH.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSuaKH.UseVisualStyleBackColor = false;
+            this.btnSuaKH.Click += new System.EventHandler(this.btnSuaKH_Click);
             // 
             // btnThemKH
             // 
@@ -182,6 +185,7 @@
             this.btnThemKH.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnThemKH.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnThemKH.UseVisualStyleBackColor = false;
+            this.btnThemKH.Click += new System.EventHandler(this.addKhachHang);
             // 
             // label10
             // 
@@ -310,6 +314,7 @@
             this.txbMaKH.Location = new System.Drawing.Point(121, 25);
             this.txbMaKH.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.txbMaKH.Name = "txbMaKH";
+            this.txbMaKH.ReadOnly = true;
             this.txbMaKH.Size = new System.Drawing.Size(259, 16);
             this.txbMaKH.TabIndex = 25;
             // 
@@ -339,6 +344,7 @@
             this.dgvKhachHang.RowTemplate.Height = 25;
             this.dgvKhachHang.Size = new System.Drawing.Size(826, 329);
             this.dgvKhachHang.TabIndex = 3;
+            this.dgvKhachHang.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvKhachHang_CellContentClick);
             // 
             // btnTimKiemKH
             // 
@@ -395,6 +401,7 @@
             this.Name = "ucQuanLyKhachHang";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ucQuanLyKhachHang";
+            this.Load += new System.EventHandler(this.ucQuanLyKhachHang_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);

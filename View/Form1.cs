@@ -69,7 +69,7 @@ namespace QuanLyGaRanKFC.View
                 else
                 {
                     this.Hide();
-                    QuanLyGaRanKFC qlch = new QuanLyGaRanKFC(nhanVien);
+                    fQuanLyGaRanKFC qlch = new fQuanLyGaRanKFC(nhanVien);
                     qlch.ShowDialog();
                     this.Close();
                 }

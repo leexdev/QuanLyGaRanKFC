@@ -1,4 +1,6 @@
-﻿using System;
+﻿using QuanLyGaRanKFC.DAO;
+using QuanLyGaRanKFC.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,10 +14,57 @@ namespace QuanLyGaRanKFC.View.UserControl
 {
     public partial class ucChiNhanh : Form
     {
+        private readonly DAO_ChiNhanh repository;
         Functions function = new Functions();
         public ucChiNhanh()
         {
             InitializeComponent();
+            this.repository = new DAO_ChiNhanh();
+            this.LoadData();
+        }
+
+        private void LoadData()
+        {
+            List<ChiNhanh> list = this.repository.getAll();
+
+            dgvChiNhanh.DataSource = list;
+
+            dgvChiNhanh.Columns[0].HeaderText = "Mã Chi Nhánh";
+            dgvChiNhanh.Columns[1].HeaderText = "Tên Chi Nhánh";
+            dgvChiNhanh.Columns[2].HeaderText = "Địa Chỉ";
+            dgvChiNhanh.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgvChiNhanh.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgvChiNhanh.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+        }
+        private void btnThemCN_Click_1(object sender, EventArgs e)
+        {
+
+            string maCN = txbMaCN.Text;
+            string tenCN = txbTenCN.Text;
+            string diaChi = txbDiaChi.Text;
+            List<NhanVien> nhanViens = new List<NhanVien>();
+            List<NguyenLieu> nguyenLieus = new List<NguyenLieu>();
+
+            ChiNhanh chiNhanh = new ChiNhanh(maCN, tenCN, diaChi, nhanViens, nguyenLieus);
+            this.repository.Add(chiNhanh);
+
+            MessageBox.Show("Thêm thành công");
+
+            this.resetFields();
+
+            this.LoadData();
+        }
+
+        private void resetFields()
+        {
+            txbMaCN.Text = "";
+            txbTenCN.Text = "";
+            txbDiaChi.Text = "";
+        }
+
+        private void btnTimKiemCN_Click(object sender, EventArgs e)
+        {
+            
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
@@ -25,13 +74,7 @@ namespace QuanLyGaRanKFC.View.UserControl
 
         private void ucChiNhanh_Load(object sender, EventArgs e)
         {
-            txbMaCN.Enabled = false;
-            txbTenCN.Enabled = false;
-            txbDiaChi.Enabled = false;
 
-            function.turnOffButton(btnSuaCN);
-            function.turnOffButton(btnLuuCN);
-            function.turnOffButton(btnXoaCN);
         }
 
         private void btnLuuCN_Click(object sender, EventArgs e)
@@ -56,18 +99,9 @@ namespace QuanLyGaRanKFC.View.UserControl
 
         private void dtgvChiNhanh_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
-        }
-
-        private void btnThemCN_Click_1(object sender, EventArgs e)
-        {
-
-            txbMaCN.Enabled = true;
-            txbTenCN.Enabled = true;
-            txbDiaChi.Enabled = true;
-
-            function.turnOffButton(btnThemCN);
-            function.turnOnButton(btnLuuCN);
+            txbMaCN.Text = dgvChiNhanh.CurrentRow.Cells[0].Value.ToString();
+            txbTenCN.Text = dgvChiNhanh.CurrentRow.Cells[1].Value.ToString();
+            txbDiaChi.Text = dgvChiNhanh.CurrentRow.Cells[2].Value.ToString();
         }
     }
 }

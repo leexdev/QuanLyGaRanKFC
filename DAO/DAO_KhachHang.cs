@@ -108,5 +108,6 @@ namespace QuanLyGaRanKFC.DAO
             command.ExecuteNonQuery();
             _conn.Close();
         }
+
     }
 }

@@ -4,7 +4,7 @@
     <Compile Update="View\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="View\QuanLyGaRanKFC.cs">
+    <Compile Update="View\fQuanLyGaRanKFC.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="View\ChiTietHoaDon.cs">
