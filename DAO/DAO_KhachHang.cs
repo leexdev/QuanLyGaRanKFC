@@ -27,9 +27,8 @@ namespace QuanLyGaRanKFC.DAO
             {
                 string maKH = reader.GetString(0);
                 string tenKH = reader.GetString(1);
-                string diaChi = reader.GetString(2);
-                string sdt = reader.GetString(3);
-                KhachHang khachHang = new KhachHang(maKH, tenKH, diaChi, sdt);
+                string sdt = reader.GetString(2);
+                KhachHang khachHang = new KhachHang(maKH, tenKH, sdt);
                 list.Add(khachHang);
             }
             _conn.Close();
@@ -45,9 +44,8 @@ namespace QuanLyGaRanKFC.DAO
             {
                 string maKH = reader.GetString(0);
                 string tenKH = reader.GetString(1);
-                string diaChi = reader.GetString(2);
-                string sdt = reader.GetString(3);
-                khachHang = new KhachHang(maKH, tenKH, diaChi, sdt);
+                string sdt = reader.GetString(2);
+                khachHang = new KhachHang(maKH, tenKH, sdt);
             }
             _conn.Close();
             return khachHang;
@@ -62,9 +60,8 @@ namespace QuanLyGaRanKFC.DAO
             {
                 string maKH = reader.GetString(0);
                 string tenKH = reader.GetString(1);
-                string diaChi = reader.GetString(2);
-                string sdt = reader.GetString(3);
-                khachHang = new KhachHang(maKH, tenKH, diaChi, sdt);
+                string sdt = reader.GetString(2);
+                khachHang = new KhachHang(maKH, tenKH, sdt);
             }
             _conn.Close();
             return khachHang;
@@ -79,9 +76,8 @@ namespace QuanLyGaRanKFC.DAO
             {
                 string maKH = reader.GetString(0);
                 string tenKH = reader.GetString(1);
-                string diaChi = reader.GetString(2);
-                string sdt = reader.GetString(3);
-                KhachHang khachHang = new KhachHang(maKH, tenKH, diaChi, sdt);
+                string sdt = reader.GetString(2);
+                KhachHang khachHang = new KhachHang(maKH, tenKH, sdt);
                 list.Add(khachHang);
             }
             _conn.Close();
@@ -90,14 +86,14 @@ namespace QuanLyGaRanKFC.DAO
         public void Add(KhachHang khachHang)
         {
             _conn.Open();
-            command = new SqlCommand($"INSERT INTO KhachHang VALUES ('{khachHang.maKH}', N'{khachHang.tenKH}', N'{khachHang.diaChi}', '{khachHang.sdt}')", _conn);
+            command = new SqlCommand($"INSERT INTO KhachHang VALUES ('{khachHang.maKH}', N'{khachHang.tenKH}', '{khachHang.sdt}')", _conn);
             command.ExecuteNonQuery();
             _conn.Close();
         }
         public void Update(KhachHang khachHang)
         {
             _conn.Open();
-            command = new SqlCommand($"UPDATE KhachHang SET TenKH = N'{khachHang.tenKH}', DiaChi = N'{khachHang.diaChi}', SDT = '{khachHang.sdt}' WHERE MaKH = '{khachHang.maKH}'", _conn);
+            command = new SqlCommand($"UPDATE KhachHang SET TenKH = N'{khachHang.tenKH}', SDT = '{khachHang.sdt}' WHERE MaKH = '{khachHang.maKH}'", _conn);
             command.ExecuteNonQuery();
             _conn.Close();
         }

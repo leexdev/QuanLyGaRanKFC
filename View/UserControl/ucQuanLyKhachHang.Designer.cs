@@ -39,9 +39,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.txbSdtKH = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txbDiaChiKH = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txbTenKH = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -92,9 +89,6 @@
             this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.txbSdtKH);
             this.panel2.Controls.Add(this.label11);
-            this.panel2.Controls.Add(this.label8);
-            this.panel2.Controls.Add(this.txbDiaChiKH);
-            this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.txbTenKH);
             this.panel2.Controls.Add(this.label5);
@@ -191,7 +185,7 @@
             // 
             this.label10.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label10.BackColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(454, 84);
+            this.label10.Location = new System.Drawing.Point(459, 46);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(330, 1);
@@ -203,8 +197,9 @@
             this.txbSdtKH.BackColor = System.Drawing.Color.White;
             this.txbSdtKH.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txbSdtKH.ForeColor = System.Drawing.Color.Black;
-            this.txbSdtKH.Location = new System.Drawing.Point(525, 64);
+            this.txbSdtKH.Location = new System.Drawing.Point(530, 26);
             this.txbSdtKH.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.txbSdtKH.MaxLength = 11;
             this.txbSdtKH.Name = "txbSdtKH";
             this.txbSdtKH.Size = new System.Drawing.Size(259, 16);
             this.txbSdtKH.TabIndex = 31;
@@ -216,48 +211,12 @@
             this.label11.BackColor = System.Drawing.Color.White;
             this.label11.Font = new System.Drawing.Font("Times New Roman", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label11.ForeColor = System.Drawing.Color.Black;
-            this.label11.Location = new System.Drawing.Point(449, 64);
+            this.label11.Location = new System.Drawing.Point(454, 26);
             this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(36, 17);
             this.label11.TabIndex = 37;
             this.label11.Text = "SĐT";
-            // 
-            // label8
-            // 
-            this.label8.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label8.BackColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(454, 45);
-            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(330, 1);
-            this.label8.TabIndex = 36;
-            // 
-            // txbDiaChiKH
-            // 
-            this.txbDiaChiKH.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txbDiaChiKH.BackColor = System.Drawing.Color.White;
-            this.txbDiaChiKH.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txbDiaChiKH.ForeColor = System.Drawing.Color.Black;
-            this.txbDiaChiKH.Location = new System.Drawing.Point(525, 25);
-            this.txbDiaChiKH.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.txbDiaChiKH.Name = "txbDiaChiKH";
-            this.txbDiaChiKH.Size = new System.Drawing.Size(259, 16);
-            this.txbDiaChiKH.TabIndex = 30;
-            // 
-            // label9
-            // 
-            this.label9.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.White;
-            this.label9.Font = new System.Drawing.Font("Times New Roman", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(449, 25);
-            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(50, 17);
-            this.label9.TabIndex = 35;
-            this.label9.Text = "Địa chỉ";
             // 
             // label4
             // 
@@ -424,9 +383,6 @@
         private Label label10;
         private TextBox txbSdtKH;
         private Label label11;
-        private Label label8;
-        private TextBox txbDiaChiKH;
-        private Label label9;
         private Label label4;
         private TextBox txbTenKH;
         private Label label5;

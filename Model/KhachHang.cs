@@ -10,16 +10,14 @@ namespace QuanLyGaRanKFC.Model
     {
         public string maKH { get; set; }
         public string tenKH { get; set; }
-        public string diaChi { get; set; }
         public string sdt { get; set; }
 
         public KhachHang() { }
 
-        public KhachHang(string maKH, string tenKH, string diaChi, string sdt)
+        public KhachHang(string maKH, string tenKH, string sdt)
         {
             this.maKH = maKH;
             this.tenKH = tenKH;
-            this.diaChi = diaChi;
             this.sdt = sdt;
         }
     }
