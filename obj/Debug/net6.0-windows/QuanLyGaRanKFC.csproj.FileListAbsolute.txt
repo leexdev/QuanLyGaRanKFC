@@ -29,3 +29,4 @@ E:\Project\baitap\QuanLyGaRanKFC\obj\Debug\net6.0-windows\QuanLyGaRanKFC.View.Ch
 E:\Project\baitap\QuanLyGaRanKFC\obj\Debug\net6.0-windows\QuanLyGaRanKFC.View.UserControl.ucChiNhanh.resources
 E:\Project\baitap\QuanLyGaRanKFC\obj\Debug\net6.0-windows\QuanLyGaRanKFC.View.UserControl.ucQuanLyHoaDon.resources
 E:\Project\baitap\QuanLyGaRanKFC\obj\Debug\net6.0-windows\QuanLyGaRanKFC.View.fQuanLyGaRanKFC.resources
+E:\Project\baitap\QuanLyGaRanKFC\bin\Debug\net6.0-windows\QuanLyGaRanKFC.dll.config

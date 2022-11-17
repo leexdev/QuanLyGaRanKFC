@@ -23,6 +23,27 @@ namespace QuanLyGaRanKFC.View.UserControl
             this.repository = new DAO_KhachHang();
             this.LoadData();
         }
+        private void maCNTuTang()
+        {
+            int count = 0;
+            count = dgvKhachHang.Rows.Count;
+            string chuoi1 = "";
+            int chuoi2 = 0;
+            chuoi1 = Convert.ToString(dgvKhachHang.Rows[count - 1].Cells[0].Value);
+            chuoi2 = Convert.ToInt32((chuoi1.Remove(0, 2)));
+            if (chuoi2 + 1 < 10)
+            {
+                txbMaKH.Text = "KH00" + (chuoi2 + 1).ToString();
+            }
+            else if (chuoi2 + 1 < 100)
+            {
+                txbMaKH.Text = "KH0" + (chuoi2 + 1).ToString();
+            }
+            else if (chuoi2 + 1 < 1000)
+            {
+                txbMaKH.Text = "KH" + (chuoi2 + 1).ToString();
+            }
+        }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
@@ -44,51 +65,41 @@ namespace QuanLyGaRanKFC.View.UserControl
 
         private void addKhachHang(object sender, EventArgs e)
         {
-            txbTenKH.Text = "";
-            txbSdtKH.Text = "";
-
-            int count = 0;
-            count = dgvKhachHang.Rows.Count;
-            string chuoi1 = "";
-            int chuoi2 = 0;
-            chuoi1 = Convert.ToString(dgvKhachHang.Rows[count - 1].Cells[0].Value);
-            chuoi2 = Convert.ToInt32((chuoi1.Remove(0, 2)));
-            if (chuoi2 + 1 < 10)
+            List<KhachHang> list = this.repository.GetAll();
+            dgvKhachHang.DataSource = list;
+            string maKh = txbMaKH.Text;
+            string tenKh = txbTenKH.Text;
+            string sdtKh = txbSdtKH.Text;
+            KhachHang newKhachHang = new KhachHang(maKh, tenKh, sdtKh);
+            if (txbMaKH.Text == "" || txbTenKH.Text == "" || txbSdtKH.Text == "")
             {
-                txbMaKH.Text = "KH00" + (chuoi2 + 1).ToString();
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin!", "Có lỗi xảy ra", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
             }
-            else if (chuoi2 + 1 < 100)
+            else
             {
-                txbMaKH.Text = "KH0" + (chuoi2 + 1).ToString();
+                this.repository.Add(newKhachHang);
+                this.LoadData();
+                MessageBox.Show("Thêm thành công!", "Thông báo!");
+                resetFieldsKH();
+                maCNTuTang();
             }
-            else if (chuoi2 + 1 < 1000)
-            {
-                txbMaKH.Text = "KH" + (chuoi2 + 1).ToString();
-            }
-            function.turnOnButton(btnLuu);
-            function.turnOffButton(btnThemKH);
-            function.turnOffButton(btnSuaKH);
-            function.turnOffButton(btnXoaKH);
-            this.currentButton = btnThemKH.Name;
         }
 
-        private void resetFields()
+        private void resetFieldsKH()
         {
             txbMaKH.Text = "";
             txbTenKH.Text = "";
             txbSdtKH.Text = "";
         }
 
-        private void dgvKhachHang_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-        }
-
         private void ucQuanLyKhachHang_Load(object sender, EventArgs e)
         {
-            function.turnOffButton(btnLuu);
+            maCNTuTang();
+            function.turnOffButton(btnSuaKH);
+            function.turnOffButton(btnXoaKH);
         }
 
-        private void btnLuu_Click(object sender, EventArgs e)
+        private void btnSuaKH_Click(object sender, EventArgs e)
         {
             List<KhachHang> list = this.repository.GetAll();
             dgvKhachHang.DataSource = list;
@@ -96,59 +107,47 @@ namespace QuanLyGaRanKFC.View.UserControl
             string tenKh = txbTenKH.Text;
             string sdtKh = txbSdtKH.Text;
             KhachHang newKhachHang = new KhachHang(maKh, tenKh, sdtKh);
-            
-            if (this.currentButton == btnThemKH.Name)
-            {
-                if(txbMaKH.Text == "" || txbTenKH.Text == "" || txbSdtKH.Text == "")
-                {
-                    MessageBox.Show("Vui lòng nhập đầy đủ thông tin!", "Thông báo");
-                }
-                else
-                {
-                    this.repository.Add(newKhachHang);
-                    MessageBox.Show("Thêm thành công!", "Thông báo!");
-                    this.LoadData();
-                    resetFields();
-                    function.turnOffButton(btnLuu);
-                    function.turnOnButton(btnThemKH);
-                    function.turnOnButton(btnSuaKH);
-                    function.turnOnButton(btnXoaKH);
-                    this.currentButton = null;
-                }
-            }
-            else if(this.currentButton == btnSuaKH.Name)
-            {
-                this.repository.Update(newKhachHang);
-                MessageBox.Show("Sửa thành công!", "Thông báo!");
-                this.LoadData();
-                resetFields();
-                function.turnOffButton(btnLuu);
-                function.turnOnButton(btnThemKH);
-                function.turnOnButton(btnSuaKH);
-                function.turnOnButton(btnXoaKH);
-                this.currentButton = null;
-            }
-            
-        }
-        private void btnSuaKH_Click(object sender, EventArgs e)
-        {
-            function.turnOffButton(btnThemKH);
+            this.repository.Update(newKhachHang);
+            this.LoadData();
+            MessageBox.Show("Sửa thành công!", "Thông báo!");
             function.turnOffButton(btnSuaKH);
-            function.turnOnButton(btnLuu);
             function.turnOffButton(btnXoaKH);
-            txbMaKH.Text = dgvKhachHang.CurrentRow.Cells[0].Value.ToString();
-            txbTenKH.Text = dgvKhachHang.CurrentRow.Cells[1].Value.ToString();
-            txbSdtKH.Text = dgvKhachHang.CurrentRow.Cells[2].Value.ToString();
-            this.currentButton = btnSuaKH.Name;
+            function.turnOnButton(btnThemKH);
+            resetFieldsKH();
+            maCNTuTang();
         }
 
         private void btnXoaKH_Click(object sender, EventArgs e)
         {
-            List<KhachHang> list = this.repository.GetAll();
-            dgvKhachHang.DataSource = list;
-            string maKh = dgvKhachHang.CurrentRow.Cells[0].Value.ToString();
-            this.repository.Delete(maKh);
-            this.LoadData();
+            if(MessageBox.Show("Bạn có muốn xóa khách hàng này không?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
+            {
+                this.repository.Delete(txbMaKH.Text);
+                this.LoadData();
+                resetFieldsKH();
+                function.turnOffButton(btnSuaKH);
+                function.turnOffButton(btnXoaKH);
+                function.turnOnButton(btnThemKH);
+                maCNTuTang();
+            }
+        }
+
+        private void dgvKhachHang_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txbMaKH.Text = dgvKhachHang.CurrentRow.Cells[0].Value.ToString();
+            txbTenKH.Text = dgvKhachHang.CurrentRow.Cells[1].Value.ToString();
+            txbSdtKH.Text = dgvKhachHang.CurrentRow.Cells[2].Value.ToString();
+            function.turnOnButton(btnSuaKH);
+            function.turnOnButton(btnXoaKH);
+            function.turnOffButton(btnThemKH);
+        }
+
+        private void btnLamMoiKH_Click(object sender, EventArgs e)
+        {
+            resetFieldsKH();
+            maCNTuTang();
+            function.turnOnButton(btnThemKH);
+            function.turnOffButton(btnSuaKH);
+            function.turnOffButton(btnXoaKH);
         }
     }
 }

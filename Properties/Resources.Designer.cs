@@ -243,6 +243,16 @@ namespace QuanLyGaRanKFC.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_repeat_16 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-repeat-16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_save_as_16 {
             get {
                 object obj = ResourceManager.GetObject("icons8-save-as-16", resourceCulture);
