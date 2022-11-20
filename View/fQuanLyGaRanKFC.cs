@@ -84,7 +84,7 @@ namespace QuanLyGaRanKFC.View
 
         private void btnHoaDon_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new ucQuanLyHoaDon());
+            OpenChildForm(new QuanLyHoaDon());
         }
     }
 }

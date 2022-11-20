@@ -19,7 +19,7 @@ namespace QuanLyGaRanKFC.DAO
         {
             _conn = new SqlConnection(_strConn);
         }
-        public List<ChiNhanh> getAll()
+        public List<ChiNhanh> GetAll()
         {
             List<ChiNhanh> list = new List<ChiNhanh>();
             _conn.Open();
@@ -37,6 +37,7 @@ namespace QuanLyGaRanKFC.DAO
                 ChiNhanh chiNhanh = new ChiNhanh(maCN, tenCN, diaChi, nhanVien, nguyenLieu);
                 list.Add(chiNhanh);
             }
+            _conn.Close();
             return list;
         }
         public List<ChiNhanh> GetByName(string _tenCN)
@@ -123,21 +124,21 @@ namespace QuanLyGaRanKFC.DAO
         public void Add(ChiNhanh chiNhanh)
         {
             _conn.Open();
-            command = new SqlCommand($"INSERT INTO ChiNhanh VALUES('{chiNhanh.maCN}', N'{chiNhanh.tenCN}', N'{chiNhanh.diaChi}'");
+            command = new SqlCommand($"INSERT INTO ChiNhanh VALUES('{chiNhanh.maCN}', N'{chiNhanh.tenCN}', N'{chiNhanh.diaChi}'", _conn);
             command.ExecuteNonQuery();
             _conn.Close();
         }
         public void Update(ChiNhanh chiNhanh)
         {
             _conn.Open();
-            command = new SqlCommand($"UPDATE ChiNhanh SET TenCN = N'{chiNhanh.tenCN}', DiaChi = N'{chiNhanh.diaChi}' WHERE MaCN = '{chiNhanh.maCN}'");
+            command = new SqlCommand($"UPDATE ChiNhanh SET TenCN = N'{chiNhanh.tenCN}', DiaChi = N'{chiNhanh.diaChi}' WHERE MaCN = '{chiNhanh.maCN}'", _conn);
             command.ExecuteNonQuery();
             _conn.Close();
         }
         public void Delete(string _maCN)
         {
             _conn.Open();
-            command = new SqlCommand($"DELETE FROM ChiNhanh WHERE MaCN = '{_maCN}'");
+            command = new SqlCommand($"DELETE FROM ChiNhanh WHERE MaCN = '{_maCN}'", _conn);
             command.ExecuteNonQuery();
             _conn.Close();
         }
