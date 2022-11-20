@@ -32,11 +32,12 @@ namespace QuanLyGaRanKFC.DAO
                 string tenDangNhap = reader.GetString(2);
                 string matKhau = reader.GetString(3);
                 DateTime ngaySinh = reader.GetDateTime(4);
+                string gioiTinh = reader.GetString(6);
                 string diaChi = reader.GetString(5);
-                string sdt = reader.GetString(6);
-                string cmnd = reader.GetString(7);
-                int quyen = reader.GetInt32(8);
-                NhanVien nv = new NhanVien(maNV, tenNV, tenDangNhap, matKhau, ngaySinh, diaChi, sdt, cmnd, quyen);
+                string sdt = reader.GetString(7);
+                string cmnd = reader.GetString(8);
+                int quyen = reader.GetInt32(9);
+                NhanVien nv = new NhanVien(maNV, tenNV, tenDangNhap, matKhau, ngaySinh, gioiTinh, diaChi, sdt, cmnd, quyen);
                 list.Add(nv);
             }
             _conn.Close();
@@ -55,11 +56,12 @@ namespace QuanLyGaRanKFC.DAO
                 string tenDangNhap = reader.GetString(2);
                 string matKhau = reader.GetString(3);
                 DateTime ngaySinh = reader.GetDateTime(4);
+                string gioiTinh = reader.GetString(6);
                 string diaChi = reader.GetString(5);
-                string sdt = reader.GetString(6);
-                string cmnd = reader.GetString(7);
-                int quyen = reader.GetInt32(8);
-                NhanVien nv = new NhanVien(maNV, tenNV, tenDangNhap, matKhau, ngaySinh, diaChi, sdt, cmnd, quyen);
+                string sdt = reader.GetString(7);
+                string cmnd = reader.GetString(8);
+                int quyen = reader.GetInt32(9);
+                NhanVien nv = new NhanVien(maNV, tenNV, tenDangNhap, matKhau, ngaySinh, gioiTinh, diaChi, sdt, cmnd, quyen);
                 list.Add(nv);
             }
             _conn.Close();
@@ -78,11 +80,12 @@ namespace QuanLyGaRanKFC.DAO
                 string tenDangNhap = reader.GetString(2);
                 string matKhau = reader.GetString(3);
                 DateTime ngaySinh = reader.GetDateTime(4);
+                string gioiTinh = reader.GetString(6);
                 string diaChi = reader.GetString(5);
-                string sdt = reader.GetString(6);
-                string cmnd = reader.GetString(7);
-                int quyen = reader.GetInt32(8);
-                NhanVien nv = new NhanVien(maNV, tenNV, tenDangNhap, matKhau, ngaySinh, diaChi, sdt, cmnd, quyen);
+                string sdt = reader.GetString(7);
+                string cmnd = reader.GetString(8);
+                int quyen = reader.GetInt32(9);
+                NhanVien nv = new NhanVien(maNV, tenNV, tenDangNhap, matKhau, ngaySinh, gioiTinh, diaChi, sdt, cmnd, quyen);
                 list.Add(nv);
             }
             _conn.Close();
@@ -101,11 +104,12 @@ namespace QuanLyGaRanKFC.DAO
                 string tenDangNhap = reader.GetString(2);
                 string matKhau = reader.GetString(3);
                 DateTime ngaySinh = reader.GetDateTime(4);
+                string gioiTinh = reader.GetString(6);
                 string diaChi = reader.GetString(5);
-                string sdt = reader.GetString(6);
-                string cmnd = reader.GetString(7);
-                int quyen = reader.GetInt32(8);
-                nhanVien = new NhanVien(maNV, tenNV, tenDangNhap, matKhau, ngaySinh, diaChi, sdt, cmnd, quyen);
+                string sdt = reader.GetString(7);
+                string cmnd = reader.GetString(8);
+                int quyen = reader.GetInt32(9);
+                nhanVien = new NhanVien(maNV, tenNV, tenDangNhap, matKhau, ngaySinh, gioiTinh, diaChi, sdt, cmnd, quyen);
             }
             _conn.Close();
             return nhanVien;
@@ -123,11 +127,12 @@ namespace QuanLyGaRanKFC.DAO
                 string tenDangNhap = reader.GetString(2);
                 string matKhau = reader.GetString(3);
                 DateTime ngaySinh = reader.GetDateTime(4);
+                string gioiTinh = reader.GetString(6);
                 string diaChi = reader.GetString(5);
-                string sdt = reader.GetString(6);
-                string cmnd = reader.GetString(7);
-                int quyen = reader.GetInt32(8);
-                nhanVien = new NhanVien(maNV, tenNV, tenDangNhap, matKhau, ngaySinh, diaChi, sdt, cmnd, quyen);
+                string sdt = reader.GetString(7);
+                string cmnd = reader.GetString(8);
+                int quyen = reader.GetInt32(9);
+                nhanVien = new NhanVien(maNV, tenNV, tenDangNhap, matKhau, ngaySinh, gioiTinh, diaChi, sdt, cmnd, quyen);
             }
             _conn.Close();
             return nhanVien;
@@ -145,11 +150,12 @@ namespace QuanLyGaRanKFC.DAO
                 string tenDangNhap = reader.GetString(2);
                 string matKhau = reader.GetString(3);
                 DateTime ngaySinh = reader.GetDateTime(4);
+                string gioiTinh = reader.GetString(6);
                 string diaChi = reader.GetString(5);
-                string sdt = reader.GetString(6);
-                string cmnd = reader.GetString(7);
-                int quyen = reader.GetInt32(8);
-                nhanVien = new NhanVien(maNV, tenNV, tenDangNhap, matKhau, ngaySinh, diaChi, sdt, cmnd, quyen);
+                string sdt = reader.GetString(7);
+                string cmnd = reader.GetString(8);
+                int quyen = reader.GetInt32(9);
+                nhanVien = new NhanVien(maNV, tenNV, tenDangNhap, matKhau, ngaySinh, gioiTinh, diaChi, sdt, cmnd, quyen);
             }
             _conn.Close();
             return nhanVien;

@@ -32,6 +32,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnLamMoiKH = new System.Windows.Forms.Button();
             this.btnXoaKH = new System.Windows.Forms.Button();
             this.btnSuaKH = new System.Windows.Forms.Button();
             this.btnThemKH = new System.Windows.Forms.Button();
@@ -48,7 +49,6 @@
             this.btnTimKiemKH = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.txbTimKiemKH = new System.Windows.Forms.TextBox();
-            this.btnLamMoiKH = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKhachHang)).BeginInit();
@@ -100,6 +100,26 @@
             this.panel2.Size = new System.Drawing.Size(827, 161);
             this.panel2.TabIndex = 2;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // btnLamMoiKH
+            // 
+            this.btnLamMoiKH.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.btnLamMoiKH.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(162)))), ((int)(((byte)(139)))));
+            this.btnLamMoiKH.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLamMoiKH.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLamMoiKH.Font = new System.Drawing.Font("Arial", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnLamMoiKH.ForeColor = System.Drawing.Color.Black;
+            this.btnLamMoiKH.Image = global::QuanLyGaRanKFC.Properties.Resources.icons8_repeat_16;
+            this.btnLamMoiKH.Location = new System.Drawing.Point(454, 112);
+            this.btnLamMoiKH.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.btnLamMoiKH.Name = "btnLamMoiKH";
+            this.btnLamMoiKH.Size = new System.Drawing.Size(118, 38);
+            this.btnLamMoiKH.TabIndex = 43;
+            this.btnLamMoiKH.Text = "Làm mới";
+            this.btnLamMoiKH.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnLamMoiKH.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnLamMoiKH.UseVisualStyleBackColor = false;
+            this.btnLamMoiKH.Click += new System.EventHandler(this.btnLamMoiKH_Click);
             // 
             // btnXoaKH
             // 
@@ -302,6 +322,7 @@
             this.btnTimKiemKH.Text = "Tìm kiếm";
             this.btnTimKiemKH.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnTimKiemKH.UseVisualStyleBackColor = false;
+            this.btnTimKiemKH.Click += new System.EventHandler(this.btnTimKiemKH_Click);
             // 
             // label14
             // 
@@ -324,26 +345,6 @@
             this.txbTimKiemKH.Name = "txbTimKiemKH";
             this.txbTimKiemKH.Size = new System.Drawing.Size(272, 16);
             this.txbTimKiemKH.TabIndex = 38;
-            // 
-            // btnLamMoiKH
-            // 
-            this.btnLamMoiKH.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.btnLamMoiKH.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(162)))), ((int)(((byte)(139)))));
-            this.btnLamMoiKH.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLamMoiKH.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLamMoiKH.Font = new System.Drawing.Font("Arial", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnLamMoiKH.ForeColor = System.Drawing.Color.Black;
-            this.btnLamMoiKH.Image = global::QuanLyGaRanKFC.Properties.Resources.icons8_repeat_16;
-            this.btnLamMoiKH.Location = new System.Drawing.Point(454, 112);
-            this.btnLamMoiKH.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.btnLamMoiKH.Name = "btnLamMoiKH";
-            this.btnLamMoiKH.Size = new System.Drawing.Size(118, 38);
-            this.btnLamMoiKH.TabIndex = 43;
-            this.btnLamMoiKH.Text = "Làm mới";
-            this.btnLamMoiKH.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLamMoiKH.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnLamMoiKH.UseVisualStyleBackColor = false;
-            this.btnLamMoiKH.Click += new System.EventHandler(this.btnLamMoiKH_Click);
             // 
             // ucQuanLyKhachHang
             // 

@@ -28,8 +28,15 @@ namespace QuanLyGaRanKFC.View.UserControl
             count = dgvKhachHang.Rows.Count;
             string chuoi1 = "";
             int chuoi2 = 0;
-            chuoi1 = Convert.ToString(dgvKhachHang.Rows[count - 1].Cells[0].Value);
-            chuoi2 = Convert.ToInt32((chuoi1.Remove(0, 2)));
+            if (dgvKhachHang.Rows.Count == 0)
+            {
+                chuoi1 = "KH000";
+            }
+            else
+            {
+                chuoi1 = Convert.ToString(dgvKhachHang.Rows[count - 1].Cells[0].Value);
+                chuoi2 = Convert.ToInt32((chuoi1.Remove(0, 2)));
+            }
             if (chuoi2 + 1 < 10)
             {
                 txbMaKH.Text = "KH00" + (chuoi2 + 1).ToString();
@@ -89,6 +96,7 @@ namespace QuanLyGaRanKFC.View.UserControl
             txbMaKH.Text = "";
             txbTenKH.Text = "";
             txbSdtKH.Text = "";
+            txbTimKiemKH.Text = "";
         }
 
         private void ucQuanLyKhachHang_Load(object sender, EventArgs e)
@@ -132,21 +140,36 @@ namespace QuanLyGaRanKFC.View.UserControl
 
         private void dgvKhachHang_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            txbMaKH.Text = dgvKhachHang.CurrentRow.Cells[0].Value.ToString();
-            txbTenKH.Text = dgvKhachHang.CurrentRow.Cells[1].Value.ToString();
-            txbSdtKH.Text = dgvKhachHang.CurrentRow.Cells[2].Value.ToString();
-            function.turnOnButton(btnSuaKH);
-            function.turnOnButton(btnXoaKH);
-            function.turnOffButton(btnThemKH);
+            if (dgvKhachHang.Rows.Count == 0)
+            {
+                txbMaKH.Text = "";
+                txbTenKH.Text = "";
+                maKHTuTang();
+            }
+            else
+            {
+                txbMaKH.Text = dgvKhachHang.CurrentRow.Cells[0].Value.ToString();
+                txbTenKH.Text = dgvKhachHang.CurrentRow.Cells[1].Value.ToString();
+                txbSdtKH.Text = dgvKhachHang.CurrentRow.Cells[2].Value.ToString();
+                function.turnOnButton(btnSuaKH);
+                function.turnOnButton(btnXoaKH);
+                function.turnOffButton(btnThemKH);
+            }
         }
 
         private void btnLamMoiKH_Click(object sender, EventArgs e)
         {
             resetFieldsKH();
             maKHTuTang();
+            this.LoadData();
             function.turnOnButton(btnThemKH);
             function.turnOffButton(btnSuaKH);
             function.turnOffButton(btnXoaKH);
+        }
+
+        private void btnTimKiemKH_Click(object sender, EventArgs e)
+        {
+            dgvKhachHang.DataSource = this.repository.GetByName(txbTimKiemKH.Text);
         }
     }
 }
