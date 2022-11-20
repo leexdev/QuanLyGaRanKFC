@@ -340,7 +340,7 @@
             this.txbTimKiemKH.BackColor = System.Drawing.Color.White;
             this.txbTimKiemKH.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txbTimKiemKH.ForeColor = System.Drawing.Color.Black;
-            this.txbTimKiemKH.Location = new System.Drawing.Point(432, 234);
+            this.txbTimKiemKH.Location = new System.Drawing.Point(433, 232);
             this.txbTimKiemKH.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.txbTimKiemKH.Name = "txbTimKiemKH";
             this.txbTimKiemKH.Size = new System.Drawing.Size(272, 16);

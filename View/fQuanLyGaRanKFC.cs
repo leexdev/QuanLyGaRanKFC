@@ -72,7 +72,7 @@ namespace QuanLyGaRanKFC.View
         private void btnDangXuat_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form1 f = new Form1();
+            fDangNhap f = new fDangNhap();
             f.ShowDialog();
             this.Close();
         }
