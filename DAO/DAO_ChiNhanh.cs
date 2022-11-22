@@ -44,7 +44,7 @@ namespace QuanLyGaRanKFC.DAO
         {
             List<ChiNhanh> list = new List<ChiNhanh>();
             _conn.Open();
-            command = new SqlCommand($"SELECT * FROM ChiNhanh WHERE TenCN LIKE '%{_tenCN}%'");
+            command = new SqlCommand($"SELECT * FROM ChiNhanh WHERE TenCN LIKE '%{_tenCN}%'", _conn);
             reader = command.ExecuteReader();
             DAO_NhanVien _NhanVien = new DAO_NhanVien();
             DAO_NguyenLieu _NguyenLieu = new DAO_NguyenLieu();
@@ -132,14 +132,14 @@ namespace QuanLyGaRanKFC.DAO
         public void Update(ChiNhanh chiNhanh)
         {
             _conn.Open();
-            command = new SqlCommand($"UPDATE ChiNhanh SET TenCN = N'{chiNhanh.tenCN}', DiaChi = N'{chiNhanh.diaChi}' WHERE MaCN = '{chiNhanh.maCN}');", _conn);
+            command = new SqlCommand($"UPDATE ChiNhanh SET TenCN = N'{chiNhanh.tenCN}', DiaChi = N'{chiNhanh.diaChi}' WHERE MaCN = '{chiNhanh.maCN}'", _conn);
             command.ExecuteNonQuery();
             _conn.Close();
         }
         public void Delete(string _maCN)
         {
             _conn.Open();
-            command = new SqlCommand($"DELETE FROM ChiNhanh WHERE MaCN = N'{_maCN}'", _conn);
+            command = new SqlCommand($"DELETE FROM NhanVien WHERE MaCN = N'{_maCN}'" + $"DELETE FROM ChiNhanh WHERE MaCN = N'{_maCN}'", _conn);
             command.ExecuteNonQuery();
             _conn.Close();
         }

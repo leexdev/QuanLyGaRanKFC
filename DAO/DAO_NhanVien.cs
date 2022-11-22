@@ -214,7 +214,6 @@ namespace QuanLyGaRanKFC.DAO
             {
                 strBuilder.Append(result[i].ToString("X2"));
             }
-
             return strBuilder.ToString();
         }
     }

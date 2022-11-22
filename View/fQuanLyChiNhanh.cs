@@ -43,33 +43,46 @@ namespace QuanLyGaRanKFC.View.UserControl
             else
             {
                 DAO_ChiNhanh dAO_ChiNhanh = new DAO_ChiNhanh();
-                MessageBox.Show("Thêm thành công!");
                 ChiNhanh.maCN = txbMaCN.Text;
                 ChiNhanh.tenCN = txbTenCN.Text;
                 ChiNhanh.diaChi = txbDiaChi.Text;
                 dAO_ChiNhanh.Add(ChiNhanh);
-                LoadData();
                 resetFieldCN();
-                txbMaCN.Text = function.CreateID(dAO_ChiNhanh.GetLast().maCN);
+                MessageBox.Show("Thêm thành công!");
             }
         }
-
         private void resetFieldCN()
         {
+            DAO_ChiNhanh dAO_ChiNhanh = new DAO_ChiNhanh();
+            LoadData();
+            txbMaCN.Text = function.CreateID(dAO_ChiNhanh.GetLast().maCN);
             txbTenCN.Text = "";
             txbDiaChi.Text = "";
             txbTimKiemCN.Text = "";
         }
         private void btnSuaCN_Click(object sender, EventArgs e)
         {
-
+            DAO_ChiNhanh dAO_ChiNhanh = new DAO_ChiNhanh();
+            ChiNhanh.maCN = txbMaCN.Text;
+            ChiNhanh.tenCN = txbTenCN.Text;
+            ChiNhanh.diaChi = txbDiaChi.Text;
+            dAO_ChiNhanh.Update(ChiNhanh);
+            resetFieldCN();
+            MessageBox.Show("Sửa thành công!");
         }
-
         private void btnTimKiemCN_Click(object sender, EventArgs e)
         {
-            
+            string _keyWord = txbTimKiemCN.Text;
+            dgvChiNhanh.Rows.Clear();
+            int i = 1;
+            DAO_ChiNhanh dAO_ChiNhanh = new DAO_ChiNhanh();
+            List<ChiNhanh> ChiNhanh = dAO_ChiNhanh.GetByName(_keyWord);
+            foreach (ChiNhanh chiNhanh in ChiNhanh)
+            {
+                dgvChiNhanh.Rows.Add(i, chiNhanh.maCN, chiNhanh.tenCN, chiNhanh.diaChi);
+                i++;
+            }
         }
-
         private void ucChiNhanh_Load(object sender, EventArgs e)
         {
             DAO_ChiNhanh dAO_ChiNhanh = new DAO_ChiNhanh();
@@ -80,18 +93,23 @@ namespace QuanLyGaRanKFC.View.UserControl
         }
         private void btnXoaCN_Click(object sender, EventArgs e)
         {
-            var result = MessageBox.Show("Bạn có chắc muốn xóa hóa đơn này?", "Xác nhận xóa", MessageBoxButtons.YesNo);
-            if (result == DialogResult.Yes)
+            if (dgvChiNhanh.Rows.Count == 2)
             {
-                DAO_ChiNhanh dAO_ChiNhanh = new DAO_ChiNhanh();
-                dAO_ChiNhanh.Delete(txbMaCN.Text);
-                LoadData();
-                resetFieldCN();
-                txbMaCN.Text = function.CreateID(dAO_ChiNhanh.GetLast().maCN);
+                MessageBox.Show("Không thể xóa!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            function.turnOffButton(btnSuaCN);
-            function.turnOffButton(btnXoaCN);
-            function.turnOnButton(btnThemCN);
+            else
+            {
+                var result = MessageBox.Show("Bạn có chắc muốn xóa hóa đơn này?", "Xác nhận xóa", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    DAO_ChiNhanh dAO_ChiNhanh = new DAO_ChiNhanh();
+                    dAO_ChiNhanh.Delete(txbMaCN.Text);
+                    resetFieldCN();
+                }
+                function.turnOffButton(btnSuaCN);
+                function.turnOffButton(btnXoaCN);
+                function.turnOnButton(btnThemCN);
+            }
         }
         private void dtgvChiNhanh_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -119,7 +137,8 @@ namespace QuanLyGaRanKFC.View.UserControl
         {
             if (e.RowIndex == -1 || e.RowIndex == dgvChiNhanh.Rows.Count - 1)
             {
-                resetFieldCN();
+                txbTenCN.Text = "";
+                txbDiaChi.Text = "";
             }
             else
             {

@@ -32,6 +32,10 @@
             this.label14 = new System.Windows.Forms.Label();
             this.btnTimKiemCN = new System.Windows.Forms.Button();
             this.dgvChiNhanh = new System.Windows.Forms.DataGridView();
+            this.sttCN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.maCN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenCN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.diaChiCN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnLamMoiCN = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -49,10 +53,6 @@
             this.txbMaCN = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txbTimKiemCN = new System.Windows.Forms.TextBox();
-            this.sttCN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.maCN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tenCN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.diaChiCN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiNhanh)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -62,10 +62,10 @@
             // 
             this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label14.BackColor = System.Drawing.Color.Black;
-            this.label14.Location = new System.Drawing.Point(925, 608);
-            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label14.Location = new System.Drawing.Point(647, 254);
+            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(381, 2);
+            this.label14.Size = new System.Drawing.Size(205, 1);
             this.label14.TabIndex = 56;
             // 
             // btnTimKiemCN
@@ -77,10 +77,10 @@
             this.btnTimKiemCN.ForeColor = System.Drawing.Color.Black;
             this.btnTimKiemCN.Image = ((System.Drawing.Image)(resources.GetObject("btnTimKiemCN.Image")));
             this.btnTimKiemCN.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnTimKiemCN.Location = new System.Drawing.Point(1313, 555);
-            this.btnTimKiemCN.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.btnTimKiemCN.Location = new System.Drawing.Point(856, 229);
+            this.btnTimKiemCN.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnTimKiemCN.Name = "btnTimKiemCN";
-            this.btnTimKiemCN.Size = new System.Drawing.Size(197, 58);
+            this.btnTimKiemCN.Size = new System.Drawing.Size(106, 27);
             this.btnTimKiemCN.TabIndex = 9;
             this.btnTimKiemCN.Text = "Tìm kiếm";
             this.btnTimKiemCN.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -100,14 +100,42 @@
             this.maCN,
             this.tenCN,
             this.diaChiCN});
-            this.dgvChiNhanh.Location = new System.Drawing.Point(0, 644);
-            this.dgvChiNhanh.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.dgvChiNhanh.Location = new System.Drawing.Point(0, 260);
             this.dgvChiNhanh.Name = "dgvChiNhanh";
+            this.dgvChiNhanh.ReadOnly = true;
             this.dgvChiNhanh.RowHeadersWidth = 82;
             this.dgvChiNhanh.RowTemplate.Height = 25;
-            this.dgvChiNhanh.Size = new System.Drawing.Size(1534, 757);
+            this.dgvChiNhanh.Size = new System.Drawing.Size(974, 393);
             this.dgvChiNhanh.TabIndex = 0;
             this.dgvChiNhanh.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvChiNhanh_CellClick);
+            // 
+            // sttCN
+            // 
+            this.sttCN.HeaderText = "Số Thứ Tự";
+            this.sttCN.MinimumWidth = 10;
+            this.sttCN.Name = "sttCN";
+            this.sttCN.ReadOnly = true;
+            // 
+            // maCN
+            // 
+            this.maCN.HeaderText = "Mã Chi Nhánh";
+            this.maCN.MinimumWidth = 10;
+            this.maCN.Name = "maCN";
+            this.maCN.ReadOnly = true;
+            // 
+            // tenCN
+            // 
+            this.tenCN.HeaderText = "Tên Chi Nhánh";
+            this.tenCN.MinimumWidth = 10;
+            this.tenCN.Name = "tenCN";
+            this.tenCN.ReadOnly = true;
+            // 
+            // diaChiCN
+            // 
+            this.diaChiCN.HeaderText = "Địa Chỉ";
+            this.diaChiCN.MinimumWidth = 10;
+            this.diaChiCN.Name = "diaChiCN";
+            this.diaChiCN.ReadOnly = true;
             // 
             // panel2
             // 
@@ -129,9 +157,8 @@
             this.panel2.Controls.Add(this.txbMaCN);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1532, 531);
+            this.panel2.Size = new System.Drawing.Size(973, 225);
             this.panel2.TabIndex = 52;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
@@ -145,10 +172,10 @@
             this.btnLamMoiCN.ForeColor = System.Drawing.Color.Black;
             this.btnLamMoiCN.Image = global::QuanLyGaRanKFC.Properties.Resources.icons8_repeat_16;
             this.btnLamMoiCN.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLamMoiCN.Location = new System.Drawing.Point(836, 393);
-            this.btnLamMoiCN.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.btnLamMoiCN.Location = new System.Drawing.Point(525, 170);
+            this.btnLamMoiCN.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnLamMoiCN.Name = "btnLamMoiCN";
-            this.btnLamMoiCN.Size = new System.Drawing.Size(219, 81);
+            this.btnLamMoiCN.Size = new System.Drawing.Size(118, 38);
             this.btnLamMoiCN.TabIndex = 97;
             this.btnLamMoiCN.Text = "Làm mới";
             this.btnLamMoiCN.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -162,9 +189,8 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(80)))), ((int)(((byte)(63)))));
             this.panel1.Controls.Add(this.label2);
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1532, 134);
+            this.panel1.Size = new System.Drawing.Size(973, 63);
             this.panel1.TabIndex = 96;
             // 
             // label2
@@ -173,10 +199,10 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(579, 19);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(386, 9);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(409, 86);
+            this.label2.Size = new System.Drawing.Size(207, 45);
             this.label2.TabIndex = 2;
             this.label2.Text = "CHI NHÁNH";
             // 
@@ -190,10 +216,10 @@
             this.btnXoaCN.ForeColor = System.Drawing.Color.Black;
             this.btnXoaCN.Image = global::QuanLyGaRanKFC.Properties.Resources.icons8_trash_16;
             this.btnXoaCN.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnXoaCN.Location = new System.Drawing.Point(1150, 393);
-            this.btnXoaCN.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.btnXoaCN.Location = new System.Drawing.Point(694, 170);
+            this.btnXoaCN.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnXoaCN.Name = "btnXoaCN";
-            this.btnXoaCN.Size = new System.Drawing.Size(219, 81);
+            this.btnXoaCN.Size = new System.Drawing.Size(118, 38);
             this.btnXoaCN.TabIndex = 7;
             this.btnXoaCN.Text = "Xóa";
             this.btnXoaCN.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -210,10 +236,10 @@
             this.btnThemCN.ForeColor = System.Drawing.Color.Black;
             this.btnThemCN.Image = global::QuanLyGaRanKFC.Properties.Resources.icons8_add_new_16;
             this.btnThemCN.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnThemCN.Location = new System.Drawing.Point(180, 393);
-            this.btnThemCN.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.btnThemCN.Location = new System.Drawing.Point(172, 170);
+            this.btnThemCN.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnThemCN.Name = "btnThemCN";
-            this.btnThemCN.Size = new System.Drawing.Size(219, 81);
+            this.btnThemCN.Size = new System.Drawing.Size(118, 38);
             this.btnThemCN.TabIndex = 4;
             this.btnThemCN.Text = "Thêm";
             this.btnThemCN.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -226,20 +252,20 @@
             this.txbDiaChi.BackColor = System.Drawing.Color.White;
             this.txbDiaChi.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txbDiaChi.ForeColor = System.Drawing.Color.Black;
-            this.txbDiaChi.Location = new System.Drawing.Point(919, 196);
-            this.txbDiaChi.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.txbDiaChi.Location = new System.Drawing.Point(582, 78);
+            this.txbDiaChi.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.txbDiaChi.Name = "txbDiaChi";
-            this.txbDiaChi.Size = new System.Drawing.Size(513, 32);
+            this.txbDiaChi.Size = new System.Drawing.Size(264, 16);
             this.txbDiaChi.TabIndex = 3;
             // 
             // label6
             // 
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label6.BackColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(819, 241);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(516, 99);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(613, 2);
+            this.label6.Size = new System.Drawing.Size(330, 1);
             this.label6.TabIndex = 88;
             // 
             // label7
@@ -249,10 +275,10 @@
             this.label7.BackColor = System.Drawing.Color.White;
             this.label7.Font = new System.Drawing.Font("Times New Roman", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(819, 198);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Location = new System.Drawing.Point(516, 79);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(97, 33);
+            this.label7.Size = new System.Drawing.Size(50, 17);
             this.label7.TabIndex = 87;
             this.label7.Text = "Địa chỉ";
             // 
@@ -262,10 +288,10 @@
             this.txbTenCN.BackColor = System.Drawing.Color.White;
             this.txbTenCN.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txbTenCN.ForeColor = System.Drawing.Color.Black;
-            this.txbTenCN.Location = new System.Drawing.Point(277, 286);
-            this.txbTenCN.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.txbTenCN.Location = new System.Drawing.Point(236, 120);
+            this.txbTenCN.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.txbTenCN.Name = "txbTenCN";
-            this.txbTenCN.Size = new System.Drawing.Size(442, 32);
+            this.txbTenCN.Size = new System.Drawing.Size(226, 16);
             this.txbTenCN.TabIndex = 2;
             // 
             // btnSuaCN
@@ -278,10 +304,10 @@
             this.btnSuaCN.ForeColor = System.Drawing.Color.Black;
             this.btnSuaCN.Image = global::QuanLyGaRanKFC.Properties.Resources.icons8_repair_16;
             this.btnSuaCN.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSuaCN.Location = new System.Drawing.Point(513, 393);
-            this.btnSuaCN.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.btnSuaCN.Location = new System.Drawing.Point(351, 170);
+            this.btnSuaCN.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnSuaCN.Name = "btnSuaCN";
-            this.btnSuaCN.Size = new System.Drawing.Size(225, 81);
+            this.btnSuaCN.Size = new System.Drawing.Size(121, 38);
             this.btnSuaCN.TabIndex = 6;
             this.btnSuaCN.Text = "Sửa";
             this.btnSuaCN.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -292,10 +318,10 @@
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label4.BackColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(106, 331);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(132, 141);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(613, 2);
+            this.label4.Size = new System.Drawing.Size(330, 1);
             this.label4.TabIndex = 83;
             // 
             // label5
@@ -305,10 +331,10 @@
             this.label5.BackColor = System.Drawing.Color.White;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(106, 288);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(132, 121);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(176, 33);
+            this.label5.Size = new System.Drawing.Size(91, 17);
             this.label5.TabIndex = 82;
             this.label5.Text = "Tên chi nhánh";
             // 
@@ -316,10 +342,10 @@
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label3.BackColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(106, 239);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(132, 98);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(613, 2);
+            this.label3.Size = new System.Drawing.Size(330, 1);
             this.label3.TabIndex = 81;
             // 
             // txbMaCN
@@ -328,11 +354,11 @@
             this.txbMaCN.BackColor = System.Drawing.Color.White;
             this.txbMaCN.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txbMaCN.ForeColor = System.Drawing.Color.Black;
-            this.txbMaCN.Location = new System.Drawing.Point(277, 196);
-            this.txbMaCN.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.txbMaCN.Location = new System.Drawing.Point(236, 78);
+            this.txbMaCN.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.txbMaCN.Name = "txbMaCN";
             this.txbMaCN.ReadOnly = true;
-            this.txbMaCN.Size = new System.Drawing.Size(442, 32);
+            this.txbMaCN.Size = new System.Drawing.Size(226, 16);
             this.txbMaCN.TabIndex = 1;
             // 
             // label1
@@ -342,10 +368,10 @@
             this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(106, 192);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(132, 78);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(169, 33);
+            this.label1.Size = new System.Drawing.Size(88, 17);
             this.label1.TabIndex = 79;
             this.label1.Text = "Mã chi nhánh";
             // 
@@ -355,48 +381,23 @@
             this.txbTimKiemCN.BackColor = System.Drawing.Color.White;
             this.txbTimKiemCN.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txbTimKiemCN.ForeColor = System.Drawing.Color.Black;
-            this.txbTimKiemCN.Location = new System.Drawing.Point(925, 567);
-            this.txbTimKiemCN.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.txbTimKiemCN.Location = new System.Drawing.Point(647, 235);
+            this.txbTimKiemCN.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.txbTimKiemCN.Name = "txbTimKiemCN";
-            this.txbTimKiemCN.Size = new System.Drawing.Size(381, 32);
+            this.txbTimKiemCN.Size = new System.Drawing.Size(205, 16);
             this.txbTimKiemCN.TabIndex = 8;
-            // 
-            // sttCN
-            // 
-            this.sttCN.HeaderText = "Số Thứ Tự";
-            this.sttCN.MinimumWidth = 10;
-            this.sttCN.Name = "sttCN";
-            // 
-            // maCN
-            // 
-            this.maCN.HeaderText = "Mã Chi Nhánh";
-            this.maCN.MinimumWidth = 10;
-            this.maCN.Name = "maCN";
-            // 
-            // tenCN
-            // 
-            this.tenCN.HeaderText = "Tên Chi Nhánh";
-            this.tenCN.MinimumWidth = 10;
-            this.tenCN.Name = "tenCN";
-            // 
-            // diaChiCN
-            // 
-            this.diaChiCN.HeaderText = "Địa Chỉ";
-            this.diaChiCN.MinimumWidth = 10;
-            this.diaChiCN.Name = "diaChiCN";
             // 
             // ucChiNhanh
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1532, 1404);
+            this.ClientSize = new System.Drawing.Size(973, 665);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.btnTimKiemCN);
             this.Controls.Add(this.dgvChiNhanh);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.txbTimKiemCN);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "ucChiNhanh";
             this.Text = "ucChiNhanh";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ucChiNhanh_FormClosing);
