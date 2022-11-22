@@ -29,15 +29,15 @@ namespace QuanLyGaRanKFC.DAO
             {
                 string maNV = reader.GetString(0);
                 string tenNV = reader.GetString(1);
-                string tenDangNhap = reader.GetString(2);
-                string matKhau = reader.GetString(3);
-                DateTime ngaySinh = reader.GetDateTime(4);
-                string gioiTinh = reader.GetString(6);
-                string diaChi = reader.GetString(5);
-                string sdt = reader.GetString(7);
-                string cmnd = reader.GetString(8);
-                int quyen = reader.GetInt32(9);
-                NhanVien nv = new NhanVien(maNV, tenNV, tenDangNhap, matKhau, ngaySinh, gioiTinh, diaChi, sdt, cmnd, quyen);
+                DateTime ngaySinh = reader.GetDateTime(2);
+                string gioiTinh = reader.GetString(3);
+                string diaChi = reader.GetString(4);
+                string sdt = reader.GetString(5);
+                string cmnd = reader.GetString(6);
+                int quyen = reader.GetInt32(7);
+                string tenDangNhap = reader.GetString(8);
+                string matKhau = reader.GetString(9);
+                NhanVien nv = new NhanVien(maNV, tenNV, ngaySinh, gioiTinh, diaChi, sdt, cmnd, quyen, tenDangNhap, matKhau);
                 list.Add(nv);
             }
             _conn.Close();
@@ -53,15 +53,15 @@ namespace QuanLyGaRanKFC.DAO
             {
                 string maNV = reader.GetString(0);
                 string tenNV = reader.GetString(1);
-                string tenDangNhap = reader.GetString(2);
-                string matKhau = reader.GetString(3);
-                DateTime ngaySinh = reader.GetDateTime(4);
-                string gioiTinh = reader.GetString(6);
-                string diaChi = reader.GetString(5);
-                string sdt = reader.GetString(7);
-                string cmnd = reader.GetString(8);
-                int quyen = reader.GetInt32(9);
-                NhanVien nv = new NhanVien(maNV, tenNV, tenDangNhap, matKhau, ngaySinh, gioiTinh, diaChi, sdt, cmnd, quyen);
+                DateTime ngaySinh = reader.GetDateTime(2);
+                string gioiTinh = reader.GetString(3);
+                string diaChi = reader.GetString(4);
+                string sdt = reader.GetString(5);
+                string cmnd = reader.GetString(6);
+                int quyen = reader.GetInt32(7);
+                string tenDangNhap = reader.GetString(8);
+                string matKhau = reader.GetString(9);
+                NhanVien nv = new NhanVien(maNV, tenNV, ngaySinh, gioiTinh, diaChi, sdt, cmnd, quyen, tenDangNhap, matKhau);
                 list.Add(nv);
             }
             _conn.Close();
@@ -77,15 +77,15 @@ namespace QuanLyGaRanKFC.DAO
             {
                 string maNV = reader.GetString(0);
                 string tenNV = reader.GetString(1);
-                string tenDangNhap = reader.GetString(2);
-                string matKhau = reader.GetString(3);
-                DateTime ngaySinh = reader.GetDateTime(4);
-                string gioiTinh = reader.GetString(6);
-                string diaChi = reader.GetString(5);
-                string sdt = reader.GetString(7);
-                string cmnd = reader.GetString(8);
-                int quyen = reader.GetInt32(9);
-                NhanVien nv = new NhanVien(maNV, tenNV, tenDangNhap, matKhau, ngaySinh, gioiTinh, diaChi, sdt, cmnd, quyen);
+                DateTime ngaySinh = reader.GetDateTime(2);
+                string gioiTinh = reader.GetString(3);
+                string diaChi = reader.GetString(4);
+                string sdt = reader.GetString(5);
+                string cmnd = reader.GetString(6);
+                int quyen = reader.GetInt32(7);
+                string tenDangNhap = reader.GetString(8);
+                string matKhau = reader.GetString(9);
+                NhanVien nv = new NhanVien(maNV, tenNV, ngaySinh, gioiTinh, diaChi, sdt, cmnd, quyen, tenDangNhap, matKhau);
                 list.Add(nv);
             }
             _conn.Close();
@@ -101,15 +101,15 @@ namespace QuanLyGaRanKFC.DAO
             {
                 string maNV = reader.GetString(0);
                 string tenNV = reader.GetString(1);
-                string tenDangNhap = reader.GetString(2);
-                string matKhau = reader.GetString(3);
-                DateTime ngaySinh = reader.GetDateTime(4);
-                string gioiTinh = reader.GetString(6);
-                string diaChi = reader.GetString(5);
-                string sdt = reader.GetString(7);
-                string cmnd = reader.GetString(8);
-                int quyen = reader.GetInt32(9);
-                nhanVien = new NhanVien(maNV, tenNV, tenDangNhap, matKhau, ngaySinh, gioiTinh, diaChi, sdt, cmnd, quyen);
+                DateTime ngaySinh = reader.GetDateTime(2);
+                string gioiTinh = reader.GetString(3);
+                string diaChi = reader.GetString(4);
+                string sdt = reader.GetString(5);
+                string cmnd = reader.GetString(6);
+                int quyen = reader.GetInt32(7);
+                string tenDangNhap = reader.GetString(8);
+                string matKhau = reader.GetString(9);
+                nhanVien = new NhanVien(maNV, tenNV, ngaySinh, gioiTinh, diaChi, sdt, cmnd, quyen, tenDangNhap, matKhau);
             }
             _conn.Close();
             return nhanVien;
@@ -124,15 +124,15 @@ namespace QuanLyGaRanKFC.DAO
             {
                 string maNV = reader.GetString(0);
                 string tenNV = reader.GetString(1);
-                string tenDangNhap = reader.GetString(2);
-                string matKhau = reader.GetString(3);
-                DateTime ngaySinh = reader.GetDateTime(4);
-                string gioiTinh = reader.GetString(6);
-                string diaChi = reader.GetString(5);
-                string sdt = reader.GetString(7);
-                string cmnd = reader.GetString(8);
-                int quyen = reader.GetInt32(9);
-                nhanVien = new NhanVien(maNV, tenNV, tenDangNhap, matKhau, ngaySinh, gioiTinh, diaChi, sdt, cmnd, quyen);
+                DateTime ngaySinh = reader.GetDateTime(2);
+                string gioiTinh = reader.GetString(3);
+                string diaChi = reader.GetString(4);
+                string sdt = reader.GetString(5);
+                string cmnd = reader.GetString(6);
+                int quyen = reader.GetInt32(7);
+                string tenDangNhap = reader.GetString(8);
+                string matKhau = reader.GetString(9);
+                nhanVien = new NhanVien(maNV, tenNV, ngaySinh, gioiTinh, diaChi, sdt, cmnd, quyen, tenDangNhap, matKhau);
             }
             _conn.Close();
             return nhanVien;
@@ -147,15 +147,15 @@ namespace QuanLyGaRanKFC.DAO
             {
                 string maNV = reader.GetString(0);
                 string tenNV = reader.GetString(1);
-                string tenDangNhap = reader.GetString(2);
-                string matKhau = reader.GetString(3);
-                DateTime ngaySinh = reader.GetDateTime(4);
-                string gioiTinh = reader.GetString(6);
-                string diaChi = reader.GetString(5);
-                string sdt = reader.GetString(7);
-                string cmnd = reader.GetString(8);
-                int quyen = reader.GetInt32(9);
-                nhanVien = new NhanVien(maNV, tenNV, tenDangNhap, matKhau, ngaySinh, gioiTinh, diaChi, sdt, cmnd, quyen);
+                DateTime ngaySinh = reader.GetDateTime(2);
+                string gioiTinh = reader.GetString(3);
+                string diaChi = reader.GetString(4);
+                string sdt = reader.GetString(5);
+                string cmnd = reader.GetString(6);
+                int quyen = reader.GetInt32(7);
+                string tenDangNhap = reader.GetString(8);
+                string matKhau = reader.GetString(9);
+                nhanVien = new NhanVien(maNV, tenNV, ngaySinh, gioiTinh, diaChi, sdt, cmnd, quyen, tenDangNhap, matKhau);
             }
             _conn.Close();
             return nhanVien;
@@ -166,14 +166,15 @@ namespace QuanLyGaRanKFC.DAO
             command = new SqlCommand($@"INSERT INTO NhanVien 
                                         VALUES(MaNV = '{_nhanVien.maNV}', 
                                                TenNV = N'{_nhanVien.tenNV}',
-                                               TenDangNhap = N'{_nhanVien.tenDangNhap}',
-                                               MatKhau = '{GetMD5(_nhanVien.matKhau)}',
                                                NgaySinh = '{_nhanVien.ngaySinh}',
+                                               GioiTinh = '{_nhanVien.gioiTinh}',
                                                DiaChi = N'{_nhanVien.diaChi}',
                                                SDT = '{_nhanVien.sdt}',
                                                CMND = '{_nhanVien.cmnd}',
                                                Quyen = {_nhanVien.quyen},
-                                               MaCN = '{_maCN}'
+                                               TenDangNhap = N'{_nhanVien.tenDangNhap}',
+                                               MatKhau = '{GetMD5(_nhanVien.matKhau)}'
+                                               MaCN = '{_maCN}',
                                                )", _conn);
             command.ExecuteNonQuery();
             _conn.Close();
@@ -183,13 +184,14 @@ namespace QuanLyGaRanKFC.DAO
             _conn.Open();
             command = new SqlCommand($@"UPDATE NhanVien 
                                         SET TenNV = N'{_nhanVien.tenNV}',
-                                            TenDangNhap = N'{_nhanVien.tenDangNhap}',
-                                            MatKhau = '{GetMD5(_nhanVien.matKhau)}',
                                             NgaySinh = '{_nhanVien.ngaySinh}',
+                                            GioiTinh = '{_nhanVien.gioiTinh}',
                                             DiaChi = N'{_nhanVien.diaChi}',
                                             SDT = '{_nhanVien.sdt}',
                                             CMND = '{_nhanVien.cmnd}',
                                             Quyen = {_nhanVien.quyen},
+                                            TenDangNhap = N'{_nhanVien.tenDangNhap}',
+                                            MatKhau = '{GetMD5(_nhanVien.matKhau)}',
                                             MaCN = '{_maCN}'
                                         WHERE MaNV = '{_nhanVien.maNV}'", _conn);
             command.ExecuteNonQuery();

@@ -27,8 +27,8 @@ namespace QuanLyGaRanKFC.View
         }
         public string CreateID(string _lastID)
         {
-            string firstSubID = _lastID.Substring(0, _lastID.Length - 5);
-            string secondSubID = _lastID.Substring(_lastID.Length - 5);
+            string firstSubID = _lastID.Substring(0, _lastID.Length - 1);
+            string secondSubID = _lastID.Substring(_lastID.Length - 1);
             int secondSubIdNew = Convert.ToInt32(secondSubID) + 1;
             string newId = firstSubID + Convert.ToString(secondSubIdNew);
             return newId;

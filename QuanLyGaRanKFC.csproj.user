@@ -4,7 +4,7 @@
     <Compile Update="View\fQuanLyNhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="View\QuanLyChiNhanh.cs">
+    <Compile Update="View\fQuanLyChiNhanh.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="View\fDangNhap.cs">
@@ -16,10 +16,10 @@
     <Compile Update="View\fChiTietHoaDon.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="View\QuanLyHoaDon.cs">
+    <Compile Update="View\fQuanLyHoaDon.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="View\QuanLyKhachHang.cs">
+    <Compile Update="View\fQuanLyKhachHang.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

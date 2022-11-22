@@ -94,9 +94,10 @@ namespace QuanLyGaRanKFC.DAO
                 string maCN = reader.GetString(0);
                 string tenCN = reader.GetString(1);
                 string diaChi = reader.GetString(2);
-                List<NguyenLieu> nguyenLieu = _NguyenLieu.GetList(maCN);
-                List<NhanVien> nhanVien = _NhanVien.GetList(maCN);
-                chiNhanh = new ChiNhanh(maCN, tenCN, diaChi, nhanVien, nguyenLieu);
+                // List<NhanVien> nhanVien = _NhanVien.GetList(reader.GetString(3));
+                // List<NguyenLieu> nguyenLieu = _NguyenLieu.GetList(reader.GetString(3));
+                //chiNhanh = new ChiNhanh(maCN, tenCN, diaChi, nhanVien, nguyenLieu);
+                chiNhanh = new ChiNhanh(maCN, tenCN, diaChi);
             }
             _conn.Close();
             return chiNhanh;
@@ -124,21 +125,21 @@ namespace QuanLyGaRanKFC.DAO
         public void Add(ChiNhanh chiNhanh)
         {
             _conn.Open();
-            command = new SqlCommand($"INSERT INTO ChiNhanh VALUES('{chiNhanh.maCN}', N'{chiNhanh.tenCN}', N'{chiNhanh.diaChi}'", _conn);
+            command = new SqlCommand($"INSERT INTO ChiNhanh VALUES(N'{chiNhanh.maCN}', N'{chiNhanh.tenCN}', N'{chiNhanh.diaChi}');", _conn);
             command.ExecuteNonQuery();
             _conn.Close();
         }
         public void Update(ChiNhanh chiNhanh)
         {
             _conn.Open();
-            command = new SqlCommand($"UPDATE ChiNhanh SET TenCN = N'{chiNhanh.tenCN}', DiaChi = N'{chiNhanh.diaChi}' WHERE MaCN = '{chiNhanh.maCN}'", _conn);
+            command = new SqlCommand($"UPDATE ChiNhanh SET TenCN = N'{chiNhanh.tenCN}', DiaChi = N'{chiNhanh.diaChi}' WHERE MaCN = '{chiNhanh.maCN}');", _conn);
             command.ExecuteNonQuery();
             _conn.Close();
         }
         public void Delete(string _maCN)
         {
             _conn.Open();
-            command = new SqlCommand($"DELETE FROM ChiNhanh WHERE MaCN = '{_maCN}'", _conn);
+            command = new SqlCommand($"DELETE FROM ChiNhanh WHERE MaCN = N'{_maCN}'", _conn);
             command.ExecuteNonQuery();
             _conn.Close();
         }

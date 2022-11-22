@@ -19,6 +19,15 @@ namespace QuanLyGaRanKFC.Model
         
         }
 
+        public ChiNhanh(string maCN, string tenCN, string diaChi)
+        {
+            this.maCN = maCN;
+            this.tenCN = tenCN;
+            this.diaChi = diaChi;
+            this.nhanVien = new List<NhanVien>();
+            this.nguyenLieu = new List<NguyenLieu>();
+        }
+
         public ChiNhanh(string maCN, string tenCN, string diaChi, List<NhanVien> nhanVien, List<NguyenLieu> nguyenLieu)
         {
             this.maCN = maCN;
