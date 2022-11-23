@@ -94,10 +94,9 @@ namespace QuanLyGaRanKFC.DAO
                 string maCN = reader.GetString(0);
                 string tenCN = reader.GetString(1);
                 string diaChi = reader.GetString(2);
-                // List<NhanVien> nhanVien = _NhanVien.GetList(reader.GetString(3));
-                // List<NguyenLieu> nguyenLieu = _NguyenLieu.GetList(reader.GetString(3));
-                //chiNhanh = new ChiNhanh(maCN, tenCN, diaChi, nhanVien, nguyenLieu);
-                chiNhanh = new ChiNhanh(maCN, tenCN, diaChi);
+                List<NhanVien> nhanVien = _NhanVien.GetList(maCN);
+                List<NguyenLieu> nguyenLieu = _NguyenLieu.GetList(maCN);
+                chiNhanh = new ChiNhanh(maCN, tenCN, diaChi, nhanVien, nguyenLieu);
             }
             _conn.Close();
             return chiNhanh;

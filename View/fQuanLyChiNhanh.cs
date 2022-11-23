@@ -21,6 +21,17 @@ namespace QuanLyGaRanKFC.View.UserControl
         public ucChiNhanh()
         {
             InitializeComponent();
+            AssociateAndRaiseViewEvent();
+        }
+        private void AssociateAndRaiseViewEvent()
+        {
+            txbTimKiemCN.KeyDown += (s, e) =>
+            {
+                if (e.KeyCode == Keys.Enter)
+                {
+                    btnTimKiemCN_Click(s, e);
+                }
+            };
         }
         public void LoadData()
         {
@@ -69,6 +80,9 @@ namespace QuanLyGaRanKFC.View.UserControl
             dAO_ChiNhanh.Update(ChiNhanh);
             resetFieldCN();
             MessageBox.Show("Sửa thành công!");
+            function.turnOffButton(btnSuaCN);
+            function.turnOffButton(btnXoaCN);
+            function.turnOnButton(btnThemCN);
         }
         private void btnTimKiemCN_Click(object sender, EventArgs e)
         {
@@ -85,6 +99,11 @@ namespace QuanLyGaRanKFC.View.UserControl
         }
         private void ucChiNhanh_Load(object sender, EventArgs e)
         {
+            List<Button> btnList = new List<Button>() { btnThemCN, btnSuaCN, btnXoaCN, btnLamMoiCN};
+            foreach(Button button in btnList)
+            {
+                button.FlatAppearance.BorderSize = 0;
+            }
             DAO_ChiNhanh dAO_ChiNhanh = new DAO_ChiNhanh();
             txbMaCN.Text = function.CreateID(dAO_ChiNhanh.GetLast().maCN);
             LoadData();
@@ -139,6 +158,9 @@ namespace QuanLyGaRanKFC.View.UserControl
             {
                 txbTenCN.Text = "";
                 txbDiaChi.Text = "";
+                function.turnOnButton(btnThemCN);
+                function.turnOffButton(btnSuaCN);
+                function.turnOffButton(btnXoaCN);
             }
             else
             {

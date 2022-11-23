@@ -36,41 +36,72 @@ namespace QuanLyGaRanKFC.View
         }
         private void fQuanLyNhanVien_Load(object sender, EventArgs e)
         {
+            List<Button> btnList = new List<Button>() { btnThemNV, btnSuaNV, btnXoaNV, btnLamMoiNV, btnTimKiemNV };
+            foreach (Button button in btnList)
+            {
+                button.FlatAppearance.BorderSize = 0;
+            }
             DAO_ChiNhanh dAO_ChiNhanh = new DAO_ChiNhanh();
             DAO_NhanVien dAO_NhanVien = new DAO_NhanVien();
             cbChiNhanh.DataSource = dAO_ChiNhanh.GetAll();
             cbChiNhanh.ValueMember = "maCN";
             cbChiNhanh.DisplayMember = "tenCN";
+            txbMaNV.Text = function.CreateID(dAO_NhanVien.GetLast().maNV);
+            LoadData();
             function.turnOffButton(btnSuaNV);
             function.turnOffButton(btnXoaNV);
         }
         private void btnThemNV_Click(object sender, EventArgs e)
         {
-            if (txbTenNV.Text == "" || cbGioiTinhNV.SelectedValue.ToString() == null || txbDiaChiNV.Text == "" || txbSdtNV.Text == "" || txbCmndNV.Text == "" || cbChucVu.SelectedValue.ToString() == null || txbTenDangNhap.Text == "" || txbMatKhau.Text == "")
+            if (txbTenNV.Text == "" || cbGioiTinhNV.SelectedIndex == -1 || txbDiaChiNV.Text == "" || txbSdtNV.Text == "" || txbCmndNV.Text == "" || cbChucVu.SelectedIndex == -1 || txbTenDangNhap.Text == "" || txbMatKhau.Text == "")
             {
-                MessageBox.Show("Vui lòng điền đầy đủ thông tin!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                DAO_NhanVien dAO_NhanVien = new DAO_NhanVien();
-                DAO_ChiNhanh dAO_ChiNhanh = new DAO_ChiNhanh();
-                cbChiNhanh.DataSource = dAO_ChiNhanh.GetAll();
-                cbChiNhanh.ValueMember = "maCN";
-                cbChiNhanh.DisplayMember = "tenCN";
-                cbChiNhanh.DisplayMember = "tenCN";
-                txbMaNV.Text = 
-                txbTenNV.Text = NhanVien.tenNV;
-                
+                if (txbMatKhau.Text.Length < 6)
+                {
+                    MessageBox.Show("Mật khẩu phải ít nhất 6 kí tự!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    DAO_NhanVien dAO_NhanVien = new DAO_NhanVien();
+                    DAO_ChiNhanh dAO_ChiNhanh = new DAO_ChiNhanh();
+                    ChiNhanh chiNhanh = dAO_ChiNhanh.GetByID(cbChiNhanh.SelectedValue.ToString());
+                    NhanVien.maNV = txbMaNV.Text;
+                    NhanVien.tenNV = txbTenNV.Text;
+                    NhanVien.ngaySinh = dtpkNgaySinhNV.Value;
+                    NhanVien.gioiTinh = cbGioiTinhNV.Text;
+                    NhanVien.diaChi = txbDiaChiNV.Text;
+                    NhanVien.sdt = txbSdtNV.Text;
+                    NhanVien.cmnd = txbCmndNV.Text;
+                    NhanVien.quyen = cbChucVu.SelectedIndex;
+                    NhanVien.tenDangNhap = txbTenDangNhap.Text;
+                    NhanVien.matKhau = txbMatKhau.Text;
+                    dAO_NhanVien.Add(NhanVien, chiNhanh.maCN);
+                    resetFieldNV();
+                    MessageBox.Show("Thêm thành công!");
+                }
             }
         }
-        private void resetFieldsNV()
+        private void resetFieldNV()
         {
-
+            DAO_NhanVien dAO_NhanVien = new DAO_NhanVien();
+            LoadData();
+            txbMaNV.Text = function.CreateID(dAO_NhanVien.GetLast().maNV);
+            txbTenNV.Text = "";
+            cbGioiTinhNV.Text = "";
+            txbDiaChiNV.Text = "";
+            txbSdtNV.Text = "";
+            txbCmndNV.Text = "";
+            cbChucVu.Text = "";
+            txbTenDangNhap.Text = "";
+            txbMatKhau.Text = "";
         }
 
-        private void panel2_Paint(object sender, PaintEventArgs e)
+        private void cbGioiTinhNV_KeyPress(object sender, KeyPressEventArgs e)
         {
-
+            e.KeyChar = (char)Keys.None;
         }
     }
 }

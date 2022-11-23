@@ -164,18 +164,17 @@ namespace QuanLyGaRanKFC.DAO
         {
             _conn.Open();
             command = new SqlCommand($@"INSERT INTO NhanVien 
-                                        VALUES(MaNV = '{_nhanVien.maNV}', 
-                                               TenNV = N'{_nhanVien.tenNV}',
-                                               NgaySinh = '{_nhanVien.ngaySinh}',
-                                               GioiTinh = '{_nhanVien.gioiTinh}',
-                                               DiaChi = N'{_nhanVien.diaChi}',
-                                               SDT = '{_nhanVien.sdt}',
-                                               CMND = '{_nhanVien.cmnd}',
-                                               Quyen = {_nhanVien.quyen},
-                                               TenDangNhap = N'{_nhanVien.tenDangNhap}',
-                                               MatKhau = '{GetMD5(_nhanVien.matKhau)}'
-                                               MaCN = '{_maCN}',
-                                               )", _conn);
+                                        VALUES('{_nhanVien.maNV}', 
+                                               N'{_nhanVien.tenNV}',
+                                               '{_nhanVien.ngaySinh}',
+                                               N'{_nhanVien.gioiTinh}',
+                                               N'{_nhanVien.diaChi}',
+                                               '{_nhanVien.sdt}',
+                                               '{_nhanVien.cmnd}',
+                                               {_nhanVien.quyen},
+                                               N'{_nhanVien.tenDangNhap}',
+                                               '{GetMD5(_nhanVien.matKhau)}',
+                                               '{_maCN}')", _conn);
             command.ExecuteNonQuery();
             _conn.Close();
         }
