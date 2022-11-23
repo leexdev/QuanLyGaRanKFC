@@ -83,7 +83,6 @@
             this.cmndNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quyenNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tenDangNhapNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.matKhauNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).BeginInit();
@@ -180,7 +179,7 @@
             this.txbCmndNV.MaxLength = 11;
             this.txbCmndNV.Name = "txbCmndNV";
             this.txbCmndNV.Size = new System.Drawing.Size(370, 32);
-            this.txbCmndNV.TabIndex = 89;
+            this.txbCmndNV.TabIndex = 8;
             // 
             // label24
             // 
@@ -209,11 +208,12 @@
             this.btnLamMoiNV.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.btnLamMoiNV.Name = "btnLamMoiNV";
             this.btnLamMoiNV.Size = new System.Drawing.Size(219, 77);
-            this.btnLamMoiNV.TabIndex = 88;
+            this.btnLamMoiNV.TabIndex = 14;
             this.btnLamMoiNV.Text = "Làm mới";
             this.btnLamMoiNV.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLamMoiNV.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnLamMoiNV.UseVisualStyleBackColor = false;
+            this.btnLamMoiNV.Click += new System.EventHandler(this.btnLamMoiNV_Click);
             // 
             // btnXoaNV
             // 
@@ -228,7 +228,7 @@
             this.btnXoaNV.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.btnXoaNV.Name = "btnXoaNV";
             this.btnXoaNV.Size = new System.Drawing.Size(219, 77);
-            this.btnXoaNV.TabIndex = 87;
+            this.btnXoaNV.TabIndex = 15;
             this.btnXoaNV.Text = "Xóa";
             this.btnXoaNV.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnXoaNV.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -247,11 +247,12 @@
             this.btnSuaNV.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.btnSuaNV.Name = "btnSuaNV";
             this.btnSuaNV.Size = new System.Drawing.Size(219, 77);
-            this.btnSuaNV.TabIndex = 86;
+            this.btnSuaNV.TabIndex = 13;
             this.btnSuaNV.Text = "Sửa";
             this.btnSuaNV.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSuaNV.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSuaNV.UseVisualStyleBackColor = false;
+            this.btnSuaNV.Click += new System.EventHandler(this.btnSuaNV_Click);
             // 
             // btnThemNV
             // 
@@ -266,7 +267,7 @@
             this.btnThemNV.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.btnThemNV.Name = "btnThemNV";
             this.btnThemNV.Size = new System.Drawing.Size(219, 77);
-            this.btnThemNV.TabIndex = 85;
+            this.btnThemNV.TabIndex = 12;
             this.btnThemNV.Text = "Thêm";
             this.btnThemNV.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnThemNV.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -293,8 +294,9 @@
             this.txbMatKhau.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.txbMatKhau.MaxLength = 11;
             this.txbMatKhau.Name = "txbMatKhau";
+            this.txbMatKhau.PasswordChar = '*';
             this.txbMatKhau.Size = new System.Drawing.Size(370, 32);
-            this.txbMatKhau.TabIndex = 82;
+            this.txbMatKhau.TabIndex = 11;
             // 
             // label21
             // 
@@ -331,7 +333,7 @@
             this.txbTenDangNhap.MaxLength = 11;
             this.txbTenDangNhap.Name = "txbTenDangNhap";
             this.txbTenDangNhap.Size = new System.Drawing.Size(370, 32);
-            this.txbTenDangNhap.TabIndex = 79;
+            this.txbTenDangNhap.TabIndex = 10;
             // 
             // label19
             // 
@@ -351,6 +353,7 @@
             // 
             this.cbChucVu.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cbChucVu.FormattingEnabled = true;
+            this.cbChucVu.ItemHeight = 32;
             this.cbChucVu.Items.AddRange(new object[] {
             "Nhân Viên",
             "Quản Lý",
@@ -359,7 +362,7 @@
             this.cbChucVu.Margin = new System.Windows.Forms.Padding(6);
             this.cbChucVu.Name = "cbChucVu";
             this.cbChucVu.Size = new System.Drawing.Size(366, 40);
-            this.cbChucVu.TabIndex = 78;
+            this.cbChucVu.TabIndex = 9;
             this.cbChucVu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbGioiTinhNV_KeyPress);
             // 
             // label16
@@ -407,7 +410,7 @@
             this.txbSdtNV.MaxLength = 11;
             this.txbSdtNV.Name = "txbSdtNV";
             this.txbSdtNV.Size = new System.Drawing.Size(370, 32);
-            this.txbSdtNV.TabIndex = 72;
+            this.txbSdtNV.TabIndex = 7;
             // 
             // label15
             // 
@@ -427,6 +430,7 @@
             // 
             this.cbGioiTinhNV.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cbGioiTinhNV.FormattingEnabled = true;
+            this.cbGioiTinhNV.ItemHeight = 32;
             this.cbGioiTinhNV.Items.AddRange(new object[] {
             "Nam",
             "Nữ"});
@@ -434,7 +438,7 @@
             this.cbGioiTinhNV.Margin = new System.Windows.Forms.Padding(6);
             this.cbGioiTinhNV.Name = "cbGioiTinhNV";
             this.cbGioiTinhNV.Size = new System.Drawing.Size(478, 40);
-            this.cbGioiTinhNV.TabIndex = 71;
+            this.cbGioiTinhNV.TabIndex = 5;
             this.cbGioiTinhNV.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbGioiTinhNV_KeyPress);
             // 
             // label12
@@ -469,7 +473,7 @@
             this.dtpkNgaySinhNV.Margin = new System.Windows.Forms.Padding(6);
             this.dtpkNgaySinhNV.Name = "dtpkNgaySinhNV";
             this.dtpkNgaySinhNV.Size = new System.Drawing.Size(478, 39);
-            this.dtpkNgaySinhNV.TabIndex = 68;
+            this.dtpkNgaySinhNV.TabIndex = 4;
             // 
             // label8
             // 
@@ -503,7 +507,7 @@
             this.cbChiNhanh.Margin = new System.Windows.Forms.Padding(6);
             this.cbChiNhanh.Name = "cbChiNhanh";
             this.cbChiNhanh.Size = new System.Drawing.Size(478, 40);
-            this.cbChiNhanh.TabIndex = 64;
+            this.cbChiNhanh.TabIndex = 1;
             // 
             // label6
             // 
@@ -550,7 +554,7 @@
             this.txbDiaChiNV.MaxLength = 11;
             this.txbDiaChiNV.Name = "txbDiaChiNV";
             this.txbDiaChiNV.Size = new System.Drawing.Size(481, 32);
-            this.txbDiaChiNV.TabIndex = 49;
+            this.txbDiaChiNV.TabIndex = 6;
             // 
             // label11
             // 
@@ -586,7 +590,7 @@
             this.txbTenNV.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.txbTenNV.Name = "txbTenNV";
             this.txbTenNV.Size = new System.Drawing.Size(481, 32);
-            this.txbTenNV.TabIndex = 46;
+            this.txbTenNV.TabIndex = 3;
             // 
             // label5
             // 
@@ -623,7 +627,7 @@
             this.txbMaNV.Name = "txbMaNV";
             this.txbMaNV.ReadOnly = true;
             this.txbMaNV.Size = new System.Drawing.Size(481, 32);
-            this.txbMaNV.TabIndex = 45;
+            this.txbMaNV.TabIndex = 2;
             // 
             // label1
             // 
@@ -652,7 +656,7 @@
             this.btnTimKiemNV.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.btnTimKiemNV.Name = "btnTimKiemNV";
             this.btnTimKiemNV.Size = new System.Drawing.Size(169, 66);
-            this.btnTimKiemNV.TabIndex = 40;
+            this.btnTimKiemNV.TabIndex = 17;
             this.btnTimKiemNV.Text = "Tìm kiếm";
             this.btnTimKiemNV.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnTimKiemNV.UseVisualStyleBackColor = false;
@@ -677,7 +681,7 @@
             this.txbTimKiemNV.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.txbTimKiemNV.Name = "txbTimKiemNV";
             this.txbTimKiemNV.Size = new System.Drawing.Size(505, 32);
-            this.txbTimKiemNV.TabIndex = 41;
+            this.txbTimKiemNV.TabIndex = 16;
             // 
             // dgvNhanVien
             // 
@@ -697,8 +701,7 @@
             this.sdtNV,
             this.cmndNV,
             this.quyenNV,
-            this.tenDangNhapNV,
-            this.matKhauNV});
+            this.tenDangNhapNV});
             this.dgvNhanVien.Location = new System.Drawing.Point(0, 723);
             this.dgvNhanVien.Margin = new System.Windows.Forms.Padding(6);
             this.dgvNhanVien.Name = "dgvNhanVien";
@@ -706,6 +709,7 @@
             this.dgvNhanVien.RowTemplate.Height = 25;
             this.dgvNhanVien.Size = new System.Drawing.Size(1807, 695);
             this.dgvNhanVien.TabIndex = 43;
+            this.dgvNhanVien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNhanVien_CellClick);
             // 
             // stt
             // 
@@ -766,12 +770,6 @@
             this.tenDangNhapNV.HeaderText = "Tên Đăng Nhập";
             this.tenDangNhapNV.MinimumWidth = 10;
             this.tenDangNhapNV.Name = "tenDangNhapNV";
-            // 
-            // matKhauNV
-            // 
-            this.matKhauNV.HeaderText = "Mật Khẩu";
-            this.matKhauNV.MinimumWidth = 10;
-            this.matKhauNV.Name = "matKhauNV";
             // 
             // fQuanLyNhanVien
             // 
@@ -855,6 +853,5 @@
         private DataGridViewTextBoxColumn cmndNV;
         private DataGridViewTextBoxColumn quyenNV;
         private DataGridViewTextBoxColumn tenDangNhapNV;
-        private DataGridViewTextBoxColumn matKhauNV;
     }
 }

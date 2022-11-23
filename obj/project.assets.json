@@ -2654,11 +2654,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Project\\baitap\\QuanLyGaRanKFC\\QuanLyGaRanKFC.csproj",
+      "projectUniqueName": "C:\\Users\\LE\\Source\\Repos\\lepro83\\QuanLyGaRanKFC\\QuanLyGaRanKFC.csproj",
       "projectName": "QuanLyGaRanKFC",
-      "projectPath": "E:\\Project\\baitap\\QuanLyGaRanKFC\\QuanLyGaRanKFC.csproj",
+      "projectPath": "C:\\Users\\LE\\Source\\Repos\\lepro83\\QuanLyGaRanKFC\\QuanLyGaRanKFC.csproj",
       "packagesPath": "C:\\Users\\LE\\.nuget\\packages\\",
-      "outputPath": "E:\\Project\\baitap\\QuanLyGaRanKFC\\obj\\",
+      "outputPath": "C:\\Users\\LE\\Source\\Repos\\lepro83\\QuanLyGaRanKFC\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\LE\\AppData\\Roaming\\NuGet\\NuGet.Config",

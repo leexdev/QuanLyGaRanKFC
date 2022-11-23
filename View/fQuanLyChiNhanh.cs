@@ -99,7 +99,9 @@ namespace QuanLyGaRanKFC.View.UserControl
         }
         private void ucChiNhanh_Load(object sender, EventArgs e)
         {
-            List<Button> btnList = new List<Button>() { btnThemCN, btnSuaCN, btnXoaCN, btnLamMoiCN};
+            dgvChiNhanh.Columns[0].Width = 60;
+            dgvChiNhanh.Columns[1].Width = 120;
+            List<Button> btnList = new List<Button>() { btnThemCN, btnSuaCN, btnXoaCN, btnLamMoiCN, btnTimKiemCN};
             foreach(Button button in btnList)
             {
                 button.FlatAppearance.BorderSize = 0;
@@ -118,7 +120,7 @@ namespace QuanLyGaRanKFC.View.UserControl
             }
             else
             {
-                var result = MessageBox.Show("Bạn có chắc muốn xóa hóa đơn này?", "Xác nhận xóa", MessageBoxButtons.YesNo);
+                var result = MessageBox.Show("Bạn có chắc muốn xóa chi nhánh này?", "Xác nhận xóa!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (result == DialogResult.Yes)
                 {
                     DAO_ChiNhanh dAO_ChiNhanh = new DAO_ChiNhanh();
