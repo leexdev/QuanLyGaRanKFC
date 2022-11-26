@@ -66,7 +66,14 @@ namespace QuanLyGaRanKFC.View.UserControl
         {
             DAO_ChiNhanh dAO_ChiNhanh = new DAO_ChiNhanh();
             LoadData();
-            txbMaCN.Text = function.CreateID(dAO_ChiNhanh.GetLast().maCN);
+            if (dgvChiNhanh.Rows.Count == 0)
+            {
+                txbMaCN.Text = "CN1";
+            }
+            else if (dgvChiNhanh.Rows.Count > 0)
+            {
+                txbMaCN.Text = function.CreateID(dAO_ChiNhanh.GetLast().maCN);
+            }
             txbTenCN.Text = "";
             txbDiaChi.Text = "";
             txbTimKiemCN.Text = "";
@@ -99,38 +106,47 @@ namespace QuanLyGaRanKFC.View.UserControl
         }
         private void ucChiNhanh_Load(object sender, EventArgs e)
         {
-            dgvChiNhanh.Columns[0].Width = 60;
+            dgvChiNhanh.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvChiNhanh.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvChiNhanh.Columns[0].Width = 50;
             dgvChiNhanh.Columns[1].Width = 120;
             List<Button> btnList = new List<Button>() { btnThemCN, btnSuaCN, btnXoaCN, btnLamMoiCN, btnTimKiemCN};
+            DAO_ChiNhanh dAO_ChiNhanh = new DAO_ChiNhanh();
             foreach(Button button in btnList)
             {
                 button.FlatAppearance.BorderSize = 0;
             }
-            DAO_ChiNhanh dAO_ChiNhanh = new DAO_ChiNhanh();
-            txbMaCN.Text = function.CreateID(dAO_ChiNhanh.GetLast().maCN);
             LoadData();
+            if (dgvChiNhanh.Rows.Count == 0)
+            {
+                txbMaCN.Text = "CN1";
+            }
+            else if (dgvChiNhanh.Rows.Count > 0)
+            {
+                txbMaCN.Text = function.CreateID(dAO_ChiNhanh.GetLast().maCN);
+            }
             function.turnOffButton(btnSuaCN);
             function.turnOffButton(btnXoaCN);
         }
         private void btnXoaCN_Click(object sender, EventArgs e)
         {
-            if (dgvChiNhanh.Rows.Count == 2)
+            var result = MessageBox.Show("Bạn có chắc muốn xóa chi nhánh này?", "Xác nhận xóa!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (result == DialogResult.Yes)
             {
-                MessageBox.Show("Không thể xóa!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                DAO_ChiNhanh dAO_ChiNhanh = new DAO_ChiNhanh();
+                dAO_ChiNhanh.Delete(txbMaCN.Text);
+                resetFieldCN();
             }
-            else
-            {
-                var result = MessageBox.Show("Bạn có chắc muốn xóa chi nhánh này?", "Xác nhận xóa!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                if (result == DialogResult.Yes)
-                {
-                    DAO_ChiNhanh dAO_ChiNhanh = new DAO_ChiNhanh();
-                    dAO_ChiNhanh.Delete(txbMaCN.Text);
-                    resetFieldCN();
-                }
-                function.turnOffButton(btnSuaCN);
-                function.turnOffButton(btnXoaCN);
-                function.turnOnButton(btnThemCN);
-            }
+            function.turnOffButton(btnSuaCN);
+            function.turnOffButton(btnXoaCN);
+            function.turnOnButton(btnThemCN);
+        }
+        private void btnLamMoiCN_Click(object sender, EventArgs e)
+        {
+            resetFieldCN();
+            function.turnOnButton(btnThemCN);
+            function.turnOffButton(btnSuaCN);
+            function.turnOffButton(btnXoaCN);
         }
         private void dtgvChiNhanh_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -146,17 +162,10 @@ namespace QuanLyGaRanKFC.View.UserControl
 
         }
 
-        private void btnLamMoiCN_Click(object sender, EventArgs e)
-        {
-            resetFieldCN();
-            function.turnOnButton(btnThemCN);
-            function.turnOffButton(btnSuaCN);
-            function.turnOffButton(btnXoaCN);
-        }
 
         private void dgvChiNhanh_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex == -1 || e.RowIndex == dgvChiNhanh.Rows.Count - 1)
+            if (e.RowIndex == -1)
             {
                 txbTenCN.Text = "";
                 txbDiaChi.Text = "";

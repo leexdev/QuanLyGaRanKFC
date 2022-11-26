@@ -292,6 +292,7 @@
             // 
             // dgvKhachHang
             // 
+            this.dgvKhachHang.AllowUserToAddRows = false;
             this.dgvKhachHang.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -299,6 +300,7 @@
             this.dgvKhachHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvKhachHang.Location = new System.Drawing.Point(0, 264);
             this.dgvKhachHang.Name = "dgvKhachHang";
+            this.dgvKhachHang.RowHeadersVisible = false;
             this.dgvKhachHang.RowTemplate.Height = 25;
             this.dgvKhachHang.Size = new System.Drawing.Size(826, 329);
             this.dgvKhachHang.TabIndex = 3;

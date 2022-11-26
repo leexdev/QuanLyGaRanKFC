@@ -44,7 +44,7 @@ namespace QuanLyGaRanKFC.DAO
         {
             List<ChiNhanh> list = new List<ChiNhanh>();
             _conn.Open();
-            command = new SqlCommand($"SELECT * FROM ChiNhanh WHERE TenCN LIKE '%{_tenCN}%'", _conn);
+            command = new SqlCommand($"SELECT * FROM ChiNhanh WHERE TenCN LIKE N'%{_tenCN}%'", _conn);
             reader = command.ExecuteReader();
             DAO_NhanVien _NhanVien = new DAO_NhanVien();
             DAO_NguyenLieu _NguyenLieu = new DAO_NguyenLieu();

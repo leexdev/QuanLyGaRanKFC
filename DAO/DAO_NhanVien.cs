@@ -71,7 +71,7 @@ namespace QuanLyGaRanKFC.DAO
         {
             List<NhanVien> list = new List<NhanVien>();
             _conn.Open();
-            command = new SqlCommand($"select * from NhanVien where TenNV like '%{_tenNV}%'", _conn);
+            command = new SqlCommand($"select * from NhanVien where TenNV like N'%{_tenNV}%'", _conn);
             reader = command.ExecuteReader();
             while (reader.Read())
             {
@@ -184,7 +184,7 @@ namespace QuanLyGaRanKFC.DAO
             command = new SqlCommand($@"UPDATE NhanVien 
                                         SET TenNV = N'{_nhanVien.tenNV}',
                                             NgaySinh = '{_nhanVien.ngaySinh}',
-                                            GioiTinh = '{_nhanVien.gioiTinh}',
+                                            GioiTinh = N'{_nhanVien.gioiTinh}',
                                             DiaChi = N'{_nhanVien.diaChi}',
                                             SDT = '{_nhanVien.sdt}',
                                             CMND = '{_nhanVien.cmnd}',

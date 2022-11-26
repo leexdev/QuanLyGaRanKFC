@@ -100,7 +100,7 @@ namespace QuanLyGaRanKFC.DAO
         public void Delete(string _maKH)
         {
             _conn.Open();
-            command = new SqlCommand($"DELETE FROM KhachHang WHERE MaKH = '{_maKH}');", _conn);
+            command = new SqlCommand($"DELETE FROM KhachHang WHERE MaKH = '{_maKH}'", _conn);
             command.ExecuteNonQuery();
             _conn.Close();
         }

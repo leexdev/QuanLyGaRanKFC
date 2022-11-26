@@ -20,6 +20,17 @@ namespace QuanLyGaRanKFC.View
         public fQuanLyNhanVien()
         {
             InitializeComponent();
+            AssociateAndRaiseViewEvent();
+        }
+        private void AssociateAndRaiseViewEvent()
+        {
+            txbTimKiemNV.KeyDown += (s, e) =>
+            {
+                if (e.KeyCode == Keys.Enter)
+                {
+                    btnTimKiemNV_Click(s, e);
+                }
+            };
         }
         private void LoadData()
         {
@@ -29,21 +40,38 @@ namespace QuanLyGaRanKFC.View
             List<NhanVien> NhanVien = dAO_NhanVien.GetAll();
             foreach(NhanVien nhanVien in NhanVien)
             {
-                dgvNhanVien.Rows.Add(i, nhanVien.maNV, nhanVien.tenNV, nhanVien.ngaySinh.ToShortDateString(), nhanVien.gioiTinh, nhanVien.diaChi, nhanVien.sdt, nhanVien.cmnd, nhanVien.quyen, nhanVien.tenDangNhap);
+                string chucVu = "";
+                if (nhanVien.quyen == 0)
+                {
+                    chucVu = "Nhân Viên";
+                }
+                else if (nhanVien.quyen == 1)
+                {
+                    chucVu = "Quản Lý";
+                }
+                else if (nhanVien.quyen == 2)
+                {
+                    chucVu = "Quản Trị Viên";
+                }
+                dgvNhanVien.Rows.Add(i, nhanVien.maNV, nhanVien.tenNV, nhanVien.ngaySinh.ToShortDateString(), nhanVien.gioiTinh, nhanVien.diaChi, nhanVien.sdt, nhanVien.cmnd, chucVu, nhanVien.tenDangNhap);
                 i++;
             }
 
         }
         private void fQuanLyNhanVien_Load(object sender, EventArgs e)
         {
-            if (NhanVien.quyen == 1 || NhanVien.quyen == 2)
-            {
-                function.turnOnButton(btnThemNV);
-            }
-            else if (NhanVien.quyen == 0)
-            {
-                function.turnOffButton(btnThemNV);
-            }
+            dgvNhanVien.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvNhanVien.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            function.turnOffButton(btnSuaNV);
+            function.turnOffButton(btnXoaNV);
+            function.turnOnButton(btnThemNV);
+            dgvNhanVien.Columns[3].DefaultCellStyle.Format = "dd/MM/yyyy";
+            dgvNhanVien.Columns[0].Width = 60;
+            dgvNhanVien.Columns[1].Width = 90;
+            dgvNhanVien.Columns[2].MinimumWidth = 130;
+            dgvNhanVien.Columns[4].Width = 60;
+            dgvNhanVien.Columns[8].Width = 90;
+            dgvNhanVien.Columns[9].Width = 120;
             dtpkNgaySinhNV.Format = DateTimePickerFormat.Custom;
             dtpkNgaySinhNV.CustomFormat = "dd/MM/yyyy";
             dtpkNgaySinhNV.ShowUpDown = false;
@@ -57,10 +85,16 @@ namespace QuanLyGaRanKFC.View
             cbChiNhanh.DataSource = dAO_ChiNhanh.GetAll();
             cbChiNhanh.ValueMember = "maCN";
             cbChiNhanh.DisplayMember = "tenCN";
-            txbMaNV.Text = function.CreateID(dAO_NhanVien.GetLast().maNV);
             LoadData();
-            function.turnOffButton(btnSuaNV);
-            function.turnOffButton(btnXoaNV);
+            if (dgvNhanVien.Rows.Count == 0)
+            {
+                txbMaNV.Text = "NV1";
+            }
+            else if (dgvNhanVien.Rows.Count > 0)
+            {
+                txbMaNV.Text = function.CreateID(dAO_NhanVien.GetLast().maNV);
+            }
+            
         }
         private void btnThemNV_Click(object sender, EventArgs e)
         {
@@ -114,11 +148,31 @@ namespace QuanLyGaRanKFC.View
             resetFieldNV();
             MessageBox.Show("Sửa thành công!");
         }
+        private void btnXoaNV_Click(object sender, EventArgs e)
+        {
+                var result = MessageBox.Show("Bạn có chắc muốn xóa nhân viên này?", "Xác nhận xóa!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (result == DialogResult.Yes)
+                {
+                    DAO_NhanVien dAO_NhanVien = new DAO_NhanVien();
+                    dAO_NhanVien.Delete(txbMaNV.Text);
+                    resetFieldNV();
+                }
+                function.turnOffButton(btnSuaNV);
+                function.turnOffButton(btnXoaNV);
+                function.turnOnButton(btnThemNV);
+        }
         private void resetFieldNV()
         {
             DAO_NhanVien dAO_NhanVien = new DAO_NhanVien();
             LoadData();
-            txbMaNV.Text = function.CreateID(dAO_NhanVien.GetLast().maNV);
+            if (dgvNhanVien.Rows.Count == 0)
+            {
+                txbMaNV.Text = "NV1";
+            }
+            else if (dgvNhanVien.Rows.Count > 0)
+            {
+                txbMaNV.Text = function.CreateID(dAO_NhanVien.GetLast().maNV);
+            }
             txbTenNV.Text = "";
             cbGioiTinhNV.Text = "";
             txbDiaChiNV.Text = "";
@@ -127,6 +181,7 @@ namespace QuanLyGaRanKFC.View
             cbChucVu.Text = "";
             txbTenDangNhap.Text = "";
             txbMatKhau.Text = "";
+            txbMatKhau.ReadOnly = false;
         }
         private void cbGioiTinhNV_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -135,18 +190,15 @@ namespace QuanLyGaRanKFC.View
 
         private void dgvNhanVien_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex == -1 || e.RowIndex == dgvNhanVien.Rows.Count - 1)
+            if (e.RowIndex == -1)
             {
                 txbTenNV.Text = "";
                 txbDiaChiNV.Text = "";
                 txbSdtNV.Text = "";
                 txbCmndNV.Text = "";
                 txbTenDangNhap.Text = "";
-                txbMatKhau.Text = "";
-                if(NhanVien.quyen == 1 || NhanVien.quyen == 2) 
-                { 
-                    function.turnOnButton(btnThemNV);
-                }
+                txbMatKhau.Text = ""; 
+                function.turnOnButton(btnThemNV);
                 function.turnOffButton(btnSuaNV);
                 function.turnOffButton(btnXoaNV);
             }
@@ -158,6 +210,7 @@ namespace QuanLyGaRanKFC.View
                 NhanVien _nhanVien = dAO_NhanVien.GetByID(row.Cells[1].Value.ToString());
                 cbChiNhanh.Text = dAO_ChiNhanh.GetByUserID(_nhanVien.maNV).tenCN;
                 cbChiNhanh.ValueMember = "maCN";
+                txbMaNV.Text = _nhanVien.maNV;
                 txbTenNV.Text = _nhanVien.tenNV;
                 dtpkNgaySinhNV.Value = _nhanVien.ngaySinh;
                 cbGioiTinhNV.Text = _nhanVien.gioiTinh;
@@ -178,18 +231,61 @@ namespace QuanLyGaRanKFC.View
                 }
                 txbTenDangNhap.Text = _nhanVien.tenDangNhap;
                 txbMatKhau.Text = "******";
-                if (NhanVien.quyen == 1 || NhanVien.quyen == 2)
-                {
-                    function.turnOffButton(btnThemNV);
-                    function.turnOnButton(btnSuaNV);
-                    function.turnOnButton(btnXoaNV);
-                }
+                txbMatKhau.ReadOnly = true;
+                function.turnOffButton(btnThemNV);
+                function.turnOnButton(btnSuaNV);
+                function.turnOnButton(btnXoaNV);
             }
         }
-
+        
         private void btnLamMoiNV_Click(object sender, EventArgs e)
         {
             resetFieldNV();
+            function.turnOnButton(btnThemNV);
+            function.turnOffButton(btnSuaNV);
+            function.turnOffButton(btnXoaNV);
+        }
+
+        private void cbGioiTinhNV_MouseClick(object sender, MouseEventArgs e)
+        {
+            cbGioiTinhNV.DroppedDown = true;
+        }
+        private void cbChucVuNV_MouseClick(object sender, MouseEventArgs e)
+        {
+            cbChucVu.DroppedDown = true;
+        }
+
+        private void cbChiNhanh_MouseClick(object sender, MouseEventArgs e)
+        {
+            cbChiNhanh.DroppedDown = true;
+        }
+
+        private void btnTimKiemNV_Click(object sender, EventArgs e)
+        {
+            string _keyWord = txbTimKiemNV.Text;
+            dgvNhanVien.Rows.Clear();
+            int i = 1;
+            DAO_NhanVien dAO_NhanVien = new DAO_NhanVien();
+            List<NhanVien> NhanVien = dAO_NhanVien.GetListByName(_keyWord);
+
+            foreach (NhanVien nhanVien in NhanVien)
+            {
+                string chucVu = "";
+                if (nhanVien.quyen == 0)
+                {
+                    chucVu = "Nhân Viên";
+                }
+                else if (nhanVien.quyen == 1)
+                {
+                    chucVu = "Quản Lý";
+                }
+                else if (nhanVien.quyen == 2)
+                {
+                    chucVu = "Quản Trị Viên";
+                }
+                dgvNhanVien.Rows.Add(i, nhanVien.maNV, nhanVien.tenNV, nhanVien.ngaySinh.ToShortDateString(), nhanVien.gioiTinh, nhanVien.diaChi, nhanVien.sdt, nhanVien.cmnd, chucVu, nhanVien.tenDangNhap);
+                i++;
+            }
         }
     }
 }

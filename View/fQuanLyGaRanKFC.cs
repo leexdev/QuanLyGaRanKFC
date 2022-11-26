@@ -66,7 +66,14 @@ namespace QuanLyGaRanKFC.View
 
         private void btnChiNhanh_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new ucChiNhanh());
+            if (nhanVien.quyen == 2)
+            {
+                OpenChildForm(new ucChiNhanh());
+            }
+            else
+            {
+                MessageBox.Show("Bạn không có quyền truy cập!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
         }
 
         private void btnDangXuat_Click(object sender, EventArgs e)
@@ -89,7 +96,14 @@ namespace QuanLyGaRanKFC.View
 
         private void btnNhanVien_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new fQuanLyNhanVien());
+            if (nhanVien.quyen == 1 || nhanVien.quyen == 2)
+            {
+                OpenChildForm(new fQuanLyNhanVien());
+            }
+            else
+            {
+                MessageBox.Show("Bạn không có quyền truy cập!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
         }
     }
 }
