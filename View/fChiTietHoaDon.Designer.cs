@@ -262,6 +262,7 @@
             this.txbMaHD.Location = new System.Drawing.Point(208, 25);
             this.txbMaHD.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.txbMaHD.Name = "txbMaHD";
+            this.txbMaHD.ReadOnly = true;
             this.txbMaHD.Size = new System.Drawing.Size(246, 16);
             this.txbMaHD.TabIndex = 25;
             // 
@@ -325,7 +326,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(975, 238);
             this.panel2.TabIndex = 52;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // txbSoLuong
             // 

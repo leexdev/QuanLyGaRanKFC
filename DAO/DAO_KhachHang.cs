@@ -66,11 +66,11 @@ namespace QuanLyGaRanKFC.DAO
             _conn.Close();
             return khachHang;
         }
-        public List<KhachHang> Search(string _timKiem)
+        public List<KhachHang> GetByName(string _tenKH)
         {
             List<KhachHang> list = new List<KhachHang>();
             _conn.Open();
-            command = new SqlCommand($"SELECT * FROM KhachHang WHERE TenKH LIKE '%{_timKiem}%' OR MaKH LIKE '%{_timKiem}%'", _conn);
+            command = new SqlCommand($"SELECT * FROM KhachHang WHERE TenKH LIKE '%{_tenKH}%'", _conn);
             reader = command.ExecuteReader();
             while (reader.Read())
             {
@@ -86,14 +86,14 @@ namespace QuanLyGaRanKFC.DAO
         public void Add(KhachHang khachHang)
         {
             _conn.Open();
-            command = new SqlCommand($"INSERT INTO KhachHang VALUES ('{khachHang.maKH}', N'{khachHang.tenKH}', '{khachHang.sdt}');", _conn);
+            command = new SqlCommand($"INSERT INTO KhachHang VALUES ('{khachHang.maKH}', N'{khachHang.tenKH}', N'{khachHang.sdt}')", _conn);
             command.ExecuteNonQuery();
             _conn.Close();
         }
         public void Update(KhachHang khachHang)
         {
             _conn.Open();
-            command = new SqlCommand($"UPDATE KhachHang SET TenKH = N'{khachHang.tenKH}', SDT = '{khachHang.sdt}' WHERE MaKH = '{khachHang.maKH}');", _conn);
+            command = new SqlCommand($"UPDATE KhachHang SET TenKH = N'{khachHang.tenKH}', SDT = '{khachHang.sdt}' WHERE MaKH = '{khachHang.maKH}'", _conn);
             command.ExecuteNonQuery();
             _conn.Close();
         }

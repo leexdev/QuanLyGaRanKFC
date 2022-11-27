@@ -66,11 +66,12 @@ namespace QuanLyGaRanKFC.View
             function.turnOffButton(btnXoaNV);
             function.turnOnButton(btnThemNV);
             dgvNhanVien.Columns[3].DefaultCellStyle.Format = "dd/MM/yyyy";
-            dgvNhanVien.Columns[0].Width = 60;
+            dgvNhanVien.Columns[0].Width = 50;
             dgvNhanVien.Columns[1].Width = 90;
             dgvNhanVien.Columns[2].MinimumWidth = 130;
             dgvNhanVien.Columns[4].Width = 60;
-            dgvNhanVien.Columns[8].Width = 90;
+            dgvNhanVien.Columns[6].Width = 120;
+            dgvNhanVien.Columns[7].Width = 90;
             dgvNhanVien.Columns[9].Width = 120;
             dtpkNgaySinhNV.Format = DateTimePickerFormat.Custom;
             dtpkNgaySinhNV.CustomFormat = "dd/MM/yyyy";
@@ -83,8 +84,11 @@ namespace QuanLyGaRanKFC.View
             DAO_ChiNhanh dAO_ChiNhanh = new DAO_ChiNhanh();
             DAO_NhanVien dAO_NhanVien = new DAO_NhanVien();
             cbChiNhanh.DataSource = dAO_ChiNhanh.GetAll();
+            cbChiNhanhLoc.DataSource = dAO_ChiNhanh.GetAll();
             cbChiNhanh.ValueMember = "maCN";
-            cbChiNhanh.DisplayMember = "tenCN";
+            cbChiNhanh.DisplayMember = "tenCN"; 
+            cbChiNhanhLoc.ValueMember = "maCN";
+            cbChiNhanhLoc.DisplayMember = "tenCN";
             LoadData();
             if (dgvNhanVien.Rows.Count == 0)
             {
@@ -161,46 +165,11 @@ namespace QuanLyGaRanKFC.View
                 function.turnOffButton(btnXoaNV);
                 function.turnOnButton(btnThemNV);
         }
-        private void resetFieldNV()
-        {
-            DAO_NhanVien dAO_NhanVien = new DAO_NhanVien();
-            LoadData();
-            if (dgvNhanVien.Rows.Count == 0)
-            {
-                txbMaNV.Text = "NV1";
-            }
-            else if (dgvNhanVien.Rows.Count > 0)
-            {
-                txbMaNV.Text = function.CreateID(dAO_NhanVien.GetLast().maNV);
-            }
-            txbTenNV.Text = "";
-            cbGioiTinhNV.Text = "";
-            txbDiaChiNV.Text = "";
-            txbSdtNV.Text = "";
-            txbCmndNV.Text = "";
-            cbChucVu.Text = "";
-            txbTenDangNhap.Text = "";
-            txbMatKhau.Text = "";
-            txbMatKhau.ReadOnly = false;
-        }
-        private void cbGioiTinhNV_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            e.KeyChar = (char)Keys.None;
-        }
-
         private void dgvNhanVien_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex == -1)
             {
-                txbTenNV.Text = "";
-                txbDiaChiNV.Text = "";
-                txbSdtNV.Text = "";
-                txbCmndNV.Text = "";
-                txbTenDangNhap.Text = "";
-                txbMatKhau.Text = ""; 
-                function.turnOnButton(btnThemNV);
-                function.turnOffButton(btnSuaNV);
-                function.turnOffButton(btnXoaNV);
+                resetFieldNV();
             }
             else
             {
@@ -245,21 +214,6 @@ namespace QuanLyGaRanKFC.View
             function.turnOffButton(btnSuaNV);
             function.turnOffButton(btnXoaNV);
         }
-
-        private void cbGioiTinhNV_MouseClick(object sender, MouseEventArgs e)
-        {
-            cbGioiTinhNV.DroppedDown = true;
-        }
-        private void cbChucVuNV_MouseClick(object sender, MouseEventArgs e)
-        {
-            cbChucVu.DroppedDown = true;
-        }
-
-        private void cbChiNhanh_MouseClick(object sender, MouseEventArgs e)
-        {
-            cbChiNhanh.DroppedDown = true;
-        }
-
         private void btnTimKiemNV_Click(object sender, EventArgs e)
         {
             string _keyWord = txbTimKiemNV.Text;
@@ -286,6 +240,80 @@ namespace QuanLyGaRanKFC.View
                 dgvNhanVien.Rows.Add(i, nhanVien.maNV, nhanVien.tenNV, nhanVien.ngaySinh.ToShortDateString(), nhanVien.gioiTinh, nhanVien.diaChi, nhanVien.sdt, nhanVien.cmnd, chucVu, nhanVien.tenDangNhap);
                 i++;
             }
+        }
+        private void btnLocNV_Click(object sender, EventArgs e)
+        {
+            dgvNhanVien.Rows.Clear();
+            DAO_NhanVien dAO_NhanVien = new DAO_NhanVien();
+            DAO_ChiNhanh dAO_ChiNhanh = new DAO_ChiNhanh();
+            ChiNhanh chiNhanh = dAO_ChiNhanh.GetByID(cbChiNhanhLoc.SelectedValue.ToString());
+            List<NhanVien> NhanVien = dAO_NhanVien.GetList(chiNhanh.maCN);
+
+            foreach (NhanVien nhanVien in NhanVien)
+            {
+                string chucVu = "";
+                int i = 1;
+                if (nhanVien.quyen == 0)
+                {
+                    chucVu = "Nhân Viên";
+                }
+                else if (nhanVien.quyen == 1)
+                {
+                    chucVu = "Quản Lý";
+                }
+                else if (nhanVien.quyen == 2)
+                {
+                    chucVu = "Quản Trị Viên";
+                }
+                dgvNhanVien.Rows.Add(i, nhanVien.maNV, nhanVien.tenNV, nhanVien.ngaySinh.ToShortDateString(), nhanVien.gioiTinh, nhanVien.diaChi, nhanVien.sdt, nhanVien.cmnd, chucVu, nhanVien.tenDangNhap);
+                i++;
+            }
+        }
+        private void resetFieldNV()
+        {
+            DAO_NhanVien dAO_NhanVien = new DAO_NhanVien();
+            LoadData();
+            if (dgvNhanVien.Rows.Count == 0)
+            {
+                txbMaNV.Text = "NV1";
+            }
+            else if (dgvNhanVien.Rows.Count > 0)
+            {
+                txbMaNV.Text = function.CreateID(dAO_NhanVien.GetLast().maNV);
+            }
+            txbTenNV.Text = "";
+            cbGioiTinhNV.Text = "";
+            txbDiaChiNV.Text = "";
+            txbSdtNV.Text = "";
+            txbCmndNV.Text = "";
+            cbChucVu.Text = "";
+            txbTenDangNhap.Text = "";
+            txbMatKhau.Text = "";
+            txbTimKiemNV.Text = "";
+            txbMatKhau.ReadOnly = false;
+        }
+        private void cbGioiTinhNV_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.KeyChar = (char)Keys.None;
+        }
+
+        private void cbGioiTinhNV_MouseClick(object sender, MouseEventArgs e)
+        {
+            cbGioiTinhNV.DroppedDown = true;
+        }
+        private void cbChucVuNV_MouseClick(object sender, MouseEventArgs e)
+        {
+            cbChucVu.DroppedDown = true;
+        }
+
+        private void cbChiNhanh_MouseClick(object sender, MouseEventArgs e)
+        {
+            cbChiNhanh.DroppedDown = true;
+        }
+
+        private void cbChiNhanhLoc_MouseClick(object sender, MouseEventArgs e)
+        {
+            cbChiNhanhLoc.DroppedDown = true;
         }
     }
 }

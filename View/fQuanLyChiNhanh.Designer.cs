@@ -165,7 +165,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(973, 242);
             this.panel2.TabIndex = 52;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // btnLamMoiCN
             // 
@@ -402,7 +401,6 @@
             this.Controls.Add(this.panel2);
             this.Name = "ucChiNhanh";
             this.Text = "ucChiNhanh";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ucChiNhanh_FormClosing);
             this.Load += new System.EventHandler(this.ucChiNhanh_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiNhanh)).EndInit();
             this.panel2.ResumeLayout(false);

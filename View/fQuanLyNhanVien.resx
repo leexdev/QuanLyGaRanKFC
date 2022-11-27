@@ -118,4 +118,13 @@
   <metadata name="tenDangNhapNV.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <data name="btnLocNV.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAOBJREFUOE+1
+        kUEKQVEUhp+BCcVEkiFTKROxAwtQFLuwDsrICixAMbAEK2BgwJAMGGDI99/rlYfriXz11Tm3zj2dc7x/
+        UcQ2NjGvh08p4Ay3OMYpHnCCWXyLinfYwagebsSxiyvM6MGFOqvYxQCHNnxGM2/wvvMjaTxh0mQPtFBz
+        hrHAig2DNFALC2OJZRsG0am0bS3MRQ6PGDPZCzRCz4ZPRHCEfZM50J3XqG1rYT7qrOIL1vXwDt1Zpzrj
+        HDWzNq/OKt5jDUNJYBW1sPuZVfzxJy78T0om+xIVp2z4E553BcRmJOZ6EjZXAAAAAElFTkSuQmCC
+</value>
+  </data>
 </root>

@@ -32,7 +32,9 @@ namespace QuanLyGaRanKFC.View.UserControl
 
         private void btnCTHD_Click(object sender, EventArgs e)
         {
-
+            this.Close();
+            fChiTietHoaDon f = new fChiTietHoaDon();
+            f.Show();
         }
     }
 }

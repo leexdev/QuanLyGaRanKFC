@@ -83,6 +83,10 @@
             this.cmndNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quyenNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tenDangNhapNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cbChiNhanhLoc = new System.Windows.Forms.ComboBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.btnLocNV = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).BeginInit();
@@ -773,12 +777,65 @@
             this.tenDangNhapNV.MinimumWidth = 10;
             this.tenDangNhapNV.Name = "tenDangNhapNV";
             // 
+            // cbChiNhanhLoc
+            // 
+            this.cbChiNhanhLoc.FormattingEnabled = true;
+            this.cbChiNhanhLoc.Location = new System.Drawing.Point(84, 307);
+            this.cbChiNhanhLoc.Name = "cbChiNhanhLoc";
+            this.cbChiNhanhLoc.Size = new System.Drawing.Size(169, 23);
+            this.cbChiNhanhLoc.TabIndex = 60;
+            this.cbChiNhanhLoc.MouseClick += new System.Windows.Forms.MouseEventHandler(this.cbChiNhanhLoc_MouseClick);
+            // 
+            // label25
+            // 
+            this.label25.BackColor = System.Drawing.Color.Black;
+            this.label25.Location = new System.Drawing.Point(13, 334);
+            this.label25.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(241, 1);
+            this.label25.TabIndex = 62;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.BackColor = System.Drawing.Color.White;
+            this.label26.Font = new System.Drawing.Font("Times New Roman", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label26.ForeColor = System.Drawing.Color.Black;
+            this.label26.Location = new System.Drawing.Point(8, 313);
+            this.label26.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(71, 17);
+            this.label26.TabIndex = 61;
+            this.label26.Text = "Chi Nhánh";
+            // 
+            // btnLocNV
+            // 
+            this.btnLocNV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(162)))), ((int)(((byte)(139)))));
+            this.btnLocNV.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLocNV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLocNV.ForeColor = System.Drawing.Color.Black;
+            this.btnLocNV.Image = ((System.Drawing.Image)(resources.GetObject("btnLocNV.Image")));
+            this.btnLocNV.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnLocNV.Location = new System.Drawing.Point(258, 306);
+            this.btnLocNV.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.btnLocNV.Name = "btnLocNV";
+            this.btnLocNV.Size = new System.Drawing.Size(82, 29);
+            this.btnLocNV.TabIndex = 63;
+            this.btnLocNV.Text = "Lọc";
+            this.btnLocNV.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnLocNV.UseVisualStyleBackColor = false;
+            this.btnLocNV.Click += new System.EventHandler(this.btnLocNV_Click);
+            // 
             // fQuanLyNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(973, 497);
+            this.Controls.Add(this.btnLocNV);
+            this.Controls.Add(this.cbChiNhanhLoc);
+            this.Controls.Add(this.label25);
+            this.Controls.Add(this.label26);
             this.Controls.Add(this.dgvNhanVien);
             this.Controls.Add(this.btnTimKiemNV);
             this.Controls.Add(this.label22);
@@ -854,5 +911,9 @@
         private DataGridViewTextBoxColumn cmndNV;
         private DataGridViewTextBoxColumn quyenNV;
         private DataGridViewTextBoxColumn tenDangNhapNV;
+        private ComboBox cbChiNhanhLoc;
+        private Label label25;
+        private Label label26;
+        private Button btnLocNV;
     }
 }

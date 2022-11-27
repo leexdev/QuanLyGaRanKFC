@@ -45,6 +45,22 @@ namespace QuanLyGaRanKFC.View.UserControl
                 i++;
             }
         }
+        private void ucChiNhanh_Load(object sender, EventArgs e)
+        {
+            dgvChiNhanh.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvChiNhanh.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvChiNhanh.Columns[0].Width = 50;
+            dgvChiNhanh.Columns[1].Width = 120;
+            List<Button> btnList = new List<Button>() { btnThemCN, btnSuaCN, btnXoaCN, btnLamMoiCN, btnTimKiemCN };
+            DAO_ChiNhanh dAO_ChiNhanh = new DAO_ChiNhanh();
+            foreach (Button button in btnList)
+            {
+                button.FlatAppearance.BorderSize = 0;
+            }
+            resetFieldCN();
+            function.turnOffButton(btnSuaCN);
+            function.turnOffButton(btnXoaCN);
+        }
         private void btnThemCN_Click_1(object sender, EventArgs e)
         {
             if (txbTenCN.Text == "" || txbDiaChi.Text == "")
@@ -62,22 +78,6 @@ namespace QuanLyGaRanKFC.View.UserControl
                 MessageBox.Show("Thêm thành công!");
             }
         }
-        private void resetFieldCN()
-        {
-            DAO_ChiNhanh dAO_ChiNhanh = new DAO_ChiNhanh();
-            LoadData();
-            if (dgvChiNhanh.Rows.Count == 0)
-            {
-                txbMaCN.Text = "CN1";
-            }
-            else if (dgvChiNhanh.Rows.Count > 0)
-            {
-                txbMaCN.Text = function.CreateID(dAO_ChiNhanh.GetLast().maCN);
-            }
-            txbTenCN.Text = "";
-            txbDiaChi.Text = "";
-            txbTimKiemCN.Text = "";
-        }
         private void btnSuaCN_Click(object sender, EventArgs e)
         {
             DAO_ChiNhanh dAO_ChiNhanh = new DAO_ChiNhanh();
@@ -90,43 +90,6 @@ namespace QuanLyGaRanKFC.View.UserControl
             function.turnOffButton(btnSuaCN);
             function.turnOffButton(btnXoaCN);
             function.turnOnButton(btnThemCN);
-        }
-        private void btnTimKiemCN_Click(object sender, EventArgs e)
-        {
-            string _keyWord = txbTimKiemCN.Text;
-            dgvChiNhanh.Rows.Clear();
-            int i = 1;
-            DAO_ChiNhanh dAO_ChiNhanh = new DAO_ChiNhanh();
-            List<ChiNhanh> ChiNhanh = dAO_ChiNhanh.GetByName(_keyWord);
-            foreach (ChiNhanh chiNhanh in ChiNhanh)
-            {
-                dgvChiNhanh.Rows.Add(i, chiNhanh.maCN, chiNhanh.tenCN, chiNhanh.diaChi);
-                i++;
-            }
-        }
-        private void ucChiNhanh_Load(object sender, EventArgs e)
-        {
-            dgvChiNhanh.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvChiNhanh.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvChiNhanh.Columns[0].Width = 50;
-            dgvChiNhanh.Columns[1].Width = 120;
-            List<Button> btnList = new List<Button>() { btnThemCN, btnSuaCN, btnXoaCN, btnLamMoiCN, btnTimKiemCN};
-            DAO_ChiNhanh dAO_ChiNhanh = new DAO_ChiNhanh();
-            foreach(Button button in btnList)
-            {
-                button.FlatAppearance.BorderSize = 0;
-            }
-            LoadData();
-            if (dgvChiNhanh.Rows.Count == 0)
-            {
-                txbMaCN.Text = "CN1";
-            }
-            else if (dgvChiNhanh.Rows.Count > 0)
-            {
-                txbMaCN.Text = function.CreateID(dAO_ChiNhanh.GetLast().maCN);
-            }
-            function.turnOffButton(btnSuaCN);
-            function.turnOffButton(btnXoaCN);
         }
         private void btnXoaCN_Click(object sender, EventArgs e)
         {
@@ -148,30 +111,24 @@ namespace QuanLyGaRanKFC.View.UserControl
             function.turnOffButton(btnSuaCN);
             function.turnOffButton(btnXoaCN);
         }
-        private void dtgvChiNhanh_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void btnTimKiemCN_Click(object sender, EventArgs e)
         {
-            
+            string _keyWord = txbTimKiemCN.Text;
+            dgvChiNhanh.Rows.Clear();
+            int i = 1;
+            DAO_ChiNhanh dAO_ChiNhanh = new DAO_ChiNhanh();
+            List<ChiNhanh> ChiNhanh = dAO_ChiNhanh.GetByName(_keyWord);
+            foreach (ChiNhanh chiNhanh in ChiNhanh)
+            {
+                dgvChiNhanh.Rows.Add(i, chiNhanh.maCN, chiNhanh.tenCN, chiNhanh.diaChi);
+                i++;
+            }
         }
-        private void ucChiNhanh_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-
         private void dgvChiNhanh_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex == -1)
             {
-                txbTenCN.Text = "";
-                txbDiaChi.Text = "";
-                function.turnOnButton(btnThemCN);
-                function.turnOffButton(btnSuaCN);
-                function.turnOffButton(btnXoaCN);
+                resetFieldCN();
             }
             else
             {
@@ -185,6 +142,22 @@ namespace QuanLyGaRanKFC.View.UserControl
                 function.turnOnButton(btnSuaCN);
                 function.turnOnButton(btnXoaCN);
             }
+        }
+        private void resetFieldCN()
+        {
+            DAO_ChiNhanh dAO_ChiNhanh = new DAO_ChiNhanh();
+            LoadData();
+            if (dgvChiNhanh.Rows.Count == 0)
+            {
+                txbMaCN.Text = "CN1";
+            }
+            else if (dgvChiNhanh.Rows.Count > 0)
+            {
+                txbMaCN.Text = function.CreateID(dAO_ChiNhanh.GetLast().maCN);
+            }
+            txbTenCN.Text = "";
+            txbDiaChi.Text = "";
+            txbTimKiemCN.Text = "";
         }
     }
 }

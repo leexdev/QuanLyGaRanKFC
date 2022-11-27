@@ -60,7 +60,7 @@ namespace QuanLyGaRanKFC.View
             }
             if (nhanVien.quyen == 2)
             {
-                lbCapBac.Text = "Admin";
+                lbCapBac.Text = "Quản Trị Viên";
             }
         }
 

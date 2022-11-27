@@ -9,7 +9,7 @@ namespace QuanLyGaRanKFC.DAO
 {
     public class DatabaseConnection
     {
-        public string _strConn = "Data Source=LEE;Initial Catalog=QuanLyBanGaRan;Integrated Security=True";
+        public string _strConn = "Data Source=./;Initial Catalog=QuanLyBanGaRan;Integrated Security=True";
         public DatabaseConnection()
         {
 
