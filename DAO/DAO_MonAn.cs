@@ -34,6 +34,23 @@ namespace QuanLyGaRanKFC.DAO
             _conn.Close();
             return list;
         }
+        public List<MonAn> GetList(string _maDM)
+        {
+            List<MonAn> list = new List<MonAn>();
+            _conn.Open();
+            command = new SqlCommand($"SELECT * FROM MonAn WHERE MaDM = '{_maDM}'", _conn);
+            reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                string maMon = reader.GetString(0);
+                string tenMon = reader.GetString(1);
+                decimal donGia = reader.GetDecimal(2);
+                MonAn ma = new MonAn(maMon, tenMon, donGia);
+                list.Add(ma);
+            }
+            _conn.Close();
+            return list;
+        }
         public MonAn GetLast()
         {
             MonAn monAn = new MonAn();

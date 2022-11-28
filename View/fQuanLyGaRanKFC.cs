@@ -91,7 +91,7 @@ namespace QuanLyGaRanKFC.View
 
         private void btnHoaDon_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new fQuanLyHoaDon());
+
         }
 
         private void btnNhanVien_Click(object sender, EventArgs e)
@@ -104,6 +104,11 @@ namespace QuanLyGaRanKFC.View
             {
                 MessageBox.Show("Bạn không có quyền truy cập!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
+        }
+
+        private void btnThanhToan_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new fThanhToan());
         }
     }
 }

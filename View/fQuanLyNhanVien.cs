@@ -86,18 +86,10 @@ namespace QuanLyGaRanKFC.View
             cbChiNhanh.DataSource = dAO_ChiNhanh.GetAll();
             cbChiNhanhLoc.DataSource = dAO_ChiNhanh.GetAll();
             cbChiNhanh.ValueMember = "maCN";
-            cbChiNhanh.DisplayMember = "tenCN"; 
+            cbChiNhanh.DisplayMember = "tenCN";
             cbChiNhanhLoc.ValueMember = "maCN";
             cbChiNhanhLoc.DisplayMember = "tenCN";
-            LoadData();
-            if (dgvNhanVien.Rows.Count == 0)
-            {
-                txbMaNV.Text = "NV1";
-            }
-            else if (dgvNhanVien.Rows.Count > 0)
-            {
-                txbMaNV.Text = function.CreateID(dAO_NhanVien.GetLast().maNV);
-            }
+            resetFieldNV();
             
         }
         private void btnThemNV_Click(object sender, EventArgs e)
@@ -112,7 +104,7 @@ namespace QuanLyGaRanKFC.View
                 {
                     MessageBox.Show("Mật khẩu phải ít nhất 6 kí tự!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                else
+                else 
                 {
                     DAO_NhanVien dAO_NhanVien = new DAO_NhanVien();
                     DAO_ChiNhanh dAO_ChiNhanh = new DAO_ChiNhanh();
@@ -248,7 +240,6 @@ namespace QuanLyGaRanKFC.View
             DAO_ChiNhanh dAO_ChiNhanh = new DAO_ChiNhanh();
             ChiNhanh chiNhanh = dAO_ChiNhanh.GetByID(cbChiNhanhLoc.SelectedValue.ToString());
             List<NhanVien> NhanVien = dAO_NhanVien.GetList(chiNhanh.maCN);
-
             foreach (NhanVien nhanVien in NhanVien)
             {
                 string chucVu = "";
