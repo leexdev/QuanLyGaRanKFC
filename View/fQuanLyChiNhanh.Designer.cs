@@ -143,7 +143,8 @@
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.panel2.Controls.Add(this.label14);
             this.panel2.Controls.Add(this.btnLamMoiCN);
             this.panel2.Controls.Add(this.btnTimKiemCN);
@@ -396,6 +397,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(973, 497);
             this.Controls.Add(this.dgvChiNhanh);
             this.Controls.Add(this.panel2);

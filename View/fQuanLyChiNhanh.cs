@@ -129,6 +129,9 @@ namespace QuanLyGaRanKFC.View.UserControl
             if (e.RowIndex == -1)
             {
                 resetFieldCN();
+                function.turnOnButton(btnThemCN);
+                function.turnOffButton(btnSuaCN);
+                function.turnOffButton(btnXoaCN);
             }
             else
             {

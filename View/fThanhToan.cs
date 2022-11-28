@@ -19,10 +19,6 @@ namespace QuanLyGaRanKFC.View
         NhanVien NhanVien = new NhanVien();
         DanhMuc DanhMuc = new DanhMuc();
         Functions function = new Functions();
-        public fThanhToan()
-        {
-            InitializeComponent();
-        }
         public fThanhToan(HoaDon HoaDon, ChiNhanh ChiNhanh, NhanVien NhanVien, DanhMuc DanhMuc)
         {
             InitializeComponent();
@@ -40,7 +36,7 @@ namespace QuanLyGaRanKFC.View
             List<CTHD> cTHDs = dAO_CTHD.GetList(HoaDon.MaHD);
             foreach (CTHD cthd in cTHDs)
             {
-                dgvThanhToan.Rows.Add(i, cthd.MonAn.maMon, cthd.MonAn.tenMon, cthd.soLuong, cthd.MonAn.donGia, cthd.thanhTien, "Xóa");
+                dgvThanhToan.Rows.Add(i, cthd.MonAn.tenMon, cthd.soLuong, cthd.MonAn.donGia, cthd.thanhTien, "Xóa");
                 tongTien += cthd.thanhTien;
                 i++;
             }
@@ -59,9 +55,7 @@ namespace QuanLyGaRanKFC.View
             DAO_NhanVien dAO_NhanVien = new DAO_NhanVien();
             DAO_DanhMuc dAO_DanhMuc = new DAO_DanhMuc();
             DAO_MonAn dAO_MonAn = new DAO_MonAn();
-            cbChiNhanh.DataSource = dAO_ChiNhanh.GetAll();
-            cbChiNhanh.ValueMember = "maCN";
-            cbChiNhanh.DisplayMember = "tenCN";
+            txbChiNhanh.Text = dAO_ChiNhanh.GetByUserID(NhanVien.maNV).tenCN;
             cbKhachHang.DataSource = dAO_KhachHang.GetAll();
             cbKhachHang.ValueMember = "maKH";
             cbKhachHang.DisplayMember = "tenKH";
@@ -72,9 +66,7 @@ namespace QuanLyGaRanKFC.View
             cbMonAn.DataSource = dAO_MonAn.GetList(danhMuc.maDM);
             cbMonAn.ValueMember = "maMon";
             cbMonAn.DisplayMember = "tenMon";
-            cbNhanVien.DataSource = dAO_NhanVien.GetAll();
-            cbNhanVien.ValueMember = "maNV";
-            cbNhanVien.DisplayMember = "tenNV";
+            txbNhanVien.Text = NhanVien.tenNV;
             resetfield();
         }
 

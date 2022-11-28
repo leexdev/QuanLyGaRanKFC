@@ -94,6 +94,9 @@ namespace QuanLyGaRanKFC.View
         }
         private void btnThemNV_Click(object sender, EventArgs e)
         {
+            DAO_NhanVien dAO_NhanVien = new DAO_NhanVien();
+            DAO_ChiNhanh dAO_ChiNhanh = new DAO_ChiNhanh();
+            List<NhanVien> nhanVien = dAO_NhanVien.GetByUserName();
             if (txbTenNV.Text == "" || cbGioiTinhNV.SelectedIndex == -1 || txbDiaChiNV.Text == "" || txbSdtNV.Text == "" || txbCmndNV.Text == "" || cbChucVu.SelectedIndex == -1 || txbTenDangNhap.Text == "" || txbMatKhau.Text == "")
             {
                 MessageBox.Show("Vui lòng điền đầy đủ thông tin", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -104,10 +107,14 @@ namespace QuanLyGaRanKFC.View
                 {
                     MessageBox.Show("Mật khẩu phải ít nhất 6 kí tự!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+                else if (txbTenDangNhap.Text == dgvNhanVien.Columns[9].DataPropertyName)
+                {
+                    MessageBox.Show("Mật khẩu phải ít nhất 6 kí tự!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                }
                 else 
                 {
-                    DAO_NhanVien dAO_NhanVien = new DAO_NhanVien();
-                    DAO_ChiNhanh dAO_ChiNhanh = new DAO_ChiNhanh();
+                    
                     ChiNhanh chiNhanh = dAO_ChiNhanh.GetByID(cbChiNhanh.SelectedValue.ToString());
                     NhanVien.maNV = txbMaNV.Text;
                     NhanVien.tenNV = txbTenNV.Text;
@@ -159,9 +166,13 @@ namespace QuanLyGaRanKFC.View
         }
         private void dgvNhanVien_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            MessageBox.Show(dgvNhanVien.Columns[9].ToString());
             if (e.RowIndex == -1)
             {
                 resetFieldNV();
+                function.turnOnButton(btnThemNV);
+                function.turnOffButton(btnSuaNV);
+                function.turnOffButton(btnXoaNV);
             }
             else
             {

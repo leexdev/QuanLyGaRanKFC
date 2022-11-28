@@ -160,6 +160,30 @@ namespace QuanLyGaRanKFC.DAO
             _conn.Close();
             return nhanVien;
         }
+        public List<NhanVien> GetByUserName()
+        {
+            List<NhanVien> list = new List<NhanVien>();
+            _conn.Open();
+            command = new SqlCommand($"select TenDangNhap from NhanVien", _conn);
+            reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                string maNV = reader.GetString(0);
+                string tenNV = reader.GetString(1);
+                DateTime ngaySinh = reader.GetDateTime(2);
+                string gioiTinh = reader.GetString(3);
+                string diaChi = reader.GetString(4);
+                string sdt = reader.GetString(5);
+                string cmnd = reader.GetString(6);
+                int quyen = reader.GetInt32(7);
+                string tenDangNhap = reader.GetString(8);
+                string matKhau = reader.GetString(9);
+                NhanVien nv = new NhanVien(maNV, tenNV, ngaySinh, gioiTinh, diaChi, sdt, cmnd, quyen, tenDangNhap, matKhau);
+                list.Add(nv);
+            }
+            _conn.Close();
+            return list;
+        }
         public void Add(NhanVien _nhanVien, string _maCN)
         {
             _conn.Open();

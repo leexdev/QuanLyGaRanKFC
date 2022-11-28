@@ -15,10 +15,15 @@ namespace QuanLyGaRanKFC.View
 {
     public partial class fQuanLyGaRanKFC : Form
     {
+        HoaDon hoaDon = new HoaDon();
+        ChiNhanh chiNhanh = new ChiNhanh();
         NhanVien nhanVien = new NhanVien();
-        public fQuanLyGaRanKFC()
+        DanhMuc danhMuc = new DanhMuc();
+        
+        public fQuanLyGaRanKFC(NhanVien nhanVien)
         {
             InitializeComponent();
+            this.nhanVien = nhanVien;
         }
 
         private Form activeForm = null;
@@ -34,12 +39,6 @@ namespace QuanLyGaRanKFC.View
             pnChildForm.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
-        }
-
-        public fQuanLyGaRanKFC(NhanVien nhanVien)
-        {
-            InitializeComponent();
-            this.nhanVien = nhanVien;
         }
 
         private void btnKhachHang_Click(object sender, EventArgs e)
@@ -108,7 +107,7 @@ namespace QuanLyGaRanKFC.View
 
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new fThanhToan());
+            OpenChildForm(new fThanhToan(hoaDon, chiNhanh, nhanVien, danhMuc));
         }
     }
 }
