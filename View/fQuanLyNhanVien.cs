@@ -72,6 +72,7 @@ namespace QuanLyGaRanKFC.View
             dgvNhanVien.Columns[4].Width = 60;
             dgvNhanVien.Columns[6].Width = 120;
             dgvNhanVien.Columns[7].Width = 90;
+            dgvNhanVien.Columns[8].Width = 110;
             dgvNhanVien.Columns[9].Width = 120;
             dtpkNgaySinhNV.Format = DateTimePickerFormat.Custom;
             dtpkNgaySinhNV.CustomFormat = "dd/MM/yyyy";
@@ -95,8 +96,7 @@ namespace QuanLyGaRanKFC.View
         private void btnThemNV_Click(object sender, EventArgs e)
         {
             DAO_NhanVien dAO_NhanVien = new DAO_NhanVien();
-            DAO_ChiNhanh dAO_ChiNhanh = new DAO_ChiNhanh();
-            List<NhanVien> nhanVien = dAO_NhanVien.GetByUserName();
+            DAO_ChiNhanh dAO_ChiNhanh = new DAO_ChiNhanh();;
             if (txbTenNV.Text == "" || cbGioiTinhNV.SelectedIndex == -1 || txbDiaChiNV.Text == "" || txbSdtNV.Text == "" || txbCmndNV.Text == "" || cbChucVu.SelectedIndex == -1 || txbTenDangNhap.Text == "" || txbMatKhau.Text == "")
             {
                 MessageBox.Show("Vui lòng điền đầy đủ thông tin", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -107,14 +107,8 @@ namespace QuanLyGaRanKFC.View
                 {
                     MessageBox.Show("Mật khẩu phải ít nhất 6 kí tự!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                else if (txbTenDangNhap.Text == dgvNhanVien.Columns[9].DataPropertyName)
-                {
-                    MessageBox.Show("Mật khẩu phải ít nhất 6 kí tự!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                }
                 else 
                 {
-                    
                     ChiNhanh chiNhanh = dAO_ChiNhanh.GetByID(cbChiNhanh.SelectedValue.ToString());
                     NhanVien.maNV = txbMaNV.Text;
                     NhanVien.tenNV = txbTenNV.Text;
@@ -166,7 +160,6 @@ namespace QuanLyGaRanKFC.View
         }
         private void dgvNhanVien_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            MessageBox.Show(dgvNhanVien.Columns[9].ToString());
             if (e.RowIndex == -1)
             {
                 resetFieldNV();
