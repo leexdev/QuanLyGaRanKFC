@@ -239,5 +239,14 @@ namespace QuanLyGaRanKFC.DAO
             }
             return strBuilder.ToString();
         }
+
+        public bool isNhanVienExist(string username)
+        {
+            _conn.Open();
+            command = new SqlCommand($"SELECT COUNT(*) FROM NhanVien WHERE TenDangNhap = '{username}'", _conn);
+            int exist = (Int32)command.ExecuteScalar();
+            _conn.Close();
+            return exist > 0;
+        }
     }
 }

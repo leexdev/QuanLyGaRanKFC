@@ -55,7 +55,16 @@ namespace QuanLyGaRanKFC.View
             DAO_NhanVien dAO_NhanVien = new DAO_NhanVien();
             DAO_DanhMuc dAO_DanhMuc = new DAO_DanhMuc();
             DAO_MonAn dAO_MonAn = new DAO_MonAn();
-            txbChiNhanh.Text = dAO_ChiNhanh.GetByUserID(NhanVien.maNV).tenCN;
+            if (NhanVien.quyen == 2)
+            {
+                cbChiNhanh.DataSource = dAO_ChiNhanh.GetAll();
+                cbChiNhanh.ValueMember = "maCN";
+                cbChiNhanh.DisplayMember = "tenCN";
+            }
+            else
+            {
+                cbChiNhanh.Text = dAO_ChiNhanh.GetByUserID(NhanVien.maNV).tenCN;
+            }
             cbKhachHang.DataSource = dAO_KhachHang.GetAll();
             cbKhachHang.ValueMember = "maKH";
             cbKhachHang.DisplayMember = "tenKH";

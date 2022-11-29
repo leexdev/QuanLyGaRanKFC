@@ -178,7 +178,7 @@
             this.txbCmndNV.ForeColor = System.Drawing.Color.Black;
             this.txbCmndNV.Location = new System.Drawing.Point(598, 71);
             this.txbCmndNV.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.txbCmndNV.MaxLength = 11;
+            this.txbCmndNV.MaxLength = 50;
             this.txbCmndNV.Name = "txbCmndNV";
             this.txbCmndNV.Size = new System.Drawing.Size(199, 16);
             this.txbCmndNV.TabIndex = 8;
@@ -295,7 +295,7 @@
             this.txbMatKhau.ForeColor = System.Drawing.Color.Black;
             this.txbMatKhau.Location = new System.Drawing.Point(598, 169);
             this.txbMatKhau.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.txbMatKhau.MaxLength = 11;
+            this.txbMatKhau.MaxLength = 50;
             this.txbMatKhau.Name = "txbMatKhau";
             this.txbMatKhau.PasswordChar = '*';
             this.txbMatKhau.Size = new System.Drawing.Size(199, 16);
@@ -333,7 +333,7 @@
             this.txbTenDangNhap.ForeColor = System.Drawing.Color.Black;
             this.txbTenDangNhap.Location = new System.Drawing.Point(598, 138);
             this.txbTenDangNhap.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.txbTenDangNhap.MaxLength = 11;
+            this.txbTenDangNhap.MaxLength = 20;
             this.txbTenDangNhap.Name = "txbTenDangNhap";
             this.txbTenDangNhap.Size = new System.Drawing.Size(199, 16);
             this.txbTenDangNhap.TabIndex = 10;
@@ -357,10 +357,6 @@
             this.cbChucVu.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cbChucVu.FormattingEnabled = true;
             this.cbChucVu.ItemHeight = 15;
-            this.cbChucVu.Items.AddRange(new object[] {
-            "Nhân Viên",
-            "Quản Lý",
-            "Quản Trị Viên"});
             this.cbChucVu.Location = new System.Drawing.Point(598, 100);
             this.cbChucVu.Name = "cbChucVu";
             this.cbChucVu.Size = new System.Drawing.Size(199, 23);
@@ -555,7 +551,7 @@
             this.txbDiaChiNV.ForeColor = System.Drawing.Color.Black;
             this.txbDiaChiNV.Location = new System.Drawing.Point(158, 169);
             this.txbDiaChiNV.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.txbDiaChiNV.MaxLength = 11;
+            this.txbDiaChiNV.MaxLength = 50;
             this.txbDiaChiNV.Name = "txbDiaChiNV";
             this.txbDiaChiNV.Size = new System.Drawing.Size(259, 16);
             this.txbDiaChiNV.TabIndex = 6;
@@ -592,6 +588,7 @@
             this.txbTenNV.ForeColor = System.Drawing.Color.Black;
             this.txbTenNV.Location = new System.Drawing.Point(158, 71);
             this.txbTenNV.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.txbTenNV.MaxLength = 50;
             this.txbTenNV.Name = "txbTenNV";
             this.txbTenNV.Size = new System.Drawing.Size(259, 16);
             this.txbTenNV.TabIndex = 3;
@@ -628,6 +625,7 @@
             this.txbMaNV.ForeColor = System.Drawing.Color.Black;
             this.txbMaNV.Location = new System.Drawing.Point(158, 40);
             this.txbMaNV.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.txbMaNV.MaxLength = 20;
             this.txbMaNV.Name = "txbMaNV";
             this.txbMaNV.ReadOnly = true;
             this.txbMaNV.Size = new System.Drawing.Size(259, 16);

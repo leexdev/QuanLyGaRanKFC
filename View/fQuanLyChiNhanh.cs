@@ -93,16 +93,23 @@ namespace QuanLyGaRanKFC.View.UserControl
         }
         private void btnXoaCN_Click(object sender, EventArgs e)
         {
-            var result = MessageBox.Show("Bạn có chắc muốn xóa chi nhánh này?", "Xác nhận xóa!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if (result == DialogResult.Yes)
+            if (txbMaCN.Text == "CN1")
             {
-                DAO_ChiNhanh dAO_ChiNhanh = new DAO_ChiNhanh();
-                dAO_ChiNhanh.Delete(txbMaCN.Text);
-                resetFieldCN();
+                MessageBox.Show("Không thể xóa!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            function.turnOffButton(btnSuaCN);
-            function.turnOffButton(btnXoaCN);
-            function.turnOnButton(btnThemCN);
+            else
+            {
+                var result = MessageBox.Show("Bạn có chắc muốn xóa chi nhánh này?", "Xác nhận xóa!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (result == DialogResult.Yes)
+                {
+                    DAO_ChiNhanh dAO_ChiNhanh = new DAO_ChiNhanh();
+                    dAO_ChiNhanh.Delete(txbMaCN.Text);
+                    resetFieldCN();
+                }
+                function.turnOffButton(btnSuaCN);
+                function.turnOffButton(btnXoaCN);
+                function.turnOnButton(btnThemCN);
+            }
         }
         private void btnLamMoiCN_Click(object sender, EventArgs e)
         {

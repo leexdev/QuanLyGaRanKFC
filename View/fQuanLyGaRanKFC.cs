@@ -53,11 +53,11 @@ namespace QuanLyGaRanKFC.View
             {
                 lbCapBac.Text = "Nhân Viên";
             }
-            if (nhanVien.quyen == 1)
+            else if (nhanVien.quyen == 1)
             {
                 lbCapBac.Text = "Quản Lý";
             }
-            if (nhanVien.quyen == 2)
+            else if (nhanVien.quyen == 2)
             {
                 lbCapBac.Text = "Quản Trị Viên";
             }
@@ -97,7 +97,7 @@ namespace QuanLyGaRanKFC.View
         {
             if (nhanVien.quyen == 1 || nhanVien.quyen == 2)
             {
-                OpenChildForm(new fQuanLyNhanVien());
+                OpenChildForm(new fQuanLyNhanVien(nhanVien, chiNhanh));
             }
             else
             {

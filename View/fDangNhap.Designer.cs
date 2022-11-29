@@ -84,7 +84,7 @@
             this.txbPassword.PlaceholderText = "Mật khẩu";
             this.txbPassword.Size = new System.Drawing.Size(179, 23);
             this.txbPassword.TabIndex = 2;
-            this.txbPassword.Text = "123456";
+            this.txbPassword.Text = "admin";
             // 
             // pictureBox3
             // 
@@ -107,7 +107,7 @@
             this.txbUserName.PlaceholderText = "Tài khoản";
             this.txbUserName.Size = new System.Drawing.Size(179, 23);
             this.txbUserName.TabIndex = 1;
-            this.txbUserName.Text = "vovantrong";
+            this.txbUserName.Text = "admin";
             // 
             // pictureBox2
             // 
@@ -169,7 +169,7 @@
             this.pictureBox1.TabIndex = 15;
             this.pictureBox1.TabStop = false;
             // 
-            // Form1
+            // fDangNhap
             // 
             this.AcceptButton = this.btnDangNhap;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -179,7 +179,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(674, 455);
             this.Controls.Add(this.panel1);
-            this.Name = "Form1";
+            this.Name = "fDangNhap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng nhập";
             this.Load += new System.EventHandler(this.Form1_Load);
