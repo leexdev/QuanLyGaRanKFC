@@ -144,5 +144,14 @@ namespace QuanLyGaRanKFC.DAO
             command.ExecuteNonQuery();
             _conn.Close();
         }
+        public int AutoId()
+        {
+            _conn.Open();
+            command = new SqlCommand($"SELECT COUNT(MaDM) FROM DanhMuc", _conn);
+            int i = Convert.ToInt32(command.ExecuteScalar());
+            _conn.Close();
+            i++;
+            return i;
+        }
     }
 }

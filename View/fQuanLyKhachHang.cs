@@ -154,14 +154,8 @@ namespace QuanLyGaRanKFC.View.UserControl
         {
             DAO_KhachHang dAO_KhachHang = new DAO_KhachHang();
             LoadData();
-            if (dgvKhachHang.Rows.Count == 0)
-            {
-                txbMaKH.Text = "KH1";
-            }
-            else if (dgvKhachHang.Rows.Count > 0)
-            {
-                txbMaKH.Text = function.CreateID(dAO_KhachHang.GetLast().maKH);
-            }
+            txbMaKH.Text = "KH" + dAO_KhachHang.AutoId();
+            txbMaKH.Enabled = false;
             txbTenKH.Text = "";
             txbSdtKH.Text = "";
             txbTimKiemKH.Text = "";

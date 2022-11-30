@@ -29,9 +29,14 @@
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
+            this.txbSdtKH = new System.Windows.Forms.TextBox();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.txbTenKH = new System.Windows.Forms.TextBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.txbChiNhanh = new System.Windows.Forms.TextBox();
             this.txbNhanVien = new System.Windows.Forms.TextBox();
             this.btnThemMon = new System.Windows.Forms.Button();
-            this.txbSoLuong = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.cbMonAn = new System.Windows.Forms.ComboBox();
@@ -41,7 +46,6 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.dtpkNgayTaoHD = new System.Windows.Forms.DateTimePicker();
-            this.cbKhachHang = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -67,8 +71,8 @@
             this.soluong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.donGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.thanhTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cbChiNhanh = new System.Windows.Forms.ComboBox();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvThanhToan)).BeginInit();
             this.SuspendLayout();
@@ -76,10 +80,14 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.cbChiNhanh);
+            this.panel2.Controls.Add(this.txbSdtKH);
+            this.panel2.Controls.Add(this.numericUpDown1);
+            this.panel2.Controls.Add(this.txbTenKH);
+            this.panel2.Controls.Add(this.label21);
+            this.panel2.Controls.Add(this.label22);
+            this.panel2.Controls.Add(this.txbChiNhanh);
             this.panel2.Controls.Add(this.txbNhanVien);
             this.panel2.Controls.Add(this.btnThemMon);
-            this.panel2.Controls.Add(this.txbSoLuong);
             this.panel2.Controls.Add(this.label16);
             this.panel2.Controls.Add(this.label17);
             this.panel2.Controls.Add(this.cbMonAn);
@@ -89,7 +97,6 @@
             this.panel2.Controls.Add(this.label12);
             this.panel2.Controls.Add(this.label13);
             this.panel2.Controls.Add(this.dtpkNgayTaoHD);
-            this.panel2.Controls.Add(this.cbKhachHang);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.label10);
@@ -103,8 +110,78 @@
             this.panel2.Controls.Add(this.label1);
             this.panel2.Location = new System.Drawing.Point(0, 65);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(879, 183);
+            this.panel2.Size = new System.Drawing.Size(879, 206);
             this.panel2.TabIndex = 65;
+            // 
+            // txbSdtKH
+            // 
+            this.txbSdtKH.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txbSdtKH.BackColor = System.Drawing.Color.White;
+            this.txbSdtKH.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txbSdtKH.ForeColor = System.Drawing.Color.Black;
+            this.txbSdtKH.Location = new System.Drawing.Point(167, 75);
+            this.txbSdtKH.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.txbSdtKH.Name = "txbSdtKH";
+            this.txbSdtKH.Size = new System.Drawing.Size(246, 16);
+            this.txbSdtKH.TabIndex = 91;
+            this.txbSdtKH.TextChanged += new System.EventHandler(this.txbSdtKH_TextChanged);
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(572, 132);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(106, 23);
+            this.numericUpDown1.TabIndex = 90;
+            // 
+            // txbTenKH
+            // 
+            this.txbTenKH.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txbTenKH.BackColor = System.Drawing.Color.White;
+            this.txbTenKH.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txbTenKH.ForeColor = System.Drawing.Color.Black;
+            this.txbTenKH.Location = new System.Drawing.Point(572, 75);
+            this.txbTenKH.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.txbTenKH.Name = "txbTenKH";
+            this.txbTenKH.ReadOnly = true;
+            this.txbTenKH.Size = new System.Drawing.Size(245, 16);
+            this.txbTenKH.TabIndex = 89;
+            // 
+            // label21
+            // 
+            this.label21.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label21.BackColor = System.Drawing.Color.Black;
+            this.label21.Location = new System.Drawing.Point(487, 95);
+            this.label21.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(330, 1);
+            this.label21.TabIndex = 88;
+            // 
+            // label22
+            // 
+            this.label22.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label22.AutoSize = true;
+            this.label22.BackColor = System.Drawing.Color.White;
+            this.label22.Font = new System.Drawing.Font("Times New Roman", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label22.ForeColor = System.Drawing.Color.Black;
+            this.label22.Location = new System.Drawing.Point(485, 76);
+            this.label22.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(83, 17);
+            this.label22.TabIndex = 87;
+            this.label22.Text = "Khách Hàng";
+            // 
+            // txbChiNhanh
+            // 
+            this.txbChiNhanh.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txbChiNhanh.BackColor = System.Drawing.Color.White;
+            this.txbChiNhanh.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txbChiNhanh.ForeColor = System.Drawing.Color.Black;
+            this.txbChiNhanh.Location = new System.Drawing.Point(167, 42);
+            this.txbChiNhanh.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.txbChiNhanh.Name = "txbChiNhanh";
+            this.txbChiNhanh.ReadOnly = true;
+            this.txbChiNhanh.Size = new System.Drawing.Size(246, 16);
+            this.txbChiNhanh.TabIndex = 86;
             // 
             // txbNhanVien
             // 
@@ -112,11 +189,11 @@
             this.txbNhanVien.BackColor = System.Drawing.Color.White;
             this.txbNhanVien.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txbNhanVien.ForeColor = System.Drawing.Color.Black;
-            this.txbNhanVien.Location = new System.Drawing.Point(565, 42);
+            this.txbNhanVien.Location = new System.Drawing.Point(572, 42);
             this.txbNhanVien.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.txbNhanVien.Name = "txbNhanVien";
             this.txbNhanVien.ReadOnly = true;
-            this.txbNhanVien.Size = new System.Drawing.Size(252, 16);
+            this.txbNhanVien.Size = new System.Drawing.Size(245, 16);
             this.txbNhanVien.TabIndex = 85;
             // 
             // btnThemMon
@@ -128,36 +205,24 @@
             this.btnThemMon.Font = new System.Drawing.Font("Arial", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnThemMon.ForeColor = System.Drawing.Color.Black;
             this.btnThemMon.Image = global::QuanLyGaRanKFC.Properties.Resources.icons8_add_new_16;
-            this.btnThemMon.Location = new System.Drawing.Point(388, 136);
+            this.btnThemMon.Location = new System.Drawing.Point(386, 164);
             this.btnThemMon.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnThemMon.Name = "btnThemMon";
-            this.btnThemMon.Size = new System.Drawing.Size(118, 38);
+            this.btnThemMon.Size = new System.Drawing.Size(118, 32);
             this.btnThemMon.TabIndex = 83;
             this.btnThemMon.Text = "Thêm món";
             this.btnThemMon.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnThemMon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnThemMon.UseVisualStyleBackColor = false;
             // 
-            // txbSoLuong
-            // 
-            this.txbSoLuong.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txbSoLuong.BackColor = System.Drawing.Color.White;
-            this.txbSoLuong.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txbSoLuong.ForeColor = System.Drawing.Color.Black;
-            this.txbSoLuong.Location = new System.Drawing.Point(565, 107);
-            this.txbSoLuong.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.txbSoLuong.Name = "txbSoLuong";
-            this.txbSoLuong.Size = new System.Drawing.Size(252, 16);
-            this.txbSoLuong.TabIndex = 82;
-            // 
             // label16
             // 
             this.label16.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label16.BackColor = System.Drawing.Color.Black;
-            this.label16.Location = new System.Drawing.Point(487, 127);
+            this.label16.Location = new System.Drawing.Point(487, 156);
             this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(330, 1);
+            this.label16.Size = new System.Drawing.Size(191, 1);
             this.label16.TabIndex = 81;
             // 
             // label17
@@ -167,7 +232,7 @@
             this.label17.BackColor = System.Drawing.Color.White;
             this.label17.Font = new System.Drawing.Font("Times New Roman", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label17.ForeColor = System.Drawing.Color.Black;
-            this.label17.Location = new System.Drawing.Point(485, 108);
+            this.label17.Location = new System.Drawing.Point(485, 136);
             this.label17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(60, 17);
@@ -178,16 +243,17 @@
             // 
             this.cbMonAn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cbMonAn.FormattingEnabled = true;
-            this.cbMonAn.Location = new System.Drawing.Point(167, 103);
+            this.cbMonAn.Location = new System.Drawing.Point(167, 132);
             this.cbMonAn.Name = "cbMonAn";
             this.cbMonAn.Size = new System.Drawing.Size(246, 23);
             this.cbMonAn.TabIndex = 79;
+            this.cbMonAn.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cb_KeyPress);
             // 
             // label14
             // 
             this.label14.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label14.BackColor = System.Drawing.Color.Black;
-            this.label14.Location = new System.Drawing.Point(83, 127);
+            this.label14.Location = new System.Drawing.Point(83, 156);
             this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(330, 1);
@@ -200,7 +266,7 @@
             this.label15.BackColor = System.Drawing.Color.White;
             this.label15.Font = new System.Drawing.Font("Times New Roman", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label15.ForeColor = System.Drawing.Color.Black;
-            this.label15.Location = new System.Drawing.Point(83, 110);
+            this.label15.Location = new System.Drawing.Point(83, 139);
             this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(35, 17);
@@ -211,16 +277,17 @@
             // 
             this.cbDanhMuc.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cbDanhMuc.FormattingEnabled = true;
-            this.cbDanhMuc.Location = new System.Drawing.Point(565, 72);
+            this.cbDanhMuc.Location = new System.Drawing.Point(167, 101);
             this.cbDanhMuc.Name = "cbDanhMuc";
-            this.cbDanhMuc.Size = new System.Drawing.Size(252, 23);
+            this.cbDanhMuc.Size = new System.Drawing.Size(246, 23);
             this.cbDanhMuc.TabIndex = 76;
+            this.cbDanhMuc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cb_KeyPress);
             // 
             // label12
             // 
             this.label12.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label12.BackColor = System.Drawing.Color.Black;
-            this.label12.Location = new System.Drawing.Point(487, 97);
+            this.label12.Location = new System.Drawing.Point(83, 126);
             this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(330, 1);
@@ -233,7 +300,7 @@
             this.label13.BackColor = System.Drawing.Color.White;
             this.label13.Font = new System.Drawing.Font("Times New Roman", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label13.ForeColor = System.Drawing.Color.Black;
-            this.label13.Location = new System.Drawing.Point(485, 78);
+            this.label13.Location = new System.Drawing.Point(81, 107);
             this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(69, 17);
@@ -244,25 +311,16 @@
             // 
             this.dtpkNgayTaoHD.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dtpkNgayTaoHD.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpkNgayTaoHD.Location = new System.Drawing.Point(565, 7);
+            this.dtpkNgayTaoHD.Location = new System.Drawing.Point(572, 7);
             this.dtpkNgayTaoHD.Name = "dtpkNgayTaoHD";
-            this.dtpkNgayTaoHD.Size = new System.Drawing.Size(252, 23);
+            this.dtpkNgayTaoHD.Size = new System.Drawing.Size(245, 23);
             this.dtpkNgayTaoHD.TabIndex = 73;
-            // 
-            // cbKhachHang
-            // 
-            this.cbKhachHang.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.cbKhachHang.FormattingEnabled = true;
-            this.cbKhachHang.Location = new System.Drawing.Point(167, 72);
-            this.cbKhachHang.Name = "cbKhachHang";
-            this.cbKhachHang.Size = new System.Drawing.Size(246, 23);
-            this.cbKhachHang.TabIndex = 71;
             // 
             // label6
             // 
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label6.BackColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(83, 97);
+            this.label6.Location = new System.Drawing.Point(83, 95);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(330, 1);
@@ -275,12 +333,12 @@
             this.label7.BackColor = System.Drawing.Color.White;
             this.label7.Font = new System.Drawing.Font("Times New Roman", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(83, 78);
+            this.label7.Location = new System.Drawing.Point(83, 76);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(79, 17);
+            this.label7.Size = new System.Drawing.Size(62, 17);
             this.label7.TabIndex = 69;
-            this.label7.Text = "Khách hàng";
+            this.label7.Text = "SĐT KH";
             // 
             // label10
             // 
@@ -447,7 +505,7 @@
             this.label20.BackColor = System.Drawing.Color.White;
             this.label20.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label20.ForeColor = System.Drawing.Color.Black;
-            this.label20.Location = new System.Drawing.Point(798, 547);
+            this.label20.Location = new System.Drawing.Point(796, 556);
             this.label20.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(55, 24);
@@ -461,7 +519,7 @@
             this.txbTongTien.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txbTongTien.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txbTongTien.ForeColor = System.Drawing.Color.Black;
-            this.txbTongTien.Location = new System.Drawing.Point(645, 543);
+            this.txbTongTien.Location = new System.Drawing.Point(643, 552);
             this.txbTongTien.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.txbTongTien.Name = "txbTongTien";
             this.txbTongTien.Size = new System.Drawing.Size(149, 28);
@@ -474,7 +532,7 @@
             this.label19.BackColor = System.Drawing.Color.White;
             this.label19.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label19.ForeColor = System.Drawing.Color.Black;
-            this.label19.Location = new System.Drawing.Point(565, 547);
+            this.label19.Location = new System.Drawing.Point(563, 556);
             this.label19.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(76, 24);
@@ -488,7 +546,7 @@
             this.label18.BackColor = System.Drawing.Color.White;
             this.label18.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label18.ForeColor = System.Drawing.Color.Black;
-            this.label18.Location = new System.Drawing.Point(369, 251);
+            this.label18.Location = new System.Drawing.Point(370, 268);
             this.label18.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(147, 24);
@@ -519,11 +577,11 @@
             this.soluong,
             this.donGia,
             this.thanhTien});
-            this.dgvThanhToan.Location = new System.Drawing.Point(0, 278);
+            this.dgvThanhToan.Location = new System.Drawing.Point(0, 295);
             this.dgvThanhToan.Name = "dgvThanhToan";
             this.dgvThanhToan.RowHeadersVisible = false;
             this.dgvThanhToan.RowTemplate.Height = 25;
-            this.dgvThanhToan.Size = new System.Drawing.Size(879, 261);
+            this.dgvThanhToan.Size = new System.Drawing.Size(879, 253);
             this.dgvThanhToan.TabIndex = 66;
             // 
             // stt
@@ -556,15 +614,6 @@
             this.thanhTien.HeaderText = "Thành Tiền";
             this.thanhTien.Name = "thanhTien";
             // 
-            // cbChiNhanh
-            // 
-            this.cbChiNhanh.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.cbChiNhanh.FormattingEnabled = true;
-            this.cbChiNhanh.Location = new System.Drawing.Point(167, 37);
-            this.cbChiNhanh.Name = "cbChiNhanh";
-            this.cbChiNhanh.Size = new System.Drawing.Size(246, 23);
-            this.cbChiNhanh.TabIndex = 86;
-            // 
             // fThanhToan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -585,6 +634,7 @@
             this.Load += new System.EventHandler(this.fThanhToan_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvThanhToan)).EndInit();
@@ -604,7 +654,6 @@
         private Label label18;
         private Panel panel3;
         private DataGridView dgvThanhToan;
-        private TextBox txbSoLuong;
         private Label label16;
         private Label label17;
         private ComboBox cbMonAn;
@@ -614,7 +663,6 @@
         private Label label12;
         private Label label13;
         private DateTimePicker dtpkNgayTaoHD;
-        private ComboBox cbKhachHang;
         private Label label6;
         private Label label7;
         private Label label10;
@@ -633,6 +681,11 @@
         private DataGridViewTextBoxColumn soluong;
         private DataGridViewTextBoxColumn donGia;
         private DataGridViewTextBoxColumn thanhTien;
-        private ComboBox cbChiNhanh;
+        private TextBox txbChiNhanh;
+        private NumericUpDown numericUpDown1;
+        private TextBox txbTenKH;
+        private Label label21;
+        private Label label22;
+        private TextBox txbSdtKH;
     }
 }

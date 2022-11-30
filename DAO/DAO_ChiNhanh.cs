@@ -23,7 +23,7 @@ namespace QuanLyGaRanKFC.DAO
         {
             List<ChiNhanh> list = new List<ChiNhanh>();
             _conn.Open();
-            command = new SqlCommand($"select * from ChiNhanh", _conn);
+            command = new SqlCommand($"select * from ChiNhanh where isDeleted = 0", _conn);
             reader = command.ExecuteReader();
             DAO_NhanVien _NhanVien = new DAO_NhanVien();
             DAO_NguyenLieu _NguyenLieu = new DAO_NguyenLieu();
@@ -44,7 +44,7 @@ namespace QuanLyGaRanKFC.DAO
         {
             List<ChiNhanh> list = new List<ChiNhanh>();
             _conn.Open();
-            command = new SqlCommand($"SELECT * FROM ChiNhanh WHERE TenCN LIKE N'%{_tenCN}%'", _conn);
+            command = new SqlCommand($"SELECT * FROM ChiNhanh WHERE TenCN LIKE N'%{_tenCN}%' where isDeleted = 0", _conn);
             reader = command.ExecuteReader();
             DAO_NhanVien _NhanVien = new DAO_NhanVien();
             DAO_NguyenLieu _NguyenLieu = new DAO_NguyenLieu();
@@ -65,7 +65,7 @@ namespace QuanLyGaRanKFC.DAO
         {
             ChiNhanh chiNhanh = new ChiNhanh();
             _conn.Open();
-            command = new SqlCommand($"SELECT TOP(1)* FROM ChiNhanh ORDER BY MaCN DESC", _conn);
+            command = new SqlCommand($"SELECT TOP(1)* FROM dbo.ChiNhanh ORDER BY LEN(MaCN) DESC, MaCN DESC", _conn);
             reader = command.ExecuteReader();
             DAO_NhanVien _NhanVien = new DAO_NhanVien();
             DAO_NguyenLieu _NguyenLieu = new DAO_NguyenLieu();
@@ -85,7 +85,7 @@ namespace QuanLyGaRanKFC.DAO
         {
             ChiNhanh chiNhanh = new ChiNhanh();
             _conn.Open();
-            command = new SqlCommand($"SELECT * FROM ChiNhanh WHERE MACN = '{_maCN}'", _conn);
+            command = new SqlCommand($"SELECT * FROM ChiNhanh WHERE MACN = '{_maCN}' and isDeleted = 0", _conn);
             reader = command.ExecuteReader();
             DAO_NhanVien _NhanVien = new DAO_NhanVien();
             DAO_NguyenLieu _NguyenLieu = new DAO_NguyenLieu();
@@ -124,7 +124,7 @@ namespace QuanLyGaRanKFC.DAO
         public void Add(ChiNhanh chiNhanh)
         {
             _conn.Open();
-            command = new SqlCommand($"INSERT INTO ChiNhanh VALUES(N'{chiNhanh.maCN}', N'{chiNhanh.tenCN}', N'{chiNhanh.diaChi}');", _conn);
+            command = new SqlCommand($"INSERT INTO ChiNhanh VALUES(N'{chiNhanh.maCN}', N'{chiNhanh.tenCN}', N'{chiNhanh.diaChi}', 0)", _conn);
             command.ExecuteNonQuery();
             _conn.Close();
         }
@@ -138,9 +138,18 @@ namespace QuanLyGaRanKFC.DAO
         public void Delete(string _maCN)
         {
             _conn.Open();
-            command = new SqlCommand($"DELETE FROM NhanVien WHERE MaCN = N'{_maCN}'" + $"DELETE FROM ChiNhanh WHERE MaCN = N'{_maCN}'", _conn);
+            command = new SqlCommand($"UPDATE ChiNhanh SET isDeleted = 1 WHERE MaCN = '{_maCN}'", _conn);
             command.ExecuteNonQuery();
             _conn.Close();
+        }
+        public int AutoId()
+        {
+            _conn.Open();
+            command = new SqlCommand($"SELECT COUNT(MaCN) FROM ChiNhanh", _conn);
+            int i = Convert.ToInt32(command.ExecuteScalar());
+            _conn.Close();
+            i++;
+            return i;
         }
     }
 }

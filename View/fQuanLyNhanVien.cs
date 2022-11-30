@@ -33,6 +33,13 @@ namespace QuanLyGaRanKFC.View
                     btnTimKiemNV_Click(s, e);
                 }
             };
+            cbChiNhanhLoc.KeyDown += (s, e) =>
+            {
+                if (e.KeyCode == Keys.Enter)
+                {
+                    btnLocNV_Click(s, e);
+                }
+            };
         }
         private void LoadData()
         {
@@ -40,7 +47,7 @@ namespace QuanLyGaRanKFC.View
             int i = 1;
             DAO_NhanVien dAO_NhanVien = new DAO_NhanVien();
             List<NhanVien> NhanVien = dAO_NhanVien.GetAll();
-            foreach(NhanVien nhanVien in NhanVien)
+            foreach (NhanVien nhanVien in NhanVien)
             {
                 string chucVu = "";
                 if (nhanVien.quyen == 0)
@@ -79,7 +86,7 @@ namespace QuanLyGaRanKFC.View
             dtpkNgaySinhNV.Format = DateTimePickerFormat.Custom;
             dtpkNgaySinhNV.CustomFormat = "dd/MM/yyyy";
             dtpkNgaySinhNV.ShowUpDown = false;
-            List<Button> btnList = new List<Button>() { btnThemNV, btnSuaNV, btnXoaNV, btnLamMoiNV, btnTimKiemNV};
+            List<Button> btnList = new List<Button>() { btnThemNV, btnSuaNV, btnXoaNV, btnLamMoiNV, btnTimKiemNV };
             foreach (Button button in btnList)
             {
                 button.FlatAppearance.BorderSize = 0;
@@ -93,19 +100,19 @@ namespace QuanLyGaRanKFC.View
                 cbChucVu.Items.Clear();
                 cbChucVu.Items.Add("Nhân Viên");
                 cbChucVu.Items.Add("Quản Lý");
-                cbChucVu.Items.Add("Quản Trị Viên");
             }
             else
             {
                 cbChucVu.Items.Clear();
                 cbChucVu.Items.Add("Nhân Viên");
+                cbChucVu.Text = "Nhân Viên";
             }
             cbChiNhanh.ValueMember = "maCN";
             cbChiNhanh.DisplayMember = "tenCN";
             cbChiNhanhLoc.ValueMember = "maCN";
             cbChiNhanhLoc.DisplayMember = "tenCN";
             resetFieldNV();
-            
+
         }
         private void btnThemNV_Click(object sender, EventArgs e)
         {
@@ -116,14 +123,14 @@ namespace QuanLyGaRanKFC.View
                 MessageBox.Show("Vui lòng điền đầy đủ thông tin", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            if (txbMatKhau.Text.Length < 6)
-            {
-                MessageBox.Show("Mật khẩu phải ít nhất 6 kí tự!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            if(dAO_NhanVien.isNhanVienExist(txbTenDangNhap.Text))
+            if (dAO_NhanVien.isNhanVienExist(txbTenDangNhap.Text))
             {
                 MessageBox.Show("Tên đăng nhập đã tồn tại!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (txbMatKhau.Text.Length< 6)
+            {
+                MessageBox.Show("Mật khẩu phải ít nhất 6 kí tự!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             ChiNhanh chiNhanh = dAO_ChiNhanh.GetByID(cbChiNhanh.SelectedValue.ToString());
@@ -141,46 +148,30 @@ namespace QuanLyGaRanKFC.View
             dAO_NhanVien.Add(_nhanvien, chiNhanh.maCN);
             resetFieldNV();
             MessageBox.Show("Thêm thành công!");
-            cbChucVu.SelectedIndex = _nhanvien.quyen;
-            this.loadDataChucVu(cbChucVu.SelectedIndex);
-        }
-
-        private void loadDataChucVu(int quyen)
-        {
-            switch (quyen)
-            {
-                case 0:
-                    cbChucVu.Text = "Nhân Viên";
-                    break;
-                case 1:
-                    cbChucVu.Text = "Quản Lý";
-                    break;
-                case 2:
-                    cbChucVu.Text = "Quản Trị Viên";
-                    break;
-                default:
-                    cbChucVu.Text = "";
-                    break;
-            }
         }
         private void btnSuaNV_Click(object sender, EventArgs e)
         {
             DAO_NhanVien dAO_NhanVien = new DAO_NhanVien();
             DAO_ChiNhanh dAO_ChiNhanh = new DAO_ChiNhanh();
             ChiNhanh chiNhanh = dAO_ChiNhanh.GetByID(cbChiNhanh.SelectedValue.ToString());
-            NhanVien.maNV = txbMaNV.Text;
-            NhanVien.tenNV = txbTenNV.Text;
-            NhanVien.ngaySinh = dtpkNgaySinhNV.Value;
-            NhanVien.gioiTinh = cbGioiTinhNV.Text;
-            NhanVien.diaChi = txbDiaChiNV.Text;
-            NhanVien.sdt = txbSdtNV.Text;
-            NhanVien.cmnd = txbCmndNV.Text;
-            NhanVien.quyen = cbChucVu.SelectedIndex;
-            NhanVien.tenDangNhap = txbTenDangNhap.Text;
-            NhanVien.matKhau = txbMatKhau.Text;
-            dAO_NhanVien.Update(NhanVien, chiNhanh.maCN);
+            NhanVien _nhanvien = new NhanVien();
+            _nhanvien.maNV = txbMaNV.Text;
+            _nhanvien.tenNV = txbTenNV.Text;
+            _nhanvien.ngaySinh = dtpkNgaySinhNV.Value;
+            _nhanvien.gioiTinh = cbGioiTinhNV.Text;
+            _nhanvien.diaChi = txbDiaChiNV.Text;
+            _nhanvien.sdt = txbSdtNV.Text;
+            _nhanvien.cmnd = txbCmndNV.Text;
+            _nhanvien.quyen = cbChucVu.SelectedIndex;
+            _nhanvien.tenDangNhap = txbTenDangNhap.Text;
+            if(txbMatKhau.Text.Length > 6)
+            {
+                _nhanvien.matKhau = txbMatKhau.Text;
+            }
+            dAO_NhanVien.Update(_nhanvien, chiNhanh.maCN);
             resetFieldNV();
             MessageBox.Show("Sửa thành công!");
+            this.LoadData();
         }
         private void btnXoaNV_Click(object sender, EventArgs e)
         {
@@ -190,33 +181,31 @@ namespace QuanLyGaRanKFC.View
             if (txbMaNV.Text == "NV1")
             {
                 MessageBox.Show("Không thể xóa!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
-            else if (NhanVien.quyen == 1 && cbChucVu.Text == "Quản Lý")
+            if (NhanVien.quyen == 1 && cbChucVu.Text == "Quản Lý")
             {
                 MessageBox.Show("Không thể xóa!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
-            else if (NhanVien.quyen == 1 && cbChiNhanh.Text != dAO_ChiNhanh.GetByUserID(NhanVien.maNV).tenCN)
+            if (NhanVien.quyen == 1 && cbChiNhanh.Text != dAO_ChiNhanh.GetByUserID(NhanVien.maNV).tenCN)
             {
                 MessageBox.Show("Không thể xóa! Nhân viên này không thuộc chi nhánh của bạn!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
+                return;
+            }
+            var result = MessageBox.Show("Bạn có chắc muốn xóa nhân viên này?", "Xác nhận xóa!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (result == DialogResult.Yes)
+            {
+                dAO_NhanVien.Delete(txbMaNV.Text);
+                resetFieldNV();
             }
             else
             {
-                var result = MessageBox.Show("Bạn có chắc muốn xóa nhân viên này?", "Xác nhận xóa!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                if (result == DialogResult.Yes)
-                {
-                    dAO_NhanVien.Delete(txbMaNV.Text);
-                    resetFieldNV();
-                }
-                else
-                {
-                    resetFieldNV();
-
-                }
-                function.turnOffButton(btnSuaNV);
-                function.turnOffButton(btnXoaNV);
-                function.turnOnButton(btnThemNV);
+                resetFieldNV();
             }
+            function.turnOffButton(btnSuaNV);
+            function.turnOffButton(btnXoaNV);
+            function.turnOnButton(btnThemNV);
         }
         private void dgvNhanVien_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -242,31 +231,25 @@ namespace QuanLyGaRanKFC.View
                 txbDiaChiNV.Text = _nhanVien.diaChi;
                 txbSdtNV.Text = _nhanVien.sdt;
                 txbCmndNV.Text = _nhanVien.cmnd;
-                if (_nhanVien.quyen == 0)
+
+                if(_nhanVien.quyen == 0 || _nhanVien.quyen == 1)
                 {
-                    cbChucVu.Text = "Nhân Viên";
                     cbChucVu.Enabled = true;
                     txbTenNV.Enabled = true;
                     txbDiaChiNV.Enabled = true;
                     txbCmndNV.Enabled = true;
-                    txbTenDangNhap.Enabled = true;
                     txbSdtNV.Enabled = true;
                     cbChiNhanh.Enabled = true;
                     cbGioiTinhNV.Enabled = true;
                     dtpkNgaySinhNV.Enabled = true;
                 }
+                if (_nhanVien.quyen == 0)
+                {
+                    cbChucVu.Text = "Nhân Viên";
+                }
                 else if (_nhanVien.quyen == 1)
                 {
                     cbChucVu.Text = "Quản Lý";
-                    cbChucVu.Enabled = true;
-                    txbTenNV.Enabled = true;
-                    txbDiaChiNV.Enabled = true;
-                    txbCmndNV.Enabled = true;
-                    txbTenDangNhap.Enabled = true;
-                    txbSdtNV.Enabled = true;
-                    cbChiNhanh.Enabled = true;
-                    cbGioiTinhNV.Enabled = true;
-                    dtpkNgaySinhNV.Enabled = true;
                 }
                 else if (_nhanVien.quyen == 2)
                 {
@@ -275,14 +258,15 @@ namespace QuanLyGaRanKFC.View
                     txbTenNV.Enabled = false;
                     txbDiaChiNV.Enabled = false;
                     txbCmndNV.Enabled = false;
-                    txbTenDangNhap.Enabled = false;
                     txbSdtNV.Enabled = false;
                     cbChiNhanh.Enabled = false;
                     cbGioiTinhNV.Enabled = false;
                     dtpkNgaySinhNV.Enabled = false;
                 }
-                txbTenDangNhap.Text = _nhanVien.tenDangNhap;
                 txbMatKhau.Text = _nhanVien.matKhau;
+                txbTenDangNhap.Text = _nhanVien.tenDangNhap;
+                txbTenDangNhap.Enabled = false;
+                txbMatKhau.Enabled = false;
                 txbMatKhau.ReadOnly = true;
                 function.turnOffButton(btnThemNV);
                 function.turnOnButton(btnSuaNV);
@@ -355,7 +339,8 @@ namespace QuanLyGaRanKFC.View
         {
             DAO_NhanVien dAO_NhanVien = new DAO_NhanVien();
             LoadData();
-            txbMaNV.Text = function.CreateID(dAO_NhanVien.GetLast().maNV);
+            txbMaNV.Text = "NV" + dAO_NhanVien.AutoId();
+            txbMaNV.Enabled = false;
             txbTenNV.Text = "";
             cbGioiTinhNV.Text = "";
             txbDiaChiNV.Text = "";
@@ -372,6 +357,7 @@ namespace QuanLyGaRanKFC.View
             txbDiaChiNV.Enabled = true;
             txbCmndNV.Enabled = true;
             txbTenDangNhap.Enabled = true;
+            txbMatKhau.Enabled = true;
             txbSdtNV.Enabled = true;
             cbChiNhanh.Enabled = true;
             cbGioiTinhNV.Enabled = true;

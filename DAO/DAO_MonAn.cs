@@ -84,5 +84,14 @@ namespace QuanLyGaRanKFC.DAO
             _conn.Close();
             return monAn;
         }
+        public int AutoId()
+        {
+            _conn.Open();
+            command = new SqlCommand($"SELECT COUNT(MaMon) FROM MonAn", _conn);
+            int i = Convert.ToInt32(command.ExecuteScalar());
+            _conn.Close();
+            i++;
+            return i;
+        }
     }
 }

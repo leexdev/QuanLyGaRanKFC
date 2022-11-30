@@ -25,14 +25,6 @@ namespace QuanLyGaRanKFC.View
             btn.Enabled = true;
             btn.BackColor = Color.FromArgb(23, 162, 139);
         }
-        public string CreateID(string _lastID)
-        {
-            string firstSubID = _lastID.Substring(0, _lastID.Length - 1);
-            string secondSubID = _lastID.Substring(_lastID.Length - 1);
-            int secondSubIdNew = Convert.ToInt32(secondSubID) + 1;
-            string newId = firstSubID + Convert.ToString(secondSubIdNew);
-            return newId;
-        }
         public string GetMD5(string plainText)
         {
             MD5 md5 = new MD5CryptoServiceProvider();

@@ -19,7 +19,7 @@ namespace QuanLyGaRanKFC.View
         NhanVien NhanVien = new NhanVien();
         DanhMuc DanhMuc = new DanhMuc();
         Functions function = new Functions();
-        public fThanhToan(HoaDon HoaDon, ChiNhanh ChiNhanh, NhanVien NhanVien, DanhMuc DanhMuc)
+        public fThanhToan(HoaDon HoaDon, ChiNhanh ChiNhanh, NhanVien NhanVien, DanhMuc DanhMuc, CTHD CTHD)
         {
             InitializeComponent();
             this.HoaDon = HoaDon;
@@ -55,19 +55,12 @@ namespace QuanLyGaRanKFC.View
             DAO_NhanVien dAO_NhanVien = new DAO_NhanVien();
             DAO_DanhMuc dAO_DanhMuc = new DAO_DanhMuc();
             DAO_MonAn dAO_MonAn = new DAO_MonAn();
-            if (NhanVien.quyen == 2)
-            {
-                cbChiNhanh.DataSource = dAO_ChiNhanh.GetAll();
-                cbChiNhanh.ValueMember = "maCN";
-                cbChiNhanh.DisplayMember = "tenCN";
-            }
-            else
-            {
-                cbChiNhanh.Text = dAO_ChiNhanh.GetByUserID(NhanVien.maNV).tenCN;
-            }
-            cbKhachHang.DataSource = dAO_KhachHang.GetAll();
-            cbKhachHang.ValueMember = "maKH";
-            cbKhachHang.DisplayMember = "tenKH";
+            txbChiNhanh.Text = dAO_ChiNhanh.GetByUserID(NhanVien.maNV).tenCN;
+            txbChiNhanh.Enabled = false;
+            txbNhanVien.Enabled = false;
+            txbTenKH.Enabled = false;
+            KhachHang khachHang = dAO_KhachHang.GetByPhone(txbSdtKH.Text);
+            txbTenKH.Text = khachHang.tenKH;
             cbDanhMuc.DataSource = dAO_DanhMuc.GetAll();
             cbDanhMuc.ValueMember = "maDM";
             cbDanhMuc.DisplayMember = "tenDM";
@@ -78,20 +71,23 @@ namespace QuanLyGaRanKFC.View
             txbNhanVien.Text = NhanVien.tenNV;
             resetfield();
         }
-
         private void resetfield()
         {
             DAO_NhanVien dAO_NhanVien = new DAO_NhanVien();
+            DAO_HoaDon dAO_HoaDon = new DAO_HoaDon();
+            txbMaHD.Text = "HD" + dAO_HoaDon.AutoId();
             LoadData();
-            if (dgvThanhToan.Rows.Count == 0)
-            {
-                txbMaHD.Text = "HD1";
-            }
-            else if (dgvThanhToan.Rows.Count > 0)
-            {
-                txbMaHD.Text = function.CreateID(dAO_NhanVien.GetLast().maNV);
-            }
-            txbSoLuong.ReadOnly = false;
+        }
+        private void cb_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.KeyChar = (char)Keys.None;
+        }
+
+        private void txbSdtKH_TextChanged(object sender, EventArgs e)
+        {
+            DAO_KhachHang dAO_KhachHang = new DAO_KhachHang();
+            KhachHang khachHang = dAO_KhachHang.GetByPhone(txbSdtKH.Text);
+            txbTenKH.Text = khachHang.tenKH;
         }
     }
 }

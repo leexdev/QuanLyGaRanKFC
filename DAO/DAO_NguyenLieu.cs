@@ -83,5 +83,14 @@ namespace QuanLyGaRanKFC.DAO
             _conn.Close();
             return nguyenLieu;
         }
+        public int AutoId()
+        {
+            _conn.Open();
+            command = new SqlCommand($"SELECT COUNT(MaNL) FROM NguyenLieu", _conn);
+            int i = Convert.ToInt32(command.ExecuteScalar());
+            _conn.Close();
+            i++;
+            return i;
+        }
     }
 }

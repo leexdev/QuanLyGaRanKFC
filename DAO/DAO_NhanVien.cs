@@ -23,7 +23,7 @@ namespace QuanLyGaRanKFC.DAO
         {
             List<NhanVien> list = new List<NhanVien>();
             _conn.Open();
-            command = new SqlCommand($"select * from NhanVien", _conn);
+            command = new SqlCommand($"select * from NhanVien where isDeleted = 0", _conn);
             reader = command.ExecuteReader();
             while (reader.Read())
             {
@@ -47,7 +47,7 @@ namespace QuanLyGaRanKFC.DAO
         {
             List<NhanVien> list = new List<NhanVien>();
             _conn.Open();
-            command = new SqlCommand($"select * from NhanVien where MaCN = '{_maCN}'", _conn);
+            command = new SqlCommand($"select * from NhanVien where MaCN = '{_maCN}' and isDeleted = 0", _conn);
             reader = command.ExecuteReader();
             while (reader.Read())
             {
@@ -71,7 +71,7 @@ namespace QuanLyGaRanKFC.DAO
         {
             List<NhanVien> list = new List<NhanVien>();
             _conn.Open();
-            command = new SqlCommand($"select * from NhanVien where TenNV like N'%{_tenNV}%'", _conn);
+            command = new SqlCommand($"select * from NhanVien where TenNV like N'%{_tenNV}%' and isDeleted = 0", _conn);
             reader = command.ExecuteReader();
             while (reader.Read())
             {
@@ -118,7 +118,7 @@ namespace QuanLyGaRanKFC.DAO
         {
             NhanVien nhanVien = new NhanVien();
             _conn.Open();
-            command = new SqlCommand($"select * from NhanVien where MaNV = '{_maNV}'", _conn);
+            command = new SqlCommand($"select * from NhanVien where MaNV = '{_maNV}' and isDeleted = 0", _conn);
             reader = command.ExecuteReader();
             while (reader.Read())
             {
@@ -141,7 +141,7 @@ namespace QuanLyGaRanKFC.DAO
         {
             NhanVien nhanVien = new NhanVien();
             _conn.Open();
-            command = new SqlCommand($"select * from NhanVien where TenDangNhap = '{_tenDangNhap}'", _conn);
+            command = new SqlCommand($"select * from NhanVien where TenDangNhap = '{_tenDangNhap}' and isDeleted = 0", _conn);
             reader = command.ExecuteReader();
             while (reader.Read())
             {
@@ -164,7 +164,7 @@ namespace QuanLyGaRanKFC.DAO
         {
             List<NhanVien> list = new List<NhanVien>();
             _conn.Open();
-            command = new SqlCommand($"select TenDangNhap from NhanVien", _conn);
+            command = new SqlCommand($"select TenDangNhap from NhanVien where isDeleted = 0", _conn);
             reader = command.ExecuteReader();
             while (reader.Read())
             {
@@ -198,7 +198,8 @@ namespace QuanLyGaRanKFC.DAO
                                                {_nhanVien.quyen},
                                                N'{_nhanVien.tenDangNhap}',
                                                '{GetMD5(_nhanVien.matKhau)}',
-                                               '{_maCN}')", _conn);
+                                               '{_maCN}',
+                                                0)", _conn);
             command.ExecuteNonQuery();
             _conn.Close();
         }
@@ -206,24 +207,24 @@ namespace QuanLyGaRanKFC.DAO
         {
             _conn.Open();
             command = new SqlCommand($@"UPDATE NhanVien 
-                                        SET TenNV = N'{_nhanVien.tenNV}',
-                                            NgaySinh = '{_nhanVien.ngaySinh}',
-                                            GioiTinh = N'{_nhanVien.gioiTinh}',
-                                            DiaChi = N'{_nhanVien.diaChi}',
-                                            SDT = '{_nhanVien.sdt}',
-                                            CMND = '{_nhanVien.cmnd}',
-                                            Quyen = {_nhanVien.quyen},
-                                            TenDangNhap = N'{_nhanVien.tenDangNhap}',
-                                            MatKhau = '{GetMD5(_nhanVien.matKhau)}',
-                                            MaCN = '{_maCN}'
-                                        WHERE MaNV = '{_nhanVien.maNV}'", _conn);
+                                    SET TenNV = N'{_nhanVien.tenNV}',
+                                        NgaySinh = '{_nhanVien.ngaySinh}',
+                                        GioiTinh = N'{_nhanVien.gioiTinh}',
+                                        DiaChi = N'{_nhanVien.diaChi}',
+                                        SDT = '{_nhanVien.sdt}',
+                                        CMND = '{_nhanVien.cmnd}',
+                                        Quyen = {_nhanVien.quyen},
+                                        TenDangNhap = N'{_nhanVien.tenDangNhap}',
+                                        MatKhau = '{GetMD5(_nhanVien.matKhau)}',
+                                        MaCN = '{_maCN}'
+                                    WHERE MaNV = '{_nhanVien.maNV}'", _conn);
             command.ExecuteNonQuery();
             _conn.Close();
         }
         public void Delete(string _maNV)
         {
             _conn.Open();
-            command = new SqlCommand($"DELETE FROM NhanVien WHERE MaNV = '{_maNV}'", _conn);
+            command = new SqlCommand($"UPDATE NhanVien SET isDeleted = 1 WHERE MaNV = '{_maNV}'", _conn);
             command.ExecuteNonQuery();
             _conn.Close();
         }
@@ -240,10 +241,20 @@ namespace QuanLyGaRanKFC.DAO
             return strBuilder.ToString();
         }
 
-        public bool isNhanVienExist(string username)
+        public int AutoId()
         {
             _conn.Open();
-            command = new SqlCommand($"SELECT COUNT(*) FROM NhanVien WHERE TenDangNhap = '{username}'", _conn);
+            command = new SqlCommand($"SELECT COUNT(MaNV) FROM NhanVien", _conn);
+            int i = Convert.ToInt32(command.ExecuteScalar());
+            _conn.Close();
+            i++;
+            return i;
+        }
+
+        public bool isNhanVienExist(string userName)
+        {
+            _conn.Open();
+            command = new SqlCommand($"SELECT COUNT(*) FROM NhanVien WHERE TenDangNhap = '{userName}' and isDeleted = 0", _conn);
             int exist = (Int32)command.ExecuteScalar();
             _conn.Close();
             return exist > 0;

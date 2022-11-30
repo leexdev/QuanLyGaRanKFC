@@ -157,14 +157,8 @@ namespace QuanLyGaRanKFC.View.UserControl
         {
             DAO_ChiNhanh dAO_ChiNhanh = new DAO_ChiNhanh();
             LoadData();
-            if (dgvChiNhanh.Rows.Count == 0)
-            {
-                txbMaCN.Text = "CN1";
-            }
-            else if (dgvChiNhanh.Rows.Count > 0)
-            {
-                txbMaCN.Text = function.CreateID(dAO_ChiNhanh.GetLast().maCN);
-            }
+            txbMaCN.Text = "CN" + dAO_ChiNhanh.AutoId();
+            txbMaCN.Enabled = false;
             txbTenCN.Text = "";
             txbDiaChi.Text = "";
             txbTimKiemCN.Text = "";

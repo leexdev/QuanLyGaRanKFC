@@ -19,6 +19,7 @@ namespace QuanLyGaRanKFC.View
         ChiNhanh chiNhanh = new ChiNhanh();
         NhanVien nhanVien = new NhanVien();
         DanhMuc danhMuc = new DanhMuc();
+        CTHD cTHD = new CTHD();
         
         public fQuanLyGaRanKFC(NhanVien nhanVien)
         {
@@ -107,7 +108,7 @@ namespace QuanLyGaRanKFC.View
 
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new fThanhToan(hoaDon, chiNhanh, nhanVien, danhMuc));
+            OpenChildForm(new fThanhToan(hoaDon, chiNhanh, nhanVien, danhMuc, cTHD));
         }
     }
 }

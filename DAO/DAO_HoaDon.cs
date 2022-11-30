@@ -15,7 +15,7 @@ namespace QuanLyGaRanKFC.DAO
         private SqlDataReader reader;
         public DAO_HoaDon()
         {
-            _conn = new SqlConnection();
+            _conn = new SqlConnection(_strConn);
         }
         public List<HoaDon> GetAll()
         {
@@ -125,6 +125,15 @@ namespace QuanLyGaRanKFC.DAO
             command = new SqlCommand($"DELETE FROM HoaDon WHERE MaHD = '{_maHD}'", _conn);
             command.ExecuteNonQuery();
             _conn.Close();
+        }
+        public int AutoId()
+        {
+            _conn.Open();
+            command = new SqlCommand($"SELECT COUNT(MaHD) FROM HoaDon", _conn);
+            int i = Convert.ToInt32(command.ExecuteScalar());
+            _conn.Close();
+            i++;
+            return i;
         }
     }
 }
