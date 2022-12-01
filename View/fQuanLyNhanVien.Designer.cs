@@ -433,7 +433,7 @@
             this.cbGioiTinhNV.Items.AddRange(new object[] {
             "Nam",
             "Nữ"});
-            this.cbGioiTinhNV.Location = new System.Drawing.Point(158, 131);
+            this.cbGioiTinhNV.Location = new System.Drawing.Point(158, 133);
             this.cbGioiTinhNV.Name = "cbGioiTinhNV";
             this.cbGioiTinhNV.Size = new System.Drawing.Size(259, 23);
             this.cbGioiTinhNV.TabIndex = 5;

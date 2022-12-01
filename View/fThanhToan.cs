@@ -53,7 +53,6 @@ namespace QuanLyGaRanKFC.View
 
             DAO_ChiNhanh dAO_ChiNhanh = new DAO_ChiNhanh();
             DAO_KhachHang dAO_KhachHang = new DAO_KhachHang();
-            DAO_NhanVien dAO_NhanVien = new DAO_NhanVien();
             DAO_DanhMuc dAO_DanhMuc = new DAO_DanhMuc();
             DAO_MonAn dAO_MonAn = new DAO_MonAn();
             txbChiNhanh.Text = dAO_ChiNhanh.GetByUserID(NhanVien.maNV).tenCN;

@@ -91,7 +91,6 @@ namespace QuanLyGaRanKFC.View
                 button.FlatAppearance.BorderSize = 0;
             }
             DAO_ChiNhanh dAO_ChiNhanh = new DAO_ChiNhanh();
-            DAO_NhanVien dAO_NhanVien = new DAO_NhanVien();
             cbChiNhanh.DataSource = dAO_ChiNhanh.GetAll();
             cbChiNhanhLoc.DataSource = dAO_ChiNhanh.GetAll();
             if (NhanVien.quyen == 2)
@@ -115,8 +114,8 @@ namespace QuanLyGaRanKFC.View
         }
         private void btnThemNV_Click(object sender, EventArgs e)
         {
-            DAO_NhanVien dAO_NhanVien = new DAO_NhanVien();
             DAO_ChiNhanh dAO_ChiNhanh = new DAO_ChiNhanh();
+            DAO_NhanVien dAO_NhanVien = new DAO_NhanVien();
             if (txbTenNV.Text == "" || cbGioiTinhNV.SelectedIndex == -1 || txbDiaChiNV.Text == "" || txbSdtNV.Text == "" || txbCmndNV.Text == "" || cbChucVu.SelectedIndex == -1 || txbTenDangNhap.Text == "" || txbMatKhau.Text == "")
             {
                 MessageBox.Show("Vui lòng điền đầy đủ thông tin", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);

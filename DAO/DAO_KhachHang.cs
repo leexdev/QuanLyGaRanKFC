@@ -86,7 +86,7 @@ namespace QuanLyGaRanKFC.DAO
         {
             List<KhachHang> list = new List<KhachHang>();
             _conn.Open();
-            command = new SqlCommand($"SELECT * FROM KhachHang WHERE TenKH LIKE N'%{_tenKH}%' OR SDT LIKE N'%{_sdtKH}%' and isDeleted = 0", _conn);
+            command = new SqlCommand($"SELECT * FROM KhachHang WHERE (TenKH LIKE N'%{_tenKH}%' OR SDT LIKE N'%{_sdtKH}%') and isDeleted = 0", _conn);
             reader = command.ExecuteReader();
             while (reader.Read())
             {

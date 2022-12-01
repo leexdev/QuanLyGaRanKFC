@@ -50,8 +50,7 @@ namespace QuanLyGaRanKFC.View.UserControl
             dgvKhachHang.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvKhachHang.Columns[0].Width = 30;
             dgvKhachHang.Columns[1].Width = 120;
-            List<Button> btnList = new List<Button>() { btnThemKH, btnSuaKH, btnXoaKH, btnLamMoiKH, btnTimKiemKH };
-            DAO_KhachHang dAO_KhachHang = new DAO_KhachHang();
+            List<Button> btnList = new List<Button>() { btnThemKH, btnSuaKH, btnXoaKH, btnLamMoiKH, btnTimKiemKH};
             foreach (Button button in btnList)
             {
                 button.FlatAppearance.BorderSize = 0;

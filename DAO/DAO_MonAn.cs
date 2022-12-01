@@ -105,7 +105,7 @@ namespace QuanLyGaRanKFC.DAO
         public void Add(MonAn _monAn, string _maDM)
         {
             _conn.Open();
-            command = new SqlCommand($@"INSERT INTO MonAn 
+            command = new SqlCommand($@"INSERT INTO MonAn
                                         VALUES(N'{_monAn.maMon}',
                                                N'{_monAn.tenMon}',
                                                {_monAn.donGia},
@@ -120,7 +120,7 @@ namespace QuanLyGaRanKFC.DAO
             command = new SqlCommand($@"UPDATE MonAn 
                                     SET TenMon = N'{_monAn.tenMon}',
                                         DonGia = {_monAn.donGia},
-                                        MaCN = '{_maDM}'
+                                        MaDM = '{_maDM}'
                                     WHERE MaMon = '{_monAn.maMon}'", _conn);
             command.ExecuteNonQuery();
             _conn.Close();

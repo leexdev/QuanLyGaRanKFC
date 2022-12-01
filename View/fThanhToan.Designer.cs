@@ -108,7 +108,8 @@
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.txbMaHD);
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Location = new System.Drawing.Point(0, 65);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 60);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(879, 206);
             this.panel2.TabIndex = 65;
@@ -128,10 +129,12 @@
             // 
             // numericUpDown1
             // 
+            this.numericUpDown1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.numericUpDown1.Location = new System.Drawing.Point(572, 132);
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(106, 23);
             this.numericUpDown1.TabIndex = 90;
+            this.numericUpDown1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txbTenKH
             // 
@@ -277,7 +280,7 @@
             // 
             this.cbDanhMuc.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cbDanhMuc.FormattingEnabled = true;
-            this.cbDanhMuc.Location = new System.Drawing.Point(167, 101);
+            this.cbDanhMuc.Location = new System.Drawing.Point(167, 102);
             this.cbDanhMuc.Name = "cbDanhMuc";
             this.cbDanhMuc.Size = new System.Drawing.Size(246, 23);
             this.cbDanhMuc.TabIndex = 76;
@@ -311,7 +314,7 @@
             // 
             this.dtpkNgayTaoHD.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dtpkNgayTaoHD.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpkNgayTaoHD.Location = new System.Drawing.Point(572, 7);
+            this.dtpkNgayTaoHD.Location = new System.Drawing.Point(572, 8);
             this.dtpkNgayTaoHD.Name = "dtpkNgayTaoHD";
             this.dtpkNgayTaoHD.Size = new System.Drawing.Size(245, 23);
             this.dtpkNgayTaoHD.TabIndex = 73;

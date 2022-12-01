@@ -4,6 +4,9 @@
     <Compile Update="View\fMonAn.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="View\fNguyenLieu.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="View\fQuanLyNhanVien.cs">
       <SubType>Form</SubType>
     </Compile>

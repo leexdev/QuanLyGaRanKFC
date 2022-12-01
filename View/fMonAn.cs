@@ -17,6 +17,8 @@ namespace QuanLyGaRanKFC.View
         Functions function = new Functions();
         DanhMuc DanhMuc = new DanhMuc();
         MonAn MonAn = new MonAn();
+        ChiNhanh ChiNhanh = new ChiNhanh();
+        NguyenLieu NguyenLieu = new NguyenLieu();
         public fMonAn(MonAn monAn, DanhMuc danhMuc)
         {
             InitializeComponent();
@@ -67,6 +69,8 @@ namespace QuanLyGaRanKFC.View
         }
         private void fMonAn_Load(object sender, EventArgs e)
         {
+            this.tpCongThuc.Hide();
+            tcMonAn.TabPages.Remove(tpCongThuc);
             DAO_DanhMuc dAO_DanhMuc = new DAO_DanhMuc();
             DAO_MonAn dAO_MonAn = new DAO_MonAn();
             dgvMonAn.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -75,11 +79,12 @@ namespace QuanLyGaRanKFC.View
             dgvDanhMuc.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             function.turnOffButton(btnSuaMA);
             function.turnOffButton(btnXoaMA);
+            function.turnOffButton(btnCongThuc);
             function.turnOffButton(btnSuaDM);
             function.turnOffButton(btnXoaDM);
             dgvMonAn.Columns[0].Width = 50;
             dgvDanhMuc.Columns[0].Width = 50;
-            List<Button> btnList = new List<Button>() { btnThemMA, btnSuaMA, btnXoaMA, btnLamMoiMA, btnTimKiemMA, btnThemDM, btnSuaDM, btnXoaDM, btnLamMoiDM, btnTimKiemMA };
+            List<Button> btnList = new List<Button>() { btnThemMA, btnSuaMA, btnXoaMA, btnLamMoiMA, btnCongThuc, btnTimKiemMA, btnThemDM, btnSuaDM, btnXoaDM, btnLamMoiDM, btnTimKiemMA};
             foreach (Button button in btnList)
             {
                 button.FlatAppearance.BorderSize = 0;
@@ -143,6 +148,7 @@ namespace QuanLyGaRanKFC.View
             }
             function.turnOffButton(btnSuaMA);
             function.turnOffButton(btnXoaMA);
+            function.turnOffButton(btnCongThuc);
             function.turnOnButton(btnThemMA);
         }
 
@@ -151,6 +157,7 @@ namespace QuanLyGaRanKFC.View
             resetFieldMA();
             function.turnOffButton(btnSuaMA);
             function.turnOffButton(btnXoaMA);
+            function.turnOffButton(btnCongThuc);
             function.turnOnButton(btnThemMA);
         }
 
@@ -176,6 +183,7 @@ namespace QuanLyGaRanKFC.View
                 function.turnOnButton(btnThemMA);
                 function.turnOffButton(btnSuaMA);
                 function.turnOffButton(btnXoaMA);
+                function.turnOffButton(btnCongThuc);
             }
             else
             {
@@ -191,6 +199,7 @@ namespace QuanLyGaRanKFC.View
                 function.turnOffButton(btnThemMA);
                 function.turnOnButton(btnSuaMA);
                 function.turnOnButton(btnXoaMA);
+                function.turnOnButton(btnCongThuc);
             }
         }
         private void btnLocMA_Click(object sender, EventArgs e)
@@ -310,6 +319,41 @@ namespace QuanLyGaRanKFC.View
         private void cbDanhMucLoc_MouseClick(object sender, MouseEventArgs e)
         {
             cbDanhMucLoc.DroppedDown = true;
+        }
+
+        private void btnCongThuc_Click(object sender, EventArgs e)
+        {
+            tcMonAn.TabPages.Insert(0, tpCongThuc);
+            this.tpCongThuc.Show();
+            tcMonAn.SelectedTab = tpCongThuc;
+            this.tpMonAn.Hide();
+            tcMonAn.TabPages.Remove(tpMonAn);
+            this.tpDanhMuc.Hide();
+            tcMonAn.TabPages.Remove(tpDanhMuc);
+            txbMaMon.Enabled = false;
+            txbMaMon.Text = txbMaMA.Text;
+            txbTenMon.Enabled = false;
+            txbTenMon.Text = txbTenMA.Text;
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            this.tpCongThuc.Hide();
+            tcMonAn.TabPages.Remove(tpCongThuc);
+            tcMonAn.TabPages.Insert(0, tpMonAn);
+            this.tpMonAn.Show();
+            tcMonAn.TabPages.Insert(1, tpDanhMuc);
+            this.tpDanhMuc.Show();
+            tcMonAn.SelectedTab = tpMonAn;
+        }
+
+        private void tcMonAn_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (tcMonAn.SelectedTab == tpMonAn || tcMonAn.SelectedTab == tpDanhMuc)
+            {
+                this.tpCongThuc.Hide();
+                tcMonAn.TabPages.Remove(tpCongThuc);
+            }
         }
     }
 }

@@ -18,6 +18,7 @@ namespace QuanLyGaRanKFC.View
         HoaDon hoaDon = new HoaDon();
         ChiNhanh chiNhanh = new ChiNhanh();
         NhanVien nhanVien = new NhanVien();
+        NguyenLieu nguyenLieu = new NguyenLieu();
         DanhMuc danhMuc = new DanhMuc();
         MonAn monAn = new MonAn();
         CTHD cTHD = new CTHD();
@@ -92,7 +93,14 @@ namespace QuanLyGaRanKFC.View
 
         private void btnHoaDon_Click(object sender, EventArgs e)
         {
+            if (nhanVien.quyen == 1 || nhanVien.quyen == 2)
+            {
 
+            }
+            else
+            {
+                MessageBox.Show("Bạn không có quyền truy cập!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
         }
 
         private void btnNhanVien_Click(object sender, EventArgs e)
@@ -114,22 +122,43 @@ namespace QuanLyGaRanKFC.View
 
         private void btnMonAn_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new fMonAn(monAn, danhMuc));
+            if (nhanVien.quyen == 1 || nhanVien.quyen == 2)
+            {
+                OpenChildForm(new fMonAn(monAn, danhMuc));
+            }
+            else
+            {
+                MessageBox.Show("Bạn không có quyền truy cập!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
         }
 
         private void btnHoaDon_Click_1(object sender, EventArgs e)
         {
+            if (nhanVien.quyen == 1 || nhanVien.quyen == 2)
+            {
 
+            }
+            else
+            {
+                MessageBox.Show("Bạn không có quyền truy cập!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
         }
 
         private void btnKho_Click(object sender, EventArgs e)
         {
-
+            OpenChildForm(new fNguyenLieu(nguyenLieu, chiNhanh));
         }
 
         private void btnThongKe_Click(object sender, EventArgs e)
         {
+            if (nhanVien.quyen == 1 || nhanVien.quyen == 2)
+            {
 
+            }
+            else
+            {
+                MessageBox.Show("Bạn không có quyền truy cập!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
         }
     }
 }
