@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "RqBNlhOYHY4EihoKWsrCbM0QVTIYhXCCJNsfoAjau/QAQ2Z9vl+jAVFSUZzGg8EJHJ8ah7552yprYhm1/tCJMA==",
+  "dgSpecHash": "l9R2DsWE8JDCDN3sJ6zPnXnNpdOEzI6l16yAKmwTXwvqTL5D3sgjZSGwqIzgBUX9ZuTU1h70mRg47liNgcjRuw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\LE\\source\\repos\\lepro83\\QuanLyGaRanKFC\\QuanLyGaRanKFC.csproj",
+  "projectFilePath": "E:\\Lập trình trực quan\\Project\\QuanLyGaRanKFC\\QuanLyGaRanKFC.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\LE\\.nuget\\packages\\jose-jwt\\4.0.1\\jose-jwt.4.0.1.nupkg.sha512",
     "C:\\Users\\LE\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",

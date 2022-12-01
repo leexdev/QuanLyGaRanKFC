@@ -22,7 +22,7 @@ namespace QuanLyGaRanKFC.DAO
         {
             List<DanhMuc> list = new List<DanhMuc>();
             _conn.Open();
-            command = new SqlCommand($"SELECT * FROM DanhMuc", _conn);
+            command = new SqlCommand($"SELECT * FROM DanhMuc where isDeleted = 0", _conn);
             reader = command.ExecuteReader();
             DAO_MonAn _MonAn = new DAO_MonAn();
             while (reader.Read())
@@ -40,7 +40,7 @@ namespace QuanLyGaRanKFC.DAO
         {
             List<DanhMuc> list = new List<DanhMuc>();
             _conn.Open();
-            command = new SqlCommand($"SELECT * FROM DanhMuc WHERE MaDM = '{_maDM}'", _conn);
+            command = new SqlCommand($"SELECT * FROM DanhMuc WHERE MaDM = '{_maDM}' and isDeleted = 0", _conn);
             reader = command.ExecuteReader();
             DAO_MonAn _MonAn = new DAO_MonAn();
             while (reader.Read())
@@ -58,7 +58,7 @@ namespace QuanLyGaRanKFC.DAO
         {
             List<DanhMuc> list = new List<DanhMuc>();
             _conn.Open();
-            command = new SqlCommand($"SELECT * FROM DanhMuc WHERE TenDM LIKE N'%{_tenDM}%'", _conn);
+            command = new SqlCommand($"SELECT * FROM DanhMuc WHERE TenDM LIKE N'%{_tenDM}%' and isDeleted = 0", _conn);
             reader = command.ExecuteReader();
             DAO_MonAn _MonAn = new DAO_MonAn();
             while (reader.Read())
@@ -93,7 +93,7 @@ namespace QuanLyGaRanKFC.DAO
         {
             DanhMuc danhMuc = new DanhMuc();
             _conn.Open();
-            command = new SqlCommand($"SELECT * FROM DanhMuc WHERE MADM = '{_maDM}'", _conn);
+            command = new SqlCommand($"SELECT * FROM DanhMuc WHERE MADM = '{_maDM}' and isDeleted = 0", _conn);
             reader = command.ExecuteReader();
             DAO_MonAn _MonAn = new DAO_MonAn();
             while (reader.Read())
@@ -110,7 +110,7 @@ namespace QuanLyGaRanKFC.DAO
         {
             DanhMuc danhMuc = new DanhMuc();
             _conn.Open();
-            command = new SqlCommand($"SELECT DanhMuc.* FROM DanhMuc, MonAn WHERE DanhMuc.MaDM = MonAn.MaMon AND MaMon = '{_maMon}'", _conn);
+            command = new SqlCommand($"SELECT DanhMuc.* FROM DanhMuc, MonAn WHERE DanhMuc.MaDM = MonAn.MaDM AND MaMon = '{_maMon}'", _conn);
             reader = command.ExecuteReader();
             DAO_MonAn _MonAn = new DAO_MonAn();
             while (reader.Read())
@@ -126,7 +126,7 @@ namespace QuanLyGaRanKFC.DAO
         public void Add(DanhMuc danhMuc)
         {
             _conn.Open();
-            command = new SqlCommand($"INSERT INTO DanhMuc VALUES(N'{danhMuc.maDM}', N'{danhMuc.tenDM}')", _conn);
+            command = new SqlCommand($"INSERT INTO DanhMuc VALUES(N'{danhMuc.maDM}', N'{danhMuc.tenDM}', 0)", _conn);
             command.ExecuteNonQuery();
             _conn.Close();
         }
@@ -140,7 +140,7 @@ namespace QuanLyGaRanKFC.DAO
         public void Delete(string _maDM)
         {
             _conn.Open();
-            command = new SqlCommand($"DELETE FROM MonAn WHERE MaDM = N'{_maDM}'" + $"DELETE FROM DanhMuc WHERE MaDM = N'{_maDM}'", _conn);
+            command = new SqlCommand($"UPDATE DanhMuc SET isDeleted = 1 WHERE MaDM = '{_maDM}'", _conn);
             command.ExecuteNonQuery();
             _conn.Close();
         }

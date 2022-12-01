@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\LE\\source\\repos\\lepro83\\QuanLyGaRanKFC\\QuanLyGaRanKFC.csproj": {}
+    "E:\\Lập trình trực quan\\Project\\QuanLyGaRanKFC\\QuanLyGaRanKFC.csproj": {}
   },
   "projects": {
-    "C:\\Users\\LE\\source\\repos\\lepro83\\QuanLyGaRanKFC\\QuanLyGaRanKFC.csproj": {
+    "E:\\Lập trình trực quan\\Project\\QuanLyGaRanKFC\\QuanLyGaRanKFC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\LE\\source\\repos\\lepro83\\QuanLyGaRanKFC\\QuanLyGaRanKFC.csproj",
+        "projectUniqueName": "E:\\Lập trình trực quan\\Project\\QuanLyGaRanKFC\\QuanLyGaRanKFC.csproj",
         "projectName": "QuanLyGaRanKFC",
-        "projectPath": "C:\\Users\\LE\\source\\repos\\lepro83\\QuanLyGaRanKFC\\QuanLyGaRanKFC.csproj",
+        "projectPath": "E:\\Lập trình trực quan\\Project\\QuanLyGaRanKFC\\QuanLyGaRanKFC.csproj",
         "packagesPath": "C:\\Users\\LE\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\LE\\source\\repos\\lepro83\\QuanLyGaRanKFC\\obj\\",
+        "outputPath": "E:\\Lập trình trực quan\\Project\\QuanLyGaRanKFC\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\LE\\AppData\\Roaming\\NuGet\\NuGet.Config",

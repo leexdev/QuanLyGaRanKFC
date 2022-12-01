@@ -65,7 +65,6 @@ namespace QuanLyGaRanKFC.View
                 dgvNhanVien.Rows.Add(i, nhanVien.maNV, nhanVien.tenNV, nhanVien.ngaySinh.ToShortDateString(), nhanVien.gioiTinh, nhanVien.diaChi, nhanVien.sdt, nhanVien.cmnd, chucVu, nhanVien.tenDangNhap);
                 i++;
             }
-
         }
         private void fQuanLyNhanVien_Load(object sender, EventArgs e)
         {
@@ -171,7 +170,6 @@ namespace QuanLyGaRanKFC.View
             dAO_NhanVien.Update(_nhanvien, chiNhanh.maCN);
             resetFieldNV();
             MessageBox.Show("Sửa thành công!");
-            this.LoadData();
         }
         private void btnXoaNV_Click(object sender, EventArgs e)
         {
@@ -363,11 +361,10 @@ namespace QuanLyGaRanKFC.View
             cbGioiTinhNV.Enabled = true;
             dtpkNgaySinhNV.Enabled = true;
         }
-        private void cbGioiTinhNV_KeyPress(object sender, KeyPressEventArgs e)
+        private void cb_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.KeyChar = (char)Keys.None;
         }
-
         private void cbGioiTinhNV_MouseClick(object sender, MouseEventArgs e)
         {
             cbGioiTinhNV.DroppedDown = true;
@@ -376,12 +373,10 @@ namespace QuanLyGaRanKFC.View
         {
             cbChucVu.DroppedDown = true;
         }
-
         private void cbChiNhanh_MouseClick(object sender, MouseEventArgs e)
         {
             cbChiNhanh.DroppedDown = true;
         }
-
         private void cbChiNhanhLoc_MouseClick(object sender, MouseEventArgs e)
         {
             cbChiNhanhLoc.DroppedDown = true;

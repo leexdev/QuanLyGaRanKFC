@@ -120,7 +120,7 @@ namespace QuanLyGaRanKFC.View.UserControl
             dgvKhachHang.Rows.Clear();
             int i = 1;
             DAO_KhachHang dAO_KhachHang = new DAO_KhachHang();
-            List<KhachHang> KhachHang = dAO_KhachHang.GetByName(_keyWord);
+            List<KhachHang> KhachHang = dAO_KhachHang.GetByName(_keyWord, _keyWord);
             foreach (KhachHang khachHang in KhachHang)
             {
                 dgvKhachHang.Rows.Add(i, khachHang.maKH, khachHang.tenKH, khachHang.sdt);

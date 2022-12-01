@@ -52,7 +52,6 @@ namespace QuanLyGaRanKFC.View.UserControl
             dgvChiNhanh.Columns[0].Width = 50;
             dgvChiNhanh.Columns[1].Width = 120;
             List<Button> btnList = new List<Button>() { btnThemCN, btnSuaCN, btnXoaCN, btnLamMoiCN, btnTimKiemCN };
-            DAO_ChiNhanh dAO_ChiNhanh = new DAO_ChiNhanh();
             foreach (Button button in btnList)
             {
                 button.FlatAppearance.BorderSize = 0;

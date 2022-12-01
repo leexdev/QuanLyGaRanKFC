@@ -361,7 +361,7 @@
             this.cbChucVu.Name = "cbChucVu";
             this.cbChucVu.Size = new System.Drawing.Size(199, 23);
             this.cbChucVu.TabIndex = 9;
-            this.cbChucVu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbGioiTinhNV_KeyPress);
+            this.cbChucVu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cb_KeyPress);
             this.cbChucVu.MouseClick += new System.Windows.Forms.MouseEventHandler(this.cbChucVuNV_MouseClick);
             // 
             // label16
@@ -437,7 +437,7 @@
             this.cbGioiTinhNV.Name = "cbGioiTinhNV";
             this.cbGioiTinhNV.Size = new System.Drawing.Size(259, 23);
             this.cbGioiTinhNV.TabIndex = 5;
-            this.cbGioiTinhNV.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbGioiTinhNV_KeyPress);
+            this.cbGioiTinhNV.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cb_KeyPress);
             this.cbGioiTinhNV.MouseClick += new System.Windows.Forms.MouseEventHandler(this.cbGioiTinhNV_MouseClick);
             // 
             // label12
@@ -506,7 +506,7 @@
             this.cbChiNhanh.Name = "cbChiNhanh";
             this.cbChiNhanh.Size = new System.Drawing.Size(259, 23);
             this.cbChiNhanh.TabIndex = 1;
-            this.cbChiNhanh.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbGioiTinhNV_KeyPress);
+            this.cbChiNhanh.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cb_KeyPress);
             this.cbChiNhanh.MouseClick += new System.Windows.Forms.MouseEventHandler(this.cbChiNhanh_MouseClick);
             // 
             // label6
@@ -708,6 +708,7 @@
             this.tenDangNhapNV});
             this.dgvNhanVien.Location = new System.Drawing.Point(0, 339);
             this.dgvNhanVien.Name = "dgvNhanVien";
+            this.dgvNhanVien.ReadOnly = true;
             this.dgvNhanVien.RowHeadersVisible = false;
             this.dgvNhanVien.RowHeadersWidth = 82;
             this.dgvNhanVien.RowTemplate.Height = 25;
@@ -720,60 +721,70 @@
             this.stt.HeaderText = "STT";
             this.stt.MinimumWidth = 10;
             this.stt.Name = "stt";
+            this.stt.ReadOnly = true;
             // 
             // maNV
             // 
             this.maNV.HeaderText = "Mã Nhân Viên";
             this.maNV.MinimumWidth = 10;
             this.maNV.Name = "maNV";
+            this.maNV.ReadOnly = true;
             // 
             // tenNV
             // 
             this.tenNV.HeaderText = "Tên Nhân Viên";
             this.tenNV.MinimumWidth = 10;
             this.tenNV.Name = "tenNV";
+            this.tenNV.ReadOnly = true;
             // 
             // ngaySinhNV
             // 
             this.ngaySinhNV.HeaderText = "Ngày Sinh";
             this.ngaySinhNV.MinimumWidth = 10;
             this.ngaySinhNV.Name = "ngaySinhNV";
+            this.ngaySinhNV.ReadOnly = true;
             // 
             // gioiTinhNV
             // 
             this.gioiTinhNV.HeaderText = "Giới Tính";
             this.gioiTinhNV.MinimumWidth = 10;
             this.gioiTinhNV.Name = "gioiTinhNV";
+            this.gioiTinhNV.ReadOnly = true;
             // 
             // diaChiNV
             // 
             this.diaChiNV.HeaderText = "Địa Chỉ";
             this.diaChiNV.MinimumWidth = 10;
             this.diaChiNV.Name = "diaChiNV";
+            this.diaChiNV.ReadOnly = true;
             // 
             // sdtNV
             // 
             this.sdtNV.HeaderText = "Số Điện Thoại";
             this.sdtNV.MinimumWidth = 10;
             this.sdtNV.Name = "sdtNV";
+            this.sdtNV.ReadOnly = true;
             // 
             // cmndNV
             // 
             this.cmndNV.HeaderText = "CMND";
             this.cmndNV.MinimumWidth = 10;
             this.cmndNV.Name = "cmndNV";
+            this.cmndNV.ReadOnly = true;
             // 
             // quyenNV
             // 
             this.quyenNV.HeaderText = "Chức Vụ";
             this.quyenNV.MinimumWidth = 10;
             this.quyenNV.Name = "quyenNV";
+            this.quyenNV.ReadOnly = true;
             // 
             // tenDangNhapNV
             // 
             this.tenDangNhapNV.HeaderText = "Tên Đăng Nhập";
             this.tenDangNhapNV.MinimumWidth = 10;
             this.tenDangNhapNV.Name = "tenDangNhapNV";
+            this.tenDangNhapNV.ReadOnly = true;
             // 
             // cbChiNhanhLoc
             // 

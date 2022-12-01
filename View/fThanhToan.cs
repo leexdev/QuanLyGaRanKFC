@@ -41,6 +41,7 @@ namespace QuanLyGaRanKFC.View
                 i++;
             }
             txbTongTien.Text = tongTien.ToString();
+            txbMaHD.Enabled = false;
         }
         private void fThanhToan_Load(object sender, EventArgs e)
         {
