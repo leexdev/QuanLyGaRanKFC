@@ -198,10 +198,10 @@
             // btnLocHD
             // 
             this.btnLocHD.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnLocHD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(162)))), ((int)(((byte)(139)))));
+            this.btnLocHD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(0)))), ((int)(((byte)(43)))));
             this.btnLocHD.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLocHD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLocHD.ForeColor = System.Drawing.Color.Black;
+            this.btnLocHD.ForeColor = System.Drawing.Color.White;
             this.btnLocHD.Image = ((System.Drawing.Image)(resources.GetObject("btnLocHD.Image")));
             this.btnLocHD.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLocHD.Location = new System.Drawing.Point(690, 65);

@@ -202,11 +202,11 @@
             // btnThemMon
             // 
             this.btnThemMon.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.btnThemMon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(162)))), ((int)(((byte)(139)))));
+            this.btnThemMon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(0)))), ((int)(((byte)(43)))));
             this.btnThemMon.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnThemMon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThemMon.Font = new System.Drawing.Font("Arial", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnThemMon.ForeColor = System.Drawing.Color.Black;
+            this.btnThemMon.ForeColor = System.Drawing.Color.White;
             this.btnThemMon.Image = global::QuanLyGaRanKFC.Properties.Resources.icons8_add_new_16;
             this.btnThemMon.Location = new System.Drawing.Point(386, 164);
             this.btnThemMon.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
@@ -469,11 +469,11 @@
             // btnIn
             // 
             this.btnIn.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnIn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnIn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(0)))), ((int)(((byte)(43)))));
             this.btnIn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIn.Font = new System.Drawing.Font("Arial", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnIn.ForeColor = System.Drawing.Color.Black;
+            this.btnIn.ForeColor = System.Drawing.Color.White;
             this.btnIn.Image = global::QuanLyGaRanKFC.Properties.Resources.icons8_send_to_printer_16;
             this.btnIn.Location = new System.Drawing.Point(487, 582);
             this.btnIn.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
@@ -487,11 +487,11 @@
             // btnLuu
             // 
             this.btnLuu.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnLuu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnLuu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(0)))), ((int)(((byte)(43)))));
             this.btnLuu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLuu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLuu.Font = new System.Drawing.Font("Arial", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnLuu.ForeColor = System.Drawing.Color.Black;
+            this.btnLuu.ForeColor = System.Drawing.Color.White;
             this.btnLuu.Image = global::QuanLyGaRanKFC.Properties.Resources.icons8_save_as_16;
             this.btnLuu.Location = new System.Drawing.Point(295, 582);
             this.btnLuu.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);

@@ -137,7 +137,6 @@
             this.tcMonAn.SelectedIndex = 0;
             this.tcMonAn.Size = new System.Drawing.Size(879, 625);
             this.tcMonAn.TabIndex = 0;
-            this.tcMonAn.SelectedIndexChanged += new System.EventHandler(this.tcMonAn_SelectedIndexChanged);
             // 
             // tpMonAn
             // 
@@ -152,6 +151,7 @@
             this.tpMonAn.Controls.Add(this.panel2);
             this.tpMonAn.Controls.Add(this.panel1);
             this.tpMonAn.Controls.Add(this.dgvMonAn);
+            this.tpMonAn.ForeColor = System.Drawing.Color.Black;
             this.tpMonAn.Location = new System.Drawing.Point(4, 24);
             this.tpMonAn.Name = "tpMonAn";
             this.tpMonAn.Padding = new System.Windows.Forms.Padding(3);
@@ -162,10 +162,10 @@
             // btnTimKiemMA
             // 
             this.btnTimKiemMA.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnTimKiemMA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnTimKiemMA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(0)))), ((int)(((byte)(43)))));
             this.btnTimKiemMA.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnTimKiemMA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTimKiemMA.ForeColor = System.Drawing.Color.Black;
+            this.btnTimKiemMA.ForeColor = System.Drawing.Color.White;
             this.btnTimKiemMA.Image = ((System.Drawing.Image)(resources.GetObject("btnTimKiemMA.Image")));
             this.btnTimKiemMA.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnTimKiemMA.Location = new System.Drawing.Point(768, 234);
@@ -180,10 +180,10 @@
             // 
             // btnLocMA
             // 
-            this.btnLocMA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(162)))), ((int)(((byte)(139)))));
+            this.btnLocMA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(0)))), ((int)(((byte)(43)))));
             this.btnLocMA.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLocMA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLocMA.ForeColor = System.Drawing.Color.Black;
+            this.btnLocMA.ForeColor = System.Drawing.Color.White;
             this.btnLocMA.Image = ((System.Drawing.Image)(resources.GetObject("btnLocMA.Image")));
             this.btnLocMA.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLocMA.Location = new System.Drawing.Point(258, 234);
@@ -334,9 +334,10 @@
             // btnCongThuc
             // 
             this.btnCongThuc.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnCongThuc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(162)))), ((int)(((byte)(139)))));
+            this.btnCongThuc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(0)))), ((int)(((byte)(43)))));
             this.btnCongThuc.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCongThuc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCongThuc.ForeColor = System.Drawing.Color.White;
             this.btnCongThuc.Location = new System.Drawing.Point(596, 81);
             this.btnCongThuc.Name = "btnCongThuc";
             this.btnCongThuc.Size = new System.Drawing.Size(226, 32);
@@ -348,11 +349,11 @@
             // btnLamMoiMA
             // 
             this.btnLamMoiMA.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.btnLamMoiMA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(162)))), ((int)(((byte)(139)))));
+            this.btnLamMoiMA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(0)))), ((int)(((byte)(43)))));
             this.btnLamMoiMA.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLamMoiMA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLamMoiMA.Font = new System.Drawing.Font("Arial", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnLamMoiMA.ForeColor = System.Drawing.Color.Black;
+            this.btnLamMoiMA.ForeColor = System.Drawing.Color.White;
             this.btnLamMoiMA.Image = global::QuanLyGaRanKFC.Properties.Resources.icons8_repeat_16;
             this.btnLamMoiMA.Location = new System.Drawing.Point(473, 122);
             this.btnLamMoiMA.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
@@ -368,11 +369,11 @@
             // btnXoaMA
             // 
             this.btnXoaMA.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.btnXoaMA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(162)))), ((int)(((byte)(139)))));
+            this.btnXoaMA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(0)))), ((int)(((byte)(43)))));
             this.btnXoaMA.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnXoaMA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXoaMA.Font = new System.Drawing.Font("Arial", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnXoaMA.ForeColor = System.Drawing.Color.Black;
+            this.btnXoaMA.ForeColor = System.Drawing.Color.White;
             this.btnXoaMA.Image = ((System.Drawing.Image)(resources.GetObject("btnXoaMA.Image")));
             this.btnXoaMA.Location = new System.Drawing.Point(651, 122);
             this.btnXoaMA.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
@@ -388,11 +389,11 @@
             // btnSuaMA
             // 
             this.btnSuaMA.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.btnSuaMA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(162)))), ((int)(((byte)(139)))));
+            this.btnSuaMA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(0)))), ((int)(((byte)(43)))));
             this.btnSuaMA.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSuaMA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSuaMA.Font = new System.Drawing.Font("Arial", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnSuaMA.ForeColor = System.Drawing.Color.Black;
+            this.btnSuaMA.ForeColor = System.Drawing.Color.White;
             this.btnSuaMA.Image = ((System.Drawing.Image)(resources.GetObject("btnSuaMA.Image")));
             this.btnSuaMA.Location = new System.Drawing.Point(295, 122);
             this.btnSuaMA.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
@@ -408,11 +409,11 @@
             // btnThemMA
             // 
             this.btnThemMA.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.btnThemMA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(162)))), ((int)(((byte)(139)))));
+            this.btnThemMA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(0)))), ((int)(((byte)(43)))));
             this.btnThemMA.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnThemMA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThemMA.Font = new System.Drawing.Font("Arial", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnThemMA.ForeColor = System.Drawing.Color.Black;
+            this.btnThemMA.ForeColor = System.Drawing.Color.White;
             this.btnThemMA.Image = global::QuanLyGaRanKFC.Properties.Resources.icons8_add_user_16;
             this.btnThemMA.Location = new System.Drawing.Point(117, 122);
             this.btnThemMA.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
@@ -682,11 +683,11 @@
             // btnLamMoiDM
             // 
             this.btnLamMoiDM.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.btnLamMoiDM.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(162)))), ((int)(((byte)(139)))));
+            this.btnLamMoiDM.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(0)))), ((int)(((byte)(43)))));
             this.btnLamMoiDM.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLamMoiDM.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLamMoiDM.Font = new System.Drawing.Font("Arial", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnLamMoiDM.ForeColor = System.Drawing.Color.Black;
+            this.btnLamMoiDM.ForeColor = System.Drawing.Color.White;
             this.btnLamMoiDM.Image = global::QuanLyGaRanKFC.Properties.Resources.icons8_repeat_16;
             this.btnLamMoiDM.Location = new System.Drawing.Point(482, 109);
             this.btnLamMoiDM.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
@@ -702,11 +703,11 @@
             // btnXoaDM
             // 
             this.btnXoaDM.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.btnXoaDM.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(162)))), ((int)(((byte)(139)))));
+            this.btnXoaDM.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(0)))), ((int)(((byte)(43)))));
             this.btnXoaDM.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnXoaDM.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXoaDM.Font = new System.Drawing.Font("Arial", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnXoaDM.ForeColor = System.Drawing.Color.Black;
+            this.btnXoaDM.ForeColor = System.Drawing.Color.White;
             this.btnXoaDM.Image = ((System.Drawing.Image)(resources.GetObject("btnXoaDM.Image")));
             this.btnXoaDM.Location = new System.Drawing.Point(658, 109);
             this.btnXoaDM.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
@@ -722,11 +723,11 @@
             // btnSuaDM
             // 
             this.btnSuaDM.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.btnSuaDM.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(162)))), ((int)(((byte)(139)))));
+            this.btnSuaDM.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(0)))), ((int)(((byte)(43)))));
             this.btnSuaDM.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSuaDM.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSuaDM.Font = new System.Drawing.Font("Arial", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnSuaDM.ForeColor = System.Drawing.Color.Black;
+            this.btnSuaDM.ForeColor = System.Drawing.Color.White;
             this.btnSuaDM.Image = ((System.Drawing.Image)(resources.GetObject("btnSuaDM.Image")));
             this.btnSuaDM.Location = new System.Drawing.Point(287, 109);
             this.btnSuaDM.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
@@ -742,11 +743,11 @@
             // btnThemDM
             // 
             this.btnThemDM.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.btnThemDM.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(162)))), ((int)(((byte)(139)))));
+            this.btnThemDM.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(0)))), ((int)(((byte)(43)))));
             this.btnThemDM.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnThemDM.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThemDM.Font = new System.Drawing.Font("Arial", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnThemDM.ForeColor = System.Drawing.Color.Black;
+            this.btnThemDM.ForeColor = System.Drawing.Color.White;
             this.btnThemDM.Image = global::QuanLyGaRanKFC.Properties.Resources.icons8_add_user_16;
             this.btnThemDM.Location = new System.Drawing.Point(107, 109);
             this.btnThemDM.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
@@ -952,11 +953,11 @@
             // btnThoat
             // 
             this.btnThoat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.btnThoat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(162)))), ((int)(((byte)(139)))));
+            this.btnThoat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(0)))), ((int)(((byte)(43)))));
             this.btnThoat.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnThoat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThoat.Font = new System.Drawing.Font("Arial", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnThoat.ForeColor = System.Drawing.Color.Black;
+            this.btnThoat.ForeColor = System.Drawing.Color.White;
             this.btnThoat.Image = global::QuanLyGaRanKFC.Properties.Resources.icons8_close_window_32;
             this.btnThoat.Location = new System.Drawing.Point(705, 88);
             this.btnThoat.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
@@ -972,11 +973,11 @@
             // btnLamMoiCT
             // 
             this.btnLamMoiCT.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.btnLamMoiCT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(162)))), ((int)(((byte)(139)))));
+            this.btnLamMoiCT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(0)))), ((int)(((byte)(43)))));
             this.btnLamMoiCT.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLamMoiCT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLamMoiCT.Font = new System.Drawing.Font("Arial", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnLamMoiCT.ForeColor = System.Drawing.Color.Black;
+            this.btnLamMoiCT.ForeColor = System.Drawing.Color.White;
             this.btnLamMoiCT.Image = global::QuanLyGaRanKFC.Properties.Resources.icons8_repeat_16;
             this.btnLamMoiCT.Location = new System.Drawing.Point(398, 87);
             this.btnLamMoiCT.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
@@ -992,11 +993,11 @@
             // btnXoaCT
             // 
             this.btnXoaCT.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.btnXoaCT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(162)))), ((int)(((byte)(139)))));
+            this.btnXoaCT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(0)))), ((int)(((byte)(43)))));
             this.btnXoaCT.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnXoaCT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXoaCT.Font = new System.Drawing.Font("Arial", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnXoaCT.ForeColor = System.Drawing.Color.Black;
+            this.btnXoaCT.ForeColor = System.Drawing.Color.White;
             this.btnXoaCT.Image = ((System.Drawing.Image)(resources.GetObject("btnXoaCT.Image")));
             this.btnXoaCT.Location = new System.Drawing.Point(554, 87);
             this.btnXoaCT.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
@@ -1012,11 +1013,11 @@
             // btnSuaCT
             // 
             this.btnSuaCT.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.btnSuaCT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(162)))), ((int)(((byte)(139)))));
+            this.btnSuaCT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(0)))), ((int)(((byte)(43)))));
             this.btnSuaCT.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSuaCT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSuaCT.Font = new System.Drawing.Font("Arial", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnSuaCT.ForeColor = System.Drawing.Color.Black;
+            this.btnSuaCT.ForeColor = System.Drawing.Color.White;
             this.btnSuaCT.Image = ((System.Drawing.Image)(resources.GetObject("btnSuaCT.Image")));
             this.btnSuaCT.Location = new System.Drawing.Point(244, 87);
             this.btnSuaCT.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
@@ -1032,11 +1033,11 @@
             // btnThemCT
             // 
             this.btnThemCT.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.btnThemCT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(162)))), ((int)(((byte)(139)))));
+            this.btnThemCT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(0)))), ((int)(((byte)(43)))));
             this.btnThemCT.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnThemCT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThemCT.Font = new System.Drawing.Font("Arial", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnThemCT.ForeColor = System.Drawing.Color.Black;
+            this.btnThemCT.ForeColor = System.Drawing.Color.White;
             this.btnThemCT.Image = global::QuanLyGaRanKFC.Properties.Resources.icons8_add_user_16;
             this.btnThemCT.Location = new System.Drawing.Point(91, 88);
             this.btnThemCT.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
@@ -1219,6 +1220,7 @@
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(879, 625);
             this.Controls.Add(this.tcMonAn);
+            this.ForeColor = System.Drawing.Color.White;
             this.Name = "fMonAn";
             this.Text = "fMonAn";
             this.Load += new System.EventHandler(this.fMonAn_Load);

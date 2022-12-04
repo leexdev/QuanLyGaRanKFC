@@ -126,12 +126,10 @@ namespace QuanLyGaRanKFC.View
                 MessageBox.Show("Bạn không có quyền truy cập!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
         }
-
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
             OpenChildForm(new fThanhToan(hoaDon, chiNhanh, nhanVien, danhMuc, cTHD));
         }
-
         private void btnMonAn_Click(object sender, EventArgs e)
         {
             if (nhanVien.quyen == 1 || nhanVien.quyen == 2)
@@ -143,7 +141,6 @@ namespace QuanLyGaRanKFC.View
                 MessageBox.Show("Bạn không có quyền truy cập!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
         }
-
         private void btnHoaDon_Click_1(object sender, EventArgs e)
         {
             if (nhanVien.quyen == 1 || nhanVien.quyen == 2)
@@ -155,12 +152,10 @@ namespace QuanLyGaRanKFC.View
                 MessageBox.Show("Bạn không có quyền truy cập!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
         }
-
         private void btnKho_Click(object sender, EventArgs e)
         {
             OpenChildForm(new fNguyenLieu(nguyenLieu, chiNhanh));
         }
-
         private void btnThongKe_Click(object sender, EventArgs e)
         {
             if (nhanVien.quyen == 1 || nhanVien.quyen == 2)
@@ -171,6 +166,10 @@ namespace QuanLyGaRanKFC.View
             {
                 MessageBox.Show("Bạn không có quyền truy cập!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
+        }
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new fTrangCaNhan(nhanVien));
         }
     }
 }

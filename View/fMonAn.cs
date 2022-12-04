@@ -348,15 +348,6 @@ namespace QuanLyGaRanKFC.View
             this.tpDanhMuc.Show();
             tcMonAn.SelectedTab = tpMonAn;
         }
-
-        private void tcMonAn_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (tcMonAn.SelectedTab == tpMonAn || tcMonAn.SelectedTab == tpDanhMuc)
-            {
-                this.tpCongThuc.Hide();
-                tcMonAn.TabPages.Remove(tpCongThuc);
-            }
-        }
         private void LoadDataCT()
         {
             dgvCongThuc.Rows.Clear();

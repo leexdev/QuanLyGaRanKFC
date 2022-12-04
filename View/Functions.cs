@@ -18,12 +18,13 @@ namespace QuanLyGaRanKFC.View
         public void turnOffButton(Button btn)
         {
             btn.Enabled = false;
-            btn.BackColor = Color.FromArgb(238, 238, 238);
+            btn.BackColor = Color.FromArgb(204, 204, 204);
         }
         public void turnOnButton(Button btn)
         {
             btn.Enabled = true;
-            btn.BackColor = Color.FromArgb(23, 162, 139);
+            btn.BackColor = Color.FromArgb(228, 0, 43);
+            btn.ForeColor = Color.White;
         }
         public string GetMD5(string plainText)
         {
