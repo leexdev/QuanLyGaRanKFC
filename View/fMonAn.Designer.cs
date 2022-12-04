@@ -1220,7 +1220,7 @@
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(879, 625);
             this.Controls.Add(this.tcMonAn);
-            this.ForeColor = System.Drawing.Color.White;
+            this.ForeColor = System.Drawing.Color.Black;
             this.Name = "fMonAn";
             this.Text = "fMonAn";
             this.Load += new System.EventHandler(this.fMonAn_Load);

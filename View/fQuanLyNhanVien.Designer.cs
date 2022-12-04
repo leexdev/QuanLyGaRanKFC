@@ -856,7 +856,7 @@
             this.Controls.Add(this.txbTimKiemNV);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.ForeColor = System.Drawing.Color.White;
+            this.ForeColor = System.Drawing.Color.Black;
             this.Name = "fQuanLyNhanVien";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "fQuanLyNhanVien";

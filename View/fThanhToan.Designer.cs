@@ -633,6 +633,7 @@
             this.Controls.Add(this.label18);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.dgvThanhToan);
+            this.ForeColor = System.Drawing.Color.Black;
             this.Name = "fThanhToan";
             this.Text = "fThanhToan";
             this.Load += new System.EventHandler(this.fThanhToan_Load);

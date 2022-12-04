@@ -97,11 +97,11 @@
             // 
             this.tcTaiKhoan.Controls.Add(this.tpTrangCaNhan);
             this.tcTaiKhoan.Controls.Add(this.tpDoiMatKhau);
-            this.tcTaiKhoan.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tcTaiKhoan.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tcTaiKhoan.Location = new System.Drawing.Point(0, 0);
             this.tcTaiKhoan.Name = "tcTaiKhoan";
             this.tcTaiKhoan.SelectedIndex = 0;
-            this.tcTaiKhoan.Size = new System.Drawing.Size(879, 627);
+            this.tcTaiKhoan.Size = new System.Drawing.Size(879, 625);
             this.tcTaiKhoan.TabIndex = 0;
             this.tcTaiKhoan.SelectedIndexChanged += new System.EventHandler(this.tcTaiKhoan_SelectedIndexChanged);
             // 
@@ -113,12 +113,15 @@
             this.tpTrangCaNhan.Location = new System.Drawing.Point(4, 24);
             this.tpTrangCaNhan.Name = "tpTrangCaNhan";
             this.tpTrangCaNhan.Padding = new System.Windows.Forms.Padding(3);
-            this.tpTrangCaNhan.Size = new System.Drawing.Size(871, 599);
+            this.tpTrangCaNhan.Size = new System.Drawing.Size(871, 597);
             this.tpTrangCaNhan.TabIndex = 0;
             this.tpTrangCaNhan.Text = "Trang Cá Nhân";
             // 
             // panel2
             // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.SystemColors.Control;
             this.panel2.Controls.Add(this.btnThayDoiMatKhau);
             this.panel2.Controls.Add(this.btnLuuNV);
@@ -152,24 +155,24 @@
             this.panel2.Controls.Add(this.txbMaCN);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Location = new System.Drawing.Point(204, 71);
+            this.panel2.Location = new System.Drawing.Point(3, 66);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(462, 522);
+            this.panel2.Size = new System.Drawing.Size(865, 530);
             this.panel2.TabIndex = 105;
             // 
             // btnThayDoiMatKhau
             // 
-            this.btnThayDoiMatKhau.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.btnThayDoiMatKhau.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnThayDoiMatKhau.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(0)))), ((int)(((byte)(43)))));
             this.btnThayDoiMatKhau.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnThayDoiMatKhau.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThayDoiMatKhau.Font = new System.Drawing.Font("Arial", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnThayDoiMatKhau.ForeColor = System.Drawing.Color.White;
             this.btnThayDoiMatKhau.Image = global::QuanLyGaRanKFC.Properties.Resources.icons8_add_user_16;
-            this.btnThayDoiMatKhau.Location = new System.Drawing.Point(166, 438);
+            this.btnThayDoiMatKhau.Location = new System.Drawing.Point(367, 438);
             this.btnThayDoiMatKhau.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnThayDoiMatKhau.Name = "btnThayDoiMatKhau";
-            this.btnThayDoiMatKhau.Size = new System.Drawing.Size(167, 27);
+            this.btnThayDoiMatKhau.Size = new System.Drawing.Size(167, 35);
             this.btnThayDoiMatKhau.TabIndex = 150;
             this.btnThayDoiMatKhau.Text = "Thay Đổi Mật Khẩu";
             this.btnThayDoiMatKhau.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -179,17 +182,17 @@
             // 
             // btnLuuNV
             // 
-            this.btnLuuNV.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.btnLuuNV.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnLuuNV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(0)))), ((int)(((byte)(43)))));
             this.btnLuuNV.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLuuNV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLuuNV.Font = new System.Drawing.Font("Arial", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnLuuNV.ForeColor = System.Drawing.Color.White;
             this.btnLuuNV.Image = global::QuanLyGaRanKFC.Properties.Resources.icons8_add_user_16;
-            this.btnLuuNV.Location = new System.Drawing.Point(189, 473);
+            this.btnLuuNV.Location = new System.Drawing.Point(390, 473);
             this.btnLuuNV.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnLuuNV.Name = "btnLuuNV";
-            this.btnLuuNV.Size = new System.Drawing.Size(118, 36);
+            this.btnLuuNV.Size = new System.Drawing.Size(118, 44);
             this.btnLuuNV.TabIndex = 148;
             this.btnLuuNV.Text = "Lưu";
             this.btnLuuNV.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -201,7 +204,7 @@
             // 
             this.label16.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label16.BackColor = System.Drawing.Color.Black;
-            this.label16.Location = new System.Drawing.Point(79, 386);
+            this.label16.Location = new System.Drawing.Point(280, 386);
             this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(330, 1);
@@ -214,7 +217,7 @@
             this.txbChucVu.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txbChucVu.Enabled = false;
             this.txbChucVu.ForeColor = System.Drawing.Color.Black;
-            this.txbChucVu.Location = new System.Drawing.Point(181, 365);
+            this.txbChucVu.Location = new System.Drawing.Point(382, 365);
             this.txbChucVu.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.txbChucVu.MaxLength = 50;
             this.txbChucVu.Name = "txbChucVu";
@@ -229,7 +232,7 @@
             this.label17.BackColor = System.Drawing.SystemColors.Control;
             this.label17.Font = new System.Drawing.Font("Times New Roman", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label17.ForeColor = System.Drawing.Color.Black;
-            this.label17.Location = new System.Drawing.Point(75, 365);
+            this.label17.Location = new System.Drawing.Point(276, 365);
             this.label17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(62, 17);
@@ -240,7 +243,7 @@
             // 
             this.label18.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label18.BackColor = System.Drawing.Color.Black;
-            this.label18.Location = new System.Drawing.Point(79, 427);
+            this.label18.Location = new System.Drawing.Point(280, 427);
             this.label18.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(328, 1);
@@ -252,7 +255,7 @@
             this.txbTenDangNhap.BackColor = System.Drawing.Color.White;
             this.txbTenDangNhap.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txbTenDangNhap.ForeColor = System.Drawing.Color.Black;
-            this.txbTenDangNhap.Location = new System.Drawing.Point(181, 407);
+            this.txbTenDangNhap.Location = new System.Drawing.Point(382, 407);
             this.txbTenDangNhap.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.txbTenDangNhap.MaxLength = 20;
             this.txbTenDangNhap.Name = "txbTenDangNhap";
@@ -266,7 +269,7 @@
             this.label19.BackColor = System.Drawing.SystemColors.Control;
             this.label19.Font = new System.Drawing.Font("Times New Roman", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label19.ForeColor = System.Drawing.Color.Black;
-            this.label19.Location = new System.Drawing.Point(75, 406);
+            this.label19.Location = new System.Drawing.Point(276, 406);
             this.label19.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(103, 17);
@@ -277,7 +280,7 @@
             // 
             this.label23.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label23.BackColor = System.Drawing.Color.Black;
-            this.label23.Location = new System.Drawing.Point(77, 345);
+            this.label23.Location = new System.Drawing.Point(278, 345);
             this.label23.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(330, 1);
@@ -289,7 +292,7 @@
             this.txbCmndNV.BackColor = System.Drawing.Color.White;
             this.txbCmndNV.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txbCmndNV.ForeColor = System.Drawing.Color.Black;
-            this.txbCmndNV.Location = new System.Drawing.Point(179, 324);
+            this.txbCmndNV.Location = new System.Drawing.Point(380, 324);
             this.txbCmndNV.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.txbCmndNV.MaxLength = 50;
             this.txbCmndNV.Name = "txbCmndNV";
@@ -303,7 +306,7 @@
             this.label24.BackColor = System.Drawing.SystemColors.Control;
             this.label24.Font = new System.Drawing.Font("Times New Roman", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label24.ForeColor = System.Drawing.Color.Black;
-            this.label24.Location = new System.Drawing.Point(75, 324);
+            this.label24.Location = new System.Drawing.Point(276, 324);
             this.label24.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(53, 17);
@@ -314,7 +317,7 @@
             // 
             this.label14.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label14.BackColor = System.Drawing.Color.Black;
-            this.label14.Location = new System.Drawing.Point(77, 305);
+            this.label14.Location = new System.Drawing.Point(278, 305);
             this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(330, 1);
@@ -326,7 +329,7 @@
             this.txbSdtNV.BackColor = System.Drawing.Color.White;
             this.txbSdtNV.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txbSdtNV.ForeColor = System.Drawing.Color.Black;
-            this.txbSdtNV.Location = new System.Drawing.Point(179, 285);
+            this.txbSdtNV.Location = new System.Drawing.Point(380, 285);
             this.txbSdtNV.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.txbSdtNV.MaxLength = 11;
             this.txbSdtNV.Name = "txbSdtNV";
@@ -340,7 +343,7 @@
             this.label15.BackColor = System.Drawing.SystemColors.Control;
             this.label15.Font = new System.Drawing.Font("Times New Roman", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label15.ForeColor = System.Drawing.Color.Black;
-            this.label15.Location = new System.Drawing.Point(75, 284);
+            this.label15.Location = new System.Drawing.Point(276, 284);
             this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(92, 17);
@@ -351,7 +354,7 @@
             // 
             this.label10.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label10.BackColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(75, 265);
+            this.label10.Location = new System.Drawing.Point(276, 265);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(330, 1);
@@ -363,7 +366,7 @@
             this.txbDiaChiNV.BackColor = System.Drawing.Color.White;
             this.txbDiaChiNV.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txbDiaChiNV.ForeColor = System.Drawing.Color.Black;
-            this.txbDiaChiNV.Location = new System.Drawing.Point(179, 245);
+            this.txbDiaChiNV.Location = new System.Drawing.Point(380, 245);
             this.txbDiaChiNV.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.txbDiaChiNV.MaxLength = 50;
             this.txbDiaChiNV.Name = "txbDiaChiNV";
@@ -377,7 +380,7 @@
             this.label11.BackColor = System.Drawing.SystemColors.Control;
             this.label11.Font = new System.Drawing.Font("Times New Roman", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label11.ForeColor = System.Drawing.Color.Black;
-            this.label11.Location = new System.Drawing.Point(75, 244);
+            this.label11.Location = new System.Drawing.Point(276, 244);
             this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(53, 17);
@@ -392,7 +395,7 @@
             this.cbGioiTinh.Items.AddRange(new object[] {
             "Nam",
             "Nữ"});
-            this.cbGioiTinh.Location = new System.Drawing.Point(179, 201);
+            this.cbGioiTinh.Location = new System.Drawing.Point(380, 201);
             this.cbGioiTinh.Name = "cbGioiTinh";
             this.cbGioiTinh.Size = new System.Drawing.Size(226, 23);
             this.cbGioiTinh.TabIndex = 116;
@@ -403,7 +406,7 @@
             // 
             this.label12.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label12.BackColor = System.Drawing.Color.Black;
-            this.label12.Location = new System.Drawing.Point(75, 227);
+            this.label12.Location = new System.Drawing.Point(276, 227);
             this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(330, 1);
@@ -416,7 +419,7 @@
             this.label13.BackColor = System.Drawing.SystemColors.Control;
             this.label13.Font = new System.Drawing.Font("Times New Roman", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label13.ForeColor = System.Drawing.Color.Black;
-            this.label13.Location = new System.Drawing.Point(75, 205);
+            this.label13.Location = new System.Drawing.Point(276, 205);
             this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(62, 17);
@@ -425,8 +428,9 @@
             // 
             // dtpkNgaySinh
             // 
+            this.dtpkNgaySinh.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dtpkNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpkNgaySinh.Location = new System.Drawing.Point(179, 158);
+            this.dtpkNgaySinh.Location = new System.Drawing.Point(380, 158);
             this.dtpkNgaySinh.Name = "dtpkNgaySinh";
             this.dtpkNgaySinh.Size = new System.Drawing.Size(226, 23);
             this.dtpkNgaySinh.TabIndex = 112;
@@ -435,7 +439,7 @@
             // 
             this.label8.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label8.BackColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(75, 183);
+            this.label8.Location = new System.Drawing.Point(276, 183);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(330, 1);
@@ -448,7 +452,7 @@
             this.label9.BackColor = System.Drawing.SystemColors.Control;
             this.label9.Font = new System.Drawing.Font("Times New Roman", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(75, 163);
+            this.label9.Location = new System.Drawing.Point(276, 163);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(69, 17);
@@ -461,7 +465,7 @@
             this.txbHoTen.BackColor = System.Drawing.Color.White;
             this.txbHoTen.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txbHoTen.ForeColor = System.Drawing.Color.Black;
-            this.txbHoTen.Location = new System.Drawing.Point(179, 123);
+            this.txbHoTen.Location = new System.Drawing.Point(380, 123);
             this.txbHoTen.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.txbHoTen.Name = "txbHoTen";
             this.txbHoTen.Size = new System.Drawing.Size(226, 16);
@@ -471,7 +475,7 @@
             // 
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label6.BackColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(75, 143);
+            this.label6.Location = new System.Drawing.Point(276, 143);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(330, 1);
@@ -484,7 +488,7 @@
             this.label7.BackColor = System.Drawing.SystemColors.Control;
             this.label7.Font = new System.Drawing.Font("Times New Roman", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(75, 123);
+            this.label7.Location = new System.Drawing.Point(276, 123);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(53, 17);
@@ -498,7 +502,7 @@
             this.txbMaNV.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txbMaNV.Enabled = false;
             this.txbMaNV.ForeColor = System.Drawing.Color.Black;
-            this.txbMaNV.Location = new System.Drawing.Point(179, 82);
+            this.txbMaNV.Location = new System.Drawing.Point(380, 82);
             this.txbMaNV.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.txbMaNV.Name = "txbMaNV";
             this.txbMaNV.ReadOnly = true;
@@ -509,7 +513,7 @@
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label4.BackColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(75, 102);
+            this.label4.Location = new System.Drawing.Point(276, 102);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(330, 1);
@@ -522,7 +526,7 @@
             this.label5.BackColor = System.Drawing.SystemColors.Control;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(75, 82);
+            this.label5.Location = new System.Drawing.Point(276, 82);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(95, 17);
@@ -536,7 +540,7 @@
             this.txbMaCN.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txbMaCN.Enabled = false;
             this.txbMaCN.ForeColor = System.Drawing.Color.Black;
-            this.txbMaCN.Location = new System.Drawing.Point(179, 42);
+            this.txbMaCN.Location = new System.Drawing.Point(380, 42);
             this.txbMaCN.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.txbMaCN.Name = "txbMaCN";
             this.txbMaCN.ReadOnly = true;
@@ -547,7 +551,7 @@
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label3.BackColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(75, 62);
+            this.label3.Location = new System.Drawing.Point(276, 62);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(330, 1);
@@ -560,7 +564,7 @@
             this.label1.BackColor = System.Drawing.SystemColors.Control;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(75, 42);
+            this.label1.Location = new System.Drawing.Point(276, 42);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(67, 17);
@@ -598,7 +602,7 @@
             this.tpDoiMatKhau.Location = new System.Drawing.Point(4, 24);
             this.tpDoiMatKhau.Name = "tpDoiMatKhau";
             this.tpDoiMatKhau.Padding = new System.Windows.Forms.Padding(3);
-            this.tpDoiMatKhau.Size = new System.Drawing.Size(871, 599);
+            this.tpDoiMatKhau.Size = new System.Drawing.Size(871, 597);
             this.tpDoiMatKhau.TabIndex = 1;
             this.tpDoiMatKhau.Text = "Đổi Mật Khẩu";
             // 
@@ -642,24 +646,25 @@
             this.panel3.Controls.Add(this.label25);
             this.panel3.Controls.Add(this.txbTenDangNhapNV);
             this.panel3.Controls.Add(this.label26);
-            this.panel3.Location = new System.Drawing.Point(212, 117);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(3, 3);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(467, 392);
+            this.panel3.Size = new System.Drawing.Size(865, 591);
             this.panel3.TabIndex = 0;
             // 
             // btnThoat
             // 
-            this.btnThoat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.btnThoat.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnThoat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(0)))), ((int)(((byte)(43)))));
             this.btnThoat.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnThoat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThoat.Font = new System.Drawing.Font("Arial", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnThoat.ForeColor = System.Drawing.Color.White;
             this.btnThoat.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.Image")));
-            this.btnThoat.Location = new System.Drawing.Point(266, 178);
+            this.btnThoat.Location = new System.Drawing.Point(465, 266);
             this.btnThoat.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(118, 36);
+            this.btnThoat.Size = new System.Drawing.Size(118, 39);
             this.btnThoat.TabIndex = 147;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -669,17 +674,17 @@
             // 
             // btnLuu
             // 
-            this.btnLuu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.btnLuu.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnLuu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(0)))), ((int)(((byte)(43)))));
             this.btnLuu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLuu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLuu.Font = new System.Drawing.Font("Arial", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnLuu.ForeColor = System.Drawing.Color.White;
             this.btnLuu.Image = global::QuanLyGaRanKFC.Properties.Resources.icons8_add_user_16;
-            this.btnLuu.Location = new System.Drawing.Point(82, 178);
+            this.btnLuu.Location = new System.Drawing.Point(281, 266);
             this.btnLuu.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(118, 36);
+            this.btnLuu.Size = new System.Drawing.Size(118, 39);
             this.btnLuu.TabIndex = 146;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -691,7 +696,7 @@
             // 
             this.label31.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label31.BackColor = System.Drawing.Color.Black;
-            this.label31.Location = new System.Drawing.Point(72, 154);
+            this.label31.Location = new System.Drawing.Point(271, 242);
             this.label31.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(328, 1);
@@ -703,7 +708,7 @@
             this.textBox1.BackColor = System.Drawing.Color.White;
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox1.ForeColor = System.Drawing.Color.Black;
-            this.textBox1.Location = new System.Drawing.Point(199, 134);
+            this.textBox1.Location = new System.Drawing.Point(398, 222);
             this.textBox1.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.textBox1.MaxLength = 50;
             this.textBox1.Name = "textBox1";
@@ -718,7 +723,7 @@
             this.label32.BackColor = System.Drawing.SystemColors.Control;
             this.label32.Font = new System.Drawing.Font("Times New Roman", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label32.ForeColor = System.Drawing.Color.Black;
-            this.label32.Location = new System.Drawing.Point(68, 133);
+            this.label32.Location = new System.Drawing.Point(267, 221);
             this.label32.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(127, 17);
@@ -729,7 +734,7 @@
             // 
             this.label29.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label29.BackColor = System.Drawing.Color.Black;
-            this.label29.Location = new System.Drawing.Point(72, 116);
+            this.label29.Location = new System.Drawing.Point(271, 204);
             this.label29.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(328, 1);
@@ -741,7 +746,7 @@
             this.txbMatKhauMoi.BackColor = System.Drawing.Color.White;
             this.txbMatKhauMoi.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txbMatKhauMoi.ForeColor = System.Drawing.Color.Black;
-            this.txbMatKhauMoi.Location = new System.Drawing.Point(199, 96);
+            this.txbMatKhauMoi.Location = new System.Drawing.Point(398, 184);
             this.txbMatKhauMoi.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.txbMatKhauMoi.MaxLength = 50;
             this.txbMatKhauMoi.Name = "txbMatKhauMoi";
@@ -756,7 +761,7 @@
             this.label30.BackColor = System.Drawing.SystemColors.Control;
             this.label30.Font = new System.Drawing.Font("Times New Roman", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label30.ForeColor = System.Drawing.Color.Black;
-            this.label30.Location = new System.Drawing.Point(68, 95);
+            this.label30.Location = new System.Drawing.Point(267, 183);
             this.label30.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(96, 17);
@@ -767,7 +772,7 @@
             // 
             this.label27.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label27.BackColor = System.Drawing.Color.Black;
-            this.label27.Location = new System.Drawing.Point(72, 78);
+            this.label27.Location = new System.Drawing.Point(271, 166);
             this.label27.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(328, 1);
@@ -779,7 +784,7 @@
             this.txbMatKhauCu.BackColor = System.Drawing.Color.White;
             this.txbMatKhauCu.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txbMatKhauCu.ForeColor = System.Drawing.Color.Black;
-            this.txbMatKhauCu.Location = new System.Drawing.Point(199, 58);
+            this.txbMatKhauCu.Location = new System.Drawing.Point(398, 146);
             this.txbMatKhauCu.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.txbMatKhauCu.MaxLength = 50;
             this.txbMatKhauCu.Name = "txbMatKhauCu";
@@ -794,7 +799,7 @@
             this.label28.BackColor = System.Drawing.SystemColors.Control;
             this.label28.Font = new System.Drawing.Font("Times New Roman", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label28.ForeColor = System.Drawing.Color.Black;
-            this.label28.Location = new System.Drawing.Point(68, 57);
+            this.label28.Location = new System.Drawing.Point(267, 145);
             this.label28.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(89, 17);
@@ -805,7 +810,7 @@
             // 
             this.label25.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label25.BackColor = System.Drawing.Color.Black;
-            this.label25.Location = new System.Drawing.Point(72, 41);
+            this.label25.Location = new System.Drawing.Point(271, 132);
             this.label25.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(328, 1);
@@ -818,7 +823,7 @@
             this.txbTenDangNhapNV.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txbTenDangNhapNV.Enabled = false;
             this.txbTenDangNhapNV.ForeColor = System.Drawing.Color.Black;
-            this.txbTenDangNhapNV.Location = new System.Drawing.Point(199, 21);
+            this.txbTenDangNhapNV.Location = new System.Drawing.Point(398, 112);
             this.txbTenDangNhapNV.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.txbTenDangNhapNV.MaxLength = 50;
             this.txbTenDangNhapNV.Name = "txbTenDangNhapNV";
@@ -832,7 +837,7 @@
             this.label26.BackColor = System.Drawing.SystemColors.Control;
             this.label26.Font = new System.Drawing.Font("Times New Roman", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label26.ForeColor = System.Drawing.Color.Black;
-            this.label26.Location = new System.Drawing.Point(68, 20);
+            this.label26.Location = new System.Drawing.Point(267, 111);
             this.label26.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(103, 17);
