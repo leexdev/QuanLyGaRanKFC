@@ -51,6 +51,7 @@ namespace QuanLyGaRanKFC.View.UserControl
             dgvChiNhanh.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvChiNhanh.Columns[0].Width = 50;
             dgvChiNhanh.Columns[1].Width = 120;
+            dgvChiNhanh.Columns[2].Width = 200;
             List<Button> btnList = new List<Button>() { btnThemCN, btnSuaCN, btnXoaCN, btnLamMoiCN, btnTimKiemCN };
             foreach (Button button in btnList)
             {
@@ -104,10 +105,10 @@ namespace QuanLyGaRanKFC.View.UserControl
                     DAO_ChiNhanh dAO_ChiNhanh = new DAO_ChiNhanh();
                     dAO_ChiNhanh.Delete(txbMaCN.Text);
                     resetFieldCN();
+                    function.turnOffButton(btnSuaCN);
+                    function.turnOffButton(btnXoaCN);
+                    function.turnOnButton(btnThemCN);
                 }
-                function.turnOffButton(btnSuaCN);
-                function.turnOffButton(btnXoaCN);
-                function.turnOnButton(btnThemCN);
             }
         }
         private void btnLamMoiCN_Click(object sender, EventArgs e)
@@ -141,9 +142,8 @@ namespace QuanLyGaRanKFC.View.UserControl
             }
             else
             {
-                DataGridViewRow row = dgvChiNhanh.Rows[e.RowIndex];
                 DAO_ChiNhanh dAO_ChiNhanh = new DAO_ChiNhanh();
-                ChiNhanh _chiNhanh = dAO_ChiNhanh.GetByID(row.Cells[1].Value.ToString());
+                ChiNhanh _chiNhanh = dAO_ChiNhanh.GetByID(dgvChiNhanh.CurrentRow.Cells[1].Value.ToString());
                 txbMaCN.Text = _chiNhanh.maCN;
                 txbTenCN.Text = _chiNhanh.tenCN;
                 txbDiaChi.Text = _chiNhanh.diaChi;

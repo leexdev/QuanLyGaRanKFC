@@ -200,18 +200,19 @@
             this.txbSdtKH.BackColor = System.Drawing.Color.White;
             this.txbSdtKH.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txbSdtKH.ForeColor = System.Drawing.Color.Black;
-            this.txbSdtKH.Location = new System.Drawing.Point(508, 21);
+            this.txbSdtKH.Location = new System.Drawing.Point(508, 22);
             this.txbSdtKH.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.txbSdtKH.MaxLength = 11;
             this.txbSdtKH.Name = "txbSdtKH";
             this.txbSdtKH.Size = new System.Drawing.Size(252, 16);
             this.txbSdtKH.TabIndex = 31;
+            this.txbSdtKH.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbSdtKH_KeyPress);
             // 
             // label11
             // 
             this.label11.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.White;
+            this.label11.BackColor = System.Drawing.SystemColors.Control;
             this.label11.Font = new System.Drawing.Font("Times New Roman", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label11.ForeColor = System.Drawing.Color.Black;
             this.label11.Location = new System.Drawing.Point(455, 23);
@@ -237,7 +238,7 @@
             this.txbTenKH.BackColor = System.Drawing.Color.White;
             this.txbTenKH.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txbTenKH.ForeColor = System.Drawing.Color.Black;
-            this.txbTenKH.Location = new System.Drawing.Point(121, 62);
+            this.txbTenKH.Location = new System.Drawing.Point(121, 63);
             this.txbTenKH.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.txbTenKH.Name = "txbTenKH";
             this.txbTenKH.Size = new System.Drawing.Size(259, 16);
@@ -247,7 +248,7 @@
             // 
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.White;
+            this.label5.BackColor = System.Drawing.SystemColors.Control;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.Color.Black;
             this.label5.Location = new System.Drawing.Point(45, 64);
@@ -273,7 +274,7 @@
             this.txbMaKH.BackColor = System.Drawing.Color.White;
             this.txbMaKH.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txbMaKH.ForeColor = System.Drawing.Color.Black;
-            this.txbMaKH.Location = new System.Drawing.Point(121, 22);
+            this.txbMaKH.Location = new System.Drawing.Point(121, 23);
             this.txbMaKH.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.txbMaKH.Name = "txbMaKH";
             this.txbMaKH.ReadOnly = true;
@@ -284,7 +285,7 @@
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.BackColor = System.Drawing.SystemColors.Control;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(45, 24);
@@ -394,7 +395,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(825, 497);
             this.Controls.Add(this.btnTimKiemKH);
             this.Controls.Add(this.label14);

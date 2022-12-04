@@ -151,7 +151,7 @@
   <metadata name="SoLuong.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="btnXoaNL.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnXoaCT.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAO1JREFUOE+1
         krGOAVEUhiehk9AqFy/AK2xIUPMCq/YEKG1vFTS20YioKXkD+xJEss1uu5Xvn2OSkZyxkfAlX/Lfc87c
@@ -161,7 +161,7 @@
         AABJRU5ErkJggg==
 </value>
   </data>
-  <data name="btnSuaNL.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnSuaCT.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAT9JREFUOE99
         00srBlEcx/FBWaCIhVxXInbKreSyoETkkljINeS6oizI/RXI0nv1/Z55DtM8M8+vPj1npvM/Z87lSTLp

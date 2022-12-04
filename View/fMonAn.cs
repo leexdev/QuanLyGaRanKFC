@@ -73,6 +73,7 @@ namespace QuanLyGaRanKFC.View
             tcMonAn.TabPages.Remove(tpCongThuc);
             DAO_DanhMuc dAO_DanhMuc = new DAO_DanhMuc();
             DAO_MonAn dAO_MonAn = new DAO_MonAn();
+            DAO_NguyenLieu dAO_NguyenLieu = new DAO_NguyenLieu();
             dgvMonAn.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvMonAn.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvDanhMuc.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -84,17 +85,20 @@ namespace QuanLyGaRanKFC.View
             function.turnOffButton(btnXoaDM);
             dgvMonAn.Columns[0].Width = 50;
             dgvDanhMuc.Columns[0].Width = 50;
-            List<Button> btnList = new List<Button>() { btnThemMA, btnSuaMA, btnXoaMA, btnLamMoiMA, btnCongThuc, btnTimKiemMA, btnThemDM, btnSuaDM, btnXoaDM, btnLamMoiDM, btnTimKiemMA};
+            List<Button> btnList = new List<Button>() { btnThemMA, btnSuaMA, btnXoaMA, btnLamMoiMA, btnCongThuc, btnTimKiemMA, btnThemDM, btnSuaDM, btnXoaDM, btnLamMoiDM, btnTimKiemMA, btnThemCT, btnSuaCT, btnXoaCT, btnLamMoiCT, btnThoat};
             foreach (Button button in btnList)
             {
                 button.FlatAppearance.BorderSize = 0;
             }
             cbDanhMuc.DataSource = dAO_DanhMuc.GetAll();
             cbDanhMucLoc.DataSource = dAO_DanhMuc.GetAll();
+            cbNguyenLieu.DataSource = dAO_NguyenLieu.GetAll();
             cbDanhMuc.ValueMember = "maDM";
             cbDanhMuc.DisplayMember = "tenDM";
             cbDanhMucLoc.ValueMember = "maDM";
             cbDanhMucLoc.DisplayMember = "tenDM";
+            cbNguyenLieu.ValueMember = "maNL";
+            cbNguyenLieu.DisplayMember = "tenNL";
             resetFieldMA();
             resetFieldDM();
         }
@@ -145,11 +149,11 @@ namespace QuanLyGaRanKFC.View
             else
             {
                 resetFieldMA();
+                function.turnOffButton(btnSuaMA);
+                function.turnOffButton(btnXoaMA);
+                function.turnOffButton(btnCongThuc);
+                function.turnOnButton(btnThemMA);
             }
-            function.turnOffButton(btnSuaMA);
-            function.turnOffButton(btnXoaMA);
-            function.turnOffButton(btnCongThuc);
-            function.turnOnButton(btnThemMA);
         }
 
         private void btnLamMoiMA_Click(object sender, EventArgs e)
@@ -187,10 +191,9 @@ namespace QuanLyGaRanKFC.View
             }
             else
             {
-                DataGridViewRow row = dgvMonAn.Rows[e.RowIndex];
                 DAO_DanhMuc dAO_DanhMuc = new DAO_DanhMuc();
                 DAO_MonAn dAO_MonAn = new DAO_MonAn();
-                MonAn monAn = dAO_MonAn.GetByID(row.Cells[1].Value.ToString());
+                MonAn monAn = dAO_MonAn.GetByID(dgvMonAn.CurrentRow.Cells[1].Value.ToString());
                 cbDanhMuc.Text = dAO_DanhMuc.GetByUserID(monAn.maMon).tenDM;
                 cbDanhMuc.ValueMember = "maDM";
                 txbMaMA.Text = monAn.maMon;
@@ -274,10 +277,10 @@ namespace QuanLyGaRanKFC.View
                 DAO_DanhMuc dAO_DanhMuc = new DAO_DanhMuc();
                 dAO_DanhMuc.Delete(txbMaDM.Text);
                 resetFieldDM();
+                function.turnOffButton(btnSuaDM);
+                function.turnOffButton(btnXoaDM);
+                function.turnOnButton(btnThemDM);
             }
-            function.turnOffButton(btnSuaDM);
-            function.turnOffButton(btnXoaDM);
-            function.turnOnButton(btnThemDM);
         }
         private void dgvDanhMuc_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -290,9 +293,8 @@ namespace QuanLyGaRanKFC.View
             }
             else
             {
-                DataGridViewRow row = dgvDanhMuc.Rows[e.RowIndex];
                 DAO_DanhMuc dAO_DanhMuc = new DAO_DanhMuc();
-                DanhMuc _danhMuc = dAO_DanhMuc.GetByID(row.Cells[1].Value.ToString());
+                DanhMuc _danhMuc = dAO_DanhMuc.GetByID(dgvDanhMuc.CurrentRow.Cells[1].Value.ToString());
                 txbMaDM.Text = _danhMuc.maDM;
                 txbTenDM.Text = _danhMuc.tenDM;
                 function.turnOffButton(btnThemDM);
@@ -354,6 +356,57 @@ namespace QuanLyGaRanKFC.View
                 this.tpCongThuc.Hide();
                 tcMonAn.TabPages.Remove(tpCongThuc);
             }
+        }
+        private void LoadDataCT()
+        {
+            dgvCongThuc.Rows.Clear();
+            int i = 1;
+            DAO_CongThuc dAO_CongThuc = new DAO_CongThuc();
+            List<CongThuc> congThucs = dAO_CongThuc.GetList(txbMaMA.Text);
+            foreach (CongThuc congThuc in congThucs)
+            {
+                dgvCongThuc.Rows.Add(i, congThuc.nguyenLieu.maNL, congThuc.nguyenLieu.tenNL, congThuc.soLuong);
+                i++;
+            }
+        }
+        private void btnThemCT_Click(object sender, EventArgs e)
+        {
+            DAO_NguyenLieu dAO_NguyenLieu = new DAO_NguyenLieu();
+            NguyenLieu nguyenLieu = dAO_NguyenLieu.GetByID(cbNguyenLieu.SelectedValue.ToString());
+            CongThuc congThuc = new CongThuc(Convert.ToInt32(nmrupSoLuong.Value), nguyenLieu);
+            DAO_CongThuc dAO_CongThuc = new DAO_CongThuc();
+            dAO_CongThuc.Add(congThuc, txbMaMon.Text);
+            resetFieldCT();
+        }
+
+        private void btnSuaCT_Click(object sender, EventArgs e)
+        {
+            DAO_NguyenLieu dAO_NguyenLieu = new DAO_NguyenLieu();
+            NguyenLieu nguyenLieu = dAO_NguyenLieu.GetByID(cbNguyenLieu.SelectedValue.ToString());
+            CongThuc congThuc = new CongThuc(Convert.ToInt32(nmrupSoLuong.Value), nguyenLieu);
+            DAO_CongThuc dAO_CongThuc = new DAO_CongThuc();
+            dAO_CongThuc.Update(congThuc, txbMaMon.Text);
+            resetFieldCT();
+        }
+
+        private void btnLamMoiCT_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnXoaCT_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void resetFieldCT()
+        {
+            LoadDataCT();
+            nmrupSoLuong.Value = 0;
+        }
+
+        private void txbMaMA_TextChanged(object sender, EventArgs e)
+        {
+            resetFieldCT();
         }
     }
 }

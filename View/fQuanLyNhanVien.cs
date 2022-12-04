@@ -45,9 +45,19 @@ namespace QuanLyGaRanKFC.View
         {
             dgvNhanVien.Rows.Clear();
             int i = 1;
+            DAO_ChiNhanh dAO_ChiNhanh = new DAO_ChiNhanh();
             DAO_NhanVien dAO_NhanVien = new DAO_NhanVien();
-            List<NhanVien> NhanVien = dAO_NhanVien.GetAll();
-            foreach (NhanVien nhanVien in NhanVien)
+            List<NhanVien> nhanViens;
+            if (NhanVien.quyen == 2)
+            {
+                nhanViens = dAO_NhanVien.GetAll();
+
+            }
+            else
+            {
+                nhanViens = dAO_NhanVien.GetList(dAO_ChiNhanh.GetByUserID(NhanVien.maNV).maCN);
+            }
+            foreach (NhanVien nhanVien in nhanViens)
             {
                 string chucVu = "";
                 if (nhanVien.quyen == 0)
@@ -91,26 +101,32 @@ namespace QuanLyGaRanKFC.View
                 button.FlatAppearance.BorderSize = 0;
             }
             DAO_ChiNhanh dAO_ChiNhanh = new DAO_ChiNhanh();
-            cbChiNhanh.DataSource = dAO_ChiNhanh.GetAll();
-            cbChiNhanhLoc.DataSource = dAO_ChiNhanh.GetAll();
             if (NhanVien.quyen == 2)
             {
                 cbChucVu.Items.Clear();
                 cbChucVu.Items.Add("Nhân Viên");
                 cbChucVu.Items.Add("Quản Lý");
+                cbChiNhanh.DataSource = dAO_ChiNhanh.GetAll();
+                cbChiNhanhLoc.DataSource = dAO_ChiNhanh.GetAll();
+                cbChiNhanh.ValueMember = "maCN";
+                cbChiNhanh.DisplayMember = "tenCN";
+                cbChiNhanhLoc.ValueMember = "maCN";
+                cbChiNhanhLoc.DisplayMember = "tenCN";
             }
             else
             {
                 cbChucVu.Items.Clear();
                 cbChucVu.Items.Add("Nhân Viên");
                 cbChucVu.Text = "Nhân Viên";
+                cbChiNhanh.Text = dAO_ChiNhanh.GetByUserID(NhanVien.maNV).tenCN;
+                cbChiNhanh.ValueMember = "maCN";
+                cbChiNhanh.DisplayMember = "tenCN";
+                cbChiNhanhLoc.Hide();
+                label25.Hide();
+                label26.Hide();
+                btnLocNV.Hide();
             }
-            cbChiNhanh.ValueMember = "maCN";
-            cbChiNhanh.DisplayMember = "tenCN";
-            cbChiNhanhLoc.ValueMember = "maCN";
-            cbChiNhanhLoc.DisplayMember = "tenCN";
             resetFieldNV();
-
         }
         private void btnThemNV_Click(object sender, EventArgs e)
         {
@@ -131,7 +147,6 @@ namespace QuanLyGaRanKFC.View
                 MessageBox.Show("Mật khẩu phải ít nhất 6 kí tự!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            ChiNhanh chiNhanh = dAO_ChiNhanh.GetByID(cbChiNhanh.SelectedValue.ToString());
             NhanVien _nhanvien = new NhanVien();
             _nhanvien.maNV = txbMaNV.Text;
             _nhanvien.tenNV = txbTenNV.Text;
@@ -143,7 +158,15 @@ namespace QuanLyGaRanKFC.View
             _nhanvien.quyen = cbChucVu.SelectedIndex;
             _nhanvien.tenDangNhap = txbTenDangNhap.Text;
             _nhanvien.matKhau = txbMatKhau.Text;
-            dAO_NhanVien.Add(_nhanvien, chiNhanh.maCN);
+            if (NhanVien.quyen == 2)
+            {
+                ChiNhanh chiNhanh = dAO_ChiNhanh.GetByID(cbChiNhanh.SelectedValue.ToString());
+                dAO_NhanVien.Add(_nhanvien, chiNhanh.maCN);
+            }
+            else
+            {
+                dAO_NhanVien.Add(_nhanvien, dAO_ChiNhanh.GetByUserID(NhanVien.maNV).maCN);
+            }
             resetFieldNV();
             MessageBox.Show("Thêm thành công!");
         }
@@ -151,7 +174,8 @@ namespace QuanLyGaRanKFC.View
         {
             DAO_NhanVien dAO_NhanVien = new DAO_NhanVien();
             DAO_ChiNhanh dAO_ChiNhanh = new DAO_ChiNhanh();
-            ChiNhanh chiNhanh = dAO_ChiNhanh.GetByID(cbChiNhanh.SelectedValue.ToString());
+            
+            
             NhanVien _nhanvien = new NhanVien();
             _nhanvien.maNV = txbMaNV.Text;
             _nhanvien.tenNV = txbTenNV.Text;
@@ -166,7 +190,15 @@ namespace QuanLyGaRanKFC.View
             {
                 _nhanvien.matKhau = txbMatKhau.Text;
             }
-            dAO_NhanVien.Update(_nhanvien, chiNhanh.maCN);
+            if (NhanVien.quyen == 2)
+            {
+                ChiNhanh chiNhanh = dAO_ChiNhanh.GetByID(cbChiNhanh.SelectedValue.ToString());
+                dAO_NhanVien.Update(_nhanvien, chiNhanh.maCN);
+            }
+            else
+            {
+                dAO_NhanVien.Update(_nhanvien, dAO_ChiNhanh.GetByUserID(NhanVien.maNV).maCN);
+            }
             resetFieldNV();
             MessageBox.Show("Sửa thành công!");
         }
@@ -195,14 +227,10 @@ namespace QuanLyGaRanKFC.View
             {
                 dAO_NhanVien.Delete(txbMaNV.Text);
                 resetFieldNV();
+                function.turnOffButton(btnSuaNV);
+                function.turnOffButton(btnXoaNV);
+                function.turnOnButton(btnThemNV);
             }
-            else
-            {
-                resetFieldNV();
-            }
-            function.turnOffButton(btnSuaNV);
-            function.turnOffButton(btnXoaNV);
-            function.turnOnButton(btnThemNV);
         }
         private void dgvNhanVien_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -215,10 +243,9 @@ namespace QuanLyGaRanKFC.View
             }
             else
             {
-                DataGridViewRow row = dgvNhanVien.Rows[e.RowIndex];
                 DAO_ChiNhanh dAO_ChiNhanh = new DAO_ChiNhanh();
                 DAO_NhanVien dAO_NhanVien = new DAO_NhanVien();
-                NhanVien _nhanVien = dAO_NhanVien.GetByID(row.Cells[1].Value.ToString());
+                NhanVien _nhanVien = dAO_NhanVien.GetByID(dgvNhanVien.CurrentRow.Cells[1].Value.ToString());
                 cbChiNhanh.Text = dAO_ChiNhanh.GetByUserID(_nhanVien.maNV).tenCN;
                 cbChiNhanh.ValueMember = "maCN";
                 txbMaNV.Text = _nhanVien.maNV;
@@ -228,9 +255,14 @@ namespace QuanLyGaRanKFC.View
                 txbDiaChiNV.Text = _nhanVien.diaChi;
                 txbSdtNV.Text = _nhanVien.sdt;
                 txbCmndNV.Text = _nhanVien.cmnd;
-
-                if(_nhanVien.quyen == 0 || _nhanVien.quyen == 1)
+                txbMatKhau.Text = _nhanVien.matKhau;
+                txbTenDangNhap.Text = _nhanVien.tenDangNhap;
+                txbTenDangNhap.Enabled = false;
+                txbMatKhau.Enabled = false;
+                txbMatKhau.ReadOnly = true;
+                if (_nhanVien.quyen == 0)
                 {
+                    cbChucVu.Text = "Nhân Viên";
                     cbChucVu.Enabled = true;
                     txbTenNV.Enabled = true;
                     txbDiaChiNV.Enabled = true;
@@ -240,13 +272,17 @@ namespace QuanLyGaRanKFC.View
                     cbGioiTinhNV.Enabled = true;
                     dtpkNgaySinhNV.Enabled = true;
                 }
-                if (_nhanVien.quyen == 0)
-                {
-                    cbChucVu.Text = "Nhân Viên";
-                }
                 else if (_nhanVien.quyen == 1)
                 {
                     cbChucVu.Text = "Quản Lý";
+                    cbChucVu.Enabled = true;
+                    txbTenNV.Enabled = true;
+                    txbDiaChiNV.Enabled = true;
+                    txbCmndNV.Enabled = true;
+                    txbSdtNV.Enabled = true;
+                    cbChiNhanh.Enabled = true;
+                    cbGioiTinhNV.Enabled = true;
+                    dtpkNgaySinhNV.Enabled = true;
                 }
                 else if (_nhanVien.quyen == 2)
                 {
@@ -260,11 +296,21 @@ namespace QuanLyGaRanKFC.View
                     cbGioiTinhNV.Enabled = false;
                     dtpkNgaySinhNV.Enabled = false;
                 }
-                txbMatKhau.Text = _nhanVien.matKhau;
-                txbTenDangNhap.Text = _nhanVien.tenDangNhap;
-                txbTenDangNhap.Enabled = false;
-                txbMatKhau.Enabled = false;
-                txbMatKhau.ReadOnly = true;
+                if (NhanVien.maNV == txbMaNV.Text || NhanVien.quyen == _nhanVien.quyen)
+                {
+                    cbChucVu.Enabled = false;
+                    txbTenNV.Enabled = false;
+                    txbDiaChiNV.Enabled = false;
+                    txbCmndNV.Enabled = false;
+                    txbSdtNV.Enabled = false;
+                    cbChiNhanh.Enabled = false;
+                    cbGioiTinhNV.Enabled = false;
+                    dtpkNgaySinhNV.Enabled = false;
+                    function.turnOffButton(btnThemNV);
+                    function.turnOffButton(btnSuaNV);
+                    function.turnOffButton(btnXoaNV);
+                    return;
+                }
                 function.turnOffButton(btnThemNV);
                 function.turnOnButton(btnSuaNV);
                 function.turnOnButton(btnXoaNV);
@@ -280,13 +326,22 @@ namespace QuanLyGaRanKFC.View
         }
         private void btnTimKiemNV_Click(object sender, EventArgs e)
         {
-            string _keyWord = txbTimKiemNV.Text;
             dgvNhanVien.Rows.Clear();
+            string _keyWord = txbTimKiemNV.Text;
             int i = 1;
+            DAO_ChiNhanh dAO_ChiNhanh = new DAO_ChiNhanh();
             DAO_NhanVien dAO_NhanVien = new DAO_NhanVien();
-            List<NhanVien> NhanVien = dAO_NhanVien.GetListByName(_keyWord);
+            List<NhanVien> nhanViens;
+            if (NhanVien.quyen == 2)
+            {
+                nhanViens = dAO_NhanVien.GetListByName(_keyWord);
 
-            foreach (NhanVien nhanVien in NhanVien)
+            }
+            else
+            {
+                nhanViens = dAO_NhanVien.GetListNVByCN(_keyWord, dAO_ChiNhanh.GetByUserID(NhanVien.maNV).maCN);
+            }
+            foreach (NhanVien nhanVien in nhanViens)
             {
                 string chucVu = "";
                 if (nhanVien.quyen == 0)
@@ -379,6 +434,10 @@ namespace QuanLyGaRanKFC.View
         private void cbChiNhanhLoc_MouseClick(object sender, MouseEventArgs e)
         {
             cbChiNhanhLoc.DroppedDown = true;
+        }
+        private void txbSdtNV_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
     }
 }

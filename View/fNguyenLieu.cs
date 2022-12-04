@@ -185,10 +185,9 @@ namespace QuanLyGaRanKFC.View
             }
             else
             {
-                DataGridViewRow row = dgvNguyenLieu.Rows[e.RowIndex];
                 DAO_ChiNhanh dAO_ChiNhanh = new DAO_ChiNhanh();
                 DAO_NguyenLieu dAO_NguyenLieu = new DAO_NguyenLieu();
-                NguyenLieu _nguyenLieu = dAO_NguyenLieu.GetByID(row.Cells[1].Value.ToString());
+                NguyenLieu _nguyenLieu = dAO_NguyenLieu.GetByID(dgvNguyenLieu.CurrentRow.Cells[1].Value.ToString());
                 cbChiNhanh.Text = dAO_ChiNhanh.GetByUserID(_nguyenLieu.maNL).tenCN;
                 cbChiNhanh.ValueMember = "maCN";
                 txbMaNL.Text = _nguyenLieu.maNL;

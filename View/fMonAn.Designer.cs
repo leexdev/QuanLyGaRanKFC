@@ -89,10 +89,10 @@
             this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel5 = new System.Windows.Forms.Panel();
             this.btnThoat = new System.Windows.Forms.Button();
-            this.btnLamMoiNL = new System.Windows.Forms.Button();
-            this.btnXoaNL = new System.Windows.Forms.Button();
-            this.btnSuaNL = new System.Windows.Forms.Button();
-            this.btnThemNL = new System.Windows.Forms.Button();
+            this.btnLamMoiCT = new System.Windows.Forms.Button();
+            this.btnXoaCT = new System.Windows.Forms.Button();
+            this.btnSuaCT = new System.Windows.Forms.Button();
+            this.btnThemCT = new System.Windows.Forms.Button();
             this.nmrupSoLuong = new System.Windows.Forms.NumericUpDown();
             this.txbTenMon = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
@@ -141,7 +141,7 @@
             // 
             // tpMonAn
             // 
-            this.tpMonAn.BackColor = System.Drawing.Color.White;
+            this.tpMonAn.BackColor = System.Drawing.SystemColors.Control;
             this.tpMonAn.Controls.Add(this.btnTimKiemMA);
             this.tpMonAn.Controls.Add(this.btnLocMA);
             this.tpMonAn.Controls.Add(this.cbDanhMucLoc);
@@ -242,7 +242,7 @@
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.BackColor = System.Drawing.Color.White;
+            this.label26.BackColor = System.Drawing.SystemColors.Control;
             this.label26.Font = new System.Drawing.Font("Times New Roman", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label26.ForeColor = System.Drawing.Color.Black;
             this.label26.Location = new System.Drawing.Point(8, 243);
@@ -321,7 +321,7 @@
             // 
             this.label7.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.White;
+            this.label7.BackColor = System.Drawing.SystemColors.Control;
             this.label7.Font = new System.Drawing.Font("Times New Roman", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label7.ForeColor = System.Drawing.Color.Black;
             this.label7.Location = new System.Drawing.Point(276, 9);
@@ -439,7 +439,7 @@
             // 
             this.label11.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.White;
+            this.label11.BackColor = System.Drawing.SystemColors.Control;
             this.label11.Font = new System.Drawing.Font("Times New Roman", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label11.ForeColor = System.Drawing.Color.Black;
             this.label11.Location = new System.Drawing.Point(517, 49);
@@ -475,7 +475,7 @@
             // 
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.White;
+            this.label5.BackColor = System.Drawing.SystemColors.Control;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.Color.Black;
             this.label5.Location = new System.Drawing.Point(66, 89);
@@ -507,12 +507,13 @@
             this.txbMaMA.ReadOnly = true;
             this.txbMaMA.Size = new System.Drawing.Size(259, 16);
             this.txbMaMA.TabIndex = 1;
+            this.txbMaMA.TextChanged += new System.EventHandler(this.txbMaMA_TextChanged);
             // 
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.BackColor = System.Drawing.SystemColors.Control;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(66, 49);
@@ -602,7 +603,7 @@
             // 
             // tpDanhMuc
             // 
-            this.tpDanhMuc.BackColor = System.Drawing.Color.White;
+            this.tpDanhMuc.BackColor = System.Drawing.SystemColors.Control;
             this.tpDanhMuc.Controls.Add(this.dgvDanhMuc);
             this.tpDanhMuc.Controls.Add(this.panel4);
             this.tpDanhMuc.Controls.Add(this.panel3);
@@ -661,6 +662,7 @@
             // 
             // panel4
             // 
+            this.panel4.BackColor = System.Drawing.SystemColors.Control;
             this.panel4.Controls.Add(this.btnLamMoiDM);
             this.panel4.Controls.Add(this.btnXoaDM);
             this.panel4.Controls.Add(this.btnSuaDM);
@@ -784,7 +786,7 @@
             // 
             this.label12.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.Color.White;
+            this.label12.BackColor = System.Drawing.SystemColors.Control;
             this.label12.Font = new System.Drawing.Font("Times New Roman", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label12.ForeColor = System.Drawing.Color.Black;
             this.label12.Location = new System.Drawing.Point(491, 23);
@@ -821,7 +823,7 @@
             // 
             this.label17.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label17.AutoSize = true;
-            this.label17.BackColor = System.Drawing.Color.White;
+            this.label17.BackColor = System.Drawing.SystemColors.Control;
             this.label17.Font = new System.Drawing.Font("Times New Roman", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label17.ForeColor = System.Drawing.Color.Black;
             this.label17.Location = new System.Drawing.Point(81, 24);
@@ -856,6 +858,7 @@
             // 
             // tpCongThuc
             // 
+            this.tpCongThuc.BackColor = System.Drawing.SystemColors.Control;
             this.tpCongThuc.Controls.Add(this.dgvCongThuc);
             this.tpCongThuc.Controls.Add(this.panel5);
             this.tpCongThuc.Controls.Add(this.panel6);
@@ -865,11 +868,13 @@
             this.tpCongThuc.Size = new System.Drawing.Size(871, 597);
             this.tpCongThuc.TabIndex = 2;
             this.tpCongThuc.Text = "Công Thức";
-            this.tpCongThuc.UseVisualStyleBackColor = true;
             // 
             // dgvCongThuc
             // 
             this.dgvCongThuc.AllowUserToAddRows = false;
+            this.dgvCongThuc.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvCongThuc.BackgroundColor = System.Drawing.Color.White;
             this.dgvCongThuc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCongThuc.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -883,7 +888,7 @@
             this.dgvCongThuc.RowHeadersVisible = false;
             this.dgvCongThuc.RowHeadersWidth = 82;
             this.dgvCongThuc.RowTemplate.Height = 25;
-            this.dgvCongThuc.Size = new System.Drawing.Size(865, 322);
+            this.dgvCongThuc.Size = new System.Drawing.Size(865, 380);
             this.dgvCongThuc.TabIndex = 74;
             // 
             // dataGridViewTextBoxColumn2
@@ -920,12 +925,12 @@
             // 
             // panel5
             // 
-            this.panel5.BackColor = System.Drawing.Color.White;
+            this.panel5.BackColor = System.Drawing.SystemColors.Control;
             this.panel5.Controls.Add(this.btnThoat);
-            this.panel5.Controls.Add(this.btnLamMoiNL);
-            this.panel5.Controls.Add(this.btnXoaNL);
-            this.panel5.Controls.Add(this.btnSuaNL);
-            this.panel5.Controls.Add(this.btnThemNL);
+            this.panel5.Controls.Add(this.btnLamMoiCT);
+            this.panel5.Controls.Add(this.btnXoaCT);
+            this.panel5.Controls.Add(this.btnSuaCT);
+            this.panel5.Controls.Add(this.btnThemCT);
             this.panel5.Controls.Add(this.nmrupSoLuong);
             this.panel5.Controls.Add(this.txbTenMon);
             this.panel5.Controls.Add(this.label13);
@@ -964,81 +969,85 @@
             this.btnThoat.UseVisualStyleBackColor = false;
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
-            // btnLamMoiNL
+            // btnLamMoiCT
             // 
-            this.btnLamMoiNL.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.btnLamMoiNL.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(162)))), ((int)(((byte)(139)))));
-            this.btnLamMoiNL.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLamMoiNL.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLamMoiNL.Font = new System.Drawing.Font("Arial", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnLamMoiNL.ForeColor = System.Drawing.Color.Black;
-            this.btnLamMoiNL.Image = global::QuanLyGaRanKFC.Properties.Resources.icons8_repeat_16;
-            this.btnLamMoiNL.Location = new System.Drawing.Point(398, 87);
-            this.btnLamMoiNL.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.btnLamMoiNL.Name = "btnLamMoiNL";
-            this.btnLamMoiNL.Size = new System.Drawing.Size(118, 39);
-            this.btnLamMoiNL.TabIndex = 93;
-            this.btnLamMoiNL.Text = "Làm mới";
-            this.btnLamMoiNL.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLamMoiNL.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnLamMoiNL.UseVisualStyleBackColor = false;
+            this.btnLamMoiCT.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.btnLamMoiCT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(162)))), ((int)(((byte)(139)))));
+            this.btnLamMoiCT.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLamMoiCT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLamMoiCT.Font = new System.Drawing.Font("Arial", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnLamMoiCT.ForeColor = System.Drawing.Color.Black;
+            this.btnLamMoiCT.Image = global::QuanLyGaRanKFC.Properties.Resources.icons8_repeat_16;
+            this.btnLamMoiCT.Location = new System.Drawing.Point(398, 87);
+            this.btnLamMoiCT.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.btnLamMoiCT.Name = "btnLamMoiCT";
+            this.btnLamMoiCT.Size = new System.Drawing.Size(118, 39);
+            this.btnLamMoiCT.TabIndex = 93;
+            this.btnLamMoiCT.Text = "Làm mới";
+            this.btnLamMoiCT.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnLamMoiCT.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnLamMoiCT.UseVisualStyleBackColor = false;
+            this.btnLamMoiCT.Click += new System.EventHandler(this.btnLamMoiCT_Click);
             // 
-            // btnXoaNL
+            // btnXoaCT
             // 
-            this.btnXoaNL.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.btnXoaNL.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(162)))), ((int)(((byte)(139)))));
-            this.btnXoaNL.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnXoaNL.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnXoaNL.Font = new System.Drawing.Font("Arial", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnXoaNL.ForeColor = System.Drawing.Color.Black;
-            this.btnXoaNL.Image = ((System.Drawing.Image)(resources.GetObject("btnXoaNL.Image")));
-            this.btnXoaNL.Location = new System.Drawing.Point(554, 87);
-            this.btnXoaNL.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.btnXoaNL.Name = "btnXoaNL";
-            this.btnXoaNL.Size = new System.Drawing.Size(118, 39);
-            this.btnXoaNL.TabIndex = 94;
-            this.btnXoaNL.Text = "Xóa";
-            this.btnXoaNL.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnXoaNL.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnXoaNL.UseVisualStyleBackColor = false;
+            this.btnXoaCT.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.btnXoaCT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(162)))), ((int)(((byte)(139)))));
+            this.btnXoaCT.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnXoaCT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnXoaCT.Font = new System.Drawing.Font("Arial", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnXoaCT.ForeColor = System.Drawing.Color.Black;
+            this.btnXoaCT.Image = ((System.Drawing.Image)(resources.GetObject("btnXoaCT.Image")));
+            this.btnXoaCT.Location = new System.Drawing.Point(554, 87);
+            this.btnXoaCT.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.btnXoaCT.Name = "btnXoaCT";
+            this.btnXoaCT.Size = new System.Drawing.Size(118, 39);
+            this.btnXoaCT.TabIndex = 94;
+            this.btnXoaCT.Text = "Xóa";
+            this.btnXoaCT.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnXoaCT.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnXoaCT.UseVisualStyleBackColor = false;
+            this.btnXoaCT.Click += new System.EventHandler(this.btnXoaCT_Click);
             // 
-            // btnSuaNL
+            // btnSuaCT
             // 
-            this.btnSuaNL.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.btnSuaNL.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(162)))), ((int)(((byte)(139)))));
-            this.btnSuaNL.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSuaNL.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSuaNL.Font = new System.Drawing.Font("Arial", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnSuaNL.ForeColor = System.Drawing.Color.Black;
-            this.btnSuaNL.Image = ((System.Drawing.Image)(resources.GetObject("btnSuaNL.Image")));
-            this.btnSuaNL.Location = new System.Drawing.Point(244, 87);
-            this.btnSuaNL.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.btnSuaNL.Name = "btnSuaNL";
-            this.btnSuaNL.Size = new System.Drawing.Size(118, 39);
-            this.btnSuaNL.TabIndex = 92;
-            this.btnSuaNL.Text = "Sửa";
-            this.btnSuaNL.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSuaNL.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnSuaNL.UseVisualStyleBackColor = false;
+            this.btnSuaCT.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.btnSuaCT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(162)))), ((int)(((byte)(139)))));
+            this.btnSuaCT.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSuaCT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSuaCT.Font = new System.Drawing.Font("Arial", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnSuaCT.ForeColor = System.Drawing.Color.Black;
+            this.btnSuaCT.Image = ((System.Drawing.Image)(resources.GetObject("btnSuaCT.Image")));
+            this.btnSuaCT.Location = new System.Drawing.Point(244, 87);
+            this.btnSuaCT.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.btnSuaCT.Name = "btnSuaCT";
+            this.btnSuaCT.Size = new System.Drawing.Size(118, 39);
+            this.btnSuaCT.TabIndex = 92;
+            this.btnSuaCT.Text = "Sửa";
+            this.btnSuaCT.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSuaCT.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSuaCT.UseVisualStyleBackColor = false;
+            this.btnSuaCT.Click += new System.EventHandler(this.btnSuaCT_Click);
             // 
-            // btnThemNL
+            // btnThemCT
             // 
-            this.btnThemNL.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.btnThemNL.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(162)))), ((int)(((byte)(139)))));
-            this.btnThemNL.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnThemNL.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThemNL.Font = new System.Drawing.Font("Arial", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnThemNL.ForeColor = System.Drawing.Color.Black;
-            this.btnThemNL.Image = global::QuanLyGaRanKFC.Properties.Resources.icons8_add_user_16;
-            this.btnThemNL.Location = new System.Drawing.Point(91, 88);
-            this.btnThemNL.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.btnThemNL.Name = "btnThemNL";
-            this.btnThemNL.Size = new System.Drawing.Size(118, 39);
-            this.btnThemNL.TabIndex = 91;
-            this.btnThemNL.Text = "Thêm";
-            this.btnThemNL.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnThemNL.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnThemNL.UseVisualStyleBackColor = false;
+            this.btnThemCT.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.btnThemCT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(162)))), ((int)(((byte)(139)))));
+            this.btnThemCT.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnThemCT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThemCT.Font = new System.Drawing.Font("Arial", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnThemCT.ForeColor = System.Drawing.Color.Black;
+            this.btnThemCT.Image = global::QuanLyGaRanKFC.Properties.Resources.icons8_add_user_16;
+            this.btnThemCT.Location = new System.Drawing.Point(91, 88);
+            this.btnThemCT.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.btnThemCT.Name = "btnThemCT";
+            this.btnThemCT.Size = new System.Drawing.Size(118, 39);
+            this.btnThemCT.TabIndex = 91;
+            this.btnThemCT.Text = "Thêm";
+            this.btnThemCT.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnThemCT.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnThemCT.UseVisualStyleBackColor = false;
+            this.btnThemCT.Click += new System.EventHandler(this.btnThemCT_Click);
             // 
             // nmrupSoLuong
             // 
@@ -1076,7 +1085,7 @@
             // 
             this.label15.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label15.AutoSize = true;
-            this.label15.BackColor = System.Drawing.Color.White;
+            this.label15.BackColor = System.Drawing.SystemColors.Control;
             this.label15.Font = new System.Drawing.Font("Times New Roman", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label15.ForeColor = System.Drawing.Color.Black;
             this.label15.Location = new System.Drawing.Point(491, 55);
@@ -1109,7 +1118,7 @@
             // 
             this.label19.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label19.AutoSize = true;
-            this.label19.BackColor = System.Drawing.Color.White;
+            this.label19.BackColor = System.Drawing.SystemColors.Control;
             this.label19.Font = new System.Drawing.Font("Times New Roman", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label19.ForeColor = System.Drawing.Color.Black;
             this.label19.Location = new System.Drawing.Point(87, 56);
@@ -1133,7 +1142,7 @@
             // 
             this.label21.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label21.AutoSize = true;
-            this.label21.BackColor = System.Drawing.Color.White;
+            this.label21.BackColor = System.Drawing.SystemColors.Control;
             this.label21.Font = new System.Drawing.Font("Times New Roman", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label21.ForeColor = System.Drawing.Color.Black;
             this.label21.Location = new System.Drawing.Point(491, 13);
@@ -1170,7 +1179,7 @@
             // 
             this.label23.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label23.AutoSize = true;
-            this.label23.BackColor = System.Drawing.Color.White;
+            this.label23.BackColor = System.Drawing.SystemColors.Control;
             this.label23.Font = new System.Drawing.Font("Times New Roman", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label23.ForeColor = System.Drawing.Color.Black;
             this.label23.Location = new System.Drawing.Point(89, 13);
@@ -1207,7 +1216,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(879, 625);
             this.Controls.Add(this.tcMonAn);
             this.Name = "fMonAn";
@@ -1300,10 +1309,10 @@
         private DataGridViewTextBoxColumn tenNL;
         private DataGridViewTextBoxColumn SoLuong;
         private Panel panel5;
-        private Button btnLamMoiNL;
-        private Button btnXoaNL;
-        private Button btnSuaNL;
-        private Button btnThemNL;
+        private Button btnLamMoiCT;
+        private Button btnXoaCT;
+        private Button btnSuaCT;
+        private Button btnThemCT;
         private NumericUpDown nmrupSoLuong;
         private TextBox txbTenMon;
         private Label label13;

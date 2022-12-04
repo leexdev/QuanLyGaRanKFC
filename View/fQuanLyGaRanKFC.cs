@@ -80,10 +80,22 @@ namespace QuanLyGaRanKFC.View
 
         private void btnDangXuat_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            fDangNhap f = new fDangNhap();
-            f.ShowDialog();
-            this.Close();
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                this.Hide();
+                fDangNhap f = new fDangNhap();
+                f.WindowState = FormWindowState.Maximized;
+                f.ShowDialog();
+                this.Close();
+            }
+            else
+            {
+                this.Hide();
+                fDangNhap f = new fDangNhap();
+                f.WindowState = FormWindowState.Normal;
+                f.ShowDialog();
+                this.Close();
+            }
         }
 
         private void btnTrangChu_Click(object sender, EventArgs e)
@@ -136,7 +148,7 @@ namespace QuanLyGaRanKFC.View
         {
             if (nhanVien.quyen == 1 || nhanVien.quyen == 2)
             {
-
+                OpenChildForm(new fHoaDon());
             }
             else
             {

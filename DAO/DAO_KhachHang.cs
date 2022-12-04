@@ -38,7 +38,7 @@ namespace QuanLyGaRanKFC.DAO
         {
             KhachHang khachHang = new KhachHang();
             _conn.Open();
-            command = new SqlCommand($"SELECT * FROM KhachHang WHERE MaKH = '{_maKH}' and isDeleted = 0", _conn);
+            command = new SqlCommand($"SELECT * FROM KhachHang WHERE MaKH = '{_maKH}' and (isDeleted = 0 or MaKH = 'KH1')", _conn);
             reader = command.ExecuteReader();
             while (reader.Read())
             {
@@ -54,7 +54,7 @@ namespace QuanLyGaRanKFC.DAO
         {
             KhachHang khachHang = new KhachHang();
             _conn.Open();
-            command = new SqlCommand($"SELECT * FROM KhachHang WHERE SDT = N'{_sdtKH}' and isDeleted = 0", _conn);
+            command = new SqlCommand($"SELECT * FROM KhachHang WHERE SDT = N'{_sdtKH}' and (isDeleted = 0 or MaKH = 'KH1')", _conn);
             reader = command.ExecuteReader();
             while (reader.Read())
             {
@@ -128,6 +128,14 @@ namespace QuanLyGaRanKFC.DAO
             _conn.Close();
             i++;
             return i;
+        }
+        public bool isKhachHangExist(string _sdtKH)
+        {
+            _conn.Open();
+            command = new SqlCommand($"SELECT COUNT(*) FROM KhachHang WHERE SDT = '{_sdtKH}' and isDeleted = 0", _conn);
+            int exist = (Int32)command.ExecuteScalar();
+            _conn.Close();
+            return exist > 0;
         }
     }
 }

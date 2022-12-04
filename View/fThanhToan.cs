@@ -61,14 +61,10 @@ namespace QuanLyGaRanKFC.View
             txbTenKH.Enabled = false;
             KhachHang khachHang = dAO_KhachHang.GetByPhone(txbSdtKH.Text);
             txbTenKH.Text = khachHang.tenKH;
+            txbNhanVien.Text = NhanVien.tenNV;
             cbDanhMuc.DataSource = dAO_DanhMuc.GetAll();
             cbDanhMuc.ValueMember = "maDM";
             cbDanhMuc.DisplayMember = "tenDM";
-            DanhMuc danhMuc = dAO_DanhMuc.GetByID(cbDanhMuc.SelectedValue.ToString());
-            cbMonAn.DataSource = dAO_MonAn.GetList(danhMuc.maDM);
-            cbMonAn.ValueMember = "maMon";
-            cbMonAn.DisplayMember = "tenMon";
-            txbNhanVien.Text = NhanVien.tenNV;
             resetfield();
         }
         private void resetfield()
@@ -88,6 +84,16 @@ namespace QuanLyGaRanKFC.View
             DAO_KhachHang dAO_KhachHang = new DAO_KhachHang();
             KhachHang khachHang = dAO_KhachHang.GetByPhone(txbSdtKH.Text);
             txbTenKH.Text = khachHang.tenKH;
+        }
+
+        private void cbDanhMuc_TextChanged(object sender, EventArgs e)
+        {
+            DAO_DanhMuc dAO_DanhMuc = new DAO_DanhMuc();
+            DAO_MonAn dAO_MonAn = new DAO_MonAn();
+            DanhMuc danhMuc = dAO_DanhMuc.GetByID(cbDanhMuc.SelectedValue.ToString());
+            cbMonAn.DataSource = dAO_MonAn.GetList(danhMuc.maDM);
+            cbMonAn.ValueMember = "maMon";
+            cbMonAn.DisplayMember = "tenMon";
         }
     }
 }

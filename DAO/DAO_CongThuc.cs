@@ -37,7 +37,7 @@ namespace QuanLyGaRanKFC.DAO
         public void Add(CongThuc congThuc, string _maMon)
         {
             _conn.Open();
-            command = new SqlCommand($"INSERT INTO CongThuc (MaMon, SoLuong, MaNL) VALUES('{_maMon}', {congThuc.soLuong}, '{congThuc.nguyenLieu.maNL}'", _conn);
+            command = new SqlCommand($"INSERT INTO CongThuc (MaMon, SoLuong, MaNL) VALUES('{_maMon}', {congThuc.soLuong}, '{congThuc.nguyenLieu.maNL}')", _conn);
             command.ExecuteNonQuery();
             _conn.Close();
         }

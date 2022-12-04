@@ -68,10 +68,22 @@ namespace QuanLyGaRanKFC.View
                 }
                 else
                 {
-                    this.Hide();
-                    fQuanLyGaRanKFC qlch = new fQuanLyGaRanKFC(nhanVien);
-                    qlch.ShowDialog();
-                    this.Close();
+                    if (this.WindowState == FormWindowState.Maximized)
+                    {
+                        this.Hide();
+                        fQuanLyGaRanKFC qlch = new fQuanLyGaRanKFC(nhanVien);
+                        qlch.WindowState = FormWindowState.Maximized;
+                        qlch.ShowDialog();
+                        this.Close();
+                    }
+                    else
+                    {
+                        this.Hide();
+                        fQuanLyGaRanKFC qlch = new fQuanLyGaRanKFC(nhanVien);
+                        qlch.WindowState = FormWindowState.Normal;
+                        qlch.ShowDialog();
+                        this.Close();
+                    }
                 }
             }
         }

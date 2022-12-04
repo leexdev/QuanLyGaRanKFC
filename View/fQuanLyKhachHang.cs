@@ -61,48 +61,77 @@ namespace QuanLyGaRanKFC.View.UserControl
         }
         private void addKhachHang(object sender, EventArgs e)
         {
+            DAO_KhachHang dAO_KhachHang = new DAO_KhachHang();
             if (txbTenKH.Text == "" || txbSdtKH.Text == "")
             {
                 MessageBox.Show("Vui lòng điền đầy đủ thông tin", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
-            else
+            if (dAO_KhachHang.isKhachHangExist(txbSdtKH.Text))
             {
-                DAO_KhachHang dAO_KhachHang = new DAO_KhachHang();
-                KhachHang.maKH = txbMaKH.Text;
-                KhachHang.tenKH = txbTenKH.Text;
-                KhachHang.sdt = txbSdtKH.Text;
-                dAO_KhachHang.Add(KhachHang);
-                resetFieldKH();
-                MessageBox.Show("Thêm thành công!");
+                MessageBox.Show("Khách hàng đã tồn tại!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
+            KhachHang.maKH = txbMaKH.Text;
+            KhachHang.tenKH = txbTenKH.Text;
+            KhachHang.sdt = txbSdtKH.Text;
+            dAO_KhachHang.Add(KhachHang);
+            resetFieldKH();
+            MessageBox.Show("Thêm thành công!");
         }
 
         private void btnSuaKH_Click(object sender, EventArgs e)
         {
             DAO_KhachHang dAO_KhachHang = new DAO_KhachHang();
-            KhachHang.maKH = txbMaKH.Text;
-            KhachHang.tenKH = txbTenKH.Text;
-            KhachHang.sdt = txbSdtKH.Text;
-            dAO_KhachHang.Update(KhachHang);
-            resetFieldKH();
-            MessageBox.Show("Sửa thành công!");
-            function.turnOffButton(btnSuaKH);
-            function.turnOffButton(btnXoaKH);
-            function.turnOnButton(btnThemKH);
+            KhachHang khachHang = dAO_KhachHang.GetByID(dgvKhachHang.CurrentRow.Cells[1].Value.ToString());
+
+            if (txbSdtKH.Text == khachHang.sdt)
+            {
+                KhachHang.maKH = txbMaKH.Text;
+                KhachHang.tenKH = txbTenKH.Text;
+                KhachHang.sdt = txbSdtKH.Text;
+                dAO_KhachHang.Update(KhachHang);
+                resetFieldKH();
+                MessageBox.Show("Sửa thành công!");
+                function.turnOffButton(btnSuaKH);
+                function.turnOffButton(btnXoaKH);
+                function.turnOnButton(btnThemKH);
+            }
+            else if (dAO_KhachHang.isKhachHangExist(txbSdtKH.Text))
+            {
+                MessageBox.Show("Số điện thoại đã tồn tại!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                KhachHang.maKH = txbMaKH.Text;
+                KhachHang.tenKH = txbTenKH.Text;
+                KhachHang.sdt = txbSdtKH.Text;
+                dAO_KhachHang.Update(KhachHang);
+                resetFieldKH();
+                MessageBox.Show("Sửa thành công!");
+                function.turnOffButton(btnSuaKH);
+                function.turnOffButton(btnXoaKH);
+                function.turnOnButton(btnThemKH);
+            }
         }
 
         private void btnXoaKH_Click(object sender, EventArgs e)
         {
+            if (txbMaKH.Text == "KH1")
+            {
+                MessageBox.Show("Không thể xóa!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             var result = MessageBox.Show("Bạn có chắc muốn xóa khách hàng này?", "Xác nhận xóa!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (result == DialogResult.Yes)
             {
                 DAO_KhachHang dAO_KhachHang = new DAO_KhachHang();
                 dAO_KhachHang.Delete(txbMaKH.Text);
                 resetFieldKH();
+                function.turnOffButton(btnSuaKH);
+                function.turnOffButton(btnXoaKH);
+                function.turnOnButton(btnThemKH);
             }
-            function.turnOffButton(btnSuaKH);
-            function.turnOffButton(btnXoaKH);
-            function.turnOnButton(btnThemKH);
         }
 
         private void btnLamMoiKH_Click(object sender, EventArgs e)
@@ -112,7 +141,6 @@ namespace QuanLyGaRanKFC.View.UserControl
             function.turnOffButton(btnSuaKH);
             function.turnOffButton(btnXoaKH);
         }
-
         private void btnTimKiemKH_Click(object sender, EventArgs e)
         {
             string _keyWord = txbTimKiemKH.Text;
@@ -138,9 +166,8 @@ namespace QuanLyGaRanKFC.View.UserControl
             }
             else
             {
-                DataGridViewRow row = dgvKhachHang.Rows[e.RowIndex];
                 DAO_KhachHang dAO_KhachHang = new DAO_KhachHang();
-                KhachHang khachHang = dAO_KhachHang.GetByID(row.Cells[1].Value.ToString());
+                KhachHang khachHang = dAO_KhachHang.GetByID(dgvKhachHang.CurrentRow.Cells[1].Value.ToString());
                 txbMaKH.Text = khachHang.maKH;
                 txbTenKH.Text = khachHang.tenKH;
                 txbSdtKH.Text = khachHang.sdt;
@@ -158,6 +185,11 @@ namespace QuanLyGaRanKFC.View.UserControl
             txbTenKH.Text = "";
             txbSdtKH.Text = "";
             txbTimKiemKH.Text = "";
+        }
+
+        private void txbSdtKH_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
     }
 }
