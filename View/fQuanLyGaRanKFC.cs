@@ -22,6 +22,7 @@ namespace QuanLyGaRanKFC.View
         DanhMuc danhMuc = new DanhMuc();
         MonAn monAn = new MonAn();
         CTHD cTHD = new CTHD();
+        KhachHang khachHang = new KhachHang();
         
         public fQuanLyGaRanKFC(NhanVien nhanVien)
         {
@@ -134,7 +135,7 @@ namespace QuanLyGaRanKFC.View
         {
             if (nhanVien.quyen == 1 || nhanVien.quyen == 2)
             {
-                OpenChildForm(new fMonAn(monAn, danhMuc));
+                OpenChildForm(new fMonAn(monAn, danhMuc, nhanVien, chiNhanh));
             }
             else
             {
@@ -145,7 +146,7 @@ namespace QuanLyGaRanKFC.View
         {
             if (nhanVien.quyen == 1 || nhanVien.quyen == 2)
             {
-                OpenChildForm(new fHoaDon());
+                OpenChildForm(new fHoaDon(nhanVien, khachHang));
             }
             else
             {
@@ -154,7 +155,7 @@ namespace QuanLyGaRanKFC.View
         }
         private void btnKho_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new fNguyenLieu(nguyenLieu, chiNhanh));
+            OpenChildForm(new fNguyenLieu(nguyenLieu, chiNhanh, nhanVien));
         }
         private void btnThongKe_Click(object sender, EventArgs e)
         {

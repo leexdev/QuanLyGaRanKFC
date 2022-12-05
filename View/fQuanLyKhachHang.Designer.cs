@@ -240,6 +240,7 @@
             this.txbTenKH.ForeColor = System.Drawing.Color.Black;
             this.txbTenKH.Location = new System.Drawing.Point(121, 63);
             this.txbTenKH.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.txbTenKH.MaxLength = 50;
             this.txbTenKH.Name = "txbTenKH";
             this.txbTenKH.Size = new System.Drawing.Size(259, 16);
             this.txbTenKH.TabIndex = 26;
@@ -276,6 +277,7 @@
             this.txbMaKH.ForeColor = System.Drawing.Color.Black;
             this.txbMaKH.Location = new System.Drawing.Point(121, 23);
             this.txbMaKH.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.txbMaKH.MaxLength = 20;
             this.txbMaKH.Name = "txbMaKH";
             this.txbMaKH.ReadOnly = true;
             this.txbMaKH.Size = new System.Drawing.Size(259, 16);

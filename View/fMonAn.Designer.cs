@@ -87,11 +87,9 @@
             this.maNL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tenNL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._xoa = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel5 = new System.Windows.Forms.Panel();
             this.btnThoat = new System.Windows.Forms.Button();
-            this.btnLamMoiCT = new System.Windows.Forms.Button();
-            this.btnXoaCT = new System.Windows.Forms.Button();
-            this.btnSuaCT = new System.Windows.Forms.Button();
             this.btnThemCT = new System.Windows.Forms.Button();
             this.nmrupSoLuong = new System.Windows.Forms.NumericUpDown();
             this.txbTenMon = new System.Windows.Forms.TextBox();
@@ -137,6 +135,7 @@
             this.tcMonAn.SelectedIndex = 0;
             this.tcMonAn.Size = new System.Drawing.Size(879, 625);
             this.tcMonAn.TabIndex = 0;
+            this.tcMonAn.SelectedIndexChanged += new System.EventHandler(this.tcMonAn_SelectedIndexChanged);
             // 
             // tpMonAn
             // 
@@ -468,6 +467,7 @@
             this.txbTenMA.ForeColor = System.Drawing.Color.Black;
             this.txbTenMA.Location = new System.Drawing.Point(142, 90);
             this.txbTenMA.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.txbTenMA.MaxLength = 100;
             this.txbTenMA.Name = "txbTenMA";
             this.txbTenMA.Size = new System.Drawing.Size(259, 16);
             this.txbTenMA.TabIndex = 2;
@@ -504,6 +504,7 @@
             this.txbMaMA.ForeColor = System.Drawing.Color.Black;
             this.txbMaMA.Location = new System.Drawing.Point(139, 49);
             this.txbMaMA.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.txbMaMA.MaxLength = 20;
             this.txbMaMA.Name = "txbMaMA";
             this.txbMaMA.ReadOnly = true;
             this.txbMaMA.Size = new System.Drawing.Size(259, 16);
@@ -778,7 +779,7 @@
             this.txbTenDM.ForeColor = System.Drawing.Color.Black;
             this.txbTenDM.Location = new System.Drawing.Point(554, 23);
             this.txbTenDM.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.txbTenDM.MaxLength = 11;
+            this.txbTenDM.MaxLength = 50;
             this.txbTenDM.Name = "txbTenDM";
             this.txbTenDM.Size = new System.Drawing.Size(242, 16);
             this.txbTenDM.TabIndex = 31;
@@ -815,6 +816,7 @@
             this.txbMaDM.ForeColor = System.Drawing.Color.Black;
             this.txbMaDM.Location = new System.Drawing.Point(157, 24);
             this.txbMaDM.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.txbMaDM.MaxLength = 20;
             this.txbMaDM.Name = "txbMaDM";
             this.txbMaDM.ReadOnly = true;
             this.txbMaDM.Size = new System.Drawing.Size(259, 16);
@@ -882,7 +884,8 @@
             this.dataGridViewTextBoxColumn2,
             this.maNL,
             this.tenNL,
-            this.SoLuong});
+            this.SoLuong,
+            this._xoa});
             this.dgvCongThuc.Location = new System.Drawing.Point(3, 214);
             this.dgvCongThuc.Name = "dgvCongThuc";
             this.dgvCongThuc.ReadOnly = true;
@@ -891,6 +894,7 @@
             this.dgvCongThuc.RowTemplate.Height = 25;
             this.dgvCongThuc.Size = new System.Drawing.Size(865, 380);
             this.dgvCongThuc.TabIndex = 74;
+            this.dgvCongThuc.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCongThuc_CellClick);
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -924,13 +928,18 @@
             this.SoLuong.Name = "SoLuong";
             this.SoLuong.ReadOnly = true;
             // 
+            // _xoa
+            // 
+            this._xoa.HeaderText = "";
+            this._xoa.Name = "_xoa";
+            this._xoa.ReadOnly = true;
+            this._xoa.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this._xoa.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.SystemColors.Control;
             this.panel5.Controls.Add(this.btnThoat);
-            this.panel5.Controls.Add(this.btnLamMoiCT);
-            this.panel5.Controls.Add(this.btnXoaCT);
-            this.panel5.Controls.Add(this.btnSuaCT);
             this.panel5.Controls.Add(this.btnThemCT);
             this.panel5.Controls.Add(this.nmrupSoLuong);
             this.panel5.Controls.Add(this.txbTenMon);
@@ -959,7 +968,7 @@
             this.btnThoat.Font = new System.Drawing.Font("Arial", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnThoat.ForeColor = System.Drawing.Color.White;
             this.btnThoat.Image = global::QuanLyGaRanKFC.Properties.Resources.icons8_close_window_32;
-            this.btnThoat.Location = new System.Drawing.Point(705, 88);
+            this.btnThoat.Location = new System.Drawing.Point(466, 88);
             this.btnThoat.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(118, 39);
@@ -970,66 +979,6 @@
             this.btnThoat.UseVisualStyleBackColor = false;
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
-            // btnLamMoiCT
-            // 
-            this.btnLamMoiCT.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.btnLamMoiCT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(0)))), ((int)(((byte)(43)))));
-            this.btnLamMoiCT.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLamMoiCT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLamMoiCT.Font = new System.Drawing.Font("Arial", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnLamMoiCT.ForeColor = System.Drawing.Color.White;
-            this.btnLamMoiCT.Image = global::QuanLyGaRanKFC.Properties.Resources.icons8_repeat_16;
-            this.btnLamMoiCT.Location = new System.Drawing.Point(398, 87);
-            this.btnLamMoiCT.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.btnLamMoiCT.Name = "btnLamMoiCT";
-            this.btnLamMoiCT.Size = new System.Drawing.Size(118, 39);
-            this.btnLamMoiCT.TabIndex = 93;
-            this.btnLamMoiCT.Text = "Làm mới";
-            this.btnLamMoiCT.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLamMoiCT.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnLamMoiCT.UseVisualStyleBackColor = false;
-            this.btnLamMoiCT.Click += new System.EventHandler(this.btnLamMoiCT_Click);
-            // 
-            // btnXoaCT
-            // 
-            this.btnXoaCT.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.btnXoaCT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(0)))), ((int)(((byte)(43)))));
-            this.btnXoaCT.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnXoaCT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnXoaCT.Font = new System.Drawing.Font("Arial", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnXoaCT.ForeColor = System.Drawing.Color.White;
-            this.btnXoaCT.Image = ((System.Drawing.Image)(resources.GetObject("btnXoaCT.Image")));
-            this.btnXoaCT.Location = new System.Drawing.Point(554, 87);
-            this.btnXoaCT.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.btnXoaCT.Name = "btnXoaCT";
-            this.btnXoaCT.Size = new System.Drawing.Size(118, 39);
-            this.btnXoaCT.TabIndex = 94;
-            this.btnXoaCT.Text = "Xóa";
-            this.btnXoaCT.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnXoaCT.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnXoaCT.UseVisualStyleBackColor = false;
-            this.btnXoaCT.Click += new System.EventHandler(this.btnXoaCT_Click);
-            // 
-            // btnSuaCT
-            // 
-            this.btnSuaCT.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.btnSuaCT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(0)))), ((int)(((byte)(43)))));
-            this.btnSuaCT.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSuaCT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSuaCT.Font = new System.Drawing.Font("Arial", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnSuaCT.ForeColor = System.Drawing.Color.White;
-            this.btnSuaCT.Image = ((System.Drawing.Image)(resources.GetObject("btnSuaCT.Image")));
-            this.btnSuaCT.Location = new System.Drawing.Point(244, 87);
-            this.btnSuaCT.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.btnSuaCT.Name = "btnSuaCT";
-            this.btnSuaCT.Size = new System.Drawing.Size(118, 39);
-            this.btnSuaCT.TabIndex = 92;
-            this.btnSuaCT.Text = "Sửa";
-            this.btnSuaCT.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSuaCT.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnSuaCT.UseVisualStyleBackColor = false;
-            this.btnSuaCT.Click += new System.EventHandler(this.btnSuaCT_Click);
-            // 
             // btnThemCT
             // 
             this.btnThemCT.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
@@ -1039,7 +988,7 @@
             this.btnThemCT.Font = new System.Drawing.Font("Arial", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnThemCT.ForeColor = System.Drawing.Color.White;
             this.btnThemCT.Image = global::QuanLyGaRanKFC.Properties.Resources.icons8_add_user_16;
-            this.btnThemCT.Location = new System.Drawing.Point(91, 88);
+            this.btnThemCT.Location = new System.Drawing.Point(311, 88);
             this.btnThemCT.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnThemCT.Name = "btnThemCT";
             this.btnThemCT.Size = new System.Drawing.Size(118, 39);
@@ -1067,6 +1016,7 @@
             this.txbTenMon.ForeColor = System.Drawing.Color.Black;
             this.txbTenMon.Location = new System.Drawing.Point(578, 13);
             this.txbTenMon.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.txbTenMon.MaxLength = 100;
             this.txbTenMon.Name = "txbTenMon";
             this.txbTenMon.ReadOnly = true;
             this.txbTenMon.Size = new System.Drawing.Size(245, 16);
@@ -1104,6 +1054,7 @@
             this.cbNguyenLieu.Name = "cbNguyenLieu";
             this.cbNguyenLieu.Size = new System.Drawing.Size(246, 23);
             this.cbNguyenLieu.TabIndex = 76;
+            this.cbNguyenLieu.MouseClick += new System.Windows.Forms.MouseEventHandler(this.cbNguyenLieu_MouseClick);
             // 
             // label18
             // 
@@ -1171,6 +1122,7 @@
             this.txbMaMon.ForeColor = System.Drawing.Color.Black;
             this.txbMaMon.Location = new System.Drawing.Point(173, 13);
             this.txbMaMon.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.txbMaMon.MaxLength = 20;
             this.txbMaMon.Name = "txbMaMon";
             this.txbMaMon.ReadOnly = true;
             this.txbMaMon.Size = new System.Drawing.Size(246, 16);
@@ -1306,14 +1258,7 @@
         private NumericUpDown nmrupDonGia;
         private TabPage tpCongThuc;
         private DataGridView dgvCongThuc;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private DataGridViewTextBoxColumn maNL;
-        private DataGridViewTextBoxColumn tenNL;
-        private DataGridViewTextBoxColumn SoLuong;
         private Panel panel5;
-        private Button btnLamMoiCT;
-        private Button btnXoaCT;
-        private Button btnSuaCT;
         private Button btnThemCT;
         private NumericUpDown nmrupSoLuong;
         private TextBox txbTenMon;
@@ -1330,5 +1275,10 @@
         private Panel panel6;
         private Label label24;
         private Button btnThoat;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private DataGridViewTextBoxColumn maNL;
+        private DataGridViewTextBoxColumn tenNL;
+        private DataGridViewTextBoxColumn SoLuong;
+        private DataGridViewButtonColumn _xoa;
     }
 }

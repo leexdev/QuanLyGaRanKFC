@@ -21,13 +21,13 @@ namespace QuanLyGaRanKFC.DAO
         {
             List<CongThuc> list = new List<CongThuc>();
             _conn.Open();
-            command = new SqlCommand($"SELECT SoLuong, NguyenLieu.MaNL FROM CongThuc, NguyenLieu WHERE CongThuc.MaNL = NguyenLieu.MaNL AND MaMon = '{_maMon}'", _conn);
+            command = new SqlCommand($"SELECT MaNL ,SUM(SoLuong) AS SoLuong FROM CongThuc WHERE CongThuc.MaMon = '{_maMon}' GROUP BY CongThuc.MaNL", _conn);
             reader = command.ExecuteReader();
             DAO_NguyenLieu _nguyenLieu = new DAO_NguyenLieu();
             while (reader.Read())
             {
-                int soLuong = reader.GetInt32(0);
-                NguyenLieu nl = _nguyenLieu.GetByID(reader.GetString(1));
+                int soLuong = reader.GetInt32(1);
+                NguyenLieu nl = _nguyenLieu.GetByID(reader.GetString(0));
                 CongThuc ct = new CongThuc(soLuong, nl);
                 list.Add(ct);
             }

@@ -102,6 +102,23 @@ namespace QuanLyGaRanKFC.DAO
             _conn.Close();
             return monAn;
         }
+        public MonAn GetByName(string _tenMon)
+        {
+            MonAn monAn = new MonAn();
+            _conn.Open();
+            command = new SqlCommand($"SELECT * FROM MonAn WHERE MaMon = '{_tenMon}' and isDeleted = 0", _conn);
+            reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                string maMon = reader.GetString(0);
+                string tenMon = reader.GetString(1);
+                decimal donGia = reader.GetDecimal(2);
+                monAn = new MonAn(maMon, tenMon, donGia);
+
+            }
+            _conn.Close();
+            return monAn;
+        }
         public void Add(MonAn _monAn, string _maDM)
         {
             _conn.Open();

@@ -271,6 +271,7 @@
             this.txbDiaChi.ForeColor = System.Drawing.Color.Black;
             this.txbDiaChi.Location = new System.Drawing.Point(582, 78);
             this.txbDiaChi.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.txbDiaChi.MaxLength = 100;
             this.txbDiaChi.Multiline = true;
             this.txbDiaChi.Name = "txbDiaChi";
             this.txbDiaChi.Size = new System.Drawing.Size(264, 58);
@@ -308,6 +309,7 @@
             this.txbTenCN.ForeColor = System.Drawing.Color.Black;
             this.txbTenCN.Location = new System.Drawing.Point(236, 120);
             this.txbTenCN.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.txbTenCN.MaxLength = 50;
             this.txbTenCN.Name = "txbTenCN";
             this.txbTenCN.Size = new System.Drawing.Size(226, 16);
             this.txbTenCN.TabIndex = 0;

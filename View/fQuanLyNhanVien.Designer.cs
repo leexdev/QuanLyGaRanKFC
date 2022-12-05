@@ -554,7 +554,7 @@
             this.txbDiaChiNV.ForeColor = System.Drawing.Color.Black;
             this.txbDiaChiNV.Location = new System.Drawing.Point(158, 169);
             this.txbDiaChiNV.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.txbDiaChiNV.MaxLength = 50;
+            this.txbDiaChiNV.MaxLength = 100;
             this.txbDiaChiNV.Name = "txbDiaChiNV";
             this.txbDiaChiNV.Size = new System.Drawing.Size(259, 16);
             this.txbDiaChiNV.TabIndex = 6;

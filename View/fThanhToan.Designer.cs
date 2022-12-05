@@ -71,6 +71,7 @@
             this.soluong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.donGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.thanhTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._xoa = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmrupSoLuong)).BeginInit();
             this.panel3.SuspendLayout();
@@ -122,6 +123,7 @@
             this.txbSdtKH.ForeColor = System.Drawing.Color.Black;
             this.txbSdtKH.Location = new System.Drawing.Point(167, 75);
             this.txbSdtKH.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.txbSdtKH.MaxLength = 11;
             this.txbSdtKH.Name = "txbSdtKH";
             this.txbSdtKH.Size = new System.Drawing.Size(246, 16);
             this.txbSdtKH.TabIndex = 91;
@@ -131,10 +133,20 @@
             // 
             this.nmrupSoLuong.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.nmrupSoLuong.Location = new System.Drawing.Point(572, 132);
+            this.nmrupSoLuong.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmrupSoLuong.Name = "nmrupSoLuong";
             this.nmrupSoLuong.Size = new System.Drawing.Size(106, 23);
             this.nmrupSoLuong.TabIndex = 90;
             this.nmrupSoLuong.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.nmrupSoLuong.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // txbTenKH
             // 
@@ -144,6 +156,7 @@
             this.txbTenKH.ForeColor = System.Drawing.Color.Black;
             this.txbTenKH.Location = new System.Drawing.Point(572, 75);
             this.txbTenKH.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.txbTenKH.MaxLength = 50;
             this.txbTenKH.Name = "txbTenKH";
             this.txbTenKH.ReadOnly = true;
             this.txbTenKH.Size = new System.Drawing.Size(245, 16);
@@ -194,6 +207,7 @@
             this.txbNhanVien.ForeColor = System.Drawing.Color.Black;
             this.txbNhanVien.Location = new System.Drawing.Point(572, 42);
             this.txbNhanVien.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.txbNhanVien.MaxLength = 50;
             this.txbNhanVien.Name = "txbNhanVien";
             this.txbNhanVien.ReadOnly = true;
             this.txbNhanVien.Size = new System.Drawing.Size(245, 16);
@@ -217,6 +231,7 @@
             this.btnThemMon.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnThemMon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnThemMon.UseVisualStyleBackColor = false;
+            this.btnThemMon.Click += new System.EventHandler(this.btnThemMon_Click);
             // 
             // label16
             // 
@@ -251,6 +266,7 @@
             this.cbMonAn.Size = new System.Drawing.Size(246, 23);
             this.cbMonAn.TabIndex = 79;
             this.cbMonAn.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cb_KeyPress);
+            this.cbMonAn.MouseClick += new System.Windows.Forms.MouseEventHandler(this.cbMonAn_MouseClick);
             // 
             // label14
             // 
@@ -286,6 +302,7 @@
             this.cbDanhMuc.TabIndex = 76;
             this.cbDanhMuc.TextChanged += new System.EventHandler(this.cbDanhMuc_TextChanged);
             this.cbDanhMuc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cb_KeyPress);
+            this.cbDanhMuc.MouseClick += new System.Windows.Forms.MouseEventHandler(this.cbDanhMuc_MouseClick);
             // 
             // label12
             // 
@@ -434,6 +451,7 @@
             this.txbMaHD.ForeColor = System.Drawing.Color.Black;
             this.txbMaHD.Location = new System.Drawing.Point(167, 12);
             this.txbMaHD.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.txbMaHD.MaxLength = 20;
             this.txbMaHD.Name = "txbMaHD";
             this.txbMaHD.ReadOnly = true;
             this.txbMaHD.Size = new System.Drawing.Size(246, 16);
@@ -501,6 +519,7 @@
             this.btnLuu.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLuu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnLuu.UseVisualStyleBackColor = false;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // label20
             // 
@@ -521,13 +540,14 @@
             this.txbTongTien.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.txbTongTien.BackColor = System.Drawing.SystemColors.Control;
             this.txbTongTien.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txbTongTien.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txbTongTien.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txbTongTien.ForeColor = System.Drawing.Color.Black;
-            this.txbTongTien.Location = new System.Drawing.Point(643, 552);
+            this.txbTongTien.Location = new System.Drawing.Point(643, 557);
             this.txbTongTien.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.txbTongTien.Name = "txbTongTien";
-            this.txbTongTien.Size = new System.Drawing.Size(149, 28);
+            this.txbTongTien.Size = new System.Drawing.Size(149, 25);
             this.txbTongTien.TabIndex = 69;
+            this.txbTongTien.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label19
             // 
@@ -580,13 +600,15 @@
             this.tenMon,
             this.soluong,
             this.donGia,
-            this.thanhTien});
+            this.thanhTien,
+            this._xoa});
             this.dgvThanhToan.Location = new System.Drawing.Point(0, 295);
             this.dgvThanhToan.Name = "dgvThanhToan";
             this.dgvThanhToan.RowHeadersVisible = false;
             this.dgvThanhToan.RowTemplate.Height = 25;
             this.dgvThanhToan.Size = new System.Drawing.Size(879, 253);
             this.dgvThanhToan.TabIndex = 66;
+            this.dgvThanhToan.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvThanhToan_CellClick);
             // 
             // stt
             // 
@@ -617,6 +639,13 @@
             this.thanhTien.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.thanhTien.HeaderText = "Thành Tiền";
             this.thanhTien.Name = "thanhTien";
+            // 
+            // _xoa
+            // 
+            this._xoa.HeaderText = "";
+            this._xoa.Name = "_xoa";
+            this._xoa.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this._xoa.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // fThanhToan
             // 
@@ -681,16 +710,17 @@
         private Label label1;
         private Button btnThemMon;
         private TextBox txbNhanVien;
-        private DataGridViewTextBoxColumn stt;
-        private DataGridViewTextBoxColumn tenMon;
-        private DataGridViewTextBoxColumn soluong;
-        private DataGridViewTextBoxColumn donGia;
-        private DataGridViewTextBoxColumn thanhTien;
         private TextBox txbChiNhanh;
         private NumericUpDown nmrupSoLuong;
         private TextBox txbTenKH;
         private Label label21;
         private Label label22;
         private TextBox txbSdtKH;
+        private DataGridViewTextBoxColumn stt;
+        private DataGridViewTextBoxColumn tenMon;
+        private DataGridViewTextBoxColumn soluong;
+        private DataGridViewTextBoxColumn donGia;
+        private DataGridViewTextBoxColumn thanhTien;
+        private DataGridViewButtonColumn _xoa;
     }
 }

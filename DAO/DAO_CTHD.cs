@@ -37,7 +37,7 @@ namespace QuanLyGaRanKFC.DAO
         public void Add(CTHD CTHD, string _maHD)
         {
             _conn.Open();
-            command = new SqlCommand($"INSERT INTO CTHoaDon (MaHD, SoLuong, MaMon) VALUES('{_maHD}', {CTHD.soLuong}, '{CTHD.MonAn.maMon}'", _conn);
+            command = new SqlCommand($"INSERT INTO CTHoaDon (MaHD, SoLuong, MaMon) VALUES('{_maHD}', {CTHD.soLuong}, '{CTHD.MonAn.maMon}')", _conn);
             command.ExecuteNonQuery();
             _conn.Close();
         }

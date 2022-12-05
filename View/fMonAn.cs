@@ -19,12 +19,15 @@ namespace QuanLyGaRanKFC.View
         MonAn MonAn = new MonAn();
         ChiNhanh ChiNhanh = new ChiNhanh();
         NguyenLieu NguyenLieu = new NguyenLieu();
-        public fMonAn(MonAn monAn, DanhMuc danhMuc)
+        NhanVien NhanVien = new NhanVien();
+        public fMonAn(MonAn monAn, DanhMuc danhMuc, NhanVien nhanVien, ChiNhanh chiNhanh)
         {
             InitializeComponent();
             AssociateAndRaiseViewEvent();
             this.MonAn = monAn;
             this.DanhMuc = danhMuc;
+            this.NhanVien = nhanVien;
+            this.ChiNhanh = chiNhanh;
         }
         private void AssociateAndRaiseViewEvent()
         {
@@ -69,11 +72,12 @@ namespace QuanLyGaRanKFC.View
         }
         private void fMonAn_Load(object sender, EventArgs e)
         {
-            this.tpCongThuc.Hide();
-            tcMonAn.TabPages.Remove(tpCongThuc);
             DAO_DanhMuc dAO_DanhMuc = new DAO_DanhMuc();
             DAO_MonAn dAO_MonAn = new DAO_MonAn();
             DAO_NguyenLieu dAO_NguyenLieu = new DAO_NguyenLieu();
+            DAO_ChiNhanh dAO_ChiNhanh = new DAO_ChiNhanh();
+            this.tpCongThuc.Hide();
+            tcMonAn.TabPages.Remove(tpCongThuc);
             dgvMonAn.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvMonAn.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvDanhMuc.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -85,20 +89,22 @@ namespace QuanLyGaRanKFC.View
             function.turnOffButton(btnXoaDM);
             dgvMonAn.Columns[0].Width = 50;
             dgvDanhMuc.Columns[0].Width = 50;
-            List<Button> btnList = new List<Button>() { btnThemMA, btnSuaMA, btnXoaMA, btnLamMoiMA, btnCongThuc, btnTimKiemMA, btnThemDM, btnSuaDM, btnXoaDM, btnLamMoiDM, btnTimKiemMA, btnThemCT, btnSuaCT, btnXoaCT, btnLamMoiCT, btnThoat};
+            dgvCongThuc.Columns[0].Width = 50;
+
+            List<Button> btnList = new List<Button>() { btnThemMA, btnSuaMA, btnXoaMA, btnLamMoiMA, btnCongThuc, btnTimKiemMA, btnThemDM, btnSuaDM, btnXoaDM, btnLamMoiDM, btnTimKiemMA, btnThemCT, btnThoat};
             foreach (Button button in btnList)
             {
                 button.FlatAppearance.BorderSize = 0;
             }
             cbDanhMuc.DataSource = dAO_DanhMuc.GetAll();
             cbDanhMucLoc.DataSource = dAO_DanhMuc.GetAll();
-            cbNguyenLieu.DataSource = dAO_NguyenLieu.GetAll();
+            cbNguyenLieu.DataSource = dAO_NguyenLieu.GetAllNL(dAO_ChiNhanh.GetByUserID(NhanVien.maNV).maCN);
+            cbNguyenLieu.ValueMember = "maNL";
+            cbNguyenLieu.DisplayMember = "tenNL";
             cbDanhMuc.ValueMember = "maDM";
             cbDanhMuc.DisplayMember = "tenDM";
             cbDanhMucLoc.ValueMember = "maDM";
             cbDanhMucLoc.DisplayMember = "tenDM";
-            cbNguyenLieu.ValueMember = "maNL";
-            cbNguyenLieu.DisplayMember = "tenNL";
             resetFieldMA();
             resetFieldDM();
         }
@@ -356,7 +362,7 @@ namespace QuanLyGaRanKFC.View
             List<CongThuc> congThucs = dAO_CongThuc.GetList(txbMaMA.Text);
             foreach (CongThuc congThuc in congThucs)
             {
-                dgvCongThuc.Rows.Add(i, congThuc.nguyenLieu.maNL, congThuc.nguyenLieu.tenNL, congThuc.soLuong);
+                dgvCongThuc.Rows.Add(i, congThuc.nguyenLieu.maNL, congThuc.nguyenLieu.tenNL, congThuc.soLuong, "Xóa");
                 i++;
             }
         }
@@ -369,26 +375,6 @@ namespace QuanLyGaRanKFC.View
             dAO_CongThuc.Add(congThuc, txbMaMon.Text);
             resetFieldCT();
         }
-
-        private void btnSuaCT_Click(object sender, EventArgs e)
-        {
-            DAO_NguyenLieu dAO_NguyenLieu = new DAO_NguyenLieu();
-            NguyenLieu nguyenLieu = dAO_NguyenLieu.GetByID(cbNguyenLieu.SelectedValue.ToString());
-            CongThuc congThuc = new CongThuc(Convert.ToInt32(nmrupSoLuong.Value), nguyenLieu);
-            DAO_CongThuc dAO_CongThuc = new DAO_CongThuc();
-            dAO_CongThuc.Update(congThuc, txbMaMon.Text);
-            resetFieldCT();
-        }
-
-        private void btnLamMoiCT_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnXoaCT_Click(object sender, EventArgs e)
-        {
-
-        }
         private void resetFieldCT()
         {
             LoadDataCT();
@@ -398,6 +384,41 @@ namespace QuanLyGaRanKFC.View
         private void txbMaMA_TextChanged(object sender, EventArgs e)
         {
             resetFieldCT();
+        }
+
+        private void dgvCongThuc_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex == -1)
+            {
+                resetFieldCT();
+                function.turnOnButton(btnThemCT);
+            }
+            else if (e.ColumnIndex == dgvCongThuc.Columns["_xoa"].Index)
+            {
+                var result = MessageBox.Show("Bạn có chắc muốn xóa nguyên liệu này?","Xác nhận xóa", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    DAO_CongThuc dAO_CongThuc = new DAO_CongThuc();
+                    dAO_CongThuc.Delete(txbMaMon.Text, dgvCongThuc.CurrentRow.Cells[1].Value.ToString());
+                    resetFieldCT();
+                }
+            }
+        }
+
+        private void tcMonAn_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DAO_DanhMuc dAO_DanhMuc = new DAO_DanhMuc();
+            cbDanhMuc.DataSource = dAO_DanhMuc.GetAll();
+            cbDanhMucLoc.DataSource = dAO_DanhMuc.GetAll();
+            cbDanhMuc.ValueMember = "maDM";
+            cbDanhMuc.DisplayMember = "tenDM";
+            cbDanhMucLoc.ValueMember = "maDM";
+            cbDanhMucLoc.DisplayMember = "tenDM";
+        }
+
+        private void cbNguyenLieu_MouseClick(object sender, MouseEventArgs e)
+        {
+            cbNguyenLieu.DroppedDown = true;
         }
     }
 }

@@ -16,9 +16,9 @@ namespace QuanLyGaRanKFC.View
     {
         NhanVien nhanVien = new NhanVien();
         Functions function = new Functions();
-        int check1 = 0;
-        int check2 = 0;
-        int check3 = 0;
+        private int check1 = 0;
+        private int check2 = 0;
+        private int check3 = 0;
         public fTrangCaNhan(NhanVien nhanVien)
         {
             InitializeComponent();
@@ -185,43 +185,46 @@ namespace QuanLyGaRanKFC.View
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            if (check1 == 0)
+            switch (check1)
             {
-                txbMatKhauCu.PasswordChar = '*';
-                check1 = 1;
-            }
-            else if (check1 == 1)
-            {
-                txbMatKhauCu.PasswordChar = (char)0;
-                check1 = 0;
+                case 0:
+                    txbMatKhauCu.PasswordChar = '*';
+                    check1 = 1;
+                    break;
+                case 1:
+                    txbMatKhauCu.PasswordChar = (char)0;
+                    check1 = 0;
+                    break;
             }
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            if (check2 == 0)
+            switch (check2)
             {
-                txbMatKhauMoi.PasswordChar = '*';
-                check2 = 1;
-            }
-            else if (check2 == 1)
-            {
-                txbMatKhauMoi.PasswordChar = (char)0;
-                check2 = 0;
+                case 0:
+                    txbMatKhauMoi.PasswordChar = '*';
+                    check2 = 1;
+                    break;
+                case 1:
+                    txbMatKhauMoi.PasswordChar = (char)0;
+                    check2 = 0;
+                    break;
             }
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-            if (check3 == 0)
+            switch (check3)
             {
-                txbNhapLaiMatKhau.PasswordChar = '*';
-                check3 = 1;
-            }
-            else if (check3 == 1)
-            {
-                txbNhapLaiMatKhau.PasswordChar = (char)0;
-                check3 = 0;
+                case 0:
+                    txbNhapLaiMatKhau.PasswordChar = '*';
+                    check3 = 1;
+                    break;
+                case 1:
+                    txbNhapLaiMatKhau.PasswordChar = (char)0;
+                    check3 = 0;
+                    break;
             }
         }
     }

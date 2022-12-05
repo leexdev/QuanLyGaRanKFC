@@ -34,6 +34,23 @@ namespace QuanLyGaRanKFC.DAO
             _conn.Close();
             return list;
         }
+        public List<NguyenLieu> GetAllNL(string _maCN)
+        {
+            List<NguyenLieu> list = new List<NguyenLieu>();
+            _conn.Open();
+            command = new SqlCommand($"SELECT NguyenLieu.* FROM ChiNhanh, NguyenLieu WHERE ChiNhanh.MaCN = NguyenLieu.MaCN AND dbo.NguyenLieu.MaCN = N'{_maCN}'", _conn);
+            reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                string maNL = reader.GetString(0);
+                string tenNL = reader.GetString(1);
+                int soLuongTon = reader.GetInt32(2);
+                NguyenLieu nl = new NguyenLieu(maNL, tenNL, soLuongTon);
+                list.Add(nl);
+            }
+            _conn.Close();
+            return list;
+        }
         public List<NguyenLieu> GetList(string _maCN)
         {
             List<NguyenLieu> list = new List<NguyenLieu>();

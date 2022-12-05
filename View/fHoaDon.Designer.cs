@@ -229,6 +229,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "fHoaDon";
             this.Text = "fHoaDon";
+            this.Load += new System.EventHandler(this.fHoaDon_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHoaDon)).EndInit();
