@@ -113,6 +113,16 @@ namespace QuanLyGaRanKFC.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap d5f85179b8bf1a5e92f7b9f008ab9b7a {
+            get {
+                object obj = ResourceManager.GetObject("d5f85179b8bf1a5e92f7b9f008ab9b7a", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap delete {
             get {
                 object obj = ResourceManager.GetObject("delete", resourceCulture);
