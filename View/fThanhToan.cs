@@ -46,7 +46,7 @@ namespace QuanLyGaRanKFC.View
             //List<CTHD> cTHDs = dAO_CTHD.GetList(HoaDon.MaHD);
             foreach (CTHD cthd in cTHDs)
             {
-                dgvThanhToan.Rows.Add(i, cthd.MonAn.tenMon, cthd.soLuong, cthd.MonAn.donGia, cthd.thanhTien, "Xóa");
+                dgvThanhToan.Rows.Add(i, cthd.MonAn.tenMon, cthd.soLuong, cthd.MonAn.donGia, cthd.thanhTien, "XÓA");
                 tongTien += cthd.thanhTien;
                 i++;
             }
@@ -139,12 +139,18 @@ namespace QuanLyGaRanKFC.View
 
         private void dgvThanhToan_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            DAO_MonAn dAO_MonAn = new DAO_MonAn();
-            MonAn monAn = dAO_MonAn.GetByName(dgvThanhToan.CurrentRow.Cells[1].Value.ToString();
-            int soluong = Convert.ToInt32(dgvThanhToan.CurrentRow.Cells[2].Value.ToString());
-            CTHD cTHD = new CTHD(soluong, monAn);
-            this.ListChitietHD.Remove(cTHD);
-            LoadData(true);
+            if (e.RowIndex == -1)
+            {
+
+            }
+            else if (e.ColumnIndex == dgvThanhToan.Columns["_xoa"].Index)
+            {
+                DAO_MonAn dAO_MonAn = new DAO_MonAn();
+                MonAn monAn = dAO_MonAn.GetByID(dgvThanhToan.CurrentRow.Cells[1].Value.ToString());
+                CTHD cTHD = new CTHD(Convert.ToInt32(dgvThanhToan.CurrentRow.Cells[2].Value.ToString()), monAn);
+                ListChitietHD.Remove(cTHD);
+                LoadData();
+            }
         }
 
         private void cbDanhMuc_MouseClick(object sender, MouseEventArgs e)
@@ -155,6 +161,51 @@ namespace QuanLyGaRanKFC.View
         private void cbMonAn_MouseClick(object sender, MouseEventArgs e)
         {
             cbMonAn.DroppedDown = true;
+        }
+
+        Bitmap bmp;
+        private void btnIn_Click(object sender, EventArgs e)
+        {
+            int height = dgvThanhToan.Height;
+            dgvThanhToan.Height = dgvThanhToan.RowCount * dgvThanhToan.RowTemplate.Height * 2;
+            bmp = new Bitmap(dgvThanhToan.Width, dgvThanhToan.Height);
+            dgvThanhToan.DrawToBitmap(bmp, new Rectangle(0, 0 , dgvThanhToan.Width - 100, dgvThanhToan.Height));
+            dgvThanhToan.Height = height;
+            printPreviewDialog1.ShowDialog();
+        }
+
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            DAO_ChiNhanh dAO_ChiNhanh = new DAO_ChiNhanh();
+            DAO_KhachHang dAO_KhachHang = new DAO_KhachHang();
+            e.Graphics.DrawString("PHIẾU TÍNH TIỀN", new Font("Verdana", 18, FontStyle.Regular), Brushes.Black, new Point(325, 30));
+            e.Graphics.DrawString("Cty LD TNHH KFC Việt Nam", new Font("Verdana", 18, FontStyle.Regular), Brushes.Black, new Point(260, 60));
+            e.Graphics.DrawString(dAO_ChiNhanh.GetByUserID(NhanVien.maNV).tenCN, new Font("Verdana", 16, FontStyle.Regular), Brushes.Black, new Point(330, 90));
+            if (dAO_ChiNhanh.GetByUserID(NhanVien.maNV).diaChi.Length < 60)
+            {
+                e.Graphics.DrawString(dAO_ChiNhanh.GetByUserID(NhanVien.maNV).diaChi, new Font("Verdana", 14, FontStyle.Regular), Brushes.Black, new Point(170, 120));
+            }
+            else
+            {
+                e.Graphics.DrawString(dAO_ChiNhanh.GetByUserID(NhanVien.maNV).diaChi, new Font("Verdana", 14, FontStyle.Regular), Brushes.Black, new Point(45, 120));
+            }
+            e.Graphics.DrawString("----------------------------------------------------------------------------------", new Font("Verdana", 14, FontStyle.Regular), Brushes.Black, new Point(45, 140));
+            e.Graphics.DrawString("MÃ HĐ: " + txbMaHD.Text, new Font("Verdana", 18, FontStyle.Regular), Brushes.Black, new Point(340, 160));
+            e.Graphics.DrawString("----------------------------------------------------------------------------------", new Font("Verdana", 14, FontStyle.Regular), Brushes.Black, new Point(45, 190));
+            e.Graphics.DrawString("Nhân Viên: " + NhanVien.maNV + " " + NhanVien.tenNV, new Font("Verdana", 8, FontStyle.Regular), Brushes.Black, new Point(25, 220));
+            if (txbSdtKH.Text == "")
+            {
+                e.Graphics.DrawString("Khách Hàng: " + dAO_KhachHang.GetByPhone(txbSdtKH.Text).tenKH, new Font("Verdana", 8, FontStyle.Regular), Brushes.Black, new Point(25, 235));
+            }
+            else
+            {
+                e.Graphics.DrawString("Khách Hàng: " + dAO_KhachHang.GetByPhone(txbSdtKH.Text).maKH + " " + dAO_KhachHang.GetByPhone(txbSdtKH.Text).tenKH, new Font("Verdana", 8, FontStyle.Regular), Brushes.Black, new Point(25, 235));
+            }
+            e.Graphics.DrawString("----------------------------------------------------------------------------------", new Font("Verdana", 14, FontStyle.Regular), Brushes.Black, new Point(45, 245));
+            e.Graphics.DrawString("DANH SÁCH MÓN ", new Font("Verdana", 15, FontStyle.Regular), Brushes.Black, new Point(340, 265));
+            e.Graphics.DrawImage(bmp, 10, 300);
+            e.Graphics.DrawString("TỔNG TIỀN: " + txbTongTien.Text + " VNĐ", new Font("Verdana", 15, FontStyle.Regular), Brushes.Black, new Point(550, 800));
+
         }
     }
 }

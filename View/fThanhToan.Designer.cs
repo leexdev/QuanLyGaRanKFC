@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fThanhToan));
             this.panel2 = new System.Windows.Forms.Panel();
             this.txbSdtKH = new System.Windows.Forms.TextBox();
             this.nmrupSoLuong = new System.Windows.Forms.NumericUpDown();
@@ -71,7 +72,9 @@
             this.soluong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.donGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.thanhTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this._xoa = new System.Windows.Forms.DataGridViewButtonColumn();
+            this._xoa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmrupSoLuong)).BeginInit();
             this.panel3.SuspendLayout();
@@ -222,12 +225,12 @@
             this.btnThemMon.Font = new System.Drawing.Font("Arial", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnThemMon.ForeColor = System.Drawing.Color.White;
             this.btnThemMon.Image = global::QuanLyGaRanKFC.Properties.Resources.icons8_add_new_16;
-            this.btnThemMon.Location = new System.Drawing.Point(386, 164);
+            this.btnThemMon.Location = new System.Drawing.Point(392, 173);
             this.btnThemMon.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnThemMon.Name = "btnThemMon";
             this.btnThemMon.Size = new System.Drawing.Size(118, 32);
             this.btnThemMon.TabIndex = 83;
-            this.btnThemMon.Text = "Thêm món";
+            this.btnThemMon.Text = "Thêm Món";
             this.btnThemMon.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnThemMon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnThemMon.UseVisualStyleBackColor = false;
@@ -501,6 +504,7 @@
             this.btnIn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnIn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnIn.UseVisualStyleBackColor = false;
+            this.btnIn.Click += new System.EventHandler(this.btnIn_Click);
             // 
             // btnLuu
             // 
@@ -570,7 +574,7 @@
             this.label18.BackColor = System.Drawing.SystemColors.Control;
             this.label18.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label18.ForeColor = System.Drawing.Color.Black;
-            this.label18.Location = new System.Drawing.Point(370, 268);
+            this.label18.Location = new System.Drawing.Point(380, 268);
             this.label18.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(147, 24);
@@ -594,6 +598,8 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvThanhToan.BackgroundColor = System.Drawing.Color.White;
+            this.dgvThanhToan.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvThanhToan.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dgvThanhToan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvThanhToan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.stt,
@@ -644,8 +650,21 @@
             // 
             this._xoa.HeaderText = "";
             this._xoa.Name = "_xoa";
-            this._xoa.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this._xoa.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // printDocument1
+            // 
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
+            // 
+            // printPreviewDialog1
+            // 
+            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewDialog1.Document = this.printDocument1;
+            this.printPreviewDialog1.Enabled = true;
+            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
+            this.printPreviewDialog1.Name = "printPreviewDialog1";
+            this.printPreviewDialog1.Visible = false;
             // 
             // fThanhToan
             // 
@@ -716,11 +735,13 @@
         private Label label21;
         private Label label22;
         private TextBox txbSdtKH;
+        private System.Drawing.Printing.PrintDocument printDocument1;
+        private PrintPreviewDialog printPreviewDialog1;
         private DataGridViewTextBoxColumn stt;
         private DataGridViewTextBoxColumn tenMon;
         private DataGridViewTextBoxColumn soluong;
         private DataGridViewTextBoxColumn donGia;
         private DataGridViewTextBoxColumn thanhTien;
-        private DataGridViewButtonColumn _xoa;
+        private DataGridViewTextBoxColumn _xoa;
     }
 }
