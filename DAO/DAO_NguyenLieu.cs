@@ -27,8 +27,7 @@ namespace QuanLyGaRanKFC.DAO
             {
                 string maNL = reader.GetString(0);
                 string tenNL = reader.GetString(1);
-                int soLuongTon = reader.GetInt32(2);
-                NguyenLieu nl = new NguyenLieu(maNL, tenNL, soLuongTon);
+                NguyenLieu nl = new NguyenLieu(maNL, tenNL);
                 list.Add(nl);
             }
             _conn.Close();
@@ -38,31 +37,13 @@ namespace QuanLyGaRanKFC.DAO
         {
             List<NguyenLieu> list = new List<NguyenLieu>();
             _conn.Open();
-            command = new SqlCommand($"SELECT NguyenLieu.* FROM ChiNhanh, NguyenLieu WHERE ChiNhanh.MaCN = NguyenLieu.MaCN AND dbo.NguyenLieu.MaCN = N'{_maCN}'", _conn);
+            command = new SqlCommand($"SELECT dbo.NguyenLieu.*, SoLuongTon FROM NguyenLieu_ChiNhanh, dbo.NguyenLieu WHERE NguyenLieu_ChiNhanh.MaNL = dbo.NguyenLieu.MaNL AND (dbo.NguyenLieu_ChiNhanh.MaCN = '{_maCN}' and isDeleted = 0)", _conn);
             reader = command.ExecuteReader();
             while (reader.Read())
             {
                 string maNL = reader.GetString(0);
                 string tenNL = reader.GetString(1);
-                int soLuongTon = reader.GetInt32(2);
-                NguyenLieu nl = new NguyenLieu(maNL, tenNL, soLuongTon);
-                list.Add(nl);
-            }
-            _conn.Close();
-            return list;
-        }
-        public List<NguyenLieu> GetList(string _maCN)
-        {
-            List<NguyenLieu> list = new List<NguyenLieu>();
-            _conn.Open();
-            command = new SqlCommand($"select * from NguyenLieu where MaCN = '{_maCN}' and isDeleted = 0", _conn);
-            reader = command.ExecuteReader();
-            while (reader.Read())
-            {
-                string maNL = reader.GetString(0);
-                string tenNL = reader.GetString(1);
-                int soLuongTon = reader.GetInt32(2);
-                NguyenLieu nl = new NguyenLieu(maNL, tenNL, soLuongTon);
+                NguyenLieu nl = new NguyenLieu(maNL, tenNL);
                 list.Add(nl);
             }
             _conn.Close();
@@ -79,7 +60,7 @@ namespace QuanLyGaRanKFC.DAO
                 string maNL = reader.GetString(0);
                 string tenNL = reader.GetString(1);
                 int soLuongTon = reader.GetInt32(2);
-                NguyenLieu nl = new NguyenLieu(maNL, tenNL, soLuongTon);
+                NguyenLieu nl = new NguyenLieu(maNL, tenNL);
                 list.Add(nl);
             }
             _conn.Close();
@@ -95,8 +76,7 @@ namespace QuanLyGaRanKFC.DAO
             {
                 string maNL = reader.GetString(0);
                 string tenNL = reader.GetString(1);
-                int soLuongTon = reader.GetInt32(2);
-                nguyenLieu = new NguyenLieu(maNL, tenNL, soLuongTon);
+                nguyenLieu = new NguyenLieu(maNL, tenNL);
             }
             _conn.Close();
             return nguyenLieu;
@@ -111,31 +91,26 @@ namespace QuanLyGaRanKFC.DAO
             {
                 string maNL = reader.GetString(0);
                 string tenNL = reader.GetString(1);
-                int soLuongTon = reader.GetInt32(2);
-                nguyenLieu = new NguyenLieu(maNL, tenNL, soLuongTon);
+                nguyenLieu = new NguyenLieu(maNL, tenNL);
             }
             _conn.Close();
             return nguyenLieu;
         }
-        public void Add(NguyenLieu _nguyenLieu, string _maCN)
+        public void Add(NguyenLieu _nguyenLieu)
         {
             _conn.Open();
             command = new SqlCommand($@"INSERT INTO NguyenLieu
                                                VALUES(N'{_nguyenLieu.maNL}',
                                                N'{_nguyenLieu.tenNL}',
-                                               {_nguyenLieu.soLuongTon},
-                                               '{_maCN}',
                                                 0)", _conn);
             command.ExecuteNonQuery();
             _conn.Close();
         }
-        public void Update(NguyenLieu _nguyenLieu, string _maCN)
+        public void Update(NguyenLieu _nguyenLieu)
         {
             _conn.Open();
             command = new SqlCommand($@"UPDATE NguyenLieu 
                                     SET TenNL = N'{_nguyenLieu.tenNL}',
-                                        SoLuongTon = {_nguyenLieu.soLuongTon},
-                                        MaCN = '{_maCN}'
                                     WHERE MaNL = '{_nguyenLieu.maNL}'", _conn);
             command.ExecuteNonQuery();
             _conn.Close();
@@ -155,6 +130,14 @@ namespace QuanLyGaRanKFC.DAO
             _conn.Close();
             i++;
             return i;
+        }
+        public bool isNguyenLieuExist(string _maNL)
+        {
+            _conn.Open();
+            command = new SqlCommand($"SELECT COUNT(*) FROM NguyenLieu WHERE MaNL = '{_maNL}'", _conn);
+            int exist = (Int32)command.ExecuteScalar();
+            _conn.Close();
+            return exist > 0;
         }
     }
 }

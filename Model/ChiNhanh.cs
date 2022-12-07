@@ -12,7 +12,6 @@ namespace QuanLyGaRanKFC.Model
         public string tenCN { get; set; }
         public string diaChi { get; set; }
         public List<NhanVien> nhanVien { get; set; }
-        public List<NguyenLieu> nguyenLieu { get; set; }
 
         public ChiNhanh() 
         { 
@@ -25,16 +24,14 @@ namespace QuanLyGaRanKFC.Model
             this.tenCN = tenCN;
             this.diaChi = diaChi;
             this.nhanVien = new List<NhanVien>();
-            this.nguyenLieu = new List<NguyenLieu>();
         }
 
-        public ChiNhanh(string maCN, string tenCN, string diaChi, List<NhanVien> nhanVien, List<NguyenLieu> nguyenLieu)
+        public ChiNhanh(string maCN, string tenCN, string diaChi, List<NhanVien> nhanVien)
         {
             this.maCN = maCN;
             this.tenCN = tenCN;
             this.diaChi = diaChi;
             this.nhanVien = nhanVien;
-            this.nguyenLieu = nguyenLieu;
         }
     }
 }

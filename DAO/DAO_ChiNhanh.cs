@@ -26,15 +26,13 @@ namespace QuanLyGaRanKFC.DAO
             command = new SqlCommand($"select * from ChiNhanh where isDeleted = 0", _conn);
             reader = command.ExecuteReader();
             DAO_NhanVien _NhanVien = new DAO_NhanVien();
-            DAO_NguyenLieu _NguyenLieu = new DAO_NguyenLieu();
             while (reader.Read())
             {
                 string maCN = reader.GetString(0);
                 string tenCN = reader.GetString(1);
                 string diaChi = reader.GetString(2);
                 List<NhanVien> nhanVien = _NhanVien.GetList(maCN);
-                List<NguyenLieu> nguyenLieu = _NguyenLieu.GetList(maCN);
-                ChiNhanh chiNhanh = new ChiNhanh(maCN, tenCN, diaChi, nhanVien, nguyenLieu);
+                ChiNhanh chiNhanh = new ChiNhanh(maCN, tenCN, diaChi, nhanVien);
                 list.Add(chiNhanh);
             }
             _conn.Close();
@@ -47,15 +45,13 @@ namespace QuanLyGaRanKFC.DAO
             command = new SqlCommand($"SELECT * FROM ChiNhanh WHERE TenCN LIKE N'%{_tenCN}%' and isDeleted = 0", _conn);
             reader = command.ExecuteReader();
             DAO_NhanVien _NhanVien = new DAO_NhanVien();
-            DAO_NguyenLieu _NguyenLieu = new DAO_NguyenLieu();
             while (reader.Read())
             {
                 string maCN = reader.GetString(0);
                 string tenCN = reader.GetString(1);
                 string diaChi = reader.GetString(2);
-                List<NguyenLieu> nguyenLieu = _NguyenLieu.GetList(maCN);
                 List<NhanVien> nhanVien = _NhanVien.GetList(maCN);
-                ChiNhanh chiNhanh = new ChiNhanh(maCN, tenCN, diaChi, nhanVien, nguyenLieu);
+                ChiNhanh chiNhanh = new ChiNhanh(maCN, tenCN, diaChi, nhanVien);
                 list.Add(chiNhanh);
             }
             _conn.Close();
@@ -68,15 +64,14 @@ namespace QuanLyGaRanKFC.DAO
             command = new SqlCommand($"SELECT TOP(1)* FROM dbo.ChiNhanh ORDER BY LEN(MaCN) DESC, MaCN DESC", _conn);
             reader = command.ExecuteReader();
             DAO_NhanVien _NhanVien = new DAO_NhanVien();
-            DAO_NguyenLieu _NguyenLieu = new DAO_NguyenLieu();
+            DAO_NguyenLieu_ChiNhanh _NguyenLieu_ChiNhanh = new DAO_NguyenLieu_ChiNhanh();
             while (reader.Read())
             {
                 string maCN = reader.GetString(0);
                 string tenCN = reader.GetString(1);
                 string diaChi = reader.GetString(2);
-                List<NguyenLieu> nguyenLieu = _NguyenLieu.GetList(maCN);
                 List<NhanVien> nhanVien = _NhanVien.GetList(maCN);
-                chiNhanh = new ChiNhanh(maCN, tenCN, diaChi, nhanVien, nguyenLieu);
+                chiNhanh = new ChiNhanh(maCN, tenCN, diaChi, nhanVien);
             }
             _conn.Close();
             return chiNhanh;
@@ -88,15 +83,14 @@ namespace QuanLyGaRanKFC.DAO
             command = new SqlCommand($"SELECT * FROM ChiNhanh WHERE MACN = '{_maCN}' and isDeleted = 0", _conn);
             reader = command.ExecuteReader();
             DAO_NhanVien _NhanVien = new DAO_NhanVien();
-            DAO_NguyenLieu _NguyenLieu = new DAO_NguyenLieu();
+            DAO_NguyenLieu_ChiNhanh _NguyenLieu_ChiNhanh = new DAO_NguyenLieu_ChiNhanh();
             while (reader.Read())
             {
                 string maCN = reader.GetString(0);
                 string tenCN = reader.GetString(1);
                 string diaChi = reader.GetString(2);
                 List<NhanVien> nhanVien = _NhanVien.GetList(maCN);
-                List<NguyenLieu> nguyenLieu = _NguyenLieu.GetList(maCN);
-                chiNhanh = new ChiNhanh(maCN, tenCN, diaChi, nhanVien, nguyenLieu);
+                chiNhanh = new ChiNhanh(maCN, tenCN, diaChi, nhanVien);
             }
             _conn.Close();
             return chiNhanh;
@@ -108,15 +102,33 @@ namespace QuanLyGaRanKFC.DAO
             command = new SqlCommand($"SELECT ChiNhanh.* FROM ChiNhanh, NhanVien WHERE ChiNhanh.MaCN = NhanVien.MaCN AND MaNV = '{_maNV}'", _conn);
             reader = command.ExecuteReader();
             DAO_NhanVien _NhanVien = new DAO_NhanVien();
-            DAO_NguyenLieu _NguyenLieu = new DAO_NguyenLieu();
+            DAO_NguyenLieu_ChiNhanh _NguyenLieu_ChiNhanh = new DAO_NguyenLieu_ChiNhanh();
             while (reader.Read())
             {
                 string maCN = reader.GetString(0);
                 string tenCN = reader.GetString(1);
                 string diaChi = reader.GetString(2);
-                List<NguyenLieu> nguyenLieu = _NguyenLieu.GetList(maCN);
                 List<NhanVien> nhanVien = _NhanVien.GetList(maCN);
-                chiNhanh = new ChiNhanh(maCN, tenCN, diaChi, nhanVien, nguyenLieu);
+                chiNhanh = new ChiNhanh(maCN, tenCN, diaChi, nhanVien);
+            }
+            _conn.Close();
+            return chiNhanh;
+        }
+        public ChiNhanh GetByNguyenLieuID(string _maNL)
+        {
+            ChiNhanh chiNhanh = new ChiNhanh();
+            _conn.Open();
+            command = new SqlCommand($"SELECT ChiNhanh.* FROM ChiNhanh, NguyenLieu_ChiNhanh WHERE ChiNhanh.MaCN = NguyenLieu_ChiNhanh.MaCN AND MaNL = '{_maNL}'", _conn);
+            reader = command.ExecuteReader();
+            DAO_NhanVien _NhanVien = new DAO_NhanVien();
+            DAO_NguyenLieu_ChiNhanh _NguyenLieu_ChiNhanh = new DAO_NguyenLieu_ChiNhanh();
+            while (reader.Read())
+            {
+                string maCN = reader.GetString(0);
+                string tenCN = reader.GetString(1);
+                string diaChi = reader.GetString(2);
+                List<NhanVien> nhanVien = _NhanVien.GetList(maCN);
+                chiNhanh = new ChiNhanh(maCN, tenCN, diaChi, nhanVien);
             }
             _conn.Close();
             return chiNhanh;

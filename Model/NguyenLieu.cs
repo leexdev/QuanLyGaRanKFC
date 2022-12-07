@@ -10,15 +10,13 @@ namespace QuanLyGaRanKFC.Model
     {
         public string maNL { get; set; }
         public string tenNL { get; set; }
-        public int soLuongTon { get; set; }
 
         public NguyenLieu() { }
 
-        public NguyenLieu(string maNL, string tenNL, int soLuongTon)
+        public NguyenLieu(string maNL, string tenNL)
         {
             this.maNL = maNL;
             this.tenNL = tenNL;
-            this.soLuongTon = soLuongTon;
         }
     }
 }

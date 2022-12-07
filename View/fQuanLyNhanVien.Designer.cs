@@ -205,7 +205,6 @@
             this.btnLamMoiNV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLamMoiNV.Font = new System.Drawing.Font("Arial", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnLamMoiNV.ForeColor = System.Drawing.Color.White;
-            this.btnLamMoiNV.Image = global::QuanLyGaRanKFC.Properties.Resources.icons8_repeat_16;
             this.btnLamMoiNV.Location = new System.Drawing.Point(491, 197);
             this.btnLamMoiNV.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnLamMoiNV.Name = "btnLamMoiNV";
@@ -265,7 +264,6 @@
             this.btnThemNV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThemNV.Font = new System.Drawing.Font("Arial", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnThemNV.ForeColor = System.Drawing.Color.White;
-            this.btnThemNV.Image = global::QuanLyGaRanKFC.Properties.Resources.icons8_add_user_16;
             this.btnThemNV.Location = new System.Drawing.Point(106, 197);
             this.btnThemNV.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnThemNV.Name = "btnThemNV";

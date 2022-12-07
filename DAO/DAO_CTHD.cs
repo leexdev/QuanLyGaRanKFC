@@ -55,5 +55,19 @@ namespace QuanLyGaRanKFC.DAO
             command.ExecuteNonQuery();
             _conn.Close();
         }
+
+        public void XoaNguyenLieu(CTHD cthd, string _maCN)
+        {
+            DAO_CongThuc dao_CongThuc = new DAO_CongThuc();
+            List<CongThuc> listCongThuc = dao_CongThuc.GetList(cthd.MonAn.maMon);
+            foreach (CongThuc ct in listCongThuc)
+            {
+                _conn.Open();
+
+                command = new SqlCommand($"UPDATE NguyenLieu_ChiNhanh SET SoLuongTon = SoLuongTon - {ct.soLuong} WHERE MaNL = '{ct.nguyenLieu.maNL}' and MaCN = '{_maCN}'", _conn);
+                command.ExecuteNonQuery();
+                _conn.Close();
+            }
+        }
     }
 }

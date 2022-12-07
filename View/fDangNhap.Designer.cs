@@ -161,7 +161,6 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::QuanLyGaRanKFC.Properties.Resources._0af3c9613761d2d2394d99312aeba397;
             this.pictureBox1.Location = new System.Drawing.Point(52, 19);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(199, 138);
@@ -175,7 +174,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.BackgroundImage = global::QuanLyGaRanKFC.Properties.Resources._2_resize;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(674, 455);
             this.Controls.Add(this.panel1);

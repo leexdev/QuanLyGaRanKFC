@@ -112,7 +112,6 @@
             this.btnLamMoiKH.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLamMoiKH.Font = new System.Drawing.Font("Arial", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnLamMoiKH.ForeColor = System.Drawing.Color.White;
-            this.btnLamMoiKH.Image = global::QuanLyGaRanKFC.Properties.Resources.icons8_repeat_16;
             this.btnLamMoiKH.Location = new System.Drawing.Point(454, 112);
             this.btnLamMoiKH.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnLamMoiKH.Name = "btnLamMoiKH";
@@ -172,7 +171,6 @@
             this.btnThemKH.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThemKH.Font = new System.Drawing.Font("Arial", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnThemKH.ForeColor = System.Drawing.Color.White;
-            this.btnThemKH.Image = global::QuanLyGaRanKFC.Properties.Resources.icons8_add_user_16;
             this.btnThemKH.Location = new System.Drawing.Point(69, 112);
             this.btnThemKH.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnThemKH.Name = "btnThemKH";

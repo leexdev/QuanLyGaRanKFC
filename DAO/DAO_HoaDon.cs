@@ -51,9 +51,9 @@ namespace QuanLyGaRanKFC.DAO
             while (reader.Read())
             {
                 string maHD = reader.GetString(0);
-                NhanVien nhanVien = dAO_NhanVien.GetByID(reader.GetString(1));
+                NhanVien nhanVien = dAO_NhanVien.GetByID(reader.GetString(3));
                 KhachHang khachHang = dAO_KhachHang.GetByID(reader.GetString(2));
-                DateTime ngayTaoHD = reader.GetDateTime(3);
+                DateTime ngayTaoHD = reader.GetDateTime(1);
                 List<CTHD> chiTiet = dAO_CTHD.GetList(reader.GetString(0));
                 HoaDon hoaDon = new HoaDon(maHD, ngayTaoHD, nhanVien, khachHang, chiTiet);
                 list.Add(hoaDon);
@@ -73,9 +73,9 @@ namespace QuanLyGaRanKFC.DAO
             while (reader.Read())
             {
                 string maHD = reader.GetString(0);
-                NhanVien nhanVien = dAO_NhanVien.GetByID(reader.GetString(1));
+                NhanVien nhanVien = dAO_NhanVien.GetByID(reader.GetString(3));
                 KhachHang khachHang = dAO_KhachHang.GetByID(reader.GetString(2));
-                DateTime ngayTaoHD = reader.GetDateTime(3);
+                DateTime ngayTaoHD = reader.GetDateTime(1);
                 List<CTHD> chiTiet = dAO_CTHD.GetList(reader.GetString(0));
                 hoaDon = new HoaDon(maHD, ngayTaoHD, nhanVien, khachHang, chiTiet);
             }

@@ -19,14 +19,16 @@ namespace QuanLyGaRanKFC.View
         ChiNhanh ChiNhanh = new ChiNhanh();
         NhanVien NhanVien = new NhanVien();
         DanhMuc DanhMuc = new DanhMuc();
+        NguyenLieu_ChiNhanh NguyenLieu_ChiNhanh = new NguyenLieu_ChiNhanh();
         Functions function = new Functions();
-        public fThanhToan(HoaDon HoaDon, ChiNhanh ChiNhanh, NhanVien NhanVien, DanhMuc DanhMuc, CTHD cTHD)
+        public fThanhToan(HoaDon HoaDon, ChiNhanh ChiNhanh, NhanVien NhanVien, DanhMuc DanhMuc, CTHD cTHD, NguyenLieu_ChiNhanh nguyenLieu_ChiNhanh)
         {
             InitializeComponent();
             this.HoaDon = HoaDon;
             this.ChiNhanh = ChiNhanh;
             this.NhanVien = NhanVien;
             this.DanhMuc = DanhMuc;
+            this.NguyenLieu_ChiNhanh = nguyenLieu_ChiNhanh;
         }
         public void LoadData(bool isFromVal = false)
         {
@@ -43,10 +45,9 @@ namespace QuanLyGaRanKFC.View
             {
                 cTHDs = this.ListChitietHD;
             }
-            //List<CTHD> cTHDs = dAO_CTHD.GetList(HoaDon.MaHD);
             foreach (CTHD cthd in cTHDs)
             {
-                dgvThanhToan.Rows.Add(i, cthd.MonAn.tenMon, cthd.soLuong, cthd.MonAn.donGia, cthd.thanhTien, "XÓA");
+                dgvThanhToan.Rows.Add(i, cthd.MonAn.tenMon, cthd.soLuong, cthd.MonAn.donGia, cthd.thanhTien, "Xóa");
                 tongTien += cthd.thanhTien;
                 i++;
             }
@@ -68,8 +69,16 @@ namespace QuanLyGaRanKFC.View
             DAO_ChiNhanh dAO_ChiNhanh = new DAO_ChiNhanh();
             DAO_KhachHang dAO_KhachHang = new DAO_KhachHang();
             DAO_DanhMuc dAO_DanhMuc = new DAO_DanhMuc();
-            txbChiNhanh.Text = dAO_ChiNhanh.GetByUserID(NhanVien.maNV).tenCN;
-            txbChiNhanh.Enabled = false;
+            if (NhanVien.quyen == 2)
+            {
+                cbChiNhanh.DataSource = dAO_ChiNhanh.GetAll();
+                cbChiNhanh.ValueMember = "maCN";
+                cbChiNhanh.DisplayMember = "tenCN";
+            }
+            else
+            {
+                cbChiNhanh.Text = dAO_ChiNhanh.GetByUserID(NhanVien.maNV).tenCN;
+            }
             txbNhanVien.Enabled = false;
             txbTenKH.Enabled = false;
             KhachHang khachHang = dAO_KhachHang.GetByPhone(txbSdtKH.Text);
@@ -120,6 +129,7 @@ namespace QuanLyGaRanKFC.View
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
+            DAO_ChiNhanh dAO_ChiNhanh = new DAO_ChiNhanh();
             DAO_HoaDon dAO_HoaDon = new DAO_HoaDon();
             DAO_CTHD dAO_CTHD = new DAO_CTHD();
             DAO_KhachHang dAO_KhachHang = new DAO_KhachHang();
@@ -131,6 +141,7 @@ namespace QuanLyGaRanKFC.View
             foreach(CTHD cthd in ListChitietHD)
             {
                 dAO_CTHD.Add(cthd, HoaDon.MaHD);
+                dAO_CTHD.XoaNguyenLieu(cthd, dAO_ChiNhanh.GetByUserID(NhanVien.maNV).maCN);
             }
             MessageBox.Show("Lưu thành công!");
             resetFieldHD();
@@ -146,10 +157,8 @@ namespace QuanLyGaRanKFC.View
             else if (e.ColumnIndex == dgvThanhToan.Columns["_xoa"].Index)
             {
                 DAO_MonAn dAO_MonAn = new DAO_MonAn();
-                MonAn monAn = dAO_MonAn.GetByID(dgvThanhToan.CurrentRow.Cells[1].Value.ToString());
-                CTHD cTHD = new CTHD(Convert.ToInt32(dgvThanhToan.CurrentRow.Cells[2].Value.ToString()), monAn);
-                ListChitietHD.Remove(cTHD);
-                LoadData();
+                this.ListChitietHD.RemoveAt(e.RowIndex);
+                LoadData(true);
             }
         }
 

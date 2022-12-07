@@ -247,7 +247,6 @@ namespace QuanLyGaRanKFC.View
                 DAO_NhanVien dAO_NhanVien = new DAO_NhanVien();
                 NhanVien _nhanVien = dAO_NhanVien.GetByID(dgvNhanVien.CurrentRow.Cells[1].Value.ToString());
                 cbChiNhanh.Text = dAO_ChiNhanh.GetByUserID(_nhanVien.maNV).tenCN;
-                cbChiNhanh.ValueMember = "maCN";
                 txbMaNV.Text = _nhanVien.maNV;
                 txbTenNV.Text = _nhanVien.tenNV;
                 dtpkNgaySinhNV.Value = _nhanVien.ngaySinh;

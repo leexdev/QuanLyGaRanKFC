@@ -53,6 +53,7 @@
             this.maNL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tenNL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.soLuongTon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.maCN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnTimKiemNL = new System.Windows.Forms.Button();
             this.label22 = new System.Windows.Forms.Label();
             this.txbTimKiemNL = new System.Windows.Forms.TextBox();
@@ -121,7 +122,6 @@
             this.btnLamMoiNL.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLamMoiNL.Font = new System.Drawing.Font("Arial", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnLamMoiNL.ForeColor = System.Drawing.Color.White;
-            this.btnLamMoiNL.Image = global::QuanLyGaRanKFC.Properties.Resources.icons8_repeat_16;
             this.btnLamMoiNL.Location = new System.Drawing.Point(489, 108);
             this.btnLamMoiNL.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnLamMoiNL.Name = "btnLamMoiNL";
@@ -181,7 +181,6 @@
             this.btnThemNL.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThemNL.Font = new System.Drawing.Font("Arial", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnThemNL.ForeColor = System.Drawing.Color.White;
-            this.btnThemNL.Image = global::QuanLyGaRanKFC.Properties.Resources.icons8_add_user_16;
             this.btnThemNL.Location = new System.Drawing.Point(104, 108);
             this.btnThemNL.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnThemNL.Name = "btnThemNL";
@@ -323,9 +322,9 @@
             this.txbMaNL.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.txbMaNL.MaxLength = 20;
             this.txbMaNL.Name = "txbMaNL";
-            this.txbMaNL.ReadOnly = true;
             this.txbMaNL.Size = new System.Drawing.Size(259, 16);
             this.txbMaNL.TabIndex = 2;
+            this.txbMaNL.TextChanged += new System.EventHandler(this.txbMaNL_TextChanged);
             // 
             // label1
             // 
@@ -354,7 +353,8 @@
             this.stt,
             this.maNL,
             this.tenNL,
-            this.soLuongTon});
+            this.soLuongTon,
+            this.maCN});
             this.dgvNguyenLieu.Location = new System.Drawing.Point(0, 260);
             this.dgvNguyenLieu.Name = "dgvNguyenLieu";
             this.dgvNguyenLieu.ReadOnly = true;
@@ -363,7 +363,7 @@
             this.dgvNguyenLieu.RowTemplate.Height = 25;
             this.dgvNguyenLieu.Size = new System.Drawing.Size(879, 365);
             this.dgvNguyenLieu.TabIndex = 44;
-            this.dgvNguyenLieu.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNhanVien_CellClick);
+            this.dgvNguyenLieu.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNguyenLieu_CellClick);
             // 
             // stt
             // 
@@ -392,6 +392,13 @@
             this.soLuongTon.MinimumWidth = 10;
             this.soLuongTon.Name = "soLuongTon";
             this.soLuongTon.ReadOnly = true;
+            // 
+            // maCN
+            // 
+            this.maCN.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.maCN.HeaderText = "Mã Chi Nhánh";
+            this.maCN.Name = "maCN";
+            this.maCN.ReadOnly = true;
             // 
             // btnTimKiemNL
             // 
@@ -491,7 +498,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(879, 625);
+            this.ClientSize = new System.Drawing.Size(879, 497);
             this.Controls.Add(this.btnLocNL);
             this.Controls.Add(this.cbChiNhanhLoc);
             this.Controls.Add(this.label25);
@@ -541,13 +548,14 @@
         private Button btnTimKiemNL;
         private Label label22;
         private TextBox txbTimKiemNL;
-        private DataGridViewTextBoxColumn stt;
-        private DataGridViewTextBoxColumn maNL;
-        private DataGridViewTextBoxColumn tenNL;
-        private DataGridViewTextBoxColumn soLuongTon;
         private Button btnLocNL;
         private ComboBox cbChiNhanhLoc;
         private Label label25;
         private Label label26;
+        private DataGridViewTextBoxColumn stt;
+        private DataGridViewTextBoxColumn maNL;
+        private DataGridViewTextBoxColumn tenNL;
+        private DataGridViewTextBoxColumn soLuongTon;
+        private DataGridViewTextBoxColumn maCN;
     }
 }

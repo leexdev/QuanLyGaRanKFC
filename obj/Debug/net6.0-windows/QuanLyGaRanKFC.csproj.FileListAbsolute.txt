@@ -127,3 +127,4 @@ E:\Lập trình trực quan\Project\QuanLyGaRanKFC\obj\Debug\net6.0-windows\ref\
 E:\Lập trình trực quan\Project\QuanLyGaRanKFC\obj\Debug\net6.0-windows\QuanLyGaRanKFC.View.fNguyenLieu.resources
 E:\Lập trình trực quan\Project\QuanLyGaRanKFC\obj\Debug\net6.0-windows\QuanLyGaRanKFC.View.fHoaDon.resources
 E:\Lập trình trực quan\Project\QuanLyGaRanKFC\obj\Debug\net6.0-windows\QuanLyGaRanKFC.View.fTrangCaNhan.resources
+E:\Lập trình trực quan\Project\QuanLyGaRanKFC\bin\Debug\net6.0-windows\FontAwesome.Sharp.dll

@@ -98,7 +98,7 @@ namespace QuanLyGaRanKFC.View
             }
             cbDanhMuc.DataSource = dAO_DanhMuc.GetAll();
             cbDanhMucLoc.DataSource = dAO_DanhMuc.GetAll();
-            cbNguyenLieu.DataSource = dAO_NguyenLieu.GetAllNL(dAO_ChiNhanh.GetByUserID(NhanVien.maNV).maCN);
+            cbNguyenLieu.DataSource = dAO_NguyenLieu.GetAll();
             cbNguyenLieu.ValueMember = "maNL";
             cbNguyenLieu.DisplayMember = "tenNL";
             cbDanhMuc.ValueMember = "maDM";

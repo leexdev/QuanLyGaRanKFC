@@ -353,7 +353,6 @@
             this.btnLamMoiMA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLamMoiMA.Font = new System.Drawing.Font("Arial", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnLamMoiMA.ForeColor = System.Drawing.Color.White;
-            this.btnLamMoiMA.Image = global::QuanLyGaRanKFC.Properties.Resources.icons8_repeat_16;
             this.btnLamMoiMA.Location = new System.Drawing.Point(473, 122);
             this.btnLamMoiMA.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnLamMoiMA.Name = "btnLamMoiMA";
@@ -413,7 +412,6 @@
             this.btnThemMA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThemMA.Font = new System.Drawing.Font("Arial", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnThemMA.ForeColor = System.Drawing.Color.White;
-            this.btnThemMA.Image = global::QuanLyGaRanKFC.Properties.Resources.icons8_add_user_16;
             this.btnThemMA.Location = new System.Drawing.Point(117, 122);
             this.btnThemMA.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnThemMA.Name = "btnThemMA";
@@ -689,7 +687,6 @@
             this.btnLamMoiDM.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLamMoiDM.Font = new System.Drawing.Font("Arial", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnLamMoiDM.ForeColor = System.Drawing.Color.White;
-            this.btnLamMoiDM.Image = global::QuanLyGaRanKFC.Properties.Resources.icons8_repeat_16;
             this.btnLamMoiDM.Location = new System.Drawing.Point(482, 109);
             this.btnLamMoiDM.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnLamMoiDM.Name = "btnLamMoiDM";
@@ -749,7 +746,6 @@
             this.btnThemDM.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThemDM.Font = new System.Drawing.Font("Arial", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnThemDM.ForeColor = System.Drawing.Color.White;
-            this.btnThemDM.Image = global::QuanLyGaRanKFC.Properties.Resources.icons8_add_user_16;
             this.btnThemDM.Location = new System.Drawing.Point(107, 109);
             this.btnThemDM.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnThemDM.Name = "btnThemDM";
@@ -967,7 +963,6 @@
             this.btnThoat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThoat.Font = new System.Drawing.Font("Arial", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnThoat.ForeColor = System.Drawing.Color.White;
-            this.btnThoat.Image = global::QuanLyGaRanKFC.Properties.Resources.icons8_close_window_32;
             this.btnThoat.Location = new System.Drawing.Point(466, 88);
             this.btnThoat.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnThoat.Name = "btnThoat";
@@ -987,7 +982,6 @@
             this.btnThemCT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThemCT.Font = new System.Drawing.Font("Arial", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnThemCT.ForeColor = System.Drawing.Color.White;
-            this.btnThemCT.Image = global::QuanLyGaRanKFC.Properties.Resources.icons8_add_user_16;
             this.btnThemCT.Location = new System.Drawing.Point(311, 88);
             this.btnThemCT.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnThemCT.Name = "btnThemCT";

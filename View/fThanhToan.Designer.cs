@@ -35,7 +35,6 @@
             this.txbTenKH = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
-            this.txbChiNhanh = new System.Windows.Forms.TextBox();
             this.txbNhanVien = new System.Windows.Forms.TextBox();
             this.btnThemMon = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
@@ -72,9 +71,10 @@
             this.soluong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.donGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.thanhTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this._xoa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._xoa = new System.Windows.Forms.DataGridViewButtonColumn();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
+            this.cbChiNhanh = new System.Windows.Forms.ComboBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmrupSoLuong)).BeginInit();
             this.panel3.SuspendLayout();
@@ -84,12 +84,12 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.Control;
+            this.panel2.Controls.Add(this.cbChiNhanh);
             this.panel2.Controls.Add(this.txbSdtKH);
             this.panel2.Controls.Add(this.nmrupSoLuong);
             this.panel2.Controls.Add(this.txbTenKH);
             this.panel2.Controls.Add(this.label21);
             this.panel2.Controls.Add(this.label22);
-            this.panel2.Controls.Add(this.txbChiNhanh);
             this.panel2.Controls.Add(this.txbNhanVien);
             this.panel2.Controls.Add(this.btnThemMon);
             this.panel2.Controls.Add(this.label16);
@@ -189,19 +189,6 @@
             this.label22.TabIndex = 87;
             this.label22.Text = "Khách Hàng";
             // 
-            // txbChiNhanh
-            // 
-            this.txbChiNhanh.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txbChiNhanh.BackColor = System.Drawing.Color.White;
-            this.txbChiNhanh.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txbChiNhanh.ForeColor = System.Drawing.Color.Black;
-            this.txbChiNhanh.Location = new System.Drawing.Point(167, 42);
-            this.txbChiNhanh.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.txbChiNhanh.Name = "txbChiNhanh";
-            this.txbChiNhanh.ReadOnly = true;
-            this.txbChiNhanh.Size = new System.Drawing.Size(246, 16);
-            this.txbChiNhanh.TabIndex = 86;
-            // 
             // txbNhanVien
             // 
             this.txbNhanVien.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -224,7 +211,6 @@
             this.btnThemMon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThemMon.Font = new System.Drawing.Font("Arial", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnThemMon.ForeColor = System.Drawing.Color.White;
-            this.btnThemMon.Image = global::QuanLyGaRanKFC.Properties.Resources.icons8_add_new_16;
             this.btnThemMon.Location = new System.Drawing.Point(392, 173);
             this.btnThemMon.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnThemMon.Name = "btnThemMon";
@@ -495,7 +481,6 @@
             this.btnIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIn.Font = new System.Drawing.Font("Arial", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnIn.ForeColor = System.Drawing.Color.White;
-            this.btnIn.Image = global::QuanLyGaRanKFC.Properties.Resources.icons8_send_to_printer_16;
             this.btnIn.Location = new System.Drawing.Point(487, 582);
             this.btnIn.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnIn.Name = "btnIn";
@@ -514,7 +499,6 @@
             this.btnLuu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLuu.Font = new System.Drawing.Font("Arial", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnLuu.ForeColor = System.Drawing.Color.White;
-            this.btnLuu.Image = global::QuanLyGaRanKFC.Properties.Resources.icons8_save_as_16;
             this.btnLuu.Location = new System.Drawing.Point(295, 582);
             this.btnLuu.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnLuu.Name = "btnLuu";
@@ -650,6 +634,8 @@
             // 
             this._xoa.HeaderText = "";
             this._xoa.Name = "_xoa";
+            this._xoa.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this._xoa.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // printDocument1
             // 
@@ -665,6 +651,16 @@
             this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
             this.printPreviewDialog1.Name = "printPreviewDialog1";
             this.printPreviewDialog1.Visible = false;
+            // 
+            // cbChiNhanh
+            // 
+            this.cbChiNhanh.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.cbChiNhanh.FormattingEnabled = true;
+            this.cbChiNhanh.Location = new System.Drawing.Point(167, 36);
+            this.cbChiNhanh.Name = "cbChiNhanh";
+            this.cbChiNhanh.Size = new System.Drawing.Size(246, 23);
+            this.cbChiNhanh.TabIndex = 77;
+            this.cbChiNhanh.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cb_KeyPress);
             // 
             // fThanhToan
             // 
@@ -729,7 +725,6 @@
         private Label label1;
         private Button btnThemMon;
         private TextBox txbNhanVien;
-        private TextBox txbChiNhanh;
         private NumericUpDown nmrupSoLuong;
         private TextBox txbTenKH;
         private Label label21;
@@ -742,6 +737,7 @@
         private DataGridViewTextBoxColumn soluong;
         private DataGridViewTextBoxColumn donGia;
         private DataGridViewTextBoxColumn thanhTien;
-        private DataGridViewTextBoxColumn _xoa;
+        private DataGridViewButtonColumn _xoa;
+        private ComboBox cbChiNhanh;
     }
 }

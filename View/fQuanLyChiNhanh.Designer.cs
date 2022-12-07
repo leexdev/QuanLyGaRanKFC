@@ -175,7 +175,6 @@
             this.btnLamMoiCN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLamMoiCN.Font = new System.Drawing.Font("Arial", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnLamMoiCN.ForeColor = System.Drawing.Color.White;
-            this.btnLamMoiCN.Image = global::QuanLyGaRanKFC.Properties.Resources.icons8_repeat_16;
             this.btnLamMoiCN.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLamMoiCN.Location = new System.Drawing.Point(525, 170);
             this.btnLamMoiCN.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
@@ -219,7 +218,6 @@
             this.btnXoaCN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXoaCN.Font = new System.Drawing.Font("Arial", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnXoaCN.ForeColor = System.Drawing.Color.White;
-            this.btnXoaCN.Image = global::QuanLyGaRanKFC.Properties.Resources.icons8_trash_16;
             this.btnXoaCN.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnXoaCN.Location = new System.Drawing.Point(694, 170);
             this.btnXoaCN.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
@@ -251,7 +249,6 @@
             this.btnThemCN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThemCN.Font = new System.Drawing.Font("Arial", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnThemCN.ForeColor = System.Drawing.Color.White;
-            this.btnThemCN.Image = global::QuanLyGaRanKFC.Properties.Resources.icons8_add_new_16;
             this.btnThemCN.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnThemCN.Location = new System.Drawing.Point(172, 170);
             this.btnThemCN.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
@@ -322,7 +319,6 @@
             this.btnSuaCN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSuaCN.Font = new System.Drawing.Font("Arial", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnSuaCN.ForeColor = System.Drawing.Color.White;
-            this.btnSuaCN.Image = global::QuanLyGaRanKFC.Properties.Resources.icons8_repair_16;
             this.btnSuaCN.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSuaCN.Location = new System.Drawing.Point(351, 170);
             this.btnSuaCN.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);

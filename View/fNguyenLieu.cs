@@ -20,13 +20,15 @@ namespace QuanLyGaRanKFC.View
         NhanVien NhanVien = new NhanVien();
         CTHD cTHD = new CTHD();
         CongThuc congThuc = new CongThuc();
-        public fNguyenLieu(NguyenLieu nguyenLieu, ChiNhanh chiNhanh, NhanVien nhanVien)
+        NguyenLieu_ChiNhanh nguyenLieu_ChiNhanh = new NguyenLieu_ChiNhanh();
+        public fNguyenLieu(NguyenLieu nguyenLieu, ChiNhanh chiNhanh, NhanVien nhanVien, NguyenLieu_ChiNhanh nguyenLieu_ChiNhanh)
         {
             InitializeComponent();
             AssociateAndRaiseViewEvent();
             this.ChiNhanh = chiNhanh;
             this.NguyenLieu = nguyenLieu;
             this.NhanVien = nhanVien;
+            this.nguyenLieu_ChiNhanh = nguyenLieu_ChiNhanh;
         }
 
         private void AssociateAndRaiseViewEvent()
@@ -51,25 +53,26 @@ namespace QuanLyGaRanKFC.View
             dgvNguyenLieu.Rows.Clear();
             int i = 1;
             DAO_ChiNhanh dAO_ChiNhanh = new DAO_ChiNhanh();
-            DAO_NguyenLieu dAO_NguyenLieu = new DAO_NguyenLieu();
-            List<NguyenLieu> nguyenLieus;
+            DAO_NguyenLieu_ChiNhanh dAO_NguyenLieu_ChiNhanh = new DAO_NguyenLieu_ChiNhanh();
+            List<NguyenLieu_ChiNhanh> nguyenLieu_ChiNhanhs = new List<NguyenLieu_ChiNhanh>();
             if (NhanVien.quyen == 2)
             {
-                nguyenLieus = dAO_NguyenLieu.GetAll();
+                nguyenLieu_ChiNhanhs = dAO_NguyenLieu_ChiNhanh.GetAll();
             }
             else
             {
-                nguyenLieus = dAO_NguyenLieu.GetList(dAO_ChiNhanh.GetByUserID(NhanVien.maNV).maCN);
+                nguyenLieu_ChiNhanhs = dAO_NguyenLieu_ChiNhanh.GetLast(dAO_ChiNhanh.GetByUserID(NhanVien.maNV).maCN);
             }
-            foreach (NguyenLieu nguyenLieu in nguyenLieus)
+            foreach (NguyenLieu_ChiNhanh nguyenLieu_ChiNhanh in nguyenLieu_ChiNhanhs)
             {
-                dgvNguyenLieu.Rows.Add(i, nguyenLieu.maNL, nguyenLieu.tenNL, nguyenLieu.soLuongTon);
+                dgvNguyenLieu.Rows.Add(i, nguyenLieu_ChiNhanh.NguyenLieu.maNL, nguyenLieu_ChiNhanh.NguyenLieu.tenNL, nguyenLieu_ChiNhanh.soLuongTon, nguyenLieu_ChiNhanh.ChiNhanh.maCN);
                 i++;
             }
         }
 
         private void fNguyenLieu_Load(object sender, EventArgs e)
         {
+            DAO_ChiNhanh dAO_ChiNhanh = new DAO_ChiNhanh();
             dgvNguyenLieu.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvNguyenLieu.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             function.turnOffButton(btnSuaNL);
@@ -82,7 +85,6 @@ namespace QuanLyGaRanKFC.View
             {
                 button.FlatAppearance.BorderSize = 0;
             }
-            DAO_ChiNhanh dAO_ChiNhanh = new DAO_ChiNhanh();
             if (NhanVien.quyen == 2)
             {
                 cbChiNhanh.DataSource = dAO_ChiNhanh.GetAll();
@@ -102,30 +104,40 @@ namespace QuanLyGaRanKFC.View
                 cbChiNhanhLoc.Hide();
                 btnLocNL.Hide();
             }
+            if (txbTenNL.Text == "")
+            {
+
+            }
             resetFieldNL();
         }
 
         private void btnThemNL_Click(object sender, EventArgs e)
         {
             DAO_ChiNhanh dAO_ChiNhanh = new DAO_ChiNhanh();
+            DAO_NguyenLieu_ChiNhanh dAO_NguyenLieu_ChiNhanh = new DAO_NguyenLieu_ChiNhanh();
             DAO_NguyenLieu dAO_NguyenLieu = new DAO_NguyenLieu();
             NguyenLieu _nguyenLieu = new NguyenLieu();
+            ChiNhanh _chiNhanh = new ChiNhanh();
             _nguyenLieu.maNL = txbMaNL.Text;
             _nguyenLieu.tenNL = txbTenNL.Text;
-            _nguyenLieu.soLuongTon = Convert.ToInt32(nmrupSoLuongTon.Value);
-            if (txbTenNL.Text == "" || txbMaNL.Text == "")
-            {
-                MessageBox.Show("Vui lòng điền đầy đủ thông tin", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
+           
+            NguyenLieu_ChiNhanh nguyenLieu_ChiNhanh = new NguyenLieu_ChiNhanh(Convert.ToInt32(nmrupSoLuongTon.Value), _nguyenLieu, _chiNhanh);
             if (NhanVien.quyen == 2)
             {
                 ChiNhanh chiNhanh = dAO_ChiNhanh.GetByID(cbChiNhanh.SelectedValue.ToString());
-                dAO_NguyenLieu.Add(_nguyenLieu, chiNhanh.maCN);
+                if (!dAO_NguyenLieu.isNguyenLieuExist(txbMaNL.Text))
+                {
+                    dAO_NguyenLieu.Add(_nguyenLieu);
+                }
+                dAO_NguyenLieu_ChiNhanh.Add(nguyenLieu_ChiNhanh, chiNhanh.maCN);
             }
             else
             {
-                dAO_NguyenLieu.Add(_nguyenLieu, dAO_ChiNhanh.GetByUserID(NhanVien.maNV).maCN);
+                if (!dAO_NguyenLieu.isNguyenLieuExist(txbMaNL.Text))
+                {
+                    dAO_NguyenLieu.Add(_nguyenLieu);
+                }
+                dAO_NguyenLieu_ChiNhanh.Add(nguyenLieu_ChiNhanh, dAO_ChiNhanh.GetByUserID(NhanVien.maNV).maCN);
             }
             resetFieldNL();
             MessageBox.Show("Thêm thành công!");
@@ -134,19 +146,20 @@ namespace QuanLyGaRanKFC.View
         private void btnSuaNL_Click(object sender, EventArgs e)
         {
             DAO_ChiNhanh dAO_ChiNhanh = new DAO_ChiNhanh();
-            DAO_NguyenLieu dAO_NguyenLieu = new DAO_NguyenLieu();
+            DAO_NguyenLieu_ChiNhanh dAO_NguyenLieu_ChiNhanh = new DAO_NguyenLieu_ChiNhanh();
             NguyenLieu _nguyenLieu = new NguyenLieu();
+            ChiNhanh _chiNhanh = new ChiNhanh();
             _nguyenLieu.maNL = txbMaNL.Text;
             _nguyenLieu.tenNL = txbTenNL.Text;
-            _nguyenLieu.soLuongTon = Convert.ToInt32(nmrupSoLuongTon.Value);
+            NguyenLieu_ChiNhanh nguyenLieu_ChiNhanh = new NguyenLieu_ChiNhanh(Convert.ToInt32(nmrupSoLuongTon.Value), _nguyenLieu, _chiNhanh);
             if (NhanVien.quyen == 2)
             {
                 ChiNhanh chiNhanh = dAO_ChiNhanh.GetByID(cbChiNhanh.SelectedValue.ToString());
-                dAO_NguyenLieu.Update(_nguyenLieu, chiNhanh.maCN);
+                dAO_NguyenLieu_ChiNhanh.Update(nguyenLieu_ChiNhanh, chiNhanh.maCN);
             }
             else
             {
-                dAO_NguyenLieu.Update(_nguyenLieu, dAO_ChiNhanh.GetByUserID(NhanVien.maNV).maCN);
+                dAO_NguyenLieu_ChiNhanh.Update(nguyenLieu_ChiNhanh, dAO_ChiNhanh.GetByUserID(NhanVien.maNV).maCN);
             }
             resetFieldNL();
             MessageBox.Show("Sửa thành công!");
@@ -164,15 +177,11 @@ namespace QuanLyGaRanKFC.View
         {
             DAO_ChiNhanh dAO_ChiNhanh = new DAO_ChiNhanh();
             DAO_NguyenLieu dAO_NguyenLieu = new DAO_NguyenLieu();
-            if (NhanVien.quyen == 1 && cbChiNhanh.Text != dAO_ChiNhanh.GetByUserID(NguyenLieu.maNL).tenCN)
-            {
-                MessageBox.Show("Không thể xóa! Nguyên liệu này không thuộc chi nhánh của bạn!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
+            DAO_NguyenLieu_ChiNhanh dAO_NguyenLieu_ChiNhanh = new DAO_NguyenLieu_ChiNhanh();
             var result = MessageBox.Show("Bạn có chắc muốn xóa nguyên liệu này?", "Xác nhận xóa!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (result == DialogResult.Yes)
             {
-                dAO_NguyenLieu.Delete(txbMaNL.Text);
+                dAO_NguyenLieu_ChiNhanh.Delete(dgvNguyenLieu.CurrentRow.Cells[4].Value.ToString(), dgvNguyenLieu.CurrentRow.Cells[1].Value.ToString());
                 resetFieldNL();
             }
             else
@@ -190,12 +199,25 @@ namespace QuanLyGaRanKFC.View
             int i = 1;
             DAO_ChiNhanh dAO_ChiNhanh = new DAO_ChiNhanh();
             DAO_NguyenLieu dAO_NguyenLieu = new DAO_NguyenLieu();
-            ChiNhanh chiNhanh = dAO_ChiNhanh.GetByID(cbChiNhanhLoc.SelectedValue.ToString());
-            List<NguyenLieu> NguyenLieu = dAO_NguyenLieu.GetList(chiNhanh.maCN);
-            foreach(NguyenLieu nguyenLieu in NguyenLieu)
+            DAO_NguyenLieu_ChiNhanh dAO_NguyenLieu_ChiNhanh = new DAO_NguyenLieu_ChiNhanh();
+            if (NhanVien.quyen == 2)
             {
-                dgvNguyenLieu.Rows.Add(i, nguyenLieu.maNL, nguyenLieu.tenNL, nguyenLieu.soLuongTon);
-                i++;
+                ChiNhanh chiNhanh = dAO_ChiNhanh.GetByID(cbChiNhanhLoc.SelectedValue.ToString());
+                List<NguyenLieu_ChiNhanh> nguyenLieu_ChiNhanhs = dAO_NguyenLieu_ChiNhanh.GetLast(chiNhanh.maCN);
+                foreach(NguyenLieu_ChiNhanh nguyenLieu_ChiNhanh in nguyenLieu_ChiNhanhs)
+                {
+                    dgvNguyenLieu.Rows.Add(i, nguyenLieu_ChiNhanh.NguyenLieu.maNL, nguyenLieu_ChiNhanh.NguyenLieu.tenNL, nguyenLieu_ChiNhanh.soLuongTon, nguyenLieu_ChiNhanh.ChiNhanh.maCN);
+                    i++;
+                }
+            }
+            else
+            {
+                List<NguyenLieu_ChiNhanh> nguyenLieu_ChiNhanhs = dAO_NguyenLieu_ChiNhanh.GetLast(dAO_ChiNhanh.GetByUserID(NhanVien.maNV).maCN);
+                foreach (NguyenLieu_ChiNhanh nguyenLieu_ChiNhanh in nguyenLieu_ChiNhanhs)
+                {
+                    dgvNguyenLieu.Rows.Add(i, nguyenLieu_ChiNhanh.NguyenLieu.maNL, nguyenLieu_ChiNhanh.NguyenLieu.tenNL, nguyenLieu_ChiNhanh.soLuongTon, nguyenLieu_ChiNhanh.ChiNhanh.maCN);
+                    i++;
+                }
             }
         }
 
@@ -204,16 +226,26 @@ namespace QuanLyGaRanKFC.View
             string _keyWord = txbTimKiemNL.Text;
             dgvNguyenLieu.Rows.Clear();
             int i = 1;
-            DAO_NguyenLieu dAO_NguyenLieu = new DAO_NguyenLieu();
-            List<NguyenLieu> NguyenLieu = dAO_NguyenLieu.GetListByName(_keyWord);
-            foreach (NguyenLieu nguyenLieu in NguyenLieu)
+            DAO_ChiNhanh dAO_ChiNhanh = new DAO_ChiNhanh();
+            DAO_NguyenLieu_ChiNhanh dAO_NguyenLieu_ChiNhanh = new DAO_NguyenLieu_ChiNhanh();
+            List<NguyenLieu_ChiNhanh> nguyenLieu_ChiNhanhs;
+            if (NhanVien.quyen == 2)
             {
-                dgvNguyenLieu.Rows.Add(i, nguyenLieu.maNL, nguyenLieu.tenNL, nguyenLieu.soLuongTon);
+                nguyenLieu_ChiNhanhs = dAO_NguyenLieu_ChiNhanh.GetListByName(_keyWord);
+            }
+            else
+            {
+                nguyenLieu_ChiNhanhs = dAO_NguyenLieu_ChiNhanh.GetListByNameForUser(_keyWord, dAO_ChiNhanh.GetByUserID(NhanVien.maNV).maCN);
+            }
+            
+            foreach (NguyenLieu_ChiNhanh nguyenLieu_ChiNhanh in nguyenLieu_ChiNhanhs)
+            {
+                dgvNguyenLieu.Rows.Add(i, nguyenLieu_ChiNhanh.NguyenLieu.maNL, nguyenLieu_ChiNhanh.NguyenLieu.tenNL, nguyenLieu_ChiNhanh.soLuongTon);
                 i++;
             }
         }
 
-        private void dgvNhanVien_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvNguyenLieu_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex == -1)
             {
@@ -226,12 +258,13 @@ namespace QuanLyGaRanKFC.View
             {
                 DAO_ChiNhanh dAO_ChiNhanh = new DAO_ChiNhanh();
                 DAO_NguyenLieu dAO_NguyenLieu = new DAO_NguyenLieu();
+                DAO_NguyenLieu_ChiNhanh dAO_NguyenLieu_ChiNhanh = new DAO_NguyenLieu_ChiNhanh();
                 NguyenLieu _nguyenLieu = dAO_NguyenLieu.GetByID(dgvNguyenLieu.CurrentRow.Cells[1].Value.ToString());
-                cbChiNhanh.Text = dAO_ChiNhanh.GetByUserID(_nguyenLieu.maNL).tenCN;
-                cbChiNhanh.ValueMember = "maCN";
+                NguyenLieu_ChiNhanh _nguyenLieu_ChiNhanh = dAO_NguyenLieu_ChiNhanh.GetByID(dgvNguyenLieu.CurrentRow.Cells[1].Value.ToString(), dgvNguyenLieu.CurrentRow.Cells[4].Value.ToString());
+                cbChiNhanh.Text = _nguyenLieu_ChiNhanh.ChiNhanh.tenCN;
                 txbMaNL.Text = _nguyenLieu.maNL;
                 txbTenNL.Text = _nguyenLieu.tenNL;
-                nmrupSoLuongTon.Value = _nguyenLieu.soLuongTon;
+                nmrupSoLuongTon.Value = Convert.ToInt32(dgvNguyenLieu.CurrentRow.Cells[3].Value.ToString());
                 function.turnOffButton(btnThemNL);
                 function.turnOnButton(btnSuaNL);
                 function.turnOnButton(btnXoaNL);
@@ -241,8 +274,7 @@ namespace QuanLyGaRanKFC.View
         {
             DAO_NguyenLieu dAO_NguyenLieu = new DAO_NguyenLieu();
             LoadData();
-            txbMaNL.Text = "NL" + dAO_NguyenLieu.AutoId();
-            txbMaNL.Enabled = false;
+            txbMaNL.Text = "";
             txbTenNL.Text = "";
             nmrupSoLuongTon.Value = 0;
             txbTimKiemNL.Text = "";
@@ -258,6 +290,21 @@ namespace QuanLyGaRanKFC.View
         private void cbChiNhanhLoc_MouseClick(object sender, MouseEventArgs e)
         {
             cbChiNhanhLoc.DroppedDown = true;
+        }
+
+        private void txbMaNL_TextChanged(object sender, EventArgs e)
+        {
+            DAO_NguyenLieu dAO_NguyenLieu = new DAO_NguyenLieu();
+            NguyenLieu nguyenLieu = dAO_NguyenLieu.GetByID(txbMaNL.Text);
+            txbTenNL.Text = nguyenLieu.tenNL;
+            if (txbTenNL.Text.Length > 0)
+            {
+                txbTenNL.Enabled = false;
+            }
+            if (txbTenNL.Text.Length == 0)
+            {
+                txbTenNL.Enabled = true;
+            }
         }
     }
 }

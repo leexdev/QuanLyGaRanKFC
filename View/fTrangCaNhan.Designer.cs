@@ -178,7 +178,6 @@
             this.btnThoatNV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThoatNV.Font = new System.Drawing.Font("Arial", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnThoatNV.ForeColor = System.Drawing.Color.White;
-            this.btnThoatNV.Image = global::QuanLyGaRanKFC.Properties.Resources.icons8_add_user_16;
             this.btnThoatNV.Location = new System.Drawing.Point(455, 475);
             this.btnThoatNV.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnThoatNV.Name = "btnThoatNV";
@@ -199,7 +198,6 @@
             this.btnThayDoiMatKhau.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThayDoiMatKhau.Font = new System.Drawing.Font("Arial", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnThayDoiMatKhau.ForeColor = System.Drawing.Color.White;
-            this.btnThayDoiMatKhau.Image = global::QuanLyGaRanKFC.Properties.Resources.icons8_add_user_16;
             this.btnThayDoiMatKhau.Location = new System.Drawing.Point(367, 438);
             this.btnThayDoiMatKhau.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnThayDoiMatKhau.Name = "btnThayDoiMatKhau";
@@ -220,7 +218,6 @@
             this.btnLuuNV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLuuNV.Font = new System.Drawing.Font("Arial", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnLuuNV.ForeColor = System.Drawing.Color.White;
-            this.btnLuuNV.Image = global::QuanLyGaRanKFC.Properties.Resources.icons8_add_user_16;
             this.btnLuuNV.Location = new System.Drawing.Point(311, 475);
             this.btnLuuNV.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnLuuNV.Name = "btnLuuNV";
