@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucQuanLyKhachHang));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -112,6 +111,7 @@
             this.btnLamMoiKH.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLamMoiKH.Font = new System.Drawing.Font("Arial", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnLamMoiKH.ForeColor = System.Drawing.Color.White;
+            this.btnLamMoiKH.Image = global::QuanLyGaRanKFC.Properties.Resources.icons8_repeat_16;
             this.btnLamMoiKH.Location = new System.Drawing.Point(454, 112);
             this.btnLamMoiKH.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnLamMoiKH.Name = "btnLamMoiKH";
@@ -131,7 +131,7 @@
             this.btnXoaKH.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXoaKH.Font = new System.Drawing.Font("Arial", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnXoaKH.ForeColor = System.Drawing.Color.White;
-            this.btnXoaKH.Image = ((System.Drawing.Image)(resources.GetObject("btnXoaKH.Image")));
+            this.btnXoaKH.Image = global::QuanLyGaRanKFC.Properties.Resources.icons8_waste_16;
             this.btnXoaKH.Location = new System.Drawing.Point(633, 112);
             this.btnXoaKH.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnXoaKH.Name = "btnXoaKH";
@@ -151,7 +151,7 @@
             this.btnSuaKH.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSuaKH.Font = new System.Drawing.Font("Arial", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnSuaKH.ForeColor = System.Drawing.Color.White;
-            this.btnSuaKH.Image = ((System.Drawing.Image)(resources.GetObject("btnSuaKH.Image")));
+            this.btnSuaKH.Image = global::QuanLyGaRanKFC.Properties.Resources.icons8_repair_16;
             this.btnSuaKH.Location = new System.Drawing.Point(253, 112);
             this.btnSuaKH.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnSuaKH.Name = "btnSuaKH";
@@ -171,6 +171,7 @@
             this.btnThemKH.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThemKH.Font = new System.Drawing.Font("Arial", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnThemKH.ForeColor = System.Drawing.Color.White;
+            this.btnThemKH.Image = global::QuanLyGaRanKFC.Properties.Resources.icons8_plus_16;
             this.btnThemKH.Location = new System.Drawing.Point(69, 112);
             this.btnThemKH.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnThemKH.Name = "btnThemKH";
@@ -357,7 +358,7 @@
             this.btnTimKiemKH.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnTimKiemKH.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTimKiemKH.ForeColor = System.Drawing.Color.White;
-            this.btnTimKiemKH.Image = ((System.Drawing.Image)(resources.GetObject("btnTimKiemKH.Image")));
+            this.btnTimKiemKH.Image = global::QuanLyGaRanKFC.Properties.Resources.icons8_search_more_16;
             this.btnTimKiemKH.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnTimKiemKH.Location = new System.Drawing.Point(718, 224);
             this.btnTimKiemKH.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);

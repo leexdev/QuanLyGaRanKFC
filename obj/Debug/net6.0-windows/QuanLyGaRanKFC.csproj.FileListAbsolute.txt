@@ -128,3 +128,11 @@ E:\Lập trình trực quan\Project\QuanLyGaRanKFC\obj\Debug\net6.0-windows\Quan
 E:\Lập trình trực quan\Project\QuanLyGaRanKFC\obj\Debug\net6.0-windows\QuanLyGaRanKFC.View.fHoaDon.resources
 E:\Lập trình trực quan\Project\QuanLyGaRanKFC\obj\Debug\net6.0-windows\QuanLyGaRanKFC.View.fTrangCaNhan.resources
 E:\Lập trình trực quan\Project\QuanLyGaRanKFC\bin\Debug\net6.0-windows\FontAwesome.Sharp.dll
+E:\Lập trình trực quan\Project\QuanLyGaRanKFC\bin\Debug\net6.0-windows\Microcharts.dll
+E:\Lập trình trực quan\Project\QuanLyGaRanKFC\bin\Debug\net6.0-windows\SkiaSharp.dll
+E:\Lập trình trực quan\Project\QuanLyGaRanKFC\bin\Debug\net6.0-windows\runtimes\osx\native\libSkiaSharp.dylib
+E:\Lập trình trực quan\Project\QuanLyGaRanKFC\bin\Debug\net6.0-windows\runtimes\win-arm64\native\libSkiaSharp.dll
+E:\Lập trình trực quan\Project\QuanLyGaRanKFC\bin\Debug\net6.0-windows\runtimes\win-x64\native\libSkiaSharp.dll
+E:\Lập trình trực quan\Project\QuanLyGaRanKFC\bin\Debug\net6.0-windows\runtimes\win-x86\native\libSkiaSharp.dll
+E:\Lập trình trực quan\Project\QuanLyGaRanKFC\bin\Debug\net6.0-windows\ScottPlot.dll
+E:\Lập trình trực quan\Project\QuanLyGaRanKFC\bin\Debug\net6.0-windows\ScottPlot.WinForms.dll

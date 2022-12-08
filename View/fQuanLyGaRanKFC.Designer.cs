@@ -30,15 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fQuanLyGaRanKFC));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnThongKe = new System.Windows.Forms.Button();
+            this.btnKho = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lbCapBac = new System.Windows.Forms.Label();
             this.lbDisplayName = new System.Windows.Forms.Label();
             this.btnDangXuat = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pnLogo = new System.Windows.Forms.Panel();
-            this.pnChildForm = new System.Windows.Forms.Panel();
-            this.btnThongKe = new System.Windows.Forms.Button();
-            this.btnKho = new System.Windows.Forms.Button();
             this.btnHoaDon = new System.Windows.Forms.Button();
             this.btnThanhToan = new System.Windows.Forms.Button();
             this.btnMonAn = new System.Windows.Forms.Button();
@@ -46,6 +44,8 @@
             this.btnNhanVien = new System.Windows.Forms.Button();
             this.btnChiNhanh = new System.Windows.Forms.Button();
             this.btnTrangChu = new System.Windows.Forms.Button();
+            this.pnLogo = new System.Windows.Forms.Panel();
+            this.pnChildForm = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -70,6 +70,48 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(250, 664);
             this.panel1.TabIndex = 0;
+            // 
+            // btnThongKe
+            // 
+            this.btnThongKe.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnThongKe.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnThongKe.FlatAppearance.BorderSize = 0;
+            this.btnThongKe.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
+            this.btnThongKe.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnThongKe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThongKe.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnThongKe.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnThongKe.Image = global::QuanLyGaRanKFC.Properties.Resources.icons8_chart_32;
+            this.btnThongKe.Location = new System.Drawing.Point(0, 500);
+            this.btnThongKe.Name = "btnThongKe";
+            this.btnThongKe.Size = new System.Drawing.Size(250, 50);
+            this.btnThongKe.TabIndex = 11;
+            this.btnThongKe.Text = "Thống Kê";
+            this.btnThongKe.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnThongKe.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnThongKe.UseVisualStyleBackColor = true;
+            this.btnThongKe.Click += new System.EventHandler(this.btnThongKe_Click);
+            // 
+            // btnKho
+            // 
+            this.btnKho.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnKho.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnKho.FlatAppearance.BorderSize = 0;
+            this.btnKho.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
+            this.btnKho.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnKho.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnKho.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnKho.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnKho.Image = global::QuanLyGaRanKFC.Properties.Resources.icons8_warehouse_32;
+            this.btnKho.Location = new System.Drawing.Point(0, 450);
+            this.btnKho.Name = "btnKho";
+            this.btnKho.Size = new System.Drawing.Size(250, 50);
+            this.btnKho.TabIndex = 10;
+            this.btnKho.Text = "Kho";
+            this.btnKho.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnKho.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnKho.UseVisualStyleBackColor = true;
+            this.btnKho.Click += new System.EventHandler(this.btnKho_Click);
             // 
             // panel2
             // 
@@ -111,11 +153,14 @@
             this.btnDangXuat.FlatAppearance.BorderSize = 0;
             this.btnDangXuat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDangXuat.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnDangXuat.Image = global::QuanLyGaRanKFC.Properties.Resources.icons8_logout_32;
             this.btnDangXuat.Location = new System.Drawing.Point(0, 69);
             this.btnDangXuat.Name = "btnDangXuat";
             this.btnDangXuat.Size = new System.Drawing.Size(250, 40);
             this.btnDangXuat.TabIndex = 1;
             this.btnDangXuat.Text = "Đăng xuất";
+            this.btnDangXuat.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDangXuat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDangXuat.UseVisualStyleBackColor = false;
             this.btnDangXuat.Click += new System.EventHandler(this.btnDangXuat_Click);
             // 
@@ -131,62 +176,6 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // pnLogo
-            // 
-            this.pnLogo.BackgroundImage = global::QuanLyGaRanKFC.Properties.Resources.kfc_PNG53;
-            this.pnLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pnLogo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnLogo.Location = new System.Drawing.Point(0, 0);
-            this.pnLogo.Name = "pnLogo";
-            this.pnLogo.Size = new System.Drawing.Size(250, 90);
-            this.pnLogo.TabIndex = 1;
-            // 
-            // pnChildForm
-            // 
-            this.pnChildForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(37)))), ((int)(((byte)(54)))));
-            this.pnChildForm.BackgroundImage = global::QuanLyGaRanKFC.Properties.Resources.kfc_head;
-            this.pnChildForm.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pnChildForm.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnChildForm.Location = new System.Drawing.Point(250, 0);
-            this.pnChildForm.Name = "pnChildForm";
-            this.pnChildForm.Size = new System.Drawing.Size(895, 664);
-            this.pnChildForm.TabIndex = 1;
-            // 
-            // btnThongKe
-            // 
-            this.btnThongKe.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnThongKe.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnThongKe.FlatAppearance.BorderSize = 0;
-            this.btnThongKe.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
-            this.btnThongKe.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnThongKe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThongKe.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnThongKe.Location = new System.Drawing.Point(0, 410);
-            this.btnThongKe.Name = "btnThongKe";
-            this.btnThongKe.Size = new System.Drawing.Size(250, 40);
-            this.btnThongKe.TabIndex = 11;
-            this.btnThongKe.Text = "Thống Kê";
-            this.btnThongKe.UseVisualStyleBackColor = true;
-            this.btnThongKe.Click += new System.EventHandler(this.btnThongKe_Click);
-            // 
-            // btnKho
-            // 
-            this.btnKho.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnKho.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnKho.FlatAppearance.BorderSize = 0;
-            this.btnKho.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
-            this.btnKho.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnKho.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnKho.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnKho.Location = new System.Drawing.Point(0, 370);
-            this.btnKho.Name = "btnKho";
-            this.btnKho.Size = new System.Drawing.Size(250, 40);
-            this.btnKho.TabIndex = 10;
-            this.btnKho.Text = "Kho";
-            this.btnKho.UseVisualStyleBackColor = true;
-            this.btnKho.Click += new System.EventHandler(this.btnKho_Click);
-            // 
             // btnHoaDon
             // 
             this.btnHoaDon.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -195,12 +184,16 @@
             this.btnHoaDon.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
             this.btnHoaDon.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnHoaDon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHoaDon.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnHoaDon.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnHoaDon.Location = new System.Drawing.Point(0, 330);
+            this.btnHoaDon.Image = global::QuanLyGaRanKFC.Properties.Resources.icons8_purchase_order_32;
+            this.btnHoaDon.Location = new System.Drawing.Point(0, 400);
             this.btnHoaDon.Name = "btnHoaDon";
-            this.btnHoaDon.Size = new System.Drawing.Size(250, 40);
+            this.btnHoaDon.Size = new System.Drawing.Size(250, 50);
             this.btnHoaDon.TabIndex = 8;
             this.btnHoaDon.Text = "Hóa Đơn";
+            this.btnHoaDon.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnHoaDon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnHoaDon.UseVisualStyleBackColor = true;
             this.btnHoaDon.Click += new System.EventHandler(this.btnHoaDon_Click_1);
             // 
@@ -212,12 +205,16 @@
             this.btnThanhToan.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
             this.btnThanhToan.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnThanhToan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThanhToan.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnThanhToan.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnThanhToan.Location = new System.Drawing.Point(0, 290);
+            this.btnThanhToan.Image = global::QuanLyGaRanKFC.Properties.Resources.icons8_receipt_32;
+            this.btnThanhToan.Location = new System.Drawing.Point(0, 350);
             this.btnThanhToan.Name = "btnThanhToan";
-            this.btnThanhToan.Size = new System.Drawing.Size(250, 40);
+            this.btnThanhToan.Size = new System.Drawing.Size(250, 50);
             this.btnThanhToan.TabIndex = 7;
             this.btnThanhToan.Text = "Thanh Toán";
+            this.btnThanhToan.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnThanhToan.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnThanhToan.UseVisualStyleBackColor = true;
             this.btnThanhToan.Click += new System.EventHandler(this.btnThanhToan_Click);
             // 
@@ -229,12 +226,16 @@
             this.btnMonAn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
             this.btnMonAn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnMonAn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMonAn.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnMonAn.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnMonAn.Location = new System.Drawing.Point(0, 250);
+            this.btnMonAn.Image = global::QuanLyGaRanKFC.Properties.Resources.icons8_meal_32;
+            this.btnMonAn.Location = new System.Drawing.Point(0, 300);
             this.btnMonAn.Name = "btnMonAn";
-            this.btnMonAn.Size = new System.Drawing.Size(250, 40);
+            this.btnMonAn.Size = new System.Drawing.Size(250, 50);
             this.btnMonAn.TabIndex = 6;
             this.btnMonAn.Text = "Món Ăn";
+            this.btnMonAn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnMonAn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnMonAn.UseVisualStyleBackColor = true;
             this.btnMonAn.Click += new System.EventHandler(this.btnMonAn_Click);
             // 
@@ -246,12 +247,16 @@
             this.btnKhachHang.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
             this.btnKhachHang.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnKhachHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnKhachHang.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnKhachHang.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnKhachHang.Location = new System.Drawing.Point(0, 210);
+            this.btnKhachHang.Image = global::QuanLyGaRanKFC.Properties.Resources.icons8_client_32__1_;
+            this.btnKhachHang.Location = new System.Drawing.Point(0, 250);
             this.btnKhachHang.Name = "btnKhachHang";
-            this.btnKhachHang.Size = new System.Drawing.Size(250, 40);
+            this.btnKhachHang.Size = new System.Drawing.Size(250, 50);
             this.btnKhachHang.TabIndex = 5;
             this.btnKhachHang.Text = "Khách Hàng";
+            this.btnKhachHang.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnKhachHang.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnKhachHang.UseVisualStyleBackColor = true;
             this.btnKhachHang.Click += new System.EventHandler(this.btnKhachHang_Click);
             // 
@@ -263,12 +268,16 @@
             this.btnNhanVien.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
             this.btnNhanVien.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnNhanVien.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNhanVien.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnNhanVien.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnNhanVien.Location = new System.Drawing.Point(0, 170);
+            this.btnNhanVien.Image = global::QuanLyGaRanKFC.Properties.Resources.icons8_staff_32;
+            this.btnNhanVien.Location = new System.Drawing.Point(0, 200);
             this.btnNhanVien.Name = "btnNhanVien";
-            this.btnNhanVien.Size = new System.Drawing.Size(250, 40);
+            this.btnNhanVien.Size = new System.Drawing.Size(250, 50);
             this.btnNhanVien.TabIndex = 4;
             this.btnNhanVien.Text = "Nhân Viên";
+            this.btnNhanVien.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnNhanVien.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnNhanVien.UseVisualStyleBackColor = true;
             this.btnNhanVien.Click += new System.EventHandler(this.btnNhanVien_Click);
             // 
@@ -280,12 +289,16 @@
             this.btnChiNhanh.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
             this.btnChiNhanh.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnChiNhanh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChiNhanh.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnChiNhanh.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnChiNhanh.Location = new System.Drawing.Point(0, 130);
+            this.btnChiNhanh.Image = global::QuanLyGaRanKFC.Properties.Resources.icons8_online_store_32;
+            this.btnChiNhanh.Location = new System.Drawing.Point(0, 150);
             this.btnChiNhanh.Name = "btnChiNhanh";
-            this.btnChiNhanh.Size = new System.Drawing.Size(250, 40);
+            this.btnChiNhanh.Size = new System.Drawing.Size(250, 50);
             this.btnChiNhanh.TabIndex = 3;
             this.btnChiNhanh.Text = "Chi Nhánh";
+            this.btnChiNhanh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnChiNhanh.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnChiNhanh.UseVisualStyleBackColor = true;
             this.btnChiNhanh.Click += new System.EventHandler(this.btnChiNhanh_Click);
             // 
@@ -301,14 +314,36 @@
             this.btnTrangChu.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnTrangChu.Image = global::QuanLyGaRanKFC.Properties.Resources.icons8_home_32;
             this.btnTrangChu.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnTrangChu.Location = new System.Drawing.Point(0, 90);
+            this.btnTrangChu.Location = new System.Drawing.Point(0, 100);
             this.btnTrangChu.Name = "btnTrangChu";
-            this.btnTrangChu.Size = new System.Drawing.Size(250, 40);
+            this.btnTrangChu.Size = new System.Drawing.Size(250, 50);
             this.btnTrangChu.TabIndex = 2;
             this.btnTrangChu.Text = "Trang Chủ";
             this.btnTrangChu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnTrangChu.UseVisualStyleBackColor = true;
             this.btnTrangChu.Click += new System.EventHandler(this.btnTrangChu_Click);
+            // 
+            // pnLogo
+            // 
+            this.pnLogo.BackgroundImage = global::QuanLyGaRanKFC.Properties.Resources.kfc_PNG53;
+            this.pnLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pnLogo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnLogo.Location = new System.Drawing.Point(0, 0);
+            this.pnLogo.Name = "pnLogo";
+            this.pnLogo.Size = new System.Drawing.Size(250, 100);
+            this.pnLogo.TabIndex = 1;
+            // 
+            // pnChildForm
+            // 
+            this.pnChildForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(37)))), ((int)(((byte)(54)))));
+            this.pnChildForm.BackgroundImage = global::QuanLyGaRanKFC.Properties.Resources.kfc_head;
+            this.pnChildForm.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pnChildForm.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnChildForm.Location = new System.Drawing.Point(250, 0);
+            this.pnChildForm.Name = "pnChildForm";
+            this.pnChildForm.Size = new System.Drawing.Size(895, 664);
+            this.pnChildForm.TabIndex = 1;
             // 
             // fQuanLyGaRanKFC
             // 

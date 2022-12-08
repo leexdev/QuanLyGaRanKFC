@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fQuanLyNhanVien));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -205,6 +204,7 @@
             this.btnLamMoiNV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLamMoiNV.Font = new System.Drawing.Font("Arial", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnLamMoiNV.ForeColor = System.Drawing.Color.White;
+            this.btnLamMoiNV.Image = global::QuanLyGaRanKFC.Properties.Resources.icons8_repeat_16;
             this.btnLamMoiNV.Location = new System.Drawing.Point(491, 197);
             this.btnLamMoiNV.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnLamMoiNV.Name = "btnLamMoiNV";
@@ -224,7 +224,7 @@
             this.btnXoaNV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXoaNV.Font = new System.Drawing.Font("Arial", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnXoaNV.ForeColor = System.Drawing.Color.White;
-            this.btnXoaNV.Image = ((System.Drawing.Image)(resources.GetObject("btnXoaNV.Image")));
+            this.btnXoaNV.Image = global::QuanLyGaRanKFC.Properties.Resources.icons8_waste_16;
             this.btnXoaNV.Location = new System.Drawing.Point(670, 197);
             this.btnXoaNV.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnXoaNV.Name = "btnXoaNV";
@@ -244,7 +244,7 @@
             this.btnSuaNV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSuaNV.Font = new System.Drawing.Font("Arial", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnSuaNV.ForeColor = System.Drawing.Color.White;
-            this.btnSuaNV.Image = ((System.Drawing.Image)(resources.GetObject("btnSuaNV.Image")));
+            this.btnSuaNV.Image = global::QuanLyGaRanKFC.Properties.Resources.icons8_repair_16;
             this.btnSuaNV.Location = new System.Drawing.Point(290, 197);
             this.btnSuaNV.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnSuaNV.Name = "btnSuaNV";
@@ -264,6 +264,7 @@
             this.btnThemNV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThemNV.Font = new System.Drawing.Font("Arial", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnThemNV.ForeColor = System.Drawing.Color.White;
+            this.btnThemNV.Image = global::QuanLyGaRanKFC.Properties.Resources.icons8_plus_161;
             this.btnThemNV.Location = new System.Drawing.Point(106, 197);
             this.btnThemNV.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnThemNV.Name = "btnThemNV";
@@ -653,7 +654,7 @@
             this.btnTimKiemNV.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnTimKiemNV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTimKiemNV.ForeColor = System.Drawing.Color.White;
-            this.btnTimKiemNV.Image = ((System.Drawing.Image)(resources.GetObject("btnTimKiemNV.Image")));
+            this.btnTimKiemNV.Image = global::QuanLyGaRanKFC.Properties.Resources.icons8_search_more_16;
             this.btnTimKiemNV.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnTimKiemNV.Location = new System.Drawing.Point(777, 304);
             this.btnTimKiemNV.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
@@ -826,7 +827,7 @@
             this.btnLocNV.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLocNV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLocNV.ForeColor = System.Drawing.Color.White;
-            this.btnLocNV.Image = ((System.Drawing.Image)(resources.GetObject("btnLocNV.Image")));
+            this.btnLocNV.Image = global::QuanLyGaRanKFC.Properties.Resources.icons8_funnel_16;
             this.btnLocNV.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLocNV.Location = new System.Drawing.Point(258, 306);
             this.btnLocNV.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);

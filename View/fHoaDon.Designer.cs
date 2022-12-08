@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fHoaDon));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.dgvHoaDon = new System.Windows.Forms.DataGridView();
@@ -222,7 +221,7 @@
             this.btnLocHD.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLocHD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLocHD.ForeColor = System.Drawing.Color.White;
-            this.btnLocHD.Image = ((System.Drawing.Image)(resources.GetObject("btnLocHD.Image")));
+            this.btnLocHD.Image = global::QuanLyGaRanKFC.Properties.Resources.icons8_funnel_16;
             this.btnLocHD.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLocHD.Location = new System.Drawing.Point(666, 65);
             this.btnLocHD.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
@@ -252,7 +251,7 @@
             this.btnThoat.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnThoat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThoat.ForeColor = System.Drawing.Color.White;
-            this.btnThoat.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.Image")));
+            this.btnThoat.Image = global::QuanLyGaRanKFC.Properties.Resources.icons8_close_window_16;
             this.btnThoat.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnThoat.Location = new System.Drawing.Point(367, 218);
             this.btnThoat.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
@@ -336,7 +335,7 @@
             this.btnLamMoi.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLamMoi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLamMoi.ForeColor = System.Drawing.Color.White;
-            this.btnLamMoi.Image = ((System.Drawing.Image)(resources.GetObject("btnLamMoi.Image")));
+            this.btnLamMoi.Image = global::QuanLyGaRanKFC.Properties.Resources.icons8_repeat_16;
             this.btnLamMoi.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLamMoi.Location = new System.Drawing.Point(752, 65);
             this.btnLamMoi.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);

@@ -73,9 +73,7 @@ namespace QuanLyGaRanKFC.View
         private void fMonAn_Load(object sender, EventArgs e)
         {
             DAO_DanhMuc dAO_DanhMuc = new DAO_DanhMuc();
-            DAO_MonAn dAO_MonAn = new DAO_MonAn();
             DAO_NguyenLieu dAO_NguyenLieu = new DAO_NguyenLieu();
-            DAO_ChiNhanh dAO_ChiNhanh = new DAO_ChiNhanh();
             this.tpCongThuc.Hide();
             tcMonAn.TabPages.Remove(tpCongThuc);
             dgvMonAn.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;

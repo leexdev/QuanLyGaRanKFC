@@ -110,22 +110,6 @@ namespace QuanLyGaRanKFC.DAO
             command.ExecuteNonQuery();
             _conn.Close();
         }
-        public void Update(HoaDon hoaDon)
-        {
-            _conn.Open();
-            command = new SqlCommand($"UPDATE HoaDon SET MaNV = '{hoaDon.nhanVien.maNV}', maKH = '{hoaDon.khachHang.maKH}', NgayTaoHD = '{hoaDon.ngayTaoHD}' WHERE MaHD = '{hoaDon.MaHD}'", _conn);
-            command.ExecuteNonQuery();
-            _conn.Close();
-        }
-        public void Delete(string _maHD)
-        {
-            _conn.Open();
-            command = new SqlCommand($"DELETE FROM CTHoaDon WHERE MaHD = '{_maHD}'", _conn);
-            command.ExecuteNonQuery();
-            command = new SqlCommand($"DELETE FROM HoaDon WHERE MaHD = '{_maHD}'", _conn);
-            command.ExecuteNonQuery();
-            _conn.Close();
-        }
         public int AutoId()
         {
             _conn.Open();

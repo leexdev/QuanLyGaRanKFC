@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fThanhToan));
             this.panel2 = new System.Windows.Forms.Panel();
+            this.cbChiNhanh = new System.Windows.Forms.ComboBox();
             this.txbSdtKH = new System.Windows.Forms.TextBox();
             this.nmrupSoLuong = new System.Windows.Forms.NumericUpDown();
             this.txbTenKH = new System.Windows.Forms.TextBox();
@@ -74,7 +75,6 @@
             this._xoa = new System.Windows.Forms.DataGridViewButtonColumn();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
-            this.cbChiNhanh = new System.Windows.Forms.ComboBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmrupSoLuong)).BeginInit();
             this.panel3.SuspendLayout();
@@ -117,6 +117,16 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(879, 206);
             this.panel2.TabIndex = 65;
+            // 
+            // cbChiNhanh
+            // 
+            this.cbChiNhanh.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.cbChiNhanh.FormattingEnabled = true;
+            this.cbChiNhanh.Location = new System.Drawing.Point(167, 36);
+            this.cbChiNhanh.Name = "cbChiNhanh";
+            this.cbChiNhanh.Size = new System.Drawing.Size(246, 23);
+            this.cbChiNhanh.TabIndex = 77;
+            this.cbChiNhanh.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cb_KeyPress);
             // 
             // txbSdtKH
             // 
@@ -211,6 +221,7 @@
             this.btnThemMon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThemMon.Font = new System.Drawing.Font("Arial", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnThemMon.ForeColor = System.Drawing.Color.White;
+            this.btnThemMon.Image = global::QuanLyGaRanKFC.Properties.Resources.icons8_plus_161;
             this.btnThemMon.Location = new System.Drawing.Point(392, 173);
             this.btnThemMon.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnThemMon.Name = "btnThemMon";
@@ -499,6 +510,7 @@
             this.btnLuu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLuu.Font = new System.Drawing.Font("Arial", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnLuu.ForeColor = System.Drawing.Color.White;
+            this.btnLuu.Image = global::QuanLyGaRanKFC.Properties.Resources.icons8_save_32;
             this.btnLuu.Location = new System.Drawing.Point(295, 582);
             this.btnLuu.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnLuu.Name = "btnLuu";
@@ -651,16 +663,6 @@
             this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
             this.printPreviewDialog1.Name = "printPreviewDialog1";
             this.printPreviewDialog1.Visible = false;
-            // 
-            // cbChiNhanh
-            // 
-            this.cbChiNhanh.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.cbChiNhanh.FormattingEnabled = true;
-            this.cbChiNhanh.Location = new System.Drawing.Point(167, 36);
-            this.cbChiNhanh.Name = "cbChiNhanh";
-            this.cbChiNhanh.Size = new System.Drawing.Size(246, 23);
-            this.cbChiNhanh.TabIndex = 77;
-            this.cbChiNhanh.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cb_KeyPress);
             // 
             // fThanhToan
             // 

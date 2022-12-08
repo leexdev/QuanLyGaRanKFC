@@ -44,6 +44,14 @@
               "target": "Package",
               "version": "[6.1.1, )"
             },
+            "Microcharts": {
+              "target": "Package",
+              "version": "[0.9.5.9, )"
+            },
+            "ScottPlot.WinForms": {
+              "target": "Package",
+              "version": "[4.1.59, )"
+            },
             "System.Data.SqlClient": {
               "target": "Package",
               "version": "[4.8.5, )"

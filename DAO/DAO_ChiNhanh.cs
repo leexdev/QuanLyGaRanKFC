@@ -38,6 +38,25 @@ namespace QuanLyGaRanKFC.DAO
             _conn.Close();
             return list;
         }
+        public List<ChiNhanh> GetList(string _maCN)
+        {
+            List<ChiNhanh> list = new List<ChiNhanh>();
+            _conn.Open();
+            command = new SqlCommand($"select * from ChiNhanh where MaCN = '{_maCN}' and isDeleted = 0", _conn);
+            reader = command.ExecuteReader();
+            DAO_NhanVien _NhanVien = new DAO_NhanVien();
+            while (reader.Read())
+            {
+                string maCN = reader.GetString(0);
+                string tenCN = reader.GetString(1);
+                string diaChi = reader.GetString(2);
+                List<NhanVien> nhanVien = _NhanVien.GetList(maCN);
+                ChiNhanh chiNhanh = new ChiNhanh(maCN, tenCN, diaChi, nhanVien);
+                list.Add(chiNhanh);
+            }
+            _conn.Close();
+            return list;
+        }
         public List<ChiNhanh> GetByName(string _tenCN)
         {
             List<ChiNhanh> list = new List<ChiNhanh>();

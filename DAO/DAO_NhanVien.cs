@@ -250,7 +250,6 @@ namespace QuanLyGaRanKFC.DAO
             i++;
             return i;
         }
-
         public bool isNhanVienExist(string userName)
         {
             _conn.Open();
