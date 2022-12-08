@@ -120,18 +120,24 @@ namespace QuanLyGaRanKFC.View
             cbNguyenLieu.DataSource = dAO_NguyenLieu.GetAll();
             cbNguyenLieu.ValueMember = "maNL";
             cbNguyenLieu.DisplayMember = "tenNL";
+            function.turnOffButton(btnXoa);
             resetFieldNL();
             resetFieldKho();
         }
 
         private void btnThemNL_Click(object sender, EventArgs e)
         {
+            DAO_NguyenLieu dAO_NguyenLieu = new DAO_NguyenLieu();
             if (txbTenNL.Text == "")
             {
                 MessageBox.Show("Vui lòng điền đầy đủ thông tin", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            DAO_NguyenLieu dAO_NguyenLieu = new DAO_NguyenLieu();
+            if (dAO_NguyenLieu.isNguyenLieuExist(txbTenNL.Text))
+            {
+                MessageBox.Show("Nguyên liệu đã tồn tại!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             NguyenLieu _nguyenLieu = new NguyenLieu();
             _nguyenLieu.maNL = txbMaNL.Text;
             _nguyenLieu.tenNL = txbTenNL.Text;
@@ -180,7 +186,7 @@ namespace QuanLyGaRanKFC.View
 
         private void btnLocNL_Click(object sender, EventArgs e)
         {
-            dgvNguyenLieu.Rows.Clear();
+            dgvKho.Rows.Clear();
             int i = 1;
             DAO_ChiNhanh dAO_ChiNhanh = new DAO_ChiNhanh();
             DAO_NguyenLieu_ChiNhanh dAO_NguyenLieu_ChiNhanh = new DAO_NguyenLieu_ChiNhanh();
@@ -243,10 +249,12 @@ namespace QuanLyGaRanKFC.View
             nmrupSoLuongTon.Value = 0;
             LoadDataKho();
         }
+
         private void cb_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.KeyChar = (char)Keys.None;
         }
+
         private void cbChiNhanh_MouseClick(object sender, MouseEventArgs e)
         {
             cbChiNhanh.DroppedDown = true;
@@ -283,6 +291,8 @@ namespace QuanLyGaRanKFC.View
             dAO_NguyenLieu_ChiNhanh.Delete(dAO_ChiNhanh.GetByID(dgvKho.CurrentRow.Cells[4].Value.ToString()).maCN, dAO_NguyenLieu.GetByID(dgvKho.CurrentRow.Cells[1].Value.ToString()).maNL);
             resetFieldKho();
             MessageBox.Show("Xóa thành công!");
+            function.turnOffButton(btnXoa);
+            function.turnOnButton(btnThem);
         }
 
         private void dgvKho_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -294,6 +304,7 @@ namespace QuanLyGaRanKFC.View
             cbNguyenLieu.Text = dAO_NguyenLieu.GetByID(dgvKho.CurrentRow.Cells[1].Value.ToString()).tenNL;
             nmrupSoLuongTon.Value = Convert.ToInt32(dgvKho.CurrentRow.Cells[3].Value.ToString());
             function.turnOffButton(btnThem);
+            function.turnOnButton(btnXoa);
         }
 
         private void btnLamMoi_Click(object sender, EventArgs e)
@@ -301,6 +312,21 @@ namespace QuanLyGaRanKFC.View
             resetFieldKho();
             function.turnOnButton(btnThem);
             function.turnOffButton(btnXoa);
+        }
+
+        private void cbNguyenLieu_MouseClick(object sender, MouseEventArgs e)
+        {
+            cbNguyenLieu.DroppedDown = true;
+        }
+
+        private void cbChiNhanh_MouseClick_1(object sender, MouseEventArgs e)
+        {
+            cbChiNhanh.DroppedDown = true;
+        }
+
+        private void cbChiNhanhLoc_MouseClick_1(object sender, MouseEventArgs e)
+        {
+            cbChiNhanhLoc.DroppedDown = true;
         }
     }
 }

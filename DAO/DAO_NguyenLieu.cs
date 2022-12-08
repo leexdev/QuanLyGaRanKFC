@@ -115,5 +115,13 @@ namespace QuanLyGaRanKFC.DAO
             i++;
             return i;
         }
+        public bool isNguyenLieuExist(string _tenNL)
+        {
+            _conn.Open();
+            command = new SqlCommand($"SELECT COUNT(*) FROM NguyenLieu WHERE TenNL = '{_tenNL}' and isDeleted = 0", _conn);
+            int exist = (Int32)command.ExecuteScalar();
+            _conn.Close();
+            return exist > 0;
+        }
     }
 }

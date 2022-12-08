@@ -127,6 +127,7 @@
             this.cbChiNhanh.Size = new System.Drawing.Size(246, 23);
             this.cbChiNhanh.TabIndex = 77;
             this.cbChiNhanh.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cb_KeyPress);
+            this.cbChiNhanh.MouseClick += new System.Windows.Forms.MouseEventHandler(this.cbChiNhanh_MouseClick);
             // 
             // txbSdtKH
             // 
@@ -265,6 +266,7 @@
             this.cbMonAn.Name = "cbMonAn";
             this.cbMonAn.Size = new System.Drawing.Size(246, 23);
             this.cbMonAn.TabIndex = 79;
+            this.cbMonAn.TextChanged += new System.EventHandler(this.cbMonAn_TextChanged);
             this.cbMonAn.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cb_KeyPress);
             this.cbMonAn.MouseClick += new System.Windows.Forms.MouseEventHandler(this.cbMonAn_MouseClick);
             // 

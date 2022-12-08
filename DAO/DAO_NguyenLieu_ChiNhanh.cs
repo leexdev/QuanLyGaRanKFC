@@ -21,7 +21,7 @@ namespace QuanLyGaRanKFC.DAO
         {
             List<NguyenLieu_ChiNhanh> list = new List<NguyenLieu_ChiNhanh>();
             _conn.Open();
-            command = new SqlCommand($"select MaNL, MaCN, Sum(SoLuongTon)  from NguyenLieu_ChiNhanh GROUP BY MaNL, MaCN", _conn);
+            command = new SqlCommand($"select * from NguyenLieu_ChiNhanh", _conn);
             reader = command.ExecuteReader();
             DAO_NguyenLieu _nguyenLieu = new DAO_NguyenLieu();
             DAO_ChiNhanh _chiNhanh = new DAO_ChiNhanh();
@@ -40,7 +40,7 @@ namespace QuanLyGaRanKFC.DAO
         {
             List<NguyenLieu_ChiNhanh> list = new List<NguyenLieu_ChiNhanh>();
             _conn.Open();
-            command = new SqlCommand($"select MaNL, MaCN, Sum(SoLuongTon) from NguyenLieu_ChiNhanh where MaCN = '{_maCN}' group by MaNL, MaCN", _conn);
+            command = new SqlCommand($"select * from NguyenLieu_ChiNhanh where MaCN = '{_maCN}'", _conn);
             reader = command.ExecuteReader();
             DAO_NguyenLieu _nguyenLieu = new DAO_NguyenLieu();
             DAO_ChiNhanh _chiNhanh = new DAO_ChiNhanh();
@@ -59,7 +59,7 @@ namespace QuanLyGaRanKFC.DAO
         {
             List<NguyenLieu_ChiNhanh> list = new List<NguyenLieu_ChiNhanh>();
             _conn.Open();
-            command = new SqlCommand($"SELECT dbo.NguyenLieu.MaNL, dbo.NguyenLieu.TenNL, MaCN, Sum(SoLuongTon) FROM NguyenLieu_ChiNhanh, dbo.NguyenLieu WHERE NguyenLieu_ChiNhanh.MaNL = dbo.NguyenLieu.MaNL AND dbo.NguyenLieu_ChiNhanh.MaCN = '{_maCN}' group by dbo.NguyenLieu.MaNL, dbo.NguyenLieu.TenNL, MaCN", _conn);
+            command = new SqlCommand($"SELECT * FROM NguyenLieu_ChiNhanh, dbo.NguyenLieu WHERE NguyenLieu_ChiNhanh.MaNL = dbo.NguyenLieu.MaNL AND dbo.NguyenLieu_ChiNhanh.MaCN = '{_maCN}'", _conn);
             reader = command.ExecuteReader();
             DAO_NguyenLieu _nguyenLieu = new DAO_NguyenLieu();
             DAO_ChiNhanh _chiNhanh = new DAO_ChiNhanh();
@@ -99,7 +99,7 @@ namespace QuanLyGaRanKFC.DAO
         {
             List<NguyenLieu_ChiNhanh> list = new List<NguyenLieu_ChiNhanh>();
             _conn.Open();
-            command = new SqlCommand($"SELECT dbo.NguyenLieu.MaNL, dbo.NguyenLieu.TenNL, MaCN SUM(SoLuongTon) as SoLuongTon FROM NguyenLieu_ChiNhanh, dbo.NguyenLieu WHERE NguyenLieu_ChiNhanh.MaNL = dbo.NguyenLieu.MaNL AND (dbo.NguyenLieu.TenNL LIKE N'%{_tenNL}%' AND MaCN = N'{_maCN}') GROUP BY dbo.NguyenLieu.MaNL, dbo.NguyenLieu.TenNL, MaCN", _conn);
+            command = new SqlCommand($"SELECT * FROM NguyenLieu_ChiNhanh, dbo.NguyenLieu WHERE NguyenLieu_ChiNhanh.MaNL = dbo.NguyenLieu.MaNL AND (dbo.NguyenLieu.TenNL LIKE N'%{_tenNL}%' AND MaCN = N'{_maCN}')", _conn);
             reader = command.ExecuteReader();
             DAO_NguyenLieu _nguyenLieu = new DAO_NguyenLieu();
             DAO_ChiNhanh _chiNhanh = new DAO_ChiNhanh();

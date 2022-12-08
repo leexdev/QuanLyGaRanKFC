@@ -138,6 +138,11 @@ namespace QuanLyGaRanKFC.View
             dAO_MonAn.Update(_monAn, danhMuc.maDM);
             resetFieldMA();
             MessageBox.Show("Sửa thành công!");
+
+            function.turnOffButton(btnSuaMA);
+            function.turnOnButton(btnThemMA);
+            function.turnOffButton(btnXoaMA);
+            function.turnOffButton(btnCongThuc);
         }
 
         private void btnXoaMA_Click(object sender, EventArgs e)
@@ -340,6 +345,7 @@ namespace QuanLyGaRanKFC.View
             txbMaMon.Text = txbMaMA.Text;
             txbTenMon.Enabled = false;
             txbTenMon.Text = txbTenMA.Text;
+            LoadDataCT();
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
@@ -351,13 +357,14 @@ namespace QuanLyGaRanKFC.View
             tcMonAn.TabPages.Insert(1, tpDanhMuc);
             this.tpDanhMuc.Show();
             tcMonAn.SelectedTab = tpMonAn;
+            resetFieldCT();
         }
         private void LoadDataCT()
         {
             dgvCongThuc.Rows.Clear();
             int i = 1;
             DAO_CongThuc dAO_CongThuc = new DAO_CongThuc();
-            List<CongThuc> congThucs = dAO_CongThuc.GetList(txbMaMA.Text);
+            List<CongThuc> congThucs = dAO_CongThuc.GetList(txbMaMon.Text);
             foreach (CongThuc congThuc in congThucs)
             {
                 dgvCongThuc.Rows.Add(i, congThuc.nguyenLieu.maNL, congThuc.nguyenLieu.tenNL, congThuc.soLuong, "Xóa");
@@ -376,14 +383,8 @@ namespace QuanLyGaRanKFC.View
         private void resetFieldCT()
         {
             LoadDataCT();
-            nmrupSoLuong.Value = 0;
+            nmrupSoLuong.Value = 1;
         }
-
-        private void txbMaMA_TextChanged(object sender, EventArgs e)
-        {
-            resetFieldCT();
-        }
-
         private void dgvCongThuc_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex == -1)

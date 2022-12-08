@@ -109,6 +109,7 @@ namespace QuanLyGaRanKFC.View
             cbMonAn.DataSource = dAO_MonAn.GetList(danhMuc.maDM);
             cbMonAn.ValueMember = "maMon";
             cbMonAn.DisplayMember = "tenMon";
+            nmrupSoLuong.Value = 1;
         }
 
         private void btnThemMon_Click(object sender, EventArgs e)
@@ -123,12 +124,20 @@ namespace QuanLyGaRanKFC.View
         {
             DAO_HoaDon dAO_HoaDon = new DAO_HoaDon();
             txbMaHD.Text = "HD" + dAO_HoaDon.AutoId();
+            nmrupSoLuong.Value = 1;
+            txbSdtKH.Text = "";
             txbTongTien.Text = "";
             dgvThanhToan.Rows.Clear();
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
+            if (txbSdtKH.Text.Length > 0 && txbTenKH.Text == "")
+            {
+                MessageBox.Show("Khách Hàng không tồn tại!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txbSdtKH.Text = "";
+                return;
+            }
             DAO_ChiNhanh dAO_ChiNhanh = new DAO_ChiNhanh();
             DAO_HoaDon dAO_HoaDon = new DAO_HoaDon();
             DAO_CTHD dAO_CTHD = new DAO_CTHD();
@@ -141,7 +150,14 @@ namespace QuanLyGaRanKFC.View
             foreach(CTHD cthd in ListChitietHD)
             {
                 dAO_CTHD.Add(cthd, HoaDon.MaHD);
-                dAO_CTHD.XoaNguyenLieu(cthd, dAO_ChiNhanh.GetByUserID(NhanVien.maNV).maCN);
+                if (NhanVien.quyen == 2)
+                {
+                    dAO_CTHD.XoaNguyenLieu(cthd, dAO_ChiNhanh.GetByID(cbChiNhanh.SelectedValue.ToString()).maCN);
+                }
+                else
+                {
+                    dAO_CTHD.XoaNguyenLieu(cthd, dAO_ChiNhanh.GetByUserID(NhanVien.maNV).maCN);
+                }
             }
             MessageBox.Show("Lưu thành công!");
             resetFieldHD();
@@ -189,14 +205,35 @@ namespace QuanLyGaRanKFC.View
             DAO_KhachHang dAO_KhachHang = new DAO_KhachHang();
             e.Graphics.DrawString("PHIẾU TÍNH TIỀN", new Font("Verdana", 18, FontStyle.Regular), Brushes.Black, new Point(325, 30));
             e.Graphics.DrawString("Cty LD TNHH KFC Việt Nam", new Font("Verdana", 18, FontStyle.Regular), Brushes.Black, new Point(260, 60));
-            e.Graphics.DrawString(dAO_ChiNhanh.GetByUserID(NhanVien.maNV).tenCN, new Font("Verdana", 16, FontStyle.Regular), Brushes.Black, new Point(330, 90));
-            if (dAO_ChiNhanh.GetByUserID(NhanVien.maNV).diaChi.Length < 60)
+            if( NhanVien.quyen == 2)
             {
-                e.Graphics.DrawString(dAO_ChiNhanh.GetByUserID(NhanVien.maNV).diaChi, new Font("Verdana", 14, FontStyle.Regular), Brushes.Black, new Point(170, 120));
+                e.Graphics.DrawString(dAO_ChiNhanh.GetByID(cbChiNhanh.SelectedValue.ToString()).tenCN, new Font("Verdana", 16, FontStyle.Regular), Brushes.Black, new Point(330, 90));
             }
             else
             {
-                e.Graphics.DrawString(dAO_ChiNhanh.GetByUserID(NhanVien.maNV).diaChi, new Font("Verdana", 14, FontStyle.Regular), Brushes.Black, new Point(45, 120));
+                e.Graphics.DrawString(dAO_ChiNhanh.GetByUserID(NhanVien.maNV).tenCN, new Font("Verdana", 16, FontStyle.Regular), Brushes.Black, new Point(330, 90));
+            }
+            if (NhanVien.quyen == 2)
+            {
+                if (dAO_ChiNhanh.GetByID(cbChiNhanh.SelectedValue.ToString()).diaChi.Length < 60)
+                {
+                    e.Graphics.DrawString(dAO_ChiNhanh.GetByID(cbChiNhanh.SelectedValue.ToString()).diaChi, new Font("Verdana", 14, FontStyle.Regular), Brushes.Black, new Point(170, 120));
+                }
+                else
+                {
+                    e.Graphics.DrawString(dAO_ChiNhanh.GetByID(cbChiNhanh.SelectedValue.ToString()).diaChi, new Font("Verdana", 14, FontStyle.Regular), Brushes.Black, new Point(45, 120));
+                }
+            }
+            else
+            {
+                if (dAO_ChiNhanh.GetByUserID(NhanVien.maNV).diaChi.Length < 60)
+                {
+                    e.Graphics.DrawString(dAO_ChiNhanh.GetByUserID(NhanVien.maNV).diaChi, new Font("Verdana", 14, FontStyle.Regular), Brushes.Black, new Point(170, 120));
+                }
+                else
+                {
+                    e.Graphics.DrawString(dAO_ChiNhanh.GetByUserID(NhanVien.maNV).diaChi, new Font("Verdana", 14, FontStyle.Regular), Brushes.Black, new Point(45, 120));
+                }
             }
             e.Graphics.DrawString("----------------------------------------------------------------------------------", new Font("Verdana", 14, FontStyle.Regular), Brushes.Black, new Point(45, 140));
             e.Graphics.DrawString("MÃ HĐ: " + txbMaHD.Text, new Font("Verdana", 18, FontStyle.Regular), Brushes.Black, new Point(340, 160));
@@ -215,6 +252,16 @@ namespace QuanLyGaRanKFC.View
             e.Graphics.DrawImage(bmp, 10, 300);
             e.Graphics.DrawString("TỔNG TIỀN: " + txbTongTien.Text + " VNĐ", new Font("Verdana", 15, FontStyle.Regular), Brushes.Black, new Point(550, 800));
 
+        }
+
+        private void cbChiNhanh_MouseClick(object sender, MouseEventArgs e)
+        {
+            cbChiNhanh.DroppedDown = true;
+        }
+
+        private void cbMonAn_TextChanged(object sender, EventArgs e)
+        {
+            nmrupSoLuong.Value = 1;
         }
     }
 }

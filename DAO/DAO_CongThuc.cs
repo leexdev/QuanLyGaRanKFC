@@ -21,7 +21,7 @@ namespace QuanLyGaRanKFC.DAO
         {
             List<CongThuc> list = new List<CongThuc>();
             _conn.Open();
-            command = new SqlCommand($"SELECT MaNL ,SUM(SoLuong) AS SoLuong FROM CongThuc WHERE CongThuc.MaMon = '{_maMon}' GROUP BY CongThuc.MaNL", _conn);
+            command = new SqlCommand($"SELECT MaNL ,SoLuong FROM CongThuc WHERE CongThuc.MaMon = '{_maMon}'", _conn);
             reader = command.ExecuteReader();
             DAO_NguyenLieu _nguyenLieu = new DAO_NguyenLieu();
             while (reader.Read())
@@ -37,7 +37,12 @@ namespace QuanLyGaRanKFC.DAO
         public void Add(CongThuc congThuc, string _maMon)
         {
             _conn.Open();
-            command = new SqlCommand($"INSERT INTO CongThuc (MaMon, SoLuong, MaNL) VALUES('{_maMon}', {congThuc.soLuong}, '{congThuc.nguyenLieu.maNL}')", _conn);
+            command = new SqlCommand($"IF EXISTS(SELECT * FROM dbo.CongThuc WHERE MaMon = '{_maMon}' AND MaNL = '{congThuc.nguyenLieu.maNL}') " +
+                $"BEGIN " +
+                $"UPDATE dbo.CongThuc SET SoLuong = Soluong + {congThuc.soLuong} WHERE MaMon = '{_maMon}' AND MaNL = '{congThuc.nguyenLieu.maNL}' END " +
+                $"ELSE " +
+                $"BEGIN INSERT INTO dbo.CongThuc (MaMon, MaNL, SoLuong) VALUES ('{_maMon}', '{congThuc.nguyenLieu.maNL}', {congThuc.soLuong}) " +
+                $"END", _conn);
             command.ExecuteNonQuery();
             _conn.Close();
         }

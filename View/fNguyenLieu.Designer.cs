@@ -90,9 +90,11 @@
             // 
             // tabControl1
             // 
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tpNguyenLieu);
             this.tabControl1.Controls.Add(this.tpKho);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -415,6 +417,9 @@
             // dgvKho
             // 
             this.dgvKho.AllowUserToAddRows = false;
+            this.dgvKho.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvKho.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvKho.BackgroundColor = System.Drawing.Color.White;
             this.dgvKho.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -424,7 +429,6 @@
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5});
-            this.dgvKho.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgvKho.Location = new System.Drawing.Point(3, 267);
             this.dgvKho.Name = "dgvKho";
             this.dgvKho.ReadOnly = true;
@@ -558,6 +562,8 @@
             this.cbNguyenLieu.Name = "cbNguyenLieu";
             this.cbNguyenLieu.Size = new System.Drawing.Size(246, 23);
             this.cbNguyenLieu.TabIndex = 98;
+            this.cbNguyenLieu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cb_KeyPress);
+            this.cbNguyenLieu.MouseClick += new System.Windows.Forms.MouseEventHandler(this.cbNguyenLieu_MouseClick);
             // 
             // label9
             // 
@@ -588,7 +594,7 @@
             this.nmrupSoLuongTon.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.nmrupSoLuongTon.Location = new System.Drawing.Point(374, 61);
             this.nmrupSoLuongTon.Maximum = new decimal(new int[] {
-            10000,
+            100000,
             0,
             0,
             0});
@@ -629,6 +635,8 @@
             this.cbChiNhanh.Name = "cbChiNhanh";
             this.cbChiNhanh.Size = new System.Drawing.Size(259, 23);
             this.cbChiNhanh.TabIndex = 92;
+            this.cbChiNhanh.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cb_KeyPress);
+            this.cbChiNhanh.MouseClick += new System.Windows.Forms.MouseEventHandler(this.cbChiNhanh_MouseClick_1);
             // 
             // label6
             // 
@@ -708,6 +716,8 @@
             this.cbChiNhanhLoc.Name = "cbChiNhanhLoc";
             this.cbChiNhanhLoc.Size = new System.Drawing.Size(169, 23);
             this.cbChiNhanhLoc.TabIndex = 79;
+            this.cbChiNhanhLoc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cb_KeyPress);
+            this.cbChiNhanhLoc.MouseClick += new System.Windows.Forms.MouseEventHandler(this.cbChiNhanhLoc_MouseClick_1);
             // 
             // btnLocNL
             // 

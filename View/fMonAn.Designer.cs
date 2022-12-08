@@ -508,7 +508,6 @@
             this.txbMaMA.ReadOnly = true;
             this.txbMaMA.Size = new System.Drawing.Size(259, 16);
             this.txbMaMA.TabIndex = 1;
-            this.txbMaMA.TextChanged += new System.EventHandler(this.txbMaMA_TextChanged);
             // 
             // label1
             // 
@@ -1002,10 +1001,20 @@
             // 
             this.nmrupSoLuong.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.nmrupSoLuong.Location = new System.Drawing.Point(578, 51);
+            this.nmrupSoLuong.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmrupSoLuong.Name = "nmrupSoLuong";
             this.nmrupSoLuong.Size = new System.Drawing.Size(106, 23);
             this.nmrupSoLuong.TabIndex = 90;
             this.nmrupSoLuong.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.nmrupSoLuong.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // txbTenMon
             // 

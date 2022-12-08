@@ -201,6 +201,9 @@ namespace QuanLyGaRanKFC.View
             }
             resetFieldNV();
             MessageBox.Show("Sửa thành công!");
+            function.turnOffButton(btnSuaNV);
+            function.turnOnButton(btnThemNV);
+            function.turnOffButton(btnXoaNV);
         }
         private void btnXoaNV_Click(object sender, EventArgs e)
         {
