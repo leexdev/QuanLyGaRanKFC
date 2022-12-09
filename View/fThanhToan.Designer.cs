@@ -494,6 +494,7 @@
             this.btnIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIn.Font = new System.Drawing.Font("Arial", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnIn.ForeColor = System.Drawing.Color.White;
+            this.btnIn.Image = global::QuanLyGaRanKFC.Properties.Resources.icons8_printer_32;
             this.btnIn.Location = new System.Drawing.Point(487, 582);
             this.btnIn.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnIn.Name = "btnIn";

@@ -13,20 +13,25 @@
         "packagesPath": "C:\\Users\\LE\\.nuget\\packages\\",
         "outputPath": "E:\\Lập trình trực quan\\Project\\QuanLyGaRanKFC\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\DevExpress 22.1\\Components\\Offline Packages"
+        ],
         "configFilePaths": [
           "C:\\Users\\LE\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 22.1.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net5.0-windows7.0"
+          "net6.0-windows7.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\DevExpress 22.1\\Components\\System\\Components\\Packages": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net5.0-windows7.0": {
-            "targetAlias": "net5.0-windows",
+          "net6.0-windows7.0": {
+            "targetAlias": "net6.0-windows",
             "projectReferences": {}
           }
         },
@@ -37,32 +42,12 @@
         }
       },
       "frameworks": {
-        "net5.0-windows7.0": {
-          "targetAlias": "net5.0-windows",
+        "net6.0-windows7.0": {
+          "targetAlias": "net6.0-windows",
           "dependencies": {
-            "FontAwesome.Sharp": {
-              "target": "Package",
-              "version": "[6.1.1, )"
-            },
-            "Microcharts": {
-              "target": "Package",
-              "version": "[0.9.5.9, )"
-            },
-            "ScottPlot.WinForms": {
-              "target": "Package",
-              "version": "[4.1.59, )"
-            },
             "System.Data.SqlClient": {
               "target": "Package",
               "version": "[4.8.5, )"
-            },
-            "entityframework": {
-              "target": "Package",
-              "version": "[6.4.4, )"
-            },
-            "jose-jwt": {
-              "target": "Package",
-              "version": "[4.0.1, )"
             }
           },
           "imports": [

@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net5.0-windows</TargetFramework>
+    <TargetFramework>net6.0-windows</TargetFramework>
 	  <LangVersion>10.0</LangVersion>
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
@@ -11,11 +11,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="entityframework" Version="6.4.4" />
-    <PackageReference Include="FontAwesome.Sharp" Version="6.1.1" />
-    <PackageReference Include="jose-jwt" Version="4.0.1" />
-    <PackageReference Include="Microcharts" Version="0.9.5.9" />
-    <PackageReference Include="ScottPlot.WinForms" Version="4.1.59" />
     <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
   </ItemGroup>
 

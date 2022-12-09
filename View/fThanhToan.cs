@@ -29,6 +29,8 @@ namespace QuanLyGaRanKFC.View
             this.NhanVien = NhanVien;
             this.DanhMuc = DanhMuc;
             this.NguyenLieu_ChiNhanh = nguyenLieu_ChiNhanh;
+            function.turnOffButton(btnLuu);
+            function.turnOffButton(btnIn);
         }
         public void LoadData(bool isFromVal = false)
         {
@@ -118,6 +120,8 @@ namespace QuanLyGaRanKFC.View
             MonAn monAn = dAO_MonAn.GetByID(cbMonAn.SelectedValue.ToString());
             CTHD cTHD = new CTHD(Convert.ToInt32(nmrupSoLuong.Value), monAn);
             this.ListChitietHD.Add(cTHD);
+            function.turnOnButton(btnLuu);
+            function.turnOnButton(btnIn);
             LoadData(true);
         }
         private void resetFieldHD()
@@ -162,6 +166,8 @@ namespace QuanLyGaRanKFC.View
             MessageBox.Show("Lưu thành công!");
             resetFieldHD();
             ListChitietHD.Clear();
+            function.turnOffButton(btnLuu);
+            function.turnOffButton(btnIn);
         }
 
         private void dgvThanhToan_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -175,6 +181,11 @@ namespace QuanLyGaRanKFC.View
                 DAO_MonAn dAO_MonAn = new DAO_MonAn();
                 this.ListChitietHD.RemoveAt(e.RowIndex);
                 LoadData(true);
+            }
+            if (dgvThanhToan.Rows.Count == 0)
+            {
+                function.turnOffButton(btnLuu);
+                function.turnOffButton(btnIn);
             }
         }
 

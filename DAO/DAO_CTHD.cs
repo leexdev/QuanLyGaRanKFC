@@ -63,7 +63,7 @@ namespace QuanLyGaRanKFC.DAO
             foreach (CongThuc ct in listCongThuc)
             {
                 _conn.Open();
-                command = new SqlCommand($"UPDATE NguyenLieu_ChiNhanh SET SoLuongTon = SoLuongTon - {ct.soLuong} WHERE MaNL = '{ct.nguyenLieu.maNL}' and MaCN = '{_maCN}'", _conn);
+                command = new SqlCommand($"UPDATE NguyenLieu_ChiNhanh SET SoLuongTon = SoLuongTon - {ct.soLuong * (cthd.soLuong != null ? cthd.soLuong : 1)} WHERE MaNL = '{ct.nguyenLieu.maNL}' and MaCN = '{_maCN}'", _conn);
                 command.ExecuteNonQuery();
                 _conn.Close();
             }
